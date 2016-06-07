@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>ActivityAttendancePage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>ActivityAttendancePage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>ActivityAttendancePage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object will contain information for all activities at ICP level like Group activities, Service activities, Income Generating activities, etc.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Activity_Date__c</fullName>
+        <description>This field will contain date on which Activity will be held.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the activity is occurring; If it is a multiple day activity (e.g. overnight retreat), this should be the date the activity begins.</inlineHelpText>
+        <label>Activity Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Description__c</fullName>
+        <description>This field contains description of Activity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>An optional description of the activity providing more information about the event (e.g. activity location, goals, etc.)</inlineHelpText>
+        <label>Activity Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Type__c</fullName>
+        <description>This picklist is populated based on Program type and contains type of activity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The type of activity being scheduled; The selection list is based on whether Center-based or Home-based was chosen for Program Type.</inlineHelpText>
+        <label>Activity Type</label>
+        <picklist>
+            <controllingField>BEN_Program_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Service Activity</fullName>
+                <controllingFieldValues>Center-Based</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Co-Curricular Activity</fullName>
+                <controllingFieldValues>Center-Based</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Literacy Class</fullName>
+                <controllingFieldValues>Home-Based</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Income Generating Skill</fullName>
+                <controllingFieldValues>Center-Based</controllingFieldValues>
+                <controllingFieldValues>Home-Based</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Caregiver Education / Support Meeting</fullName>
+                <controllingFieldValues>Center-Based</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <controllingFieldValues>Center-Based</controllingFieldValues>
+                <controllingFieldValues>Home-Based</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BEN_Program_Type__c</fullName>
+        <description>This picklist contains program type options.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one:
+Center Based = program delivered at ICP; 
+Home Based = program delivered at home.</inlineHelpText>
+        <label>Program Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Center-Based</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home-Based</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ICP_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>ICP__r.ICP_Id__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ICP ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP__c</fullName>
+        <description>This field will contain master-detail relationship with ICP.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup Field – Name of the church where the Beneficiary is registered.</inlineHelpText>
+        <label>ICP</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>ICP</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Activity Attendance</relationshipLabel>
+        <relationshipName>Group_Activities</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Tutor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field contains Tutor Information.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup Field – Tutor or Implementer for the Child.</inlineHelpText>
+        <label>Tutor  / Implementer</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.Role_At_ICP__c</field>
+                <operation>equals</operation>
+                <value>Tutor / Implementer</value>
+            </filterItems>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.ICP__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Activity Attendance</relationshipLabel>
+        <relationshipName>Activity_Attendance</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Activity Attendance</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Tutor__c</columns>
+        <columns>Activity_Type__c</columns>
+        <columns>Activity_Date__c</columns>
+        <columns>ICP_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Activity Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Activity Attendance</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Tutor__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Activity_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Activity_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ICP_ID__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>New_Activity</fullName>
+        <availability>online</availability>
+        <description>This button will open customized page for creating New Activity</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/ActivityAttendancePage?ICPId={!Account.Id}</url>
+    </webLinks>
+</CustomObject>

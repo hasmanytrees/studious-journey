@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This custom setting would help define list of fileds/filters used in the custom search per object-type.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Fields_to_Filter_Label__c</fullName>
+        <description>Put comma separated list of field labels, including numeric fields at last, with the same sequence as api names.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Put comma separated list of field labels, including numeric fields at last, with the same sequence as api names.</inlineHelpText>
+        <label>Fields to Filter Label</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Fields_to_Filter__c</fullName>
+        <description>Use comma separated API names of fields, that should be used for filteration, Separate out numeric fields using semi-colon</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use comma separated API names of fields, that should be used for filteration, Separate out numeric fields using semi-colon</inlineHelpText>
+        <label>Fields to Filter</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Numeric_Fields_to_Filter__c</fullName>
+        <description>Use comma separated API names of fields, that should be used for filtration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use comma separated API names of fields, that should be used for filtration</inlineHelpText>
+        <label>Numeric Fields to Filter</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Object__c</fullName>
+        <externalId>false</externalId>
+        <label>Object</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Result_Column_Fields_Label__c</fullName>
+        <externalId>false</externalId>
+        <label>Result Column Fields Label</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Result_Column_Fields__c</fullName>
+        <description>Use comma separated API names of fields, that should be used as columns of result table.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use comma separated API names of fields, that should be used as columns of result table.</inlineHelpText>
+        <label>Result Column Fields</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Custom Search Setting</label>
+    <visibility>Protected</visibility>
+</CustomObject>

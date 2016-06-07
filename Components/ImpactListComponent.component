@@ -1,0 +1,121 @@
+<!--****************************************************************************
+*Page Name          : ImpactListComponent
+*Description        : This VisualForce component is used for ImpactListComponentController
+                      class which implements both ICP and Beneficiary Impact List
+                      functionality for Disaster module
+*Created By         : Sudipta Nayak
+*Created On         : 16-Oct-2015
+
+********************************************************************************-->
+
+<apex:component controller="ImpactListComponentController" >
+    
+    <script>
+        window.$Label = window.$Label || {};
+        $Label.Show = '{!JSENCODE($Label.TableJQuery_Show)}';
+        $Label.Showing = '{!JSENCODE($Label.TableJQuery_Showing)}';
+        $Label.Entries = '{!JSENCODE($Label.TableJQuery_Entries)}';
+        $Label.Search = '{!JSENCODE($Label.TableJQuery_Search)}';
+        $Label.To = '{!JSENCODE($Label.TableJQuery_To)}';
+        $Label.First = '{!JSENCODE($Label.TableJQuery_First)}';
+        $Label.Previous = '{!JSENCODE($Label.TableJQuery_Previous)}';
+        $Label.Next = '{!JSENCODE($Label.TableJQuery_Next)}';
+        $Label.Last = '{!JSENCODE($Label.TableJQuery_Last)}';
+        $Label.Filtered_From = '{!JSENCODE($Label.TableJQuery_Filtered_From)}';
+        $Label.Total_Enteries = '{!JSENCODE($Label.TableJQuery_Total_Enteries)}';
+        $Label.No_Matching_Records = '{!JSENCODE($Label.TableJQuery_No_Matching_Records)}';
+        $Label.Showing_Enteries = '{!JSENCODE($Label.TableJQuery_Showing_Enteries)}';
+        $Label.Of = '{!JSENCODE($Label.TableJQuery_Of)}';       
+    </script>
+    
+    <apex:includescript value="{!URLFOR($Resource.jQuery_Lib)}"/> 
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/tableJquery.js')}"></script> 
+    <script class="jsbin" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/tableJquery2.js')}"></script>
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/fnLengthChange.js')}"></script>
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/demo_Page.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/table.css')}" /> 
+    <apex:includescript value="{!URLFOR($Resource.DisasterImpactListScript)}"/>
+    
+    <apex:attribute name="id" description="The unique id" type="String" 
+    required="true" />
+    <apex:attribute name="sObject"
+    description="Specifies if ICP or Beneficiary" type="String" required="true" />
+    <apex:attribute name="bCreate"
+    description="True if display created list" type="Boolean" required="true" />
+    <apex:attribute name="bNoRecordsToShow" description="True if no records to display"
+    type="Boolean" required="true" />
+    <apex:attribute name="oCommUpdate"
+    description="communication update record details" type="Communication_Update__c"
+    required="true" />
+    <apex:attribute name="lstCreatedICP"
+    description="created list for the component" type="ICP_Impact__c[]"
+    required="false" assignTo="{!lstICPToDisplay}" />
+    <apex:attribute name="lstCreatedBen"
+    description="created list for the component" type="Beneficiary_Impact__c[]"
+    required="false" assignTo="{!lstBeneficiaryToDisplay}" />
+    <apex:attribute name="sURLForExport" description="stores the URL for export of the list"
+    type="String" required="true" />
+    <apex:attribute name="sTitle" description="stores the title of the page block"
+    type="String" required="true" />
+    
+    <apex:pageBlock id="listPageBlock">
+        <apex:pageBlockButtons rendered="{! bNoRecordsToShow == false}">
+            <!--<apex:commandButton value="{!$Label.TableJQuery_First}" action="{!showFirst}"
+            status="status" reRender="listPageBlock" disabled="{!setToDisplay.HasPrevious == false }" />
+            <apex:commandButton value="{!$Label.TableJQuery_Previous}" action="{!showPrevious}"
+            status="status" reRender="listPageBlock" disabled="{!setToDisplay.HasPrevious == false}" />
+            <apex:commandButton value="{!$Label.TableJQuery_Next}" action="{!showNext}"
+            status="status" reRender="listPageBlock" disabled="{!setToDisplay.HasNext == false}" />
+            <apex:commandButton value="{!$Label.TableJQuery_Last}" action="{!showLast}"
+            status="status" reRender="listPageBlock" disabled="{!setToDisplay.HasNext == false}" /> -->
+            <apex:commandButton value="{!$Label.Disaster_Export_All}" 
+            onclick=" var val = '{!sURLForExport}'; window.open(val); return false; " />
+        </apex:pageBlockButtons> 
+        
+        <apex:pageBlockSection title="{!sTitle}" columns="1" rendered="{! sObject == 'Beneficiary' }">
+            <apex:pageBlockTable value="{!lstBeneficiaryToDisplay}" var="benRec" title="Beneficary List" id="TableList"
+                                 rendered="{! sObject == 'Beneficiary' && bNoRecordsToShow == false}">
+                <apex:column value="{!benRec.Local_Beneficiary_ID__c}" headerValue="{!$Label.Disaster_Local_Beneficiary_ID}" />
+                <apex:column value="{!benRec.BEN_Name__c}" headerValue="{!$Label.CDPR_Assessment_Label_BenName}"/>
+                <apex:column value="{!benRec.Sponsorship_Status__c }" headerValue="{!$Label.Disaster_Sponsorship_Status}"/>
+                <apex:column value="{!benRec.Sponsor_Country__c }" headerValue="{!$Label.Disaster_Supporter_Country}"/>
+                <apex:column value="{!benRec.Sponsor_ID__c }" headerValue="{!$Label.Disaster_GP_Supporter_ID}"/>
+                <apex:column value="{!benRec.Sponsor_Global_ID__c }" headerValue="{!$Label.Disaster_Sponsor_Global_ID}"/>
+                <apex:column value="{!benRec.Correspondent_Country__c }" headerValue="{!$Label.Disaster_Correspondent_Country}"/>
+                <apex:column value="{!benRec.Correspondent_ID__c }" headerValue="{!$Label.Disaster_Correspondent_ID}"/>
+                <apex:column value="{!benRec.Correspondent_Global_ID__c }" headerValue="{!$Label.Disaster_Correspondent_Global_ID}"/>
+                <apex:column value="{!benRec.BEN_Disaster_Status__c }" headerValue="{!$Label.Disaster_Beneficiary_Disaster_Status}"/>
+                <apex:column value="{!benRec.BEN_Location__c}" headerValue="{!$Label.Disaster_Beneficiary_Location}"/>
+                <apex:column value="{!benRec.BEN_Physical_Condition__c}" headerValue="{!$Label.Disaster_Beneficiary_Physical_Condition}"/>
+                <apex:column value="{!benRec.BEN_Phy_Condition_Description__c}"
+                             headerValue="{!$Label.Disaster_Beneficiary_Physical_Condition_Description}"/>
+                <apex:column value="{!benRec.Number_Caregivers_Died__c}" headerValue="{!$Label.Disaster_Number_Of_Caregivers_Died}"/>
+                <apex:column value="{!benRec.Number_Of_Caregivers_Seriously_Injured__c}"
+                             headerValue="{!$Label.Disaster_Number_Of_Caregivers_Seriously_Injured}" />
+                <apex:column value="{!benRec.Number_Siblings_Died__c}" headerValue="{!$Label.Disaster_Number_Of_Siblings_Died}" />
+                <apex:column value="{!benRec.Number_Of_Siblings_Seriously_Injured__c}"
+                             headerValue="{!$Label.Disaster_Number_Of_Siblings_Seriously_Injured}"/>
+                <apex:column value="{!benRec.House_Condition__c}" headerValue="{!$Label.Disaster_House_Condition}"/>
+                <apex:column value="{!benRec.Lost_Personal_Effects__c}" headerValue="{!$Label.Disaster_Lost_Personal_Effects}"/>
+                <apex:column value="{!benRec.Loss_Of_Livelihood__c}" headerValue="{!$Label.Disaster_Loss_Of_Livelihood}"/>
+            </apex:pageBlockTable>
+            <apex:outputText rendered="{!sObject == 'Beneficiary' && bNoRecordsToShow == true}"> {!$Label.TableJQuery_No_Matching_Records} </apex:outputText>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="{!sTitle}" columns="1" rendered="{! sObject == 'ICP' }">
+            <apex:pageBlockTable value="{!lstICPToDisplay}" var="icpRec" title="ICP List" id="TableList"
+                                 rendered="{! sObject == 'ICP' && bNoRecordsToShow == false}">
+                <apex:column value="{!icpRec.ICP_Name__r.ICP_ID__c }" headerValue="{!$Label.Disaster_ICP_ID}"/>
+                <apex:column value="{!icpRec.ICP_Name__r.Name }" headerValue="{!$Label.Disaster_ICP_Name}"/>
+                <apex:column value="{!icpRec.ICP_Disaster_Status__c }" headerValue="{!$Label.Disaster_ICP_Disaster_Status}"/>
+                <apex:column value="{!icpRec.Disaster_Impact_On_ICP_Program__c }"
+                             headerValue="{!$Label.Disaster_Disaster_Impact_On_ICP_Program}"/>
+                <apex:column value="{!icpRec.Disaster_Impact_To_ICP_Infrastructure__c}"
+                             headerValue="{!$Label.Disaster_Impact_On_ICP_Infrastructure}"/>
+                <apex:column value="{!icpRec.ICP_Disaster_Impact_Description__c }"
+                             headerValue="{!$Label.Disaster_ICP_Disaster_Impact_Description}"/>
+            </apex:pageBlockTable>
+            <apex:outputText rendered="{!sObject == 'ICP' && bNoRecordsToShow == true}"> {!$Label.TableJQuery_No_Matching_Records} </apex:outputText>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:component>

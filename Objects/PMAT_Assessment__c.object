@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>PMATFormNew</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>PMATFormNew</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>PMATFormNew</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <description>The master detail relationship with Account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - Name of the church partner</inlineHelpText>
+        <label>Account Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>PMAT Assessments</relationshipLabel>
+        <relationshipName>PMAT_Assessments</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Cluster__c</fullName>
+        <description>This formula field holds Cluster Name of the PMAT ICP</description>
+        <externalId>false</externalId>
+        <formula>Account_Name__r.Cluster__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cluster</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_Recipent__c</fullName>
+        <description>This field has been added to set the ICP rep to whom the &apos;PMAT initiated&apos; email will be sent</description>
+        <externalId>false</externalId>
+        <label>Email Recipent</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FO_Created_ICP_Form__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field shows whether the ICP Form was created by FO for Non tech enabled iCP</description>
+        <externalId>false</externalId>
+        <label>FO Created ICP Form</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FO_PMAT_Average__c</fullName>
+        <description>This field holds the PMAT Maturity Average of the FO Form associated with this PMAT Assessment.</description>
+        <externalId>false</externalId>
+        <label>FO PMAT Average</label>
+        <summarizedField>PMAT__c.PMAT_Maturity_Numeric_Average__c</summarizedField>
+        <summaryFilterItems>
+            <field>PMAT__c.PMAT_Type__c</field>
+            <operation>equals</operation>
+            <value>Compassion</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>PMAT__c.PMAT_Status__c</field>
+            <operation>equals</operation>
+            <value>Ready for Discussion, Complete</value>
+        </summaryFilterItems>
+        <summaryForeignKey>PMAT__c.PMAT_Assessment__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Field_Office_ID__c</fullName>
+        <description>This field holds the Field Office ID of PMAT ICP</description>
+        <externalId>false</externalId>
+        <formula>Account_Name__r.Cluster__r.Territory__r.Field_Office__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automated - Compassion Office responsible for overseeing this Territory.</inlineHelpText>
+        <label>Field Office ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Office__c</fullName>
+        <description>This field holds the field office of the Account</description>
+        <externalId>false</externalId>
+        <formula>Account_Name__r.Field_Office__c</formula>
+        <inlineHelpText>Automated - Compassion Office responsible for overseeing this Territory.</inlineHelpText>
+        <label>Field Office</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_ID__c</fullName>
+        <description>This field holds the ICP ID of the Account</description>
+        <externalId>false</externalId>
+        <formula>Account_Name__r.ICP_Id__c</formula>
+        <inlineHelpText>Automated - The unique identifier assigned to this ICP when it was a Lead</inlineHelpText>
+        <label>ICP ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_PMAT_Average__c</fullName>
+        <description>This field holds the PMAT Maturity Average of the ICP Form associated with this PMAT Assessment.</description>
+        <externalId>false</externalId>
+        <label>ICP PMAT Average</label>
+        <summarizedField>PMAT__c.PMAT_Maturity_Numeric_Average__c</summarizedField>
+        <summaryFilterItems>
+            <field>PMAT__c.PMAT_Type__c</field>
+            <operation>equals</operation>
+            <value>ICP</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>PMAT__c.PMAT_Status__c</field>
+            <operation>equals</operation>
+            <value>Ready for Discussion, Complete</value>
+        </summaryFilterItems>
+        <summaryForeignKey>PMAT__c.PMAT_Assessment__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Child_Records__c</fullName>
+        <description>This is a ROLL- UP Summary field that holds the number of children records</description>
+        <externalId>false</externalId>
+        <label>Number of Child Records</label>
+        <summaryFilterItems>
+            <field>PMAT__c.PMAT_Maturity_Numeric_Average__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>PMAT__c.PMAT_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Initiated</value>
+        </summaryFilterItems>
+        <summaryForeignKey>PMAT__c.PMAT_Assessment__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field holds the owner of the PMAT Assessment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated / Editable - The person receiving all notifications and action items related to this account. Automatically assigned to the person who created the record, but changeable to any other system user.</inlineHelpText>
+        <label>Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PMAT_Assessments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PMAT_Action_Item_List__c</fullName>
+        <description>This field holds the list of Action items decided upon by both FO &amp; PMAT</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A simple list of actions that both Compassion and the ICP commit to taking to strengthen the ministry and partnership for the future. This list should inform the PF&apos;s Facilitation Workplan and the ICP&apos;s Operational Plan</inlineHelpText>
+        <label>PMAT Action Item List</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PMAT_Assessment_End_Date__c</fullName>
+        <description>The end date of Assessment Period</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date that marks the end of the time-frame that PMAT is assessing</inlineHelpText>
+        <label>Assessment Period End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PMAT_Assessment_Id_For_Data_Load__c</fullName>
+        <description>This is a back-end field used by Data conversion team for Upsert Purposes</description>
+        <externalId>true</externalId>
+        <label>PMAT Assessment Id For Data Load</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PMAT_Assessment_Start_Date__c</fullName>
+        <description>The start date of Assessment Period</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date that marks the beginning of the time-frame that PMAT is assessing</inlineHelpText>
+        <label>Assessment Period Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PMAT_Combined_Maturity_Level__c</fullName>
+        <description>This field holds the combined maturity level for the Assessment</description>
+        <externalId>false</externalId>
+        <formula>IF (PMAT_Combined_Maturity_Numeric_Average__c == null , &apos;&apos;, IF( PMAT_Combined_Maturity_Numeric_Average__c &gt;0 &amp;&amp; PMAT_Combined_Maturity_Numeric_Average__c &lt;= 2.5, $Label.PMAT_ProCap1_PS1 , IF( PMAT_Combined_Maturity_Numeric_Average__c &gt; 2.5 &amp;&amp; PMAT_Combined_Maturity_Numeric_Average__c &lt;= 4.5, $Label.PMAT_ProCap1_PS2 , IF ( PMAT_Combined_Maturity_Numeric_Average__c &gt; 4.5, $Label.PMAT_ProCap1_PS3 , &apos;&apos; ) )))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The final Partnership Maturity Level.  This level is determined by averaging the overall Partnership Maturity Level identified on Compassion&apos;s form and the ICP&apos;s form.</inlineHelpText>
+        <label>PMAT Combined Maturity Level</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PMAT_Combined_Maturity_Numeric_Average__c</fullName>
+        <description>This field holds the combined maturity average for the Assessment</description>
+        <externalId>false</externalId>
+        <formula>IF( Sum_of_Child_Maturity__c &gt; 0 &amp;&amp;  Number_of_Child_Records__c &gt; 1 ,(Sum_of_Child_Maturity__c / Number_of_Child_Records__c), Null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The numeric average of the overall Partnership Maturity Level identified on Compassion&apos;s form and the ICP&apos;s form.</inlineHelpText>
+        <label>PMAT Combined Maturity Numeric Average</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PMAT_Completion_Date__c</fullName>
+        <description>This field holds the PMAT Completion Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date when all activities related to this PMAT have been completed, including both ICP and CI forms, discussions, changes, and action plans.</inlineHelpText>
+        <label>PMAT Completion Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PMAT_Discussion_Summary__c</fullName>
+        <description>This field holds the summary of the PMAT Discussions</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This summary of the final PMAT discussion should reflect both ICP and Compassion views.  This should include partnership strengths and challenges, disagreements, commitments, and plans for how to strengthen the ministry and partnership in the future.</inlineHelpText>
+        <label>PMAT Discussion Summary</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PMAT_ICP_Representative__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This person stores the person that manually filled out the PMAT at the ICP</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The ICP contact who is responsible for filling out their PMAT form</inlineHelpText>
+        <label>PMAT ICP Representative</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account_Name__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>PMAT Assessments</relationshipLabel>
+        <relationshipName>PMAT_Assessments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PMAT_Maturity_Average_Difference__c</fullName>
+        <description>This field holds the difference between PMAT Averages of the FO &amp; ICP Form.</description>
+        <externalId>false</externalId>
+        <formula>IF(AND( FO_PMAT_Average__c != 0 , ICP_PMAT_Average__c != 0 ), IF( FO_PMAT_Average__c &gt;  ICP_PMAT_Average__c , FO_PMAT_Average__c - ICP_PMAT_Average__c, ICP_PMAT_Average__c - FO_PMAT_Average__c), Null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PMAT Maturity Average Difference</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PMAT_Next_Assessment_Date__c</fullName>
+        <description>This field holds the next assessment date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date when the next PMAT must be completed.</inlineHelpText>
+        <label>PMAT Next Assessment Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Partnership_Facilitator_ID__c</fullName>
+        <description>This formula returns the id of the Partnership Facilitator</description>
+        <externalId>false</externalId>
+        <formula>Account_Name__r.Partnership_Facilitator__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automated - Partnership Facilitator working with this ICP. Must be a system user</inlineHelpText>
+        <label>Partnership Facilitator ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Partnership_Facilitator_Supervisor_ID__c</fullName>
+        <description>This formula returns the id of the Partnership Facilitator Supervisor</description>
+        <externalId>false</externalId>
+        <formula>Account_Name__r.Partnership_Facilitator_Supervisor__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automated - Partnership Facilitator Supervisor working with this ICP. Must be a system user</inlineHelpText>
+        <label>Partnership Facilitator Supervisor ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Partnership_Facilitator_Supervisor__c</fullName>
+        <description>This formula returns the Name of the Partnership Facilitator Supervisor</description>
+        <externalId>false</externalId>
+        <formula>Account_Name__r.Partnership_Facilitator_Supervisor__r.FirstName + &apos; &apos; + Account_Name__r.Partnership_Facilitator_Supervisor__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automated - Partnership Facilitator Supervisor working with this ICP. Must be a system user</inlineHelpText>
+        <label>Partnership Facilitator Supervisor</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Partnership_Facilitator__c</fullName>
+        <description>This formula field returns the name of the Partnership Facilitator</description>
+        <externalId>false</externalId>
+        <formula>Account_Name__r.Partnership_Facilitator__r.FirstName + &apos; &apos; + Account_Name__r.Partnership_Facilitator__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automated - Partnership Facilitator working with this ICP. Must be a system user</inlineHelpText>
+        <label>Partnership Facilitator</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sum_of_Child_Maturity__c</fullName>
+        <description>This field holds the sum of Child Maturity</description>
+        <externalId>false</externalId>
+        <label>Sum of Child Maturity</label>
+        <summarizedField>PMAT__c.PMAT_Maturity_Numeric_Average__c</summarizedField>
+        <summaryFilterItems>
+            <field>PMAT__c.PMAT_Maturity_Numeric_Average__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>PMAT__c.PMAT_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Initiated</value>
+        </summaryFilterItems>
+        <summaryForeignKey>PMAT__c.PMAT_Assessment__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>PMAT Assessment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>PMAT_Completion_Date__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Account_Name__c</columns>
+        <columns>FO_PMAT_Average__c</columns>
+        <columns>ICP_PMAT_Average__c</columns>
+        <columns>PMAT_Maturity_Average_Difference__c</columns>
+        <columns>Number_of_Child_Records__c</columns>
+        <columns>Sum_of_Child_Maturity__c</columns>
+        <columns>PMAT_Combined_Maturity_Numeric_Average__c</columns>
+        <columns>PMAT_Combined_Maturity_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>PMAT Assessment Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>PMAT Assessments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Start_Date_greater_than_End_Date_Check</fullName>
+        <active>true</active>
+        <description>This rule checks if the start date is greater then end date</description>
+        <errorConditionFormula>IF(PMAT_Assessment_Start_Date__c  &gt;  PMAT_Assessment_End_Date__c, TRUE, FALSE)</errorConditionFormula>
+        <errorDisplayField>PMAT_Assessment_Start_Date__c</errorDisplayField>
+        <errorMessage>Assessment Start Date cannot be greater than Assessment End Date.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_PMAT</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New PMAT</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/PMATFormNew?AccId={!Account.Id}</url>
+    </webLinks>
+</CustomObject>

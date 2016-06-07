@@ -1,0 +1,99 @@
+<apex:page extensions="MassUpdateRecordsICPImpactExtension" standardController="ICP_Impact__c" sidebar="false" tabStyle="Disaster__c" >
+    <script>
+        window.$Label = window.$Label || {};
+        $Label.Show = '{!JSENCODE($Label.TableJQuery_Show)}';
+        $Label.Showing = '{!JSENCODE($Label.TableJQuery_Showing)}';
+        $Label.No_Data_Available = '{!JSENCODE($Label.TableJQuery_No_Data_Available)}';
+        $Label.Entries = '{!JSENCODE($Label.TableJQuery_Entries)}';
+        $Label.Search = '{!JSENCODE($Label.TableJQuery_Search)}';
+        $Label.To = '{!JSENCODE($Label.TableJQuery_To)}';
+        $Label.First = '{!JSENCODE($Label.TableJQuery_First)}';
+        $Label.Previous = '{!JSENCODE($Label.TableJQuery_Previous)}';
+        $Label.Next = '{!JSENCODE($Label.TableJQuery_Next)}';
+        $Label.Last = '{!JSENCODE($Label.TableJQuery_Last)}';
+        $Label.Filtered_From = '{!JSENCODE($Label.TableJQuery_Filtered_From)}';
+        $Label.Total_Enteries = '{!JSENCODE($Label.TableJQuery_Total_Enteries)}';
+        $Label.No_Matching_Records = '{!JSENCODE($Label.TableJQuery_No_Matching_Records)}';
+        $Label.Showing_Enteries = '{!JSENCODE($Label.TableJQuery_Showing_Enteries)}';
+        $Label.Of = '{!JSENCODE($Label.TableJQuery_Of)}';       
+    </script>
+    
+    <apex:includescript value="{!URLFOR($Resource.jQuery_Lib)}"/>
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/tableJquery.js')}"></script>  
+    <script class="jsbin" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/tableJquery2.js')}"></script>
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/fnLengthChange.js')}"></script>
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/demo_Page.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/table.css')}" />
+    <apex:includescript value="{!URLFOR($Resource.DisasterScript)}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.DisasterStyles)}"/>
+    
+    <apex:actionStatus id="status">
+        <apex:facet name="start">
+            <div class="waitingSearchDiv" id="el_loading" style="background-color:#DCD6D6;height:100%;width:100%; opacity:0.45 ; z-index:55;"> 
+                 <div class="waitingHolder" style="top: 250px; padding-left:600px;align:center;position:absolute ; opacity:0.65 ; z-index:78;">
+                     <img class="waitingImage" src="{!$Resource.Loading_New}"/>                       
+                 </div>
+            </div>
+         </apex:facet>
+    </apex:actionStatus>
+
+
+<apex:form id="MassCreateImpact">
+	<apex:pageBlock title="{!$Label.Disaster_Mass_Create_ICP_Impact}">
+
+		<apex:pageBlockSection id="SearchICP" title="{!$Label.Disaster_Search_ICP}">
+			<apex:selectList label="Search by" value="{!sFilters}" multiselect="false" size="1"	onchange="renderFilter() ; return false">
+				<apex:selectOptions value="{!lstFilterVal}" />
+			</apex:selectList>
+			<br/>
+			<apex:inputField value="{!oFilter.Field_Office__c}" rendered="{!sFilters = 'Field Office'}"/>
+			<apex:inputField value="{!oFilter.Territory__c }" rendered="{!sFilters = 'Territory'}"/>
+			<apex:inputField value="{!oFilter.Cluster__c }" rendered="{!sFilters = 'Cluster'}"/>
+			<br/>
+			<apex:commandButton value="{!$Label.Mass_Ben_Need_Label_Search}" action="{!search}"
+			status="status" reRender="MassCreateImpact" oncomplete="dispTable();" style="margin-left: 40%;"/>
+			<apex:actionFunction Name="renderFilter" action="{!renderFilter}" reRender="SearchICP"/>
+		</apex:pageBlockSection>
+
+		<apex:pageBlockButtons rendered="{! bDisplayICPImpact }">
+			<apex:commandButton value="{!$Label.CDPR_Assessment_Btn_Save}" action="{!save}" 
+            status="status" rerender="MassCreateImpact" onclick="addAll()"/>
+            <apex:commandButton value="{!$Label.CDPR_Assessment_Btn_Cancel}" action="{!cancel}"/>
+		</apex:pageBlockButtons>
+		<apex:pageMessages />
+
+		<apex:pageBlockSection title="{!$Label.Disaster_ICP_List}" rendered="{! bDisplayICPImpact}"/>
+		<apex:pageBlockTable id="TableList" value="{!lstICPWrapper}" var="ICPRecord" rendered="{!bDisplayICPImpact}">
+			<apex:column headerValue="Select">
+				<apex:facet name="header">
+					<apex:inputCheckbox id="selectCheck" label="{!$Label.Mass_Update_Account_Label_SelAll}"
+					title="{!$Label.Mass_Update_Account_Label_Sel_DeselAll}" onClick="selectAllCheck()"/>
+				</apex:facet>
+				<apex:inputCheckbox id="checkSelectBen" value="{!ICPRecord.bIsSelected}" />
+			</apex:column>
+			<apex:column value="{!ICPRecord.oAccount.ICP_ID__c }" headerValue="{!$Label.Disaster_ICP_ID}"/>
+			<apex:column value="{!ICPRecord.oAccount.Name }" headerValue="{!$Label.CDPR_Assessment_Label_ICP}"/>
+			<apex:column >
+				<apex:facet name="header">{!$Label.Disaster_Disaster_Impact_On_ICP_Program}</apex:facet>
+				<apex:inputField value="{!ICPRecord.oIcpImpactRecValues.Disaster_Impact_On_ICP_Program__c}"
+				rendered="{!ICPRecord.bAlreadyExists = false}" />
+				<apex:inputText disabled="true" style="width:139px;" rendered="{!ICPRecord.bAlreadyExists = true}"/>
+			</apex:column>
+			<apex:column >
+				<apex:facet name="header">{!$Label.Disaster_Impact_On_ICP_Infrastructure}</apex:facet>
+				<apex:inputField value="{!ICPRecord.oIcpImpactRecValues.Disaster_Impact_To_ICP_Infrastructure__c}"
+				rendered="{!ICPRecord.bAlreadyExists = false}" />
+				<apex:inputText disabled="true" style="width:139px;" rendered="{!ICPRecord.bAlreadyExists = true}"/>
+			</apex:column>
+			<apex:column >
+				<apex:facet name="header">{!$Label.Disaster_ICP_Disaster_Comments}</apex:facet>
+				<apex:inputField value="{!ICPRecord.oIcpImpactRecValues.ICP_Disaster_Impact_Description__c}"
+				rendered="{!ICPRecord.bAlreadyExists = false}" />
+				<apex:inputTextArea disabled="true" rendered="{!ICPRecord.bAlreadyExists = true}"/>
+			</apex:column>
+
+		</apex:pageBlockTable>
+
+	</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Close</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewTask</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ActivityDate</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDisposition</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDurationInSeconds</fullName>
+    </fields>
+    <fields>
+        <fullName>CallObject</fullName>
+    </fields>
+    <fields>
+        <fullName>CallType</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>IsVisibleInSelfService</fullName>
+        <inlineHelpText>Check this box to make the task visible to the ICP.</inlineHelpText>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+                <highPriority>true</highPriority>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Normal</fullName>
+                <default>true</default>
+                <highPriority>false</highPriority>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+                <highPriority>false</highPriority>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RecurrenceInterval</fullName>
+    </fields>
+    <fields>
+        <fullName>RecurrenceRegeneratedType</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <closed>false</closed>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Initiated</fullName>
+                <closed>false</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <closed>false</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <closed>true</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deferred</fullName>
+                <closed>true</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Canceled</fullName>
+                <closed>true</closed>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Communicate/Notify</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compile/Collect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Confirm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Develop</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Document</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Execute</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feedback</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finalize</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Text</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Write</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TaskSubtype</fullName>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WhatId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WhoId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <recordTypes>
+        <fullName>Operational_Plan_Objective_Activity</fullName>
+        <active>false</active>
+        <description>This record type is used when a Task is needed on Operational Plan Objective</description>
+        <label>Operational Plan Objective Activity</label>
+        <picklistValues>
+            <picklist>Activity_Age_Group__c</picklist>
+            <values>
+                <fullName>0-2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12-14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15-18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6-8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9-11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survival Caregivers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Appeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facilitation Work Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milestone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operational Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Beneficiary_Attendance__c</picklist>
+            <values>
+                <fullName>Attended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invitation Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Attended</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Type__c</picklist>
+            <values>
+                <fullName>Assessment Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attend Home Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Breakfast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lunch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sightseeing And Shopping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit CIV Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit Sponsorship Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit Survival Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Invitee_Type__c</picklist>
+            <values>
+                <fullName>Beneficiary</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Caregiver - Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Caregiver - Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Method__c</picklist>
+            <values>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Podcast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Media Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar Self-guided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar-Live</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Objective__c</picklist>
+            <values>
+                <fullName>Beneficiary Agreement Signing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beneficiary Progress Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regular Beneficiary Visit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Outcome__c</picklist>
+            <values>
+                <fullName>Beneficiary%3A Cognitive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beneficiary%3A Physical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beneficiary%3A Socio-Emotional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beneficiary%3A Spiritual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP%3A Local Ownership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP%3A Management Structure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP%3A Resource Mobilization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP%3A Vision%2FLeadership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Percentage_Completed__c</picklist>
+            <values>
+                <fullName>10%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>70%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>80%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90%25</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Purpose__c</picklist>
+            <values>
+                <fullName>Coaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cultivation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Speech_Category__c</picklist>
+            <values>
+                <fullName>Motivational</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testimony</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initiated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communicate%2FNotify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compile%2FCollect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Develop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Execute</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finalize</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Text</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Write</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Assessment Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attend Home Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Breakfast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lunch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sightseeing And Shopping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit CIV Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Task</fullName>
+        <active>true</active>
+        <description>Use this record type when you are creating a general task,</description>
+        <label>Task</label>
+        <picklistValues>
+            <picklist>Activity_Age_Group__c</picklist>
+            <values>
+                <fullName>0-2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12-14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15-18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6-8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9-11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survival Caregivers</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Activity_Source__c</picklist>
+            <values>
+                <fullName>Audit Results</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cluster Objective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operational Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PMAT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milestone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Beneficiary_Attendance__c</picklist>
+            <values>
+                <fullName>Attended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invitation Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Attended</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Type__c</picklist>
+            <values>
+                <fullName>Assessment Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attend Home Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Breakfast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lunch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sightseeing And Shopping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit CIV Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit Sponsorship Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit Survival Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Invitee_Type__c</picklist>
+            <values>
+                <fullName>Beneficiary</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Caregiver - Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Caregiver - Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Method__c</picklist>
+            <values>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Podcast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Media Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar Self-guided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar-Live</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Objective__c</picklist>
+            <values>
+                <fullName>Beneficiary Agreement Signing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beneficiary Progress Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regular Beneficiary Visit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Outcome__c</picklist>
+            <values>
+                <fullName>Beneficiary%3A Socio-Emotional</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Percentage_Completed__c</picklist>
+            <values>
+                <fullName>10%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>70%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>80%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90%25</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Purpose__c</picklist>
+            <values>
+                <fullName>Coaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cultivation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Speech_Category__c</picklist>
+            <values>
+                <fullName>Motivational</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testimony</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initiated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Assessment Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attend Home Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Breakfast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lunch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sightseeing And Shopping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit CIV Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visit Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Milestone_completion_date_change</fullName>
+        <active>false</active>
+        <description>Milestone completion date can be changed only within six months of ICP agreement date.</description>
+        <errorConditionFormula>AND(
+     ISCHANGED(  ActivityDate ),
+      ActivityDate -ICP_Agreement_Date__c &gt; 180
+    )</errorConditionFormula>
+        <errorDisplayField>ActivityDate</errorDisplayField>
+        <errorMessage>Due Date must be less than 6 months after the Partnership Agreement Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_ICP_Users_From_Editing_Task</fullName>
+        <active>true</active>
+        <description>This validation rule will prevent ICP users from Editing tasks that are not assigned to them.</description>
+        <errorConditionFormula>AND(NOT(ISNEW()), ISPICKVAL($User.UserType, &apos;PowerPartner&apos;),OwnerId !=  $User.Id, CreatedById != $User.Id )</errorConditionFormula>
+        <errorMessage>You are only able to edit tasks that are assigned to you.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Validate_Task_Assignation_For_ICP_Users</fullName>
+        <active>true</active>
+        <description>This Validation rule will prevent ICP users to assign task to any other users not belonging to their ICP.</description>
+        <errorConditionFormula>AND( OR(ISNEW(), CreatedById =  $User.Id),ISPICKVAL($User.UserType, &apos;PowerPartner&apos;),NOT( ISPICKVAL(Owner:User.UserType, &apos;PowerPartner&apos;) ))</errorConditionFormula>
+        <errorMessage>You are only able to assign tasks to users within your ICP. Please contact your Partnership Facilitator to discuss this task with them.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>WhenStatusComppleted_ActivityCompletionD</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISBLANK( Activity_Completion_Date__c ) , ISPICKVAL(Status, &apos;Completed&apos;) )</errorConditionFormula>
+        <errorDisplayField>Activity_Completion_Date__c</errorDisplayField>
+        <errorMessage>Please Enter the Activity Completion Date.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Delete_Activities</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Delete Activities</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)} 
+
+
+var recordTaskList={!GETRECORDIDS( $ObjectType.Task )}; 
+var recordEventList={!GETRECORDIDS(  $ObjectType.Event  )}; 
+if(recordTaskList.length==0)
+{ 
+ if(recordEventList.length==0)
+{
+alert(&quot;Please select at least a single record !&quot;); 
+}
+
+} 
+else 
+{ 
+var choice=confirm(&quot;Do you want to delete selected Record(s) ?&quot;); 
+if(choice==true) 
+{ 
+if(recordTaskList.length!=0)
+{
+result = sforce.connection.deleteIds(recordTaskList); 
+alert(recordTaskList.length+&quot; Task(s) Deleted Successfully &quot;); 
+}
+
+if(recordEventList.length!=0)
+{
+result = sforce.connection.deleteIds(recordEventList);
+alert(recordEventList.length+&quot; Event(s) Deleted Successfully &quot;);  
+}
+//alert(recordList.length+&quot; Task(s) Deleted Successfully &quot;); 
+location.reload(); 
+} 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Task_Account</fullName>
+        <availability>online</availability>
+        <description>Use this task button for defaulting Task Record type to Task</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Task</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)}
+
+var currentUser = sforce.connection.getUserInfo(); 
+var RecordTypeQuery = &quot;Select Id from RecordType where SObjectType = &apos;Task&apos; And DeveloperName = &apos;Task&apos;&quot;;
+var resultID = sforce.connection.query(RecordTypeQuery);
+var rec =resultID.getArray(&quot;records&quot;);
+if(currentUser.userType!=&apos;PowerPartner&apos;){ 
+window.open(&quot;/00T/e?what_id={!Account.Id}&amp;retURL=%2F{!Account.Id}&amp;RecordType=&quot; + rec[0].Id + &quot;&amp;ent=Task&quot;,&quot;_parent&quot;);
+}
+else{
+window.open(&quot;/ICPPortal/00T/e?what_id={!Account.Id}&amp;retURL=%2F{!Account.Id}&amp;RecordType=&quot; + rec[0].Id + &quot;&amp;ent=Task&quot;,&quot;_parent&quot;);
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Task_Activity_Plan</fullName>
+        <availability>online</availability>
+        <description>Use this task button for defaulting Task Record type to Task</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Task</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)}
+var currentUser = sforce.connection.getUserInfo(); 
+var RecordTypeQuery = &quot;Select Id from RecordType where SObjectType = &apos;Task&apos; And DeveloperName = &apos;Task&apos;&quot;;
+var resultID = sforce.connection.query(RecordTypeQuery);
+var rec =resultID.getArray(&quot;records&quot;);
+
+if(currentUser.userType!=&apos;PowerPartner&apos;){ 
+window.open(&quot;/00T/e?what_id={!Activity_Plan__c.Id}&amp;retURL=%2F{!Activity_Plan__c.Id}&amp;RecordType=&quot; + rec[0].Id + &quot;&amp;ent=Task&quot;,&quot;_parent&quot;);
+}
+
+else{
+window.open(&quot;/ICPPortal/00T/e?what_id={!Activity_Plan__c.Id}&amp;retURL=%2F{!Activity_Plan__c.Id}&amp;RecordType=&quot; + rec[0].Id + &quot;&amp;ent=Task&quot;,&quot;_parent&quot;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Task_Facilitation_Workplan</fullName>
+        <availability>online</availability>
+        <description>Use this task button for defaulting Task Record type to Task</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Task</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)}
+
+var currentUser = sforce.connection.getUserInfo();
+var RecordTypeQuery = &quot;Select Id from RecordType where SObjectType = &apos;Task&apos; And DeveloperName = &apos;Task&apos;&quot;;
+var resultID = sforce.connection.query(RecordTypeQuery);
+var rec =resultID.getArray(&quot;records&quot;);
+
+if(currentUser.userType!=&apos;PowerPartner&apos;){
+window.open(&quot;/00T/e?what_id={!Activity_Plan__c.Id}&amp;retURL=%2F{!Activity_Plan__c.Id}&amp;RecordType=&quot; + rec[0].Id + &quot;&amp;ent=Task&quot;,&quot;_parent&quot;);
+}
+else{
+window.open(&quot;/ICPPortal/00T/e?what_id={!Activity_Plan__c.Id}&amp;retURL=%2F{!Activity_Plan__c.Id}&amp;RecordType=&quot; + rec[0].Id + &quot;&amp;ent=Task&quot;,&quot;_parent&quot;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Task_ICP_Lifecycle_Events</fullName>
+        <availability>online</availability>
+        <description>Button to open deafaul task for ICP Lifecycle Event</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Task</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)} 
+
+var RecordTypeQuery = &quot;Select Id from RecordType where SObjectType = &apos;Task&apos; And DeveloperName = &apos;Task&apos;&quot;; 
+var resultID = sforce.connection.query(RecordTypeQuery); 
+var records =resultID.getArray(&quot;records&quot;); 
+window.open(&quot;/00T/e?what_id={!ICP_Lifecycle_Events__c.Id}&amp;retURL=%2F{!ICP_Lifecycle_Events__c.Id}&amp;RecordType=&quot; + records[0].Id + &quot;&amp;ent=Task&quot;,&quot;_parent&quot;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Task_Lead</fullName>
+        <availability>online</availability>
+        <description>Use this task button for defaulting Task Record type to Task.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Task</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)}
+
+var RecordTypeQuery = &quot;Select Id from RecordType where SObjectType = &apos;Task&apos; And DeveloperName = &apos;Task&apos;&quot;;
+var resultID = sforce.connection.query(RecordTypeQuery);
+var rec =resultID.getArray(&quot;records&quot;);
+window.open(&quot;/00T/e?who_id={!Lead.Id}&amp;retURL=%2F{!Lead.Id}&amp;RecordType=&quot; + rec[0].Id + &quot;&amp;ent=Task&quot;,&quot;_parent&quot;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Task_Operational_Activity</fullName>
+        <availability>online</availability>
+        <description>Use this task button for defaulting Task Record type to Operational Plan Objective Activity</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Task</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)}
+
+var RecordTypeQuery = &quot;Select Id from RecordType where SObjectType = &apos;Task&apos; And DeveloperName = &apos;Operational_Plan_Objective_Activity&apos;&quot;;
+var resultID = sforce.connection.query(RecordTypeQuery);
+var rec =resultID.getArray(&quot;records&quot;);
+window.open(&quot;/00T/e?what_id={!Activity_Plan__c.Id}&amp;retURL=%2F{!Activity_Plan__c.Id}&amp;RecordType=&quot; + rec[0].Id + &quot;&amp;ent=Task&quot;,&quot;_parent&quot;);</url>
+    </webLinks>
+</CustomObject>

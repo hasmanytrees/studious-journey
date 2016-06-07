@@ -1,0 +1,187 @@
+<!--************************************************************************
+*Page Name          : CSPBenefAttendanceTrackingPage
+*Description        : This VisualForce page allows Tutor to track attendance of CSP Beneficiaries in Monthly class. 
+*Created By         : Himanshu Raichandani
+*Created On         : 13-July-2015 
+********************************************************************************-->
+<apex:page sidebar="false" cache="false" readOnly="false" standardController="Monthly_Class_Schedule__c"  extensions="CSPBenefAttendanceTrackingExtension">
+    
+<head>
+    <apex:stylesheet value="{!URLFOR($Resource.ClassStyles)}" />
+</head>
+
+<apex:form id="form" >
+    <apex:sectionHeader title="{!oMonthlySchedule.Name}"/>
+    <apex:commandlink action="{!redirectToListPage}" style="text-decoration: none;">&lt;&lt; {!$Label.Class_Attn_Back_To_List_Lbl}</apex:commandlink>
+    <br/><br/>
+    <script type="text/javascript">
+        function openPrintPage(){
+            var message = '{!JSENCODE(sLoginFromPartnerPortal)}';
+            if(message == 'true'){
+                window.open("{!$Label.Class_Attn_Portal_CSP_Print_Form_Lbl}"+"{!oMonthlySchedule.Id}","_blank");
+            }else{
+                window.open("{!$Label.Class_Attn_CSP_Print_Form_Lbl}"+"{!oMonthlySchedule.Id}","_blank");
+            }
+        }
+    </script> 
+    <apex:pageBlock id="mainTab2" mode="maindetail">
+
+        <apex:pageBlockSection title="{!$Label.Class_Attn_Add_Members_Lbl}" columns="2" id="pbs1">
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Account.fields.ICP_Id__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_ICP_ID_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Yearly_Class__r.ICP_Name__r.ICP_Id__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$Label.Class_Name_Help_Text}">
+                <apex:outputLabel value="{!$Label.Class_Name_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Name}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Monthly_Class_Schedule__c.fields.ICP_Name__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_ICP_Name_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.ICP_Name__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Monthly_Class_Schedule__c.fields.BEN_Cognitive_Age_Group__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Attendance_Track_Label_AgeGrp}"/>
+                <apex:outputField value="{!oMonthlySchedule.BEN_Cognitive_Age_Group__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Tutor__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_Tutor_Implementer_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Tutor__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.BEN_Program_Delivery__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_Program_Type_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Yearly_Class__r.BEN_Program_Delivery__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Monthly_Class_Schedule__c.fields.Year__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_Attn_Year_Lbl}"/>
+                <apex:outputText value="{!oMonthlySchedule.Year__c}"/>
+            </apex:pageBlockSectionItem>            
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Class_Type__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_Type_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Yearly_Class__r.Class_Type__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Monthly_Class_Schedule__c.fields.Month__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_Attn_Month_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Month__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Class_Description__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_Description_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Yearly_Class__r.Class_Description__c}"/>
+            </apex:pageBlockSectionItem>
+
+
+            <br/>
+            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:outputPanel id="tstpopup">
+        <apex:outputPanel layout="block" rendered="{!bDisplayPopUp}">
+            
+            <apex:pageBlock id="ben" >
+                
+                <apex:pageBlockSection columns="1" >
+                    <apex:pageBlockTable value="{!lstForTable}" var="displayData" id="result1"  headerClass="toHideHeader" align="left"  border="0" style="bgcolor:grey;">
+                        <apex:column style="background-color:lightgray;">
+                            <b><apex:outputText value="{!$Label.Attendance_Track_Label_BenName}" style="display:flex;width:100px"/></b>
+                        </apex:column>
+                        <apex:column style="background-color:lightgray;">
+                            <b><apex:outputText value="{!$Label.Class_Attn_Local_Beneficiary_No_Lbl}" style="display:flex;width:100px"/></b>
+                        </apex:column>
+                        <apex:column style="background-color:lightgray;">
+                            <b><apex:outputText value="{!$Label.Class_Attn_Total_Hours_CSP_Lbl}" style="display:flex;width:100px"/></b>
+                        </apex:column>
+                        <apex:repeat value="{!lstDailyClassWrapper}" var="oDailyWrap" first="{!iFirstElement}" rows="{!iRowsToShow}">
+                            <apex:column style="background-color:lightgray;">
+                                <apex:outputPanel style="display:flex;width:100px">
+                                       <b><apex:outputText value="{!oDailyWrap.sNameVfDisplay}" ></apex:outputText></b>
+                                </apex:outputPanel>  
+                            </apex:column>
+                        </apex:repeat>          
+                    </apex:pageBlockTable> 
+                    
+                    <apex:pageBlockTable value="{!lstBeneficiaryWrapper}" var="oBenefWrapper" 
+                                         id="result"  headerClass="toHideHeader" border="0" align="left"  >
+                        <apex:column >
+                            <apex:outputLink value="/{!oBenefWrapper.sBeneficiaryId}" style="display:flex;width:100px">{!oBenefWrapper.sBeneficiaryName}</apex:outputLink>
+                        </apex:column>
+                        <apex:column > 
+                            <apex:outputPanel style="display:flex;width:100px;">
+                                <apex:outputText value="{!oBenefWrapper.sLocalBeneficiaryNum}"/>
+                            </apex:outputPanel>
+                        </apex:column>
+                        <apex:column > 
+                            <apex:outputPanel style="display:flex;width:100px;">
+                                <apex:outputText value="{!oBenefWrapper.dTotalHours}"/>
+                            </apex:outputPanel>
+                        </apex:column>
+                        <apex:repeat value="{!oBenefWrapper.lstBenefAttendance}" var="oBenefAttn" id="theRepeat" first="{!iFirstElement}" rows="{!iRowsToShow}">
+                            <apex:column >
+                                <apex:outputPanel style="display:flex;width:100px;">
+                                    <apex:inputText styleClass="onlyNumber" size="1" value="{!oBenefAttn.dHours}" onkeypress="onlyNumber(this);limit(this);" disabled="{!(!bShowComponents)}"/>
+                                </apex:outputPanel>
+                            </apex:column>
+                        </apex:repeat>
+                    </apex:pageBlockTable>
+                    
+                </apex:pageBlockSection>
+                <apex:pageMessages id="message"> </apex:pageMessages>
+                <apex:commandButton value="{!$Label.Class_Attn_Last_Lbl}" action="{!lastPage}" reRender="tstpopup" disabled="{!bDisabledLastBtn}" style="float:right;"/>
+                <apex:commandButton value="{!$Label.Class_Attn_Next_Lbl}" action="{!nextPage}" reRender="tstpopup" disabled="{!bDisabledNextBtn}" style="float:right;"/>
+                <apex:commandButton value="{!$Label.Class_Attn_Previous_Lbl}" action="{!previousPage}" reRender="tstpopup" disabled="{!bDisabledPrevBtn}" style="float:right;"/>
+                <apex:commandButton value="{!$Label.Class_Attn_First_Lbl}" action="{!firstPage}" reRender="tstpopup" disabled="{!bDisabledFirstBtn}" style="float:right;"/>
+                <apex:commandButton value="{!$Label.Class_Attn_Save_Attendance_Lbl}" action="{!saveAttendance}" reRender="tstpopup" status="status" rendered="{!bShowComponents}"/>
+                <apex:commandButton value="{!$Label.Activity_Attn_Cancel_Btn_Lbl}" action="{!redirectToListPage}" rendered="{!bShowComponents}"/>
+                <apex:commandButton value="{!$Label.Activity_Attn_Print_Btn_Lbl}" onclick="openPrintPage();"/>
+                
+                <apex:actionStatus id="status">
+                    <apex:facet name="start">
+                    <div class="waitingSearchDiv" id="el_loading" style="background-color: #DCD6D6;
+                           height: 100%;width:100%; opacity:0.45 ; z-index:55;"> 
+                        <div class="waitingHolder" style="top: 250px; padding-left:600px;  align:center;position:absolute ; opacity:0.65 ; z-index:78;">
+                            <img class="waitingImage" src="{!$Resource.Loading_New}"/>                       
+                        </div>
+                    </div>
+                    </apex:facet>
+                </apex:actionStatus>
+                
+            </apex:pageBlock>
+        </apex:outputPanel>
+        <script type="text/javascript">
+            function onlyNumber(){
+                
+            
+                
+                // added new code 
+                $('.onlyNumber').on('keypress',function(e){
+                var deleteCode = 8;  var backspaceCode = 46;
+                var key = e.which;
+
+                
+                if ((key>=48 && key<=57) || key === deleteCode || key === backspaceCode || (key>=37 &&  key<=40) || key===0)    
+                {    
+                    character = String.fromCharCode(key);
+                    if( character != '.' && character != '%' && character != '&' && character != '(' && character != '\'' ) 
+                    { 
+                        return true; 
+                    }
+                    else { return false; }
+                 }
+                 else   { return false; }
+    });
+            }
+            
+            function limit(element)
+            {
+                var max_chars = 0;
+                
+                if(element.value.length > max_chars) {
+                    element.value = element.value.substr(0, max_chars);
+                   
+                }
+            }
+            
+            
+        </script>
+    </apex:outputPanel>
+</apex:form>
+
+</apex:page>

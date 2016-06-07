@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This custom setting is used to store Milestones Setup task record details .</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Activity_Type__c</fullName>
+        <description>This is used to store Activity Type of a task</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is used to store Activity Type of a task</inlineHelpText>
+        <label>Activity Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Add_Days_To_Duedate__c</fullName>
+        <description>Specifies Number of days to be added to Due Date of task</description>
+        <externalId>false</externalId>
+        <label>Add Days To Duedate</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Add_Days_To_ReminderDateTime__c</fullName>
+        <description>Specifies Number of days to be added to Reminder Date of task</description>
+        <externalId>false</externalId>
+        <label>Add Days To ReminderDateTime</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description1__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is used to store Description of task, Description of task is divided in two parts : Description 1 and Description 2 if it exceeds 255 character limit.</inlineHelpText>
+        <label>Description1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description2__c</fullName>
+        <description>This is used to store Description of task, Description of task is divided in two parts : Description 1 and Description 2 if it exceeds 255 character limit.</description>
+        <externalId>false</externalId>
+        <label>Description2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>IsReminderSet__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Specifies value to be set for Reminder Set on task.</description>
+        <externalId>false</externalId>
+        <label>IsReminderSet</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <description>Specifies value to be set for Priority on task.</description>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Specifies value to be set for Status on task.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subject__c</fullName>
+        <description>Specifies value to be set for Subject on task.</description>
+        <externalId>false</externalId>
+        <label>Subject</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Milestones Setup Task</label>
+    <visibility>Public</visibility>
+</CustomObject>

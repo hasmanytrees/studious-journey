@@ -1,0 +1,4 @@
+<apex:page >
+    <br></br>
+    <h1 style="font-size: 1.3em;">{!$Label.Web_To_Lead_Record_Created_Successfully}</h1>
+</apex:page>

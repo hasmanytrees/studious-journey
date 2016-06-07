@@ -1,0 +1,226 @@
+<!--************************************************************************
+*Page Name          : CDSPBenefAttendancePrintForm
+*Description        : This VisualForce page allows Tutor to print empty/filled attendance of CDSP Beneficiaries in Monthly class. 
+*Created By         : Himanshu Raichandani
+*Created On         : 29-July-2015 
+********************************************************************************-->
+<apex:page sidebar="false" cache="false" readOnly="false" standardController="Monthly_Class_Schedule__c" showHeader="false" extensions="CDSPBenefAttendanceTrackingExtension">
+<style>
+    body{ 
+        overflow: hidden;
+    }
+</style>
+<head>
+    <apex:stylesheet value="{!URLFOR($Resource.ClassStyles)}" />
+    <style type="text/css" media="print">
+        @media print{
+            table { 
+                page-break-inside:avoid;
+                page-break-before:avoid;
+            }
+        }
+</style>
+</head>
+
+<apex:form id="form" >
+    <apex:sectionHeader title="{!oMonthlySchedule.Name}"/>
+    <div  style="width:80%">
+    <apex:pageBlock id="mainTab2" mode="maindetail">
+        <apex:outputPanel >
+            <br/>
+        <apex:pageBlockSection title="{!$Label.Class_Attn_Add_Members_Lbl}" columns="2" id="pbs1">
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Account.fields.ICP_Id__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_ICP_ID_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Yearly_Class__r.ICP_Name__r.ICP_Id__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Monthly_Class_Schedule__c.fields.Name.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_Name_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Name}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Monthly_Class_Schedule__c.fields.ICP_Name__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_ICP_Name_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.ICP_Name__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Monthly_Class_Schedule__c.fields.BEN_Cognitive_Age_Group__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Attendance_Track_Label_AgeGrp}"/>
+                <apex:outputField value="{!oMonthlySchedule.BEN_Cognitive_Age_Group__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Class_Tutor_Implementer_Lbl}"/>
+               <apex:outputField value="{!oMonthlySchedule.Tutor__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.BEN_Program_Delivery__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_Program_Type_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Yearly_Class__r.BEN_Program_Delivery__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Monthly_Class_Schedule__c.fields.Year__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_Attn_Year_Lbl}"/>
+                <apex:outputText value="{!oMonthlySchedule.Year__c}"/>
+            </apex:pageBlockSectionItem>            
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Class_Type__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_Type_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Yearly_Class__r.Class_Type__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Monthly_Class_Schedule__c.fields.Month__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_Attn_Month_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Month__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Class_Description__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Class_Description_Lbl}"/>
+                <apex:outputField value="{!oMonthlySchedule.Yearly_Class__r.Class_Description__c}"/>
+            </apex:pageBlockSectionItem>   
+        </apex:pageBlockSection>
+        
+    </apex:outputpanel>
+    </apex:pageBlock>
+    </div>
+    <apex:outputPanel id="tstpopup">
+        <apex:outputPanel layout="block" rendered="{!bDisplayPopUp}">
+        <!--<div style="width:80%">
+            
+            <apex:pageBlock id="ben">
+                <apex:pageBlockSection columns="1" >
+                    <apex:pageBlockTable value="{!lstForTable}" var="displayData" id="result1" align="left" headerClass="toHideHeader" border="0" style="bgcolor:grey;">
+                        <apex:column style="background-color:lightgray;">
+                            <apex:outputPanel style="display:flex;width:70px;">
+                                <b><apex:outputText value="{!$Label.Attendance_Track_Label_BenName}"/></b>
+                            </apex:outputPanel>
+                        </apex:column>
+                        <apex:column style="background-color:lightgray;">
+                            <apex:outputPanel style="display:flex;width:70px;">
+                                <b><apex:outputText value="{!$Label.Class_Attn_Local_Beneficiary_No_Lbl}"/></b>
+                            </apex:outputPanel>
+                        </apex:column>
+                        <apex:repeat value="{!lstDailyClassWrapper}" var="oDailyWrap">
+                            <apex:column style="background-color:lightgray;">
+                                <apex:outputPanel style="display:flex;width:20px">
+                                       <b><apex:outputText value="{!oDailyWrap.sNameToDisplay}" ></apex:outputText></b>
+                                </apex:outputPanel>  
+                            </apex:column>
+                        </apex:repeat>          
+                    </apex:pageBlockTable> 
+
+                    <apex:pageBlockTable value="{!lstForTable}" var="displayData" id="result2" align="left" headerClass="toHideHeader" border="0" style="bgcolor:grey;">
+                        <apex:column style="background-color:lightgray;">
+                            <apex:outputPanel style="display:flex;width:70px;">
+                                <b><apex:outputText value="  "/></b>
+                            </apex:outputPanel>
+                        </apex:column>
+                        <apex:column style="background-color:lightgray;">
+                            <apex:outputPanel style="display:flex;width:70px;">
+                                <b><apex:outputText value="{!$Label.Class_Attn_Class_Hours_Lbl}"/></b>
+                            </apex:outputPanel>
+                        </apex:column>
+                        <apex:repeat value="{!lstDailyClassWrapper}" var="oDailyWrap">
+                            <apex:column style="background-color:lightgray;">
+                                <apex:outputPanel style="display:flex;width:20px">
+                                       <div style="outline:#000 thin solid; display:table-cell; height:20px; width:700px; vertical-align:middle">
+                                         <center> {!oDailyWrap.dHours}  </center>                                 
+                                        </div>
+                                </apex:outputPanel>  
+                            </apex:column>
+                        </apex:repeat>    
+                    </apex:pageBlockTable> 
+
+                    <apex:pageBlockTable value="{!lstBeneficiaryWrapper}" var="oBenefWrapper" id="result" headerClass="toHideHeader" border="0" align="left" style="margin-top:2%;margin-bottom:2%;page-break-inside:auto;">
+                        <apex:column >
+                            <apex:outputPanel style="display:flex;width:70px;">
+                                <b><apex:outputText value="{!oBenefWrapper.sBeneficiaryName}"/></b>
+                            </apex:outputPanel> 
+                        </apex:column>
+                        <apex:column > 
+                            <apex:outputPanel style="display:flex;width:70px;">
+                                <b><apex:outputText value="{!oBenefWrapper.sLocalBeneficiaryNum}"/></b>
+                            </apex:outputPanel>
+                        </apex:column>
+                        <apex:repeat value="{!oBenefWrapper.lstBenefAttendance}" var="oBenefAttn" id="theRepeat">
+                            <apex:column >
+                                <apex:outputPanel style="display:flex;width:20px;">
+                                    <b><apex:inputCheckbox value="{!oBenefAttn.bSelected}" disabled="true"/></b>
+                                </apex:outputPanel>
+                            </apex:column>
+                        </apex:repeat>
+                    </apex:pageBlockTable>
+
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </div>-->
+        <apex:repeat value="{!lstForTable}" var="displayData" id="result1">
+            <table align="left" style="bgcolor:grey;width:100%;margin-left:4px;background-color:lightgray;margin-bottom: 8px;">
+                <tr>
+                    <td style="background-color:lightgray;width:100px;">
+                        <apex:outputPanel style="width:70px;">
+                            <b><apex:outputText value="{!$Label.Attendance_Track_Label_BenName}"/></b>
+                        </apex:outputPanel>
+                    </td>
+                    <td style="background-color:lightgray;width:70px;">
+                        <apex:outputPanel style="width:70px;">
+                            <b><apex:outputText value="{!$Label.Class_Attn_Local_Beneficiary_No_Lbl}"/></b>
+                        </apex:outputPanel>
+                    </td>
+                    <apex:repeat value="{!lstDailyClassWrapper}" var="oDailyWrap">
+                        <td style="background-color:lightgray;">
+                            <apex:outputPanel style="display:flex;width:20px;">
+                                <b><apex:outputText value="{!oDailyWrap.sNameToDisplay}" ></apex:outputText></b>
+                            </apex:outputPanel> 
+                        </td>
+                    </apex:repeat>
+                </tr>
+            </table>
+        </apex:repeat>
+        
+        <apex:repeat value="{!lstForTable}" var="displayData">
+            <table style="bgcolor:grey;margin-top: 20px;  width: 100%; margin-left: 4px;background-color:lightgray;">
+                <tr>
+                    <td style="width:100px;">
+                        <apex:outputPanel style="width:100px;">
+                            <b><apex:outputText value="  "/></b>
+                        </apex:outputPanel>
+                    </td>
+                    <td style="width:70px;">
+                        <apex:outputPanel style="width:70px;">
+                            <b><apex:outputText value="{!$Label.Class_Attn_Class_Hours_Lbl}"/></b>
+                        </apex:outputPanel>
+                    </td>
+                    <apex:repeat value="{!lstDailyClassWrapper}" var="oDailyWrap">
+                        <td style="background-color:lightgray;">
+                            <apex:outputPanel style="display:flex;width:20px;page-break-inside: avoid;">
+                                <div style="outline:#000 thin solid; display:table-cell; height:20px; width:700px; vertical-align:middle">
+                                    <center> {!oDailyWrap.dHours}  </center>                                 
+                                 </div>
+                             </apex:outputPanel>
+                        </td>
+                    </apex:repeat>
+                </tr>
+            </table>
+        </apex:repeat>
+        
+        <apex:repeat value="{!lstBeneficiaryWrapper}" var="oBenefWrapper">
+            <table align="left" style="margin-top:1%;width:100%;;margin-left: 4px;">
+                <tr>
+                    <td style="width:100px;">
+                        <apex:outputPanel style="display:flex;width:110px;">
+                            <b><apex:outputText value="{!oBenefWrapper.sBeneficiaryName}"/></b>
+                        </apex:outputPanel> 
+                    </td>
+                    <td style="width:70px;">
+                        <apex:outputPanel style="display:flex;width:70px;">
+                            <b><apex:outputText value="{!oBenefWrapper.sLocalBeneficiaryNum}"/></b>
+                        </apex:outputPanel>
+                    </td>
+                    <apex:repeat value="{!oBenefWrapper.lstBenefAttendance}" var="oBenefAttn" id="theRepeat">
+                        <td>
+                            <apex:outputPanel style="display:flex;width:20px;">
+                                <b><apex:inputCheckbox value="{!oBenefAttn.bSelected}" disabled="true"/></b>
+                            </apex:outputPanel>
+                        </td>
+                    </apex:repeat>                    
+                </tr>
+            </table>
+        </apex:repeat>
+          
+        </apex:outputPanel>
+    </apex:outputPanel>
+</apex:form>
+ 
+</apex:page>

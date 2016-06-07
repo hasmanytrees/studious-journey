@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>This custom setting is used to store data that is used in the calculation of the Maximum Connect User Count.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Incremental_number_for_Beneficiaries__c</fullName>
+        <description>This field stores the incremental number of Beneficiaries which results in increment in the Max Connect User Count by the Incremental number for Connect Users.</description>
+        <externalId>false</externalId>
+        <label>Incremental number for Beneficiaries</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Incremental_number_for_Connect_Users__c</fullName>
+        <description>This field stores the incremental number of Connect Users which decides the amount of addition to the Max Connect User Count when the Beneficiary count is increased by the Incremental number for Connect Users.</description>
+        <externalId>false</externalId>
+        <label>Incremental number for Connect Users</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lower_Limit_of_Beneficiary_Count__c</fullName>
+        <description>This field stores the lower limit of the Beneficiary count based on which the lower limit of the Connect User Count is assigned to the Max Connect User Count.</description>
+        <externalId>false</externalId>
+        <label>Lower Limit of Beneficiary Count</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lower_Limit_of_Connect_User_Count__c</fullName>
+        <description>This field stores the Lower limit of the Connect User Count which is assigned to the Max Connect User Count field when the Beneficiary Count is less than or equal to the Lower limit of the Beneficiary count.</description>
+        <externalId>false</externalId>
+        <label>Lower Limit of Connect User Count</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Max_Limit_of_Connect_User_Allowed__c</fullName>
+        <description>This field stores the Maximum allowed Connect Users for an ICP.</description>
+        <externalId>false</externalId>
+        <label>Max Allowed Connect Users</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Max Connect User Count Data</label>
+    <visibility>Public</visibility>
+</CustomObject>

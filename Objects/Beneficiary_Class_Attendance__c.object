@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object will contain information regarding Beneficiary Attendance corresponding to Monthly Class Schedule. For Center-Based presence/absence is marked while for Home-Based, number of hours of Home visit is recorded in this object.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>BEN_Attended__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to track if Beneficiary attended a particular class or not</description>
+        <externalId>false</externalId>
+        <label>Attended</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BEN_Hours_Attended__c</fullName>
+        <description>This field denotes number of hours of home visit by Tutor in case of Home Based Beneficaries.</description>
+        <externalId>false</externalId>
+        <label>Hours Attended</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEN_Id__c</fullName>
+        <description>Used to connect Beneficiary Class Attendance record to Beneficiary Account</description>
+        <externalId>false</externalId>
+        <label>Beneficiary</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Survival Beneficiary</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Sponsorship Beneficiary</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Beneficiary Class Attendance</relationshipLabel>
+        <relationshipName>Beneficiary_Class_Attendance</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Class_Date__c</fullName>
+        <description>This field fetches Class date from Daily Class Schedule</description>
+        <externalId>false</externalId>
+        <formula>Daily_Class_Schedule__r.Class_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Class Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Class_Type__c</fullName>
+        <description>This field stores the Class Type of the scheduled Class.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Daily_Class_Schedule__r.Monthly_Class_Schedule__r.Yearly_Class__r.Class_Type__c)</formula>
+        <label>Class Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Daily_Class_Day__c</fullName>
+        <description>This field fetches Day from parent Daily Class Schedule</description>
+        <externalId>false</externalId>
+        <formula>Daily_Class_Schedule__r.Day__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Daily Class Day</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Daily_Class_Schedule__c</fullName>
+        <description>Used to connect the Beneficiary Class Atttendance record to Daily Class Schedule record</description>
+        <externalId>false</externalId>
+        <label>Daily Class Schedule</label>
+        <referenceTo>Daily_Class_Schedule__c</referenceTo>
+        <relationshipLabel>Beneficiary Class Attendance</relationshipLabel>
+        <relationshipName>Beneficiary_Class_Attendance</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Hours_Attended_In_Last_60_Days__c</fullName>
+        <description>This backend field is used for rollup summary which in turn is used in Reports. It checks if class date is 60 days ago or not. If yes then it stores 0, else it copies hours from Hours attended.</description>
+        <externalId>false</externalId>
+        <formula>IF(TODAY()- Class_Date__c &gt;= 60,  0 , BEN_Hours_Attended__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hours Attended In Last 60 Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monthly_Class_Name__c</fullName>
+        <description>This formula field fetches Monthly Class Name by traversing through Daily Class Schedule</description>
+        <externalId>false</externalId>
+        <formula>Daily_Class_Schedule__r.Monthly_Class_Schedule__r.Name</formula>
+        <label>Monthly Class Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tutor_Implementer__c</fullName>
+        <description>This is a formula field that displays the Tutor/ Implementer Name on the Beneficiary Class Attendance Object.</description>
+        <externalId>false</externalId>
+        <formula>Daily_Class_Schedule__r.Monthly_Class_Schedule__r.Tutor__c</formula>
+        <label>Tutor / Implementer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Beneficiary Class Attendance</label>
+    <nameField>
+        <label>Beneficiary Class Attendance Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Beneficiary Class Attendance</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

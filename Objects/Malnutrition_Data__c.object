@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Used for malnutrition data. This will contain field name and other 4 valid values of malnutrition related data.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Field_Name__c</fullName>
+        <description>Field name which will help in calculating Malnutrition data</description>
+        <externalId>false</externalId>
+        <label>Field Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Height__c</fullName>
+        <description>This height field will help in checking condition only for Weight For Height/Length scenario. This field won&apos;t contain any value in case of Height For Age &amp; Weight For Age.</description>
+        <externalId>false</externalId>
+        <label>Height</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Of_Months_For_Condition_1__c</fullName>
+        <description>Number of months used in calculation for Condition 1</description>
+        <externalId>false</externalId>
+        <label>No Of Months For Condition 1</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Of_Months_For_Condition_2__c</fullName>
+        <description>Number of months used in calculation for Condition 2</description>
+        <externalId>false</externalId>
+        <label>No Of Months For Condition 2</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value1_For_Age__c</fullName>
+        <description>This value will contain picklist value corresponding to age condition 1</description>
+        <externalId>false</externalId>
+        <label>Value1 For Age</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value2_For_Age__c</fullName>
+        <description>This value will contain picklist value corresponding to age condition 2</description>
+        <externalId>false</externalId>
+        <label>Value2 For Age</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value_1__c</fullName>
+        <description>Valid Value 1</description>
+        <externalId>false</externalId>
+        <label>Value 1</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value_2__c</fullName>
+        <description>Valid Value 2</description>
+        <externalId>false</externalId>
+        <label>Value 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value_3__c</fullName>
+        <description>Valid Value 3</description>
+        <externalId>false</externalId>
+        <label>Value 3</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value_4__c</fullName>
+        <description>Valid Value 4</description>
+        <externalId>false</externalId>
+        <label>Value 4</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value_5__c</fullName>
+        <description>Valid Value 5</description>
+        <externalId>false</externalId>
+        <label>Value 5</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value_For_Height__c</fullName>
+        <description>This value will contain picklist value corresponding to hieght condition</description>
+        <externalId>false</externalId>
+        <label>Value For Height</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Malnutrition Data</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,105 @@
+<!--/************************************************************************
+*Name               : CDPRAssessment
+*Description        : This page is used for the assessment of the Beneficiary which 
+                      in turn leads to creation of a Beneficiary Assessment record.   
+*Created By         : Sowmya Chamakura 
+*Created On         : 1/10/2015
+
+********************************************************************************/-->
+<apex:page standardcontroller="Beneficiary_Assessment__c"  extensions="CDPRAssessmentExtension" action="{!redirect}" id="pg">
+    <input id="hiddenElement" type="hidden" />
+    <script type="text/javascript">
+    window.onload = setFocus
+    
+    function setFocus() {
+        document.getElementById("hiddenElement").focus();
+    }
+    </script>
+    <apex:sectionHeader title="" subtitle="CDPR Report"/>
+    <apex:form id="frm">  
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:outputPanel id="jspanel">
+        <script type="text/javascript">
+                function cdprAdded(){
+                    var message = '{!JSENCODE(sShowMessage)}';
+                    var sLoginUserType = '{!JSENCODE(sUserType)}'; 
+                    if(message == 'true'){              
+                        alert('{!JSENCODE(sSuccessMessage)}');
+                        if(sLoginUserType == 'PowerPartner'){
+                            window.open("/ICPPortal/{!JSENCODE(beneficiaryId)}", '_self');
+                        }else{
+                            window.open("/{!JSENCODE(beneficiaryId)}", '_self');
+                        }
+                        
+                    }   
+                }
+            </script>
+        </apex:outputPanel>  
+        <apex:pageBlock id="pb1">
+            <apex:pageBlockSection title="{!$Label.CDPR_Assessment_Title}" columns="2">
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$Label.CDPR_Assessment_Label_BenName}" />
+                    <apex:outputText value="{!sBeneficiaryName}" />
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$Label.CDPR_Assessment_Label_ICP}" />
+                    <apex:outputText value="{!sIcpName}" />
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$Label.CDPR_Assessment_Label_AssessmentDate}" />
+                    <apex:inputField value="{!oBeneficiaryAssessment.Assessment_Completion_Date__c}" required="true"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$Label.CDPR_Assessment_Label_Age}" />
+                    <apex:outputText value="{!sAge}" />
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem />
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$Label.CDPR_Assessment_Label_Cognitive_Age}" />
+                    <apex:outputText value="{!oAccount.Cognitive_Age_Group__c}" />
+                </apex:pageblocksectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock id="pb2">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!saveForm}" value="{!$Label.CDPR_Assessment_Btn_Save}" id="theButton1" oncomplete="cdprAdded()" rerender="frm"/>
+                <apex:commandButton action="{!cancel}" value="{!$Label.CDPR_Assessment_Btn_Cancel}" id="theButton2"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" id="pbs2">             
+                <apex:pageBlockTable value="{!lstOutComeArea}" var="oal"  id="pbtbl21">
+                    <apex:column >
+                        <apex:pageBlockTable value="{!mapIndicator[oal]}" var="r" id="pbtbl22">
+                            <apex:column >                              
+                                <apex:facet name="header">                                    
+                                    <apex:outputText value="{!oal}" style="font-size: medium;"/>                                    
+                                </apex:facet>                                                             
+                                <apex:pageBlockTable value="{!mapResponses[r]}" var="ind"  columns="5" id="pbtbl23">
+                                    <apex:facet name="header">
+                                        <apex:outputPanel layout="block" style="text-align:center">
+                                            <b>
+                                                <apex:outputText value="{!r}" />
+                                            </b>
+                                        </apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:column headervalue="{!$Label.CDPR_Assessment_Label_ProgressMeasure}">
+                                        <apex:outputText value="{!ind.Progress_Measure__c}" />
+                                    </apex:column>  
+                                    <apex:column headervalue="{!$Label.CDPR_Assessment_Label_ProgressMeasureDescribe}">
+                                        <apex:outputText value="{!ind.Progress_Measure_Description__c}" />
+                                    </apex:column>  
+                                    <apex:column headervalue="{!$Label.CDPR_Assessment_Label_Points}">
+                                        <apex:inputField value="{!ind.Points__c}" required="True" />
+                                    </apex:column>                          
+                                    <apex:column headervalue="{!$Label.CDPR_Assessment_Label_Comments}">
+                                        <apex:inputField value="{!ind.Comments__c}" />
+                                    </apex:column>                         
+                                </apex:pageBlockTable>
+                            </apex:column>  
+                            <br/>
+                        </apex:pageBlockTable>
+                    </apex:column>                  
+                </apex:pageBlockTable>               
+            </apex:pageBlockSection>            
+        </apex:pageBlock>
+    </apex:form>     
+</apex:page>

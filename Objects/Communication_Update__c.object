@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Beneficiary_List__c</fullName>
+        <description>This field is to store the Beneficiary List that is included in this Communication Update.</description>
+        <externalId>false</externalId>
+        <label>Beneficiary List</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Communication_Update_Name__c</fullName>
+        <description>This field auto-generates a unique name for each Communication Update record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated – The auto-populated name of the communication updated. The update will be numbered by sequence of communications  for example, Comm. Update #1, Comm. Update #2, etc.</inlineHelpText>
+        <label>Communication Update Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Communication_Updates_From__c</fullName>
+        <description>This field is auto-populated with the Created Date of the last Communication Update record, or if this is the first Communication update then the Created Date of the Master Disaster record.</description>
+        <externalId>false</externalId>
+        <label>Communication Updates From</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Communication_Updates_To__c</fullName>
+        <description>This field is auto-populated with the Created Date of the Communication Update record.</description>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Communication Updates To</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Communication_On_Time__c</fullName>
+        <description>This field to is checked if the update from the field office was submitted on time according to PFM standards.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For Global Disaster Communications Team use only - Check the box if the update from the field office was submitted on time according to PFM standards.</inlineHelpText>
+        <label>Disaster Communication On Time?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>On Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1 Day Late</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2-3 Days Late</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4-6 Days Late</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1 Week+ Late</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Communication_Summary__c</fullName>
+        <description>This field stores Compassion’s communication of disasters to thier staff about the disaster and what is currently being done about the disaster</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Global Disaster Comms. use only - Summarize new information from the FO for use in external communications by the organization. Include updates to impacted beneficiaries, ICPs and the FO, updates on disaster response, and any prayer requests submitted</inlineHelpText>
+        <label>Disaster Communication Summary</label>
+        <length>3300</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Disaster_Communication_Update_Status__c</fullName>
+        <description>This field stores the Status of the Communication Update record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>FO Draft: Started but not submitted for review
+Ready for Global Comm. Review: Submitted for global disaster team review
+Under Global Comm. Review: Global disaster team reviewing/ finalizing FO update
+Ready for SBC: Ready for organizational use</inlineHelpText>
+        <label>Disaster Communication Update Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Field Office Draft</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready For Global Communication Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Under Global Communication Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready For Organizational Use</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sent For Organizational Use</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Email_Inbox__c</fullName>
+        <defaultValue>&quot;_USCommEdFieldCrisis@compassion.com&quot;</defaultValue>
+        <description>Back-end field used for sending Email Alerts for Global Communication Review</description>
+        <externalId>false</externalId>
+        <label>Disaster Email Inbox</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disaster_Name__c</fullName>
+        <description>This field stores the Disaster master record related to the Communication Update.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The name of the disaster entered on the disaster record.</inlineHelpText>
+        <label>Disaster Name</label>
+        <referenceTo>Disaster__c</referenceTo>
+        <relationshipLabel>Communication Updates</relationshipLabel>
+        <relationshipName>Communication_Updates</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Disaster_Type__c</fullName>
+        <description>This is a back end formula field that is being used for an Email template</description>
+        <externalId>false</externalId>
+        <formula>TEXT (Disaster_Name__r.Disaster_Type__c)</formula>
+        <label>Disaster Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Office_Disaster_Response_Update__c</fullName>
+        <description>This field stores the updates from the Field Office related to the Disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field Office use - Summarize the disaster event and how the FO and/ or ICP are responding to beneficiary needs. If known and applicable, please include how beneficiaries are being helped by local authorities, relief organizations or the government.</inlineHelpText>
+        <label>Field Office&apos;s Disaster Response Update</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Field_Office__c</fullName>
+        <description>This field is auto-populated with the Field office entered on the disaster record.</description>
+        <externalId>false</externalId>
+        <formula>Disaster_Name__r.Field_Office__r.Name</formula>
+        <inlineHelpText>Automated - The name of the field office entered on the disaster record</inlineHelpText>
+        <label>Field Office</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_List__c</fullName>
+        <description>This field is to store the ICP List that is included in this Communication Update.</description>
+        <externalId>false</externalId>
+        <label>ICP List</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SBC_Communication_ID__c</fullName>
+        <description>This field stores the SBC Communication Kit ID associated to the Communication Update record.</description>
+        <externalId>false</externalId>
+        <label>SBC Communication ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <label>Communication Update</label>
+    <nameField>
+        <displayFormat>CU-{0000}</displayFormat>
+        <label>Communication Update ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Communication Updates</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Control_Comm_Update_Status_Change_GMC</fullName>
+        <active>true</active>
+        <description>For Disaster Communication Update Status, Under Global Communication Review and Ready for SBC, these two status should only be changeable by the Leadership Management profile</description>
+        <errorConditionFormula>AND( ISCHANGED( Disaster_Communication_Update_Status__c ), OR(ISPICKVAL( Disaster_Communication_Update_Status__c , &apos;Under Global Communication Review&apos;), ISPICKVAL( Disaster_Communication_Update_Status__c , &apos;Ready For Organizational Use&apos;), ISPICKVAL( Disaster_Communication_Update_Status__c , &apos;Sent For Organizational Use&apos;)), $Profile.Name &lt;&gt; &apos;Leadership Management&apos;)</errorConditionFormula>
+        <errorMessage>This Status update is not allowed for your Role.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Default_Status_on_Creation</fullName>
+        <active>true</active>
+        <description>Make sure that when a Communication Update record is created, the Status can only be set to Field Office Draft</description>
+        <errorConditionFormula>AND( ISNEW() , NOT( ISPICKVAL( Disaster_Communication_Update_Status__c , &apos;Field Office Draft&apos;) ) )</errorConditionFormula>
+        <errorMessage>The Communication Update record can only be created with &apos;Disaster Communication Update Status&apos; as &apos;Field Office Draft&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Make_Disaster_Comm_Summary_Mandatory</fullName>
+        <active>true</active>
+        <description>Disaster Communication Summary should be Mandatory when the Disaster Communication Update Status is Ready For Organizational Use.</description>
+        <errorConditionFormula>IF( AND(OR(ISPICKVAL(Disaster_Communication_Update_Status__c,&apos;Ready For Organizational Use&apos;),ISPICKVAL(Disaster_Communication_Update_Status__c,&apos;Sent For Organizational Use&apos;)) , $Profile.Name = &apos;Leadership Management&apos; ,OR(ISBLANK( Disaster_Communication_Summary__c ),ISNULL(TEXT(  Disaster_Communication_On_Time__c )))), true, false)</errorConditionFormula>
+        <errorMessage>Please enter values for &apos;Disaster Communication On Time?&apos; and &apos;Disaster Communication Summary&apos;</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Beneficiary_Impact_List</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Beneficiary Impact List</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/BeneficiaryImpactList?id={!Communication_Update__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ICP_Impact_List</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>ICP Impact List</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ICPImpactList?id={!Communication_Update__c.Id}</url>
+    </webLinks>
+</CustomObject>

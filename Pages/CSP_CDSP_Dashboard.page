@@ -1,0 +1,46 @@
+<!--****************************************************************************
+*Page Name          : CSP_CDSP_Dashboard
+*Description        : This VisualForce page is used to display the Number of CSP
+                      and CDSP Beneficiary and Maximum Beneficiary Capacity for
+                      every ICP
+*Created By         : Rahul Agarwal
+*Created On         : 03-Dec-2014
+
+********************************************************************************-->
+
+<apex:page standardController="Account">
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-size: 110%;
+        font-family:Lucida Sans Unicode;
+        }
+    </style>
+    <table >
+        <tr>
+            <td>
+                <b>{!$Label.CSP_CDSP_Dashboard_Label_BenNo}</b>
+            </td>
+            <td>
+                <apex:outputField value="{!Account.No_Of_CSP_Beneficiaries__c}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>{!$Label.CSP_CDSP_Dashboard_Label_CDSPBenNo}</b>
+            </td>
+            <td>
+                <apex:outputField value="{!Account.No_Of_CDSP_Beneficiaries__c}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>{!$Label.CSP_CDSP_Dashboard_Label_MaxCapacity}</b>
+            </td>
+            <td>
+                <apex:outputField value="{!Account.ICP_Maximum_Beneficiary_Capacity__c}"/>
+            </td>
+        </tr>
+    </table>
+</apex:page>

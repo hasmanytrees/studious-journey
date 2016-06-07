@@ -1,0 +1,13 @@
+<!--************************************************************************
+*Page Name          : GenericAttendanceTrackingPage
+*Description        : VisualForce page which decides CDSP/CSP Form is to be opened. 
+*Created By         : Himanshu Raichandani
+*Created On         : 03-July-2015 
+********************************************************************************-->
+<apex:page standardController="Monthly_Class_Schedule__c" extensions="GenericAttendanceTrackingExtension" action="{!redirectToActualPage}">
+ 
+	<apex:form >
+        <apex:inputHidden value="{!Monthly_Class_Schedule__c.Class_Type__c}"/>
+    </apex:form>
+   
+</apex:page>

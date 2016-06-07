@@ -1,0 +1,199 @@
+<!--************************************************************************
+*Page Name          : YearlyClassPage
+*Description        : VisualForce page where the attendance of a beneficiary is tracked for Yearly Class. 
+*Created By         : Himanshu Raichandani
+*Created On         : 03-July-2015 
+********************************************************************************-->
+<apex:page sidebar="false" cache="false" readOnly="false" standardController="Yearly_Class_Schedule__c"  extensions="YearlyClassExtension">
+
+<head>
+    <apex:stylesheet value="{!URLFOR($Resource.ClassStyles)}" />
+</head>
+
+<apex:form id="form" >
+    <apex:sectionHeader title="{!$Label.Class_Beneficiaries_Enrollment_Lbl}"/>
+    <apex:pageMessages id="message"> </apex:pageMessages>
+    <apex:pageBlock id="mainTab2" mode="maindetail">
+        <apex:pageBlockButtons location="bottom">
+            <apex:commandButton value="{!$Label.Class_Add_Class_Members_Lbl}" action="{!searchBeneficiary}" reRender="form" status="status"  rendered="{!bCreateFlow}"/>
+            <apex:commandButton value="{!$Label.Class_Cancel_Btn_Lbl}" immediate="true" action="{!redirectToPreviousPage}" rendered="{!bShowComponents}"/>
+            <apex:actionStatus id="status">
+                    <apex:facet name="start">
+                    <div class="waitingSearchDiv" id="el_loading" style="background-color: #DCD6D6;
+                           height: 100%;width:100%; opacity:0.45 ; z-index:55;"> 
+                        <div class="waitingHolder" style="top: 250px; padding-left:600px;  align:center;position:absolute ; opacity:0.65 ; z-index:78;">
+                            <img class="waitingImage" src="{!$Resource.Loading_New}"/>                       
+                        </div>
+                    </div>
+                    </apex:facet>
+            </apex:actionStatus>
+        </apex:pageBlockButtons>
+        <apex:outputPanel style="width:100% ">
+            <apex:pageBlockSection title="{!$Label.Class_Class_Details_Lbl}" columns="2" id="pbs1" rendered="{!bCreateFlow}">
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Account.fields.ICP_Id__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_ICP_ID_Lbl}"/>
+                    <apex:outputField value="{!oYearlySchedule.ICP_ID__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$Label.Class_Name_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Class_Name_Lbl}"/>
+                    <apex:inputField value="{!oYearlySchedule.Name}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.ICP_Name__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_ICP_Name_Lbl}"/>
+                    <apex:inputField value="{!oYearlySchedule.ICP_Name__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.BEN_Cognitive_Age_Group__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Attendance_Track_Label_AgeGrp}"/>
+                    <apex:inputField value="{!oYearlySchedule.BEN_Cognitive_Age_Group__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Tutor__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_Tutor_Implementer_Lbl}"/>
+                    <apex:inputField value="{!oYearlySchedule.Tutor__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.BEN_Program_Delivery__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_Program_Type_Lbl}"/>
+                    <apex:inputField value="{!oYearlySchedule.BEN_Program_Delivery__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Year__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Attendance_Track_Label_Year}"/>
+                    <apex:inputField value="{!oYearlySchedule.Year__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Class_Type__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_Type_Lbl}"/>
+                    <apex:inputField value="{!oYearlySchedule.Class_Type__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Starting_Month__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_Starting_Month_Lbl}"/>
+                    <apex:inputField value="{!oYearlySchedule.Starting_Month__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Class_Description__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_Description_Lbl}"/>
+                    <apex:inputField value="{!oYearlySchedule.Class_Description__c}"/>
+                </apex:pageBlockSectionItem>
+                <br/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="{!$Label.Class_Class_Details_Lbl}" columns="2" id="pbs2" rendered="{!bUpdateFlow}">
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Account.fields.ICP_Id__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_ICP_ID_Lbl}"/>
+                    <apex:outputField value="{!oYearlySchedule.ICP_ID__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$Label.Class_Name_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Class_Name_Lbl}"/>
+                    <apex:inputField value="{!oYearlySchedule.Name}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.ICP_Name__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_ICP_Name_Lbl}"/>
+                    <apex:outputField value="{!oYearlySchedule.ICP_Name__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.BEN_Cognitive_Age_Group__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Attendance_Track_Label_AgeGrp}"/>
+                    <apex:outputText value="{!oYearlySchedule.BEN_Cognitive_Age_Group__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Tutor__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_Tutor_Implementer_Lbl}"/>
+                    <apex:inputField value="{!oYearlySchedule.Tutor__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.BEN_Program_Delivery__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_Program_Type_Lbl}"/>
+                    <apex:outputField value="{!oYearlySchedule.BEN_Program_Delivery__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Year__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Attendance_Track_Label_Year}"/>
+                    <apex:outputField value="{!oYearlySchedule.Year__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Class_Type__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_Type_Lbl}"/>
+                    <apex:outputField value="{!oYearlySchedule.Class_Type__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Starting_Month__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_Starting_Month_Lbl}"/>
+                    <apex:outputField value="{!oYearlySchedule.Starting_Month__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Yearly_Class_Schedule__c.fields.Class_Description__c.InlineHelpText}">
+                    <apex:outputLabel value="{!$Label.Class_Description_Lbl}"/>
+                    <apex:inputField value="{!oYearlySchedule.Class_Description__c}"/>
+                </apex:pageBlockSectionItem>
+                <br/>
+            </apex:pageBlockSection>
+        </apex:outputpanel>
+    </apex:pageBlock>
+    
+    <apex:outputPanel id="tstpopup">
+        <apex:outputPanel layout="block" rendered="{!bDisplayPopUp}">
+            
+            <apex:pageBlock title="{!$Label.Class_Information_Lbl}"  id="ben">
+                
+                <apex:actionFunction name="callSelectAllBenefForMonth" action="{!selectAllBenefForMonth}" id="actionFunc1" reRender="ben">
+                    <apex:param name="monthName" value=""/>
+                </apex:actionFunction>
+                
+                <apex:actionFunction name="callSelectAllMonthForBenef" action="{!selectAllMonthForBenef}" id="actionFunc2" reRender="ben">
+                    <apex:param name="sBenefId" value=""/>
+                </apex:actionFunction>
+                <apex:pageBlockSection columns="1" >
+                    
+                 <apex:pageBlockTable value="{!lstForTable}" var="displayData" id="result1" align="left" border="0" headerClass="toHideHeader" style="bgcolor:grey;">
+                    <apex:column style="background-color:lightgray;">
+                        <b><apex:outputText value="{!$Label.Attendance_Track_Label_BenName}" style="display:flex;width:100px"/></b>
+                    </apex:column>
+                    
+                    <apex:column style="background-color:lightgray;">
+                        <b><apex:outputText value="{!$Label.Class_Local_Beneficiary_ID_Lbl}" style="display:flex;width:100px"/></b>
+                    </apex:column>
+                    <apex:column style="background-color:lightgray;">
+                        <b><apex:outputText value="{!$Label.Class_Include_All_Months_Lbl}" style="display:flex;width:70px"/></b>
+                    </apex:column>
+                    <apex:repeat value="{!lstForFirstRow}" var="columnName">
+                        <apex:column style="background-color:lightgray;">
+                            <apex:outputPanel style="display:flex;width:70px;">
+                                   <b><apex:outputText value="{!mapMonthEngToLocalLang[columnName]}"></apex:outputText>
+                                   <apex:inputCheckbox onclick="callSelectAllBenefForMonth('{!columnName}')" value="{!mapForFirstRow[columnName]}" disabled="{!(!bShowComponents)}"/></b>
+                            </apex:outputPanel>  
+                        </apex:column>
+                    </apex:repeat>          
+                </apex:pageBlockTable>
+                    
+                    <apex:pageBlockTable value="{!lstBeneficiaryWrapper}" var="oBenefWrapper" 
+                                         id="result" headerClass="toHideHeader" border="0" align="center" >
+                        
+                        <apex:column >
+                            <apex:outputPanel style="display:flex;width:100px;">
+                                <apex:outputLink value="/{!oBenefWrapper.sBeneficiaryId}">{!oBenefWrapper.sBeneficiaryName}</apex:outputLink>
+                            </apex:outputPanel>
+                        </apex:column>
+                        <apex:column >
+                            <apex:outputPanel style="display:flex;width:100px;">
+                                <apex:outputText value="{!oBenefWrapper.sLocalBeneficiaryId}"/>
+                            </apex:outputPanel>
+                        </apex:column>
+                        <apex:column >
+                            <apex:inputCheckbox onclick="callSelectAllMonthForBenef('{!oBenefWrapper.sBeneficiaryId}')" style="display:flex;width:70px;" value="{!oBenefWrapper.bCheckForAllMonths}" disabled="{!(!bShowComponents)}"/>
+                        </apex:column>
+                        <apex:repeat value="{!oBenefWrapper.lstMonthWrapper}" var="bMonth" id="theRepeat">
+                            <apex:column >
+                                <apex:inputCheckbox value="{!bMonth.bSelectedMonth}"  style="display:flex;width:70px;" disabled="{!(!bShowComponents)}"/>
+                            </apex:column>
+                        </apex:repeat>
+                    </apex:pageBlockTable>                  
+                </apex:pageBlockSection>
+                
+                <apex:commandButton value="{!$Label.Class_Save_Btn_Lbl}" status="status" action="{!selectBeneficiaries}" rerender="form" rendered="{!bShowComponents}"/>
+                <apex:commandButton value="{!$Label.Class_Cancel_Btn_Lbl}" status="status" action="{!resetAllDataStructures}" rerender="tstpopup" rendered="{!bShowComponents}"/>
+                <apex:actionStatus id="status">
+                    <apex:facet name="start">
+                    <div class="waitingSearchDiv" id="el_loading" style="background-color: #DCD6D6;
+                           height: 100%;width:100%; opacity:0.45 ; z-index:55;"> 
+                        <div class="waitingHolder" style="top: 250px; padding-left:600px;  align:center;position:absolute ; opacity:0.65 ; z-index:78;">
+                            <img class="waitingImage" src="{!$Resource.Loading_New}"/>                       
+                        </div>
+                    </div>
+                    </apex:facet>
+                </apex:actionStatus> 
+            </apex:pageBlock>
+            
+        </apex:outputPanel>
+    </apex:outputPanel>
+</apex:form>
+ 
+</apex:page>

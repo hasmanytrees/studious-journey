@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Additional_Funds_Requested__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will be checked if more than the $20,000 USD in reimbursable disaster funds will be needed to respond to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check the box only if more than the $20,000 USD in reimbursable disaster funds will be needed to respond to the disaster.</inlineHelpText>
+        <label>Additional Funds Needed</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CIV_Link__c</fullName>
+        <description>Link to Intervention record associated with this disaster.</description>
+        <externalId>false</externalId>
+        <label>CIV Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Damage_Over_1_Million__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The damage to the ICPs, beneficiaries, or Field office is estimated to be over one million dollars</description>
+        <externalId>false</externalId>
+        <label>Damage Over 1 Million</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Area_Description__c</fullName>
+        <description>This field describe the geographic location the disaster has impacted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the geographic location the disaster has impacted in the country.</inlineHelpText>
+        <label>Disaster Area Description</label>
+        <length>3300</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Disaster_Communication_Sensitive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field should be checked if Compassion&apos;s sensitive messaging guidelines apply to the reporting for this disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check the box if Compassion&apos;s sensitive messaging guidelines apply to the reporting for this disaster.</inlineHelpText>
+        <label>Disaster Communication Sensitive</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Communications_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field stores the name of the User who is creating the Contact and is changeable to another User if required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the name of the person responsible for the communications about the disaster.</inlineHelpText>
+        <label>Disaster Communications Contact</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Disasters</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Date__c</fullName>
+        <description>This field stores the date and time the disaster occurred.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date the disaster first occurred.</inlineHelpText>
+        <label>Disaster Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_ID__c</fullName>
+        <description>This field automatically creates the unique identifier that is associated to the new disaster record.</description>
+        <displayFormat>DI-{0000}</displayFormat>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The unique identifier that is generated when a new disaster record is created.</inlineHelpText>
+        <label>Disaster ID</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Impact_Description__c</fullName>
+        <description>This field stores a general description of the disaster and how it has impacted Compassion&apos;s beneficiaries, ICPs and the field office.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide a general description of the disaster and how it has impacted the field office, ICPs and beneficiaries.</inlineHelpText>
+        <label>Disaster Impact Description</label>
+        <length>3300</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Disaster_Photo__c</fullName>
+        <description>This field stores the link to any disaster photos.</description>
+        <externalId>false</externalId>
+        <label>Disaster Photo</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Record_Close_Date__c</fullName>
+        <description>This field is automatically populated with the date when the Disaster Status is changed to Closed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - A disaster end date is populated when the disaster record status is set to closed.</inlineHelpText>
+        <label>Disaster Record Close Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Record_Status__c</fullName>
+        <description>This field stores the status of disaster record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the status of disaster record. Choose closed status when the disaster reporting is completed or has transitioned to CIV reporting.</inlineHelpText>
+        <label>Disaster Record Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Response_Description__c</fullName>
+        <description>This field describes how Compassion (ICP/field office) is responding to the disaster. Include any coordination with local resources.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe how the Compassion field office and ICPs are responding to the disaster. Include coordination with local organizations.</inlineHelpText>
+        <label>Disaster Response Description</label>
+        <length>3300</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Disaster_Severity_Level__c</fullName>
+        <description>This field is auto-populated based on the estimated impact to the field office, ICPs, and beneficiaries.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - Indicates the severity level of the disaster being reported based on the estimated impact to the field office, ICPs, and beneficiaries</inlineHelpText>
+        <label>Disaster Severity Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Orange</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Start_Date__c</fullName>
+        <description>The date the disaster first happened.</description>
+        <externalId>false</externalId>
+        <label>Disaster Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Type__c</fullName>
+        <description>This field stores the type of disaster that occurred.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the type of disaster that occurred.</inlineHelpText>
+        <label>Disaster Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Animal / Insect Infestation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Civil Or Political Unrest / Rioting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disease / Epidemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Earthquake</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extreme Temperatures</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fire</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hail Storm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heavy Rains / Flooding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hurricanes / Tropical Storms / Cyclones / Typhoons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Industrial Accident</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Landslide</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strong Winds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tornado</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transport Accident</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tsunami</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volcanic Activity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Water Contamination Crisis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Basic_Supplies_Needed__c</fullName>
+        <description>This field stores the estimated number of Compassion beneficiaries, caregivers or siblings who need basic supplies due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the estimated number of Compassion beneficiaries, caregivers or siblings who need basic supplies due to the disaster. Basic supplies include food, water, temporary shelter, trauma counseling, basic sanitation or hygiene supplies.</inlineHelpText>
+        <label>Estimated Basic Supplies Needed</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11-24</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25-49</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50-99</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100-250</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>250+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Damage_Over_1_Million_USD__c</fullName>
+        <description>This field is checked if the damage to the ICPs, beneficiaries, or Field office is estimated to be over one million dollars</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select “Yes” if the estimated damage to Compassion beneficiaries, ICPs and the field office is over $1 million USD or select “No” if the estimated damage is under $ 1 million USD.</inlineHelpText>
+        <label>Estimated Damage Over 1 Million USD</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Homes_Destroyed__c</fullName>
+        <description>This field stores the estimated number of homes of Compassion beneficiaries that were destroyed due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the estimated number of homes of Compassion beneficiaries that were destroyed due to the disaster.</inlineHelpText>
+        <label>Estimated Homes Destroyed</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11-24</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25-49</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50-99</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100-250</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>250+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Loss_Of_Life__c</fullName>
+        <description>This field stores the estimated number of Compassion beneficiaries, their caregivers or siblings who lost their lives due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the estimated number of Compassion beneficiaries, their caregivers or siblings who lost their lives due to the disaster.</inlineHelpText>
+        <label>Estimated Loss Of Life</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11-24</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25-49</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50-99</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100-250</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>250+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Loss_Of_Livelihood__c</fullName>
+        <description>This field stores the estimated number of Compassion caregivers that lost their livelihood due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the estimated number of Compassion caregivers that lost their livelihood due to the disaster.</inlineHelpText>
+        <label>Estimated Loss Of Livelihood</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11-24</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25-49</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50-99</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100-250</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>250+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Not_Attending_Project__c</fullName>
+        <description>This field stores the estimated number of Compassion beneficiaries who are not attending the project due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the estimated number of Compassion beneficiaries who are not attending the project due to the disaster.</inlineHelpText>
+        <label>Estimated Not Attending Project</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11-24</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25-49</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50-99</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100-250</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>250+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Rehabilitation_Funds_USD__c</fullName>
+        <description>This field stores the estimated amount of disaster funds(in USD) that will be necessary for the rehabilitation phase of the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the estimated amount of disaster funds (in USD) necessary for the rehabilitation phase of the disaster. Example: The anticipated costs of interventions, such as home repair/reconstruction, ICP repair/reconstruction, livelihood restoration, etc.</inlineHelpText>
+        <label>Estimated Rehabilitation Funds (USD)</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Relief_Funds_USD__c</fullName>
+        <description>This field stores the estimated amount of disaster funds (in USD) that will be necessary for the relief phase of the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the estimated amount of disaster funds (in USD) that will be necessary for the relief phase of the disaster. For example, the anticipated costs of items, such as food, water, temporary shelter, etc.</inlineHelpText>
+        <label>Estimated Relief Funds (USD)</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Serious_Injuries__c</fullName>
+        <description>This field stores the estimated number of Compassion beneficiaries, their caregivers or siblings who were seriously injured due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the estimated number of Compassion beneficiaries, their caregivers or siblings who were seriously injured due to the disaster.</inlineHelpText>
+        <label>Estimated Serious Injuries</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11-24</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25-49</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50-99</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100-250</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>250+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Field_Office_Damage__c</fullName>
+        <description>This field stores the level of damage to the Compassion field office due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the level of damage to the Compassion field office due to the disaster.</inlineHelpText>
+        <label>Field Office  Damage</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Significant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Operational / Destroyed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Field_Office_Impact_Description__c</fullName>
+        <description>This field stores the impact of the disaster on the field office&apos;s ability to operate and support program.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the impact of the disaster on the field office&apos;s ability to operate and support program.</inlineHelpText>
+        <label>Field Office Impact Description</label>
+        <length>1000</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Field_Office__c</fullName>
+        <description>This field stores the name of the field office reporting the disaster</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the name of the field office reporting the disaster</inlineHelpText>
+        <label>Field Office</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Field Office</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Disasters</relationshipLabel>
+        <relationshipName>Disasters</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Impact_On_ICP_Infrastructure_Damaged__c</fullName>
+        <description>ICP Disaster Impact record, ICP Impact on ICP Infrastructure field, Impact Status = Significantly Damaged</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The total reported number of ICPs whose infrastructure has been significantly damaged due to the disaster.</inlineHelpText>
+        <label>Impact On ICP Infrastructure - Damaged</label>
+        <summaryFilterItems>
+            <field>ICP_Impact__c.Disaster_Impact_To_ICP_Infrastructure__c</field>
+            <operation>equals</operation>
+            <value>Significant Damage</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ICP_Impact__c.Disaster_Name__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Impact_On_ICP_Infrastructure_Destroyed__c</fullName>
+        <description>This field is auto-populated with the total reported number of ICPs whose infrastructure has been destroyed due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The total reported number of ICPs whose infrastructure has been destroyed due to the disaster.</inlineHelpText>
+        <label>Impact On ICP Infrastructure - Destroyed</label>
+        <summaryFilterItems>
+            <field>ICP_Impact__c.Disaster_Impact_To_ICP_Infrastructure__c</field>
+            <operation>equals</operation>
+            <value>Destroyed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ICP_Impact__c.Disaster_Name__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Impact_On_ICP_Program_Temporarily_Closed__c</fullName>
+        <description>ICP Disaster Impact record, ICP Impact on ICP Program field, Impact Status = TemporarilyClosed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The total reported number of ICPs who are temporarily closed because they are unable to implement program due to the disaster.</inlineHelpText>
+        <label>Impact On ICP Program-Temporarily Closed</label>
+        <summaryFilterItems>
+            <field>ICP_Impact__c.Disaster_Impact_On_ICP_Program__c</field>
+            <operation>equals</operation>
+            <value>Temporarily Closed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ICP_Impact__c.Disaster_Name__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Impact_To_Field_Office_Operations__c</fullName>
+        <description>This field stores the level of impact to the field office operations and their ability to support program.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the level of impact to the field office operations and their ability to support program.</inlineHelpText>
+        <label>Impact To Field Office Operations</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Significant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Operational / Destroyed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Paper_Form_Links__c</fullName>
+        <description>This field stores multiple links to scanned paper forms</description>
+        <externalId>false</externalId>
+        <label>Paper Form Links</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Reported_Loss_Of_Life_Beneficiaries__c</fullName>
+        <description>Beneficiary Disaster Impact record, Beneficary Physical Condition field, Field = Child died.  Sum for all beneficiary impact forms with this field condition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The reported number of Compassion beneficiaries who lost their lives due to the disaster.</inlineHelpText>
+        <label>Reported Loss Of Life - Beneficiaries</label>
+        <summaryFilterItems>
+            <field>Beneficiary_Impact__c.BEN_Physical_Condition__c</field>
+            <operation>equals</operation>
+            <value>Beneficiary Died</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Beneficiary_Impact__c.Disaster_Name__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Reported_Loss_Of_Life_Caregivers__c</fullName>
+        <description>Beneficiary Disaster Impact record, Number of Caregivers died Field. Sum for all beneficiary impact forms with this field condition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The reported number of caregivers of Compassion beneficiaries who lost their lives due to the disaster.</inlineHelpText>
+        <label>Reported Loss Of Life - Caregivers</label>
+        <summarizedField>Beneficiary_Impact__c.Number_Caregivers_Died__c</summarizedField>
+        <summaryForeignKey>Beneficiary_Impact__c.Disaster_Name__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Reported_Loss_Of_Life_Siblings__c</fullName>
+        <description>Beneficiary Disaster Impact record, Number of Siblings died Field. Sum for all beneficiary impact forms with this field condition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The reported number of siblings of Compassion beneficiaries who lost their lives due to the disaster.</inlineHelpText>
+        <label>Reported Loss Of Life - Siblings</label>
+        <summarizedField>Beneficiary_Impact__c.Number_Siblings_Died__c</summarizedField>
+        <summaryForeignKey>Beneficiary_Impact__c.Disaster_Name__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Reported_Number_Beneficiaries_Impacted__c</fullName>
+        <description>Beneficiary Disaster Impact record, Beneficary Disaster Status field, Status = Affected</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The total reported number of beneficiaries affected by the disaster.</inlineHelpText>
+        <label>Reported Number Beneficiaries Impacted</label>
+        <summaryFilterItems>
+            <field>Beneficiary_Impact__c.BEN_Disaster_Status__c</field>
+            <operation>equals</operation>
+            <value>Affected</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Beneficiary_Impact__c.Disaster_Name__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Reported_Number_Of_ICPs_Impacted__c</fullName>
+        <description>ICP Disaster Impact record, ICP Disaster Status field, Status = Affected</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The total reported number of ICPs affected by the disaster.</inlineHelpText>
+        <label>Reported Number Of ICPs Impacted</label>
+        <summaryFilterItems>
+            <field>ICP_Impact__c.ICP_Disaster_Status__c</field>
+            <operation>equals</operation>
+            <value>Affected</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ICP_Impact__c.Disaster_Name__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Reported_Serious_Injuries_Beneficaries__c</fullName>
+        <description>Beneficiary Disaster Impact record, Beneficiary Physical Condition Field.  Field = child seriously injured. Sum for all beneficiary impact forms with this field condition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The reported number of Compassion beneficiaries who were seriously injured due to the disaster.</inlineHelpText>
+        <label>Reported Serious Injuries - Beneficaries</label>
+        <summaryFilterItems>
+            <field>Beneficiary_Impact__c.BEN_Physical_Condition__c</field>
+            <operation>equals</operation>
+            <value>Beneficiary Seriously Injured</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Beneficiary_Impact__c.Disaster_Name__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Reported_Serious_Injuries_Caregivers__c</fullName>
+        <description>Beneficiary Disaster Impact record, Caregiver Seriously Injured Field.  Sum for all beneficiary impact forms with this field condition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The reported number of caregivers of Compassion beneficiaries who were seriously injured due to the disaster.</inlineHelpText>
+        <label>Reported Serious Injuries - Caregivers</label>
+        <summarizedField>Beneficiary_Impact__c.Number_Of_Caregivers_Seriously_Injured__c</summarizedField>
+        <summaryForeignKey>Beneficiary_Impact__c.Disaster_Name__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Reported_Serious_Injuries_Siblings__c</fullName>
+        <description>Beneficiary Disaster Impact record, Siblings Seriously Injured Field.  Sum for all beneficiary impact forms with this field condition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The reported number of siblings of Compassion beneficiaries who were seriously injured due to the disaster.</inlineHelpText>
+        <label>Reported Serious Injuries - Siblings</label>
+        <summarizedField>Beneficiary_Impact__c.Number_Of_Siblings_Seriously_Injured__c</summarizedField>
+        <summaryForeignKey>Beneficiary_Impact__c.Disaster_Name__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Summary_Information__c</fullName>
+        <description>This field stores the summary of the disaster, including bullet items around the disaster.</description>
+        <externalId>false</externalId>
+        <label>Summary Information</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Disaster</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Disaster_Record_Status__c</columns>
+        <columns>Disaster_Type__c</columns>
+        <columns>Field_Office__c</columns>
+        <columns>Disaster_Date__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Disaster Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Disasters</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Disaster_Record_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Disaster_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Field_Office__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Disaster_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Additional_Funds_Needed_related_Fields</fullName>
+        <active>true</active>
+        <description>Make Estimated Relief Funds (USD) and Estimated Rehabilitation Funds (USD) required when Additional Funds Needed is True</description>
+        <errorConditionFormula>IF( AND (Additional_Funds_Requested__c, OR(ISNULL( Estimated_Rehabilitation_Funds_USD__c ), ISNULL( Estimated_Relief_Funds_USD__c  )) ), true, false)</errorConditionFormula>
+        <errorMessage>Please select values for Estimated Relief Funds (USD) and Estimated Rehabilitation Funds (USD).</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Disaster_Date_should_not_be_later_date</fullName>
+        <active>true</active>
+        <description>This Validation Rule will ensure that the Disaster Date can be today or a past date</description>
+        <errorConditionFormula>Disaster_Date__c  &gt;  TODAY()</errorConditionFormula>
+        <errorMessage>Disaster Date can be only be Today&apos;s Date or a Past Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Reverse_Additional_Funds_Needed</fullName>
+        <active>true</active>
+        <description>If a user does not check the Additional Funds Needed box but enters Estimated Relief or Rehabilitation Funds, the system requires the user to check the box</description>
+        <errorConditionFormula>IF( OR ( AND ( NOT(ISNULL(Estimated_Rehabilitation_Funds_USD__c)), OR( NOT(Additional_Funds_Requested__c), ISNULL( Estimated_Relief_Funds_USD__c )) ), AND ( NOT(ISNULL(Estimated_Relief_Funds_USD__c)), OR( NOT(Additional_Funds_Requested__c), ISNULL( Estimated_Rehabilitation_Funds_USD__c )) )), true, false)</errorConditionFormula>
+        <errorMessage>Please enter values for Estimated Relief Funds (USD) / Estimated Rehabilitation Funds (USD) and check Additional Funds Required if not already.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>View_All_Beneficiary_Impacted</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>View All Beneficiaries Impacted</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!$Setup.Org_Level_Settings__c.Disaster_Beneficiary_Report_Id__c}?pv0={!Disaster__c.Disaster_ID__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>View_All_ICP_Impacted</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>View All ICPs Impacted</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!$Setup.Org_Level_Settings__c.Disaster_ICP_Report_Id__c}?pv0={!Disaster__c.Disaster_ID__c}</url>
+    </webLinks>
+</CustomObject>

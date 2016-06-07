@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This custom object is used to store Content related to a Beneficiary/ICP/Interventions. Content can be images, videos, forms etc.  Actual content will be stored in Perceptive. This object will store “links” to these documents in Perceptive</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Activity_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to capture perceptive link for the activity plan related documents uploaded in the perceptive.</description>
+        <externalId>false</externalId>
+        <label>Activity Plan</label>
+        <referenceTo>Activity_Plan__c</referenceTo>
+        <relationshipLabel>Content(Activity Plan)</relationshipLabel>
+        <relationshipName>Content</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AttachmentDT__c</fullName>
+        <externalId>false</externalId>
+        <label>AttachmentDT</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>AttachmentId__c</fullName>
+        <description>This field is used for mapping  in Rest Integration.</description>
+        <externalId>false</externalId>
+        <label>AttachmentId</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attachment_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Attachment Id</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Ben_Image_Id_For_Data_Load__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This is the id used for data loads for Beneficiaries&apos; Image</description>
+        <externalId>true</externalId>
+        <label>Ben Image Id For Data Load</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Beneficiary_Assessment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Beneficiary Assessment</label>
+        <referenceTo>Beneficiary_Assessment__c</referenceTo>
+        <relationshipLabel>Content(Beneficiary Assessment)</relationshipLabel>
+        <relationshipName>Content</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Beneficiary_Lifecycle_Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Beneficiary Lifecycle Event</label>
+        <referenceTo>Beneficiary_Lifecycle_Event__c</referenceTo>
+        <relationshipLabel>Content(Beneficiary Lifecycle Event)</relationshipLabel>
+        <relationshipName>Content</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Beneficiary__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Beneficiary Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Content (Beneficiary)</relationshipLabel>
+        <relationshipName>Content</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is used to attach a content record to a MI3</description>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Content (ICP)</relationshipLabel>
+        <relationshipName>Content</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>Contains comments corresponding to Content</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Content_Download_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Content Download Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Content_Link__c</fullName>
+        <externalId>false</externalId>
+        <label>Content Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Content_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Content Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Budget Form</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget Form Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consent Form - Beneficiary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development Plan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disaster</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Education Materials</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health Assessment / Medical Incident</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health Forms</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP Reactivation Notification Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP Setup Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP Strategic Plan Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP Suspend Ext Notification Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP Suspend Notification Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP Welcome Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lead Letter of Intent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lead Status Notification Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Miscellaneous Supporting Document</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Official Identity Record</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operational Plan Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partnership Agreement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partnership Agreement Template Mature 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partnership Agreement Template Mature 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partnership Agreement Template Mature 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partnership Agreement Template Mature 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partnership Agreement Template Mature 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partnership Transition Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PF Communication to ICP Lead Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Photo - Beneficiary Full Body</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Photo - Beneficiary Headshot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Photo - ICP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Exit Kit Documents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unplanned Exit Kit Documents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Disaster__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Disaster</label>
+        <referenceTo>Disaster__c</referenceTo>
+        <relationshipLabel>Content</relationshipLabel>
+        <relationshipName>Content</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Field_Office_For_Sharing_Rule__c</fullName>
+        <externalId>false</externalId>
+        <label>Field Office For Sharing Rule</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Office__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Field Office</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Content (Field Office)</relationshipLabel>
+        <relationshipName>Content2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ICP_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>ICP__r.ICP_Id__c</formula>
+        <label>ICP ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_Image_Id_For_Data_Load__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This is the id used for data loads for ICP&apos;s Image</description>
+        <externalId>true</externalId>
+        <label>ICP Image Id For Data Load</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>ICP Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Content (Lead)</relationshipLabel>
+        <relationshipName>Content</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ICP__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>ICP</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Content (ICP)</relationshipLabel>
+        <relationshipName>Content1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Image_Upload_Date__c</fullName>
+        <description>This field signifies the date on which historical Content is uploaded in Perceptive. This field is used only for historical records.</description>
+        <externalId>false</externalId>
+        <label>Historical Content Upload Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Incidents__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Medical Incidents</label>
+        <referenceTo>Medical_Incidents__c</referenceTo>
+        <relationshipLabel>Content</relationshipLabel>
+        <relationshipName>Content</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Record_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Record ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Signifies current Status of Content</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Content</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Content_Download_Type__c</columns>
+        <columns>Content_Link__c</columns>
+        <columns>Content_Type__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_ICP_Content</fullName>
+        <columns>NAME</columns>
+        <columns>Content_Link__c</columns>
+        <columns>Content_Type__c</columns>
+        <columns>Content_Download_Type__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Content__c.ICP,Content__c.ICP_Lead</value>
+        </filters>
+        <label>All ICP Content</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>C-{0000}</displayFormat>
+        <label>Content Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Content</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>Activity_Plan</fullName>
+        <active>true</active>
+        <label>Activity Plan</label>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Budget Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miscellaneous Supporting Document</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Beneficiary</fullName>
+        <active>true</active>
+        <label>Beneficiary</label>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Consent Form - Beneficiary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education Materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Assessment %2F Medical Incident</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miscellaneous Supporting Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Official Identity Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo - Beneficiary Full Body</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Beneficiary_Assessment</fullName>
+        <active>true</active>
+        <label>Beneficiary Assessment</label>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Development Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Forms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miscellaneous Supporting Document</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Beneficiary_Lifecycle_Event</fullName>
+        <active>true</active>
+        <label>Beneficiary Lifecycle Event</label>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Miscellaneous Supporting Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Exit Kit Documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unplanned Exit Kit Documents</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Case</fullName>
+        <active>true</active>
+        <label>Case</label>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Miscellaneous Supporting Document</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Disaster</fullName>
+        <active>true</active>
+        <description>This record type will capture all Disaster related content</description>
+        <label>Disaster</label>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Disaster</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Field_Office</fullName>
+        <active>true</active>
+        <label>Field Office</label>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Budget Form Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Reactivation Notification Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Setup Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Strategic Plan Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Suspend Ext Notification Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Suspend Notification Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Welcome Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Status Notification Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miscellaneous Supporting Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PF Communication to ICP Lead Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partnership Transition Template</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ICP</fullName>
+        <active>true</active>
+        <label>ICP</label>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Budget Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miscellaneous Supporting Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partnership Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo - ICP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ICP_Lead</fullName>
+        <active>true</active>
+        <label>ICP Lead</label>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Lead Letter of Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miscellaneous Supporting Document</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Medical_Incidents</fullName>
+        <active>true</active>
+        <label>Medical Incidents</label>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Development Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Forms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miscellaneous Supporting Document</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Beneficiary__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Content_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Content_Link__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Content_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Comments__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Notes__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Record_ID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OBJECT_ID</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Content_Link__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Apex_Based_Sharing__c</fullName>
+        <label>Apex Based Sharing</label>
+    </sharingReasons>
+    <validationRules>
+        <fullName>Prevent_ICP_To_Create_Full_Body_Content</fullName>
+        <active>true</active>
+        <description>This will prevent ICP from creating Content record of Content Type Photo - Beneficiary Full Body</description>
+        <errorConditionFormula>AND(  ISPICKVAL($User.UserType, &apos;PowerPartner&apos;), RecordType.DeveloperName = &apos;Beneficiary&apos;,  ISPICKVAL( Content_Type__c , &apos;Photo - Beneficiary Full Body&apos;) )</errorConditionFormula>
+        <errorMessage>You do not have permission to create Content of Content Type &apos;Photo - Beneficiary Full Body&apos;</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Download_Content</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Download Content</masterLabel>
+        <openType>replace</openType>
+        <page>ContentDownload</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Content</fullName>
+        <availability>online</availability>
+        <description>To skip record type selection of content from related list new record creation</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Content</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)} 
+
+var result = sforce.connection.query(&quot;SELECT id,DeveloperName FROM RecordType where sobjecttype=&apos;Content__c&apos;&quot;); 
+
+records = result.getArray(&quot;records&quot;); 
+
+var activityPlan =&apos;&apos;; 
+var Beneficiary =&apos;&apos;; 
+var Beneficiary_Assessment =&apos;&apos;; 
+var Beneficiary_Lifecycle_Event =&apos;&apos;; 
+var Field_Office =&apos;&apos;; 
+var ICP =&apos;&apos;; 
+var ICP_Lead =&apos;&apos;; 
+var Disaster =&apos;&apos;; 
+for (var i=0; i&lt; records.length; i++) 
+{ 
+if(records[i].DeveloperName ==&apos;Activity_Plan&apos;){ 
+activityPlan = records[i].Id; 
+
+} 
+if(records[i].DeveloperName ==&apos;Beneficiary&apos;){ 
+Beneficiary = records[i].Id; 
+
+} 
+
+if(records[i].DeveloperName ==&apos;Beneficiary_Assessment&apos;){ 
+Beneficiary_Assessment = records[i].Id; 
+
+} 
+if(records[i].DeveloperName ==&apos;Beneficiary_Lifecycle_Event&apos;){ 
+Beneficiary_Lifecycle_Event = records[i].Id; 
+
+} 
+if(records[i].DeveloperName ==&apos;Field_Office&apos;){ 
+Field_Office= records[i].Id; 
+} 
+if(records[i].DeveloperName ==&apos;ICP&apos;){ 
+ICP= records[i].Id; 
+
+} 
+if(records[i].DeveloperName ==&apos;ICP_Lead&apos;){ 
+ICP_Lead= records[i].Id; 
+
+} 
+if(records[i].DeveloperName ==&apos;Disaster&apos;){ 
+Disaster= records[i].Id; 
+
+} 
+} 
+if( &apos;{!Disaster__c.Id}&apos; != &apos;&apos;) { 
+window.open(&quot;{!$Setup.Org_Level_Settings__c.Content_Object_Prefix__c}/e?CF{!$Setup.Org_Level_Settings__c.Disaster_Content_Id__c}={!JSENCODE(Disaster__c.Name)}&amp;CF{!$Setup.Org_Level_Settings__c.Disaster_Content_Id__c}_lkid={!Disaster__c.Id}&amp;retURL=%2F{!Disaster__c.Id}&amp;RecordType=&quot; + Disaster,&quot;_parent&quot;); 
+} 
+else{ 
+if(&apos;{!Account.RecordType}&apos; == &apos;Field Office&apos;){ 
+window.open(&quot;{!$Setup.Org_Level_Settings__c.Content_Object_Prefix__c}/e?CF{!$Setup.Org_Level_Settings__c.Field_Office_Content_Id__c}={!JSENCODE(Account.Name)}&amp;CF{!$Setup.Org_Level_Settings__c.Field_Office_Content_Id__c}_lkid={!Account.Id}&amp;retURL=%2F{!Account.Id}&amp;RecordType=&quot; + Field_Office,&quot;_parent&quot;); 
+} 
+
+if(&apos;{!Activity_Plan__c.RecordType}&apos; ==&apos;Operational Plan&apos; || &apos;{!Activity_Plan__c.RecordType}&apos; ==&apos;Operational Plan Objectives&apos; ||&apos;{!Activity_Plan__c.RecordType}&apos; ==&apos;Read Only Operational Plan Objective&apos; || &apos;{!Activity_Plan__c.RecordType}&apos; ==&apos;Set Up Plan&apos; || &apos;{!Activity_Plan__c.RecordType}&apos; ==&apos;Strategic Plan Support Request&apos; || &apos;{!Activity_Plan__c.RecordType}&apos; ==&apos;Suspension - Follow Up&apos; || &apos;{!Activity_Plan__c.RecordType}&apos; ==&apos;Suspension - Support Request&apos; || &apos;{!Activity_Plan__c.RecordType}&apos; ==&apos;Transition Communication Plan&apos; || &apos;{!Activity_Plan__c.RecordType}&apos; ==&apos;Transition Plan&apos;){ 
+window.open(&quot;{!$Setup.Org_Level_Settings__c.Content_Object_Prefix__c}/e?CF{!$Setup.Org_Level_Settings__c.Activity_Plan_Content_Id__c}={!JSENCODE(Activity_Plan__c.Name)}&amp;CF{!$Setup.Org_Level_Settings__c.Activity_Plan_Content_Id__c}_lkid={!Activity_Plan__c.Id}&amp;retURL=%2F{!Activity_Plan__c.Id}&amp;RecordType=&quot; + activityPlan,&quot;_parent&quot;); 
+
+} 
+if( &apos;{!Account.RecordType}&apos; ==&apos;Survival Beneficiary&apos; || &apos;{!Account.RecordType}&apos; ==&apos;Sponsorship Beneficiary&apos;){ 
+window.open(&quot;{!$Setup.Org_Level_Settings__c.Content_Object_Prefix__c}/e?CF{!$Setup.Org_Level_Settings__c.Ben_Content_Id__c}={!JSENCODE(Account.Name)}&amp;CF{!$Setup.Org_Level_Settings__c.Ben_Content_Id__c}_lkid={!Account.Id}&amp;retURL=%2F{!Account.Id}&amp;RecordType=&quot; + Beneficiary,&quot;_parent&quot;); 
+
+} 
+
+if(&apos;{!Beneficiary_Assessment__c.RecordType}&apos; ==&apos;CDPR&apos; ||&apos;{!Beneficiary_Assessment__c.RecordType}&apos; ==&apos;Development Plan&apos; ||&apos;{!Beneficiary_Assessment__c.RecordType}&apos; ==&apos;Growth Monitoring&apos; ||&apos;{!Beneficiary_Assessment__c.RecordType}&apos; ==&apos;Health Assessment&apos;){ 
+window.open(&quot;{!$Setup.Org_Level_Settings__c.Content_Object_Prefix__c}/e?CF{!$Setup.Org_Level_Settings__c.BeneficiaryAssessment_Content_Id__c}={!JSENCODE(Beneficiary_Assessment__c.Name)}&amp;CF{!$Setup.Org_Level_Settings__c.BeneficiaryAssessment_Content_Id__c}_lkid={!Beneficiary_Assessment__c.Id}&amp;retURL=%2F{!Beneficiary_Assessment__c.Id}&amp;RecordType=&quot; + Beneficiary_Assessment,&quot;_parent&quot;); 
+
+} 
+
+if(&apos;{!Beneficiary_Lifecycle_Event__c.RecordType}&apos; ==&apos;Caregiver Death&apos;||&apos;{!Beneficiary_Lifecycle_Event__c.RecordType}&apos; ==&apos;Incident&apos;||&apos;{!Beneficiary_Lifecycle_Event__c.RecordType}&apos; ==&apos;Planned Exit&apos;||&apos;{!Beneficiary_Lifecycle_Event__c.RecordType}&apos; ==&apos;Registration&apos;||&apos;{!Beneficiary_Lifecycle_Event__c.RecordType}&apos; ==&apos;Reinstatement/Return&apos;||&apos;{!Beneficiary_Lifecycle_Event__c.RecordType}&apos; ==&apos;Transfer&apos;||&apos;{!Beneficiary_Lifecycle_Event__c.RecordType}&apos; ==&apos;Transition&apos;||&apos;{!Beneficiary_Lifecycle_Event__c.RecordType}&apos; ==&apos;Unplanned Exit&apos;){ 
+window.open(&quot;{!$Setup.Org_Level_Settings__c.Content_Object_Prefix__c}/e?CF{!$Setup.Org_Level_Settings__c.BeneficiaryLifecycleEvent_Content_Id__c}={!JSENCODE(Beneficiary_Lifecycle_Event__c.Name)}&amp;CF{!$Setup.Org_Level_Settings__c.BeneficiaryLifecycleEvent_Content_Id__c}_lkid={!Beneficiary_Lifecycle_Event__c.Id}&amp;retURL=%2F{!Beneficiary_Lifecycle_Event__c.Id}&amp;RecordType=&quot; + Beneficiary_Lifecycle_Event,&quot;_parent&quot;); 
+
+} 
+
+if(&apos;{!Account.RecordType}&apos; ==&apos;ICP&apos;){ 
+window.open(&quot;{!$Setup.Org_Level_Settings__c.Content_Object_Prefix__c}/e?CF{!$Setup.Org_Level_Settings__c.ICP_Content_Id__c}={!JSENCODE(Account.Name)}&amp;CF{!$Setup.Org_Level_Settings__c.ICP_Content_Id__c}_lkid={!Account.Id}&amp;retURL=%2F{!Account.Id}&amp;RecordType=&quot; + ICP,&quot;_parent&quot;); 
+
+} 
+if (&apos;{!Lead.RecordType}&apos; == &apos;ICP Lead&apos;){ 
+window.open(&quot;{!$Setup.Org_Level_Settings__c.Content_Object_Prefix__c}/e?CF{!$Setup.Org_Level_Settings__c.Lead_Content_Id__c}={!JSENCODE(Lead.Name)}&amp;CF{!$Setup.Org_Level_Settings__c.Lead_Content_Id__c}_lkid={!Lead.Id}&amp;retURL=%2F{!Lead.Id}&amp;RecordType=&quot; + ICP_Lead,&quot;_parent&quot;); 
+
+} 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_To_Perceptive</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Upload Content</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
+if(&quot;{!Content__c.Status__c}&quot;==&quot;Approved&quot;){ 
+try{ 
+var contentId=&apos;{!Content__c.Id}&apos; 
+
+var result = sforce.apex.execute(&quot;AttachmentSendToPerceptive&quot;, &quot;sendToPerceptive&quot;,{contentId: contentId}); 
+alert(&quot;Your content is uploaded&quot;); 
+location.reload(); 
+} 
+catch(err) { 
+txt=&quot;There was an error on this page.\n\n&quot;; 
+txt+=&quot;Error description: &quot; + err.description + &quot;\n\n&quot;; 
+txt+=&quot;Click OK to continue.\n\n&quot;; 
+alert(&quot;Error Occurred in Content Upload to Perceptive.Please Contact System Administrator&quot;+err); 
+} 
+} 
+else{ 
+alert(&apos;You can only send approved content to perceptive&apos;); 
+
+}</url>
+    </webLinks>
+</CustomObject>

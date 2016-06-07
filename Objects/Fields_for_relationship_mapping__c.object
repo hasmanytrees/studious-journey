@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This object is used to store list of all dummy fields which are used to map for integration purposes</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Field_API__c</fullName>
+        <externalId>false</externalId>
+        <label>Field API</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Fields for relationship mapping</label>
+    <visibility>Public</visibility>
+</CustomObject>

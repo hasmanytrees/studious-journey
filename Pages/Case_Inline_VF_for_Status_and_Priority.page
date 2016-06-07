@@ -1,0 +1,26 @@
+<!--************************************************************************
+*Page Name          : Case_Inline_VF_for_Status_and_Priority
+*Description        : This inline VisualForce page is used to control the Case Status
+*Created By         : Rahul Agarwal
+*Created On         : 07-Dec-2014
+
+********************************************************************************-->
+
+<apex:page standardController="Case">
+    <apex:form >
+        <apex:pageBlock mode="inlineEdit">
+            <apex:pageBlockButtons >
+                <!--<apex:commandButton action="{!edit}" id="editButton" value="Edit"/>-->
+                <apex:commandButton action="{!save}" id="saveButton" value="{!$Label.Case_Inline_VF_Btn_Save}" style="display:none;"/>
+                <apex:commandButton onclick="resetInlineEdit()" id="cancelButton" value="{!$Label.Case_Inline_VF_Btn_Cancel}" style="display:none;"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:outputField value="{!case.Status}">
+                    <apex:inlineEditSupport showOnEdit="saveButton, cancelButton" 
+                                            hideOnEdit="editButton" event="ondblclick" 
+                                            changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                </apex:outputField>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

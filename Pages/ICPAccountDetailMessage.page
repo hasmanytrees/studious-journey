@@ -1,0 +1,23 @@
+<!--/************************************************************************
+*Page Name          : ICP_AccoutDetail_Message
+*Description        : This page contains message required for portal user account detail section.   
+*Created By         : Sfurti Pandey 
+*Created On         : 19-June-2015
+
+********************************************************************************/-->
+<apex:page standardController="Account" standardStylesheets="true">
+<style>
+.myBlock {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background color:white;
+     }
+   
+}
+</style>
+    <div styleClass="myBlock" >
+        <p>{!$Label.Account_Detail_Page_Message}</p>
+    </div>
+</apex:page>

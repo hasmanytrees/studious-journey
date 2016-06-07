@@ -1,0 +1,38 @@
+NAME,AGE_MAX__C,AGE_MIN__C,FO_ID__C,PRIORITY__C,TYPE_OF_LETTER__C,TEMPLATE_ID__C,TEMPLATE_LAST_USED_DATE__C,TEMPLATE_MONTHS__C,TEMPLATE_ORDER__C
+1,9,3,PH,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,PH-D-1S11-1,,November;December,1
+2,9,3,PH,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,PH-D-2S11-2,,January;February,2
+3,9,3,PH,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,PH-D-1S11-3,,September;October,3
+4,9,3,PH,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,PH-D-2S11-4,,July;August,4
+5,9,3,PH,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,PH-D-1S11-5,,March;April,5
+6,9,3,PH,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,PH-D-1S11-6,,May;June,6
+7,40,3,PH,1,New Sponsor Letter,PH-B-1S11-1,,January;February;March;April;May;June;July;August;September;October;November;December,1
+8,40,9,PH,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,PH-E-6S11-1,,January;February;March;April;May;June;July;August;September;October;November;December,1
+9,40,1,PH,2,Final Letter,PH-F-4S01-1,,January;February;March;April;May;June;July;August;September;October;November;December,1
+10,9,3,KE,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,KE-D-1S11-1,,March;April,1
+11,9,3,KE,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,KE-D-1S11-2,,January;February,2
+12,9,3,KE,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,KE-D-1S11-3,,May;June,3
+13,9,3,KE,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,KE-D-1S11-4,,November;December,4
+14,9,3,KE,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,KE-D-1S11-5,,September;October,5
+15,9,3,KE,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,KE-D-1S11-6,,July;August,6
+16,40,3,KE,1,New Sponsor Letter,KE-B-2S11-1,,January;February;March;April;May;June;July;August;September;October;November;December,1
+17,40,9,KE,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,KE-E-4S01-1,,January;February;March;April;May;June;July;August;September;October;November;December,1
+18,40,1,KE,2,Final Letter,KE-F-4S01-1,,January;February;March;April;May;June;July;August;September;October;November;December,1
+19,9,3,SV,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,SV-D-2S11-1,,July;August,1
+20,9,3,SV,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,SV-D-1S11-2,,September;October,2
+21,9,3,SV,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,SV-D-2S11-3,,January;February,3
+22,9,3,SV,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,SV-D-1S11-4,,May;June,4
+23,9,3,SV,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,SV-D-2S11-5,,March;April,5
+24,9,3,SV,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,SV-D-1S11-6,,November;December,6
+25,40,3,SV,1,New Sponsor Letter,SV-B-1S11-1,,January;February;March;April;May;June;July;August;September;October;November;December,1
+26,40,9,SV,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,SV-E-4S01-1,,January;February;March;April;May;June;July;August;September;October;November;December,1
+27,40,1,SV,2,Final Letter,SV-F-4S01-1,,January;February;March;April;May;June;July;August;September;October;November;December,1
+28,9,3,BO,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,BO-D-2S11-1,,January;February,1
+29,9,3,BO,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,BO-D-1S11-2,,March;April,2
+30,9,3,BO,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,BO-D-1S11-3,,September;October,3
+31,9,3,BO,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,BO-D-1S11-4,,May;June,4
+32,9,3,BO,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,BO-D-1S11-5,,July;August,5
+33,9,3,BO,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,BO-D-1S11-6,,November;December,6
+34,40,3,BO,1,New Sponsor Letter,BO-B-2S11-1,,January;February;March;April;May;June;July;August;September;October;November;December,1
+35,40,9,BO,3,Scheduled Letter;Reciprocal Letter;Small Gift Thank You Letter;Large Gift Thank You Letter,BO-E-4S01-1,,January;February;March;April;May;June;July;August;September;October;November;December,1
+36,40,1,BO,2,Final Letter,BO-F-4S01-1,,January;February;March;April;May;June;July;August;September;October;November;December,1
+37,3,1,BO,1,New Sponsor Letter,BO-A-1S11-1,,January;February;March;April;May;June;July;August;September;October;November;December,1

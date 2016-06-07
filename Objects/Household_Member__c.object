@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Child_Id_For_Data_Load__c</fullName>
+        <externalId>true</externalId>
+        <label>Child Id For Data Load</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Existing_Beneficiary__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Compassion Beneficiary</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Sponsorship Beneficiary</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Survival Beneficiary</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Household Members</relationshipLabel>
+        <relationshipName>Household_Members</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Household__c</fullName>
+        <externalId>false</externalId>
+        <label>Household</label>
+        <referenceTo>Household__c</referenceTo>
+        <relationshipLabel>Household Members</relationshipLabel>
+        <relationshipName>Household_Members</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Is_Caregiver_Text_from_Neuron__c</fullName>
+        <externalId>false</externalId>
+        <label>Is Caregiver Text from Neuron</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Caregiver__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This checkbox denotes that Household member is a Caregiver of this family or not.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This checkbox denotes that Household member is a Caregiver of this family or not.</inlineHelpText>
+        <label>Is Caregiver</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Household_Member_Beneficiary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will be updated by Workflow/Trigger if this Household Member is Beneficiary or not. This field is used for roll up summary field on Household object.</description>
+        <externalId>false</externalId>
+        <label>Is Household Member Beneficiary?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Primary_Caregiver__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This checkbox denotes that Household member is Primary Caregiver of this family or not. The family can have only one Primary Caregiver at a time.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This checkbox denotes that Household member is Primary Caregiver of this family or not.</inlineHelpText>
+        <label>Is Primary Caregiver</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Need_Key_For_Data_Load__c</fullName>
+        <externalId>true</externalId>
+        <label>Need Key For Data Load</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Beneficiary - Male</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beneficiary - Female</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grandmother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grandfather</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aunt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uncle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Godmother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Godfather</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Friend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Step Father</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Step Mother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foster parent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other relative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other non-relative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Household Member</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Existing_Beneficiary__c</columns>
+        <columns>Household__c</columns>
+        <columns>Is_Primary_Caregiver__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Household Member Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Household Members</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Household__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Role__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Is_Caregiver__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Existing_Beneficiary__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Role__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Household__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>Role__c</lookupFilterFields>
+        <lookupFilterFields>Household__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>Household__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Household__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Role__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Is_Caregiver__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Existing_Beneficiary__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Caregiver_Improper_Assignment_Rule</fullName>
+        <active>true</active>
+        <description>Natural parents who are not living with the child cannot be listed as a caregiver.</description>
+        <errorConditionFormula>IF( 
+AND($Profile.Name != &apos;System Administrator&apos;,ISPICKVAL(Household__r.Together_Now__c,&quot;Yes&quot;), 
+OR( 
+AND(Household__r.Natural_Father_Living_With_Child__c=True,Household__r.Natural_Mother_Living_With_Child__c=False,ISPICKVAL(Role__c,&quot;Mother&quot;),Is_Caregiver__c=True), 
+AND(Household__r.Natural_Father_Living_With_Child__c=False,Household__r.Natural_Mother_Living_With_Child__c=True,ISPICKVAL(Role__c,&quot;Father&quot;),Is_Caregiver__c=True))),true,false)</errorConditionFormula>
+        <errorMessage>Natural parents who are not living with the child cannot be listed as a caregiver.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Validate_Is_Caregiver_is_Checked</fullName>
+        <active>true</active>
+        <description>This is to make sure that when Is Primary Caregiver is checked, the Is caregiver is also checked</description>
+        <errorConditionFormula>AND( Is_Primary_Caregiver__c = True , Is_Caregiver__c  = False)</errorConditionFormula>
+        <errorDisplayField>Is_Caregiver__c</errorDisplayField>
+        <errorMessage>Please select &quot;Is Caregiver&quot; for the household member.</errorMessage>
+    </validationRules>
+</CustomObject>

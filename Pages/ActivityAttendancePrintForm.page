@@ -1,0 +1,101 @@
+<!--************************************************************************
+*Page Name          : ActivityAttendancePrintForm
+*Description        : VisualForce page from where activity attendance of a beneficiary is printed. 
+*Created By         : Himanshu Raichandani
+*Created On         : 03-Aug-2015 
+********************************************************************************-->
+<apex:page standardController="Activity_Attendance__c" extensions="ActivityAttendanceExtension" sidebar="false" showHeader="false" >
+
+    <div style="{!$Label.Activity_Attendance_Page_Size}">
+    <apex:form id="form">
+    <apex:sectionHeader title="{!$Label.Activity_Attendance_Heading}"/>
+    <apex:pageBlock id="mainTab2" mode="maindetail">
+    <apex:outputPanel id="topPanel">
+    
+    <apex:pageBlockSection title="" columns="2" id="pbs2" rendered="{!bUpdateFlow}">
+        <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Activity_Attn_ICP_ID_Lbl}"/>
+                <apex:outputText value="{!oActivityAttendance.ICP__r.ICP_Id__c}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Activity_Attn_Activity_Name_Lbl}"/>
+                <apex:outputText value="{!oActivityAttendance.Name}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Activity_Attn_ICP_Name_Lbl}"/>
+                <apex:outputField value="{!oActivityAttendance.ICP__c}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Activity_Attn_Program_Type_Lbl}"/>
+                <apex:outputText value="{!oActivityAttendance.BEN_Program_Type__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Activity_Attn_Tutor_Implementer_Lbl}"/>
+                <apex:outputField value="{!oActivityAttendance.Tutor__c}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Activity_Attn_Activity_Type_Lbl}"/>
+                <apex:outputText value="{!oActivityAttendance.Activity_Type__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem />
+        <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Activity_Attn_Activity_Date_Lbl}"/>
+                <apex:outputField value="{!oActivityAttendance.Activity_Date__c}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem />        
+        <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Activity_Attn_Activity_Desc_Lbl}"/>
+                <apex:outputText value="{!oActivityAttendance.Activity_Description__c}"/>
+        </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+    
+    </apex:outputpanel>
+    </apex:pageBlock>
+    <apex:outputPanel id="allthetables">
+    <apex:outputPanel rendered="{!bShowBottom}">
+    <apex:pageBlock id="mainTab">
+    <div>
+    <apex:pageBlockSection title="{!$Label.Activity_Attn_Add_Benef_Lbl}" dir="left" columns="1" id="pbs2" rendered="{!bShowBottom}"/>
+    
+            <apex:pageBlockTable value="{!mapBenefIdToBenefWrapper}" var="benefId" 
+                                         id="result" border="0" align="left">
+                        
+                
+                        <apex:column style="width:30px;">
+                            <apex:outputPanel >
+                                <apex:inputCheckbox style="margin-left:7%;" value="{!mapBenefIdToBenefWrapper[benefId].bAttended}" disabled="true"/>
+                            </apex:outputPanel>
+                            <apex:facet name="header">
+                                <apex:outputPanel >
+                                    <b><apex:outputText value="{!$Label.Activity_Attn_Attended_Lbl}"></apex:outputText></b>
+                                </apex:outputPanel>
+                            </apex:facet>
+                        </apex:column>
+                        <apex:column style="width:30px;">
+                            <apex:outputPanel >
+                                <apex:outputText value="{!mapBenefIdToBenefWrapper[benefId].sLocalBeneficiaryId}"/>
+                            </apex:outputPanel>
+                            <apex:facet name="header">{!$Label.Activity_Attn_Local_Benef_ID_Lbl}</apex:facet>
+                        </apex:column>
+                       <apex:column style="width:120px;">
+                            <apex:outputPanel >
+                                <apex:outputText value="{!mapBenefIdToBenefWrapper[benefId].sBeneficiaryName}"/>
+                            </apex:outputPanel>  
+                            <apex:facet name="header">{!$Label.Activity_Attn_Benef_Name_Lbl}</apex:facet>
+                        </apex:column>
+                        <apex:column style="width:60px;">
+                            <apex:outputPanel >
+                                <apex:outputText value="{!mapBenefIdToBenefWrapper[benefId].sPrimaryCaregiverName}"/>
+                            </apex:outputPanel>
+                            <apex:facet name="header">{!$Label.Activity_Attn_Primary_Caregiver_Lbl}</apex:facet>
+                        </apex:column>
+             </apex:pageBlockTable>
+   
+    </div>
+    </apex:pageBlock>
+     </apex:outputPanel>
+     </apex:outputPanel>
+    </apex:form>
+    </div>
+    
+</apex:page>

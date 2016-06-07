@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Field_Hierarchy__c</fullName>
+        <description>This field holds the id of the cluster that this record is meant to be looking up to</description>
+        <externalId>false</externalId>
+        <label>Field Hierarchy</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>PM_Hierarchy__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Cluster</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>PM_Hierarchy__c</referenceTo>
+        <relationshipLabel>PMAT Cluster Measures</relationshipLabel>
+        <relationshipName>Cluster_Datas</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Indicator_Number__c</fullName>
+        <description>This picklist value indicates the Indicator of the measurement label</description>
+        <externalId>false</externalId>
+        <label>Indicator Number</label>
+        <picklist>
+            <controllingField>Outcome_Number__c</controllingField>
+            <picklistValues>
+                <fullName>1.1: ICP reflects strong partner church vision and values.</fullName>
+                <controllingFieldValues>1: Demonstrate Effective Vision and Leadership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1.2: Pastor and recognized church leaders are engaged in ministry to children.</fullName>
+                <controllingFieldValues>1: Demonstrate Effective Vision and Leadership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1.3: Church has an accountability system in place that has a meaningful role in influencing and overseeing the program.</fullName>
+                <controllingFieldValues>1: Demonstrate Effective Vision and Leadership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2.1: ICP Recruits needed quality and quantity of staff and volunteers</fullName>
+                <controllingFieldValues>2: Mobilize Resources</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2.2: Contributes facilities and financial support to the ministry to children and caregivers</fullName>
+                <controllingFieldValues>2: Mobilize Resources</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2.3: Mobilizes community resources to support the ministry to children</fullName>
+                <controllingFieldValues>2: Mobilize Resources</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3.1: Addresses Outcomes and standards of the Partnership Agreement effectively</fullName>
+                <controllingFieldValues>3: Establishes efficient structures and management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3.2: Makes and implements effective annual plans</fullName>
+                <controllingFieldValues>3: Establishes efficient structures and management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3.3: Implements curriculum effectively</fullName>
+                <controllingFieldValues>3: Establishes efficient structures and management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4.1: Advocates for children and caregivers by engaging multiple stakeholders in the church and community with the program and on behalf of children</fullName>
+                <controllingFieldValues>4: Reflects local ownership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4.2: Demonstrates ongoing learning and improvement in the management of the overall childrens ministry</fullName>
+                <controllingFieldValues>4: Reflects local ownership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4.3: Mobilizes technical assistance and financial resources independently of Compassion</fullName>
+                <controllingFieldValues>4: Reflects local ownership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Measure_Number__c</fullName>
+        <description>This picklist value indicates the measurement number of the measurement label</description>
+        <externalId>false</externalId>
+        <label>Measure Number</label>
+        <picklist>
+            <controllingField>Indicator_Number__c</controllingField>
+            <picklistValues>
+                <fullName>Measure 1.1.1</fullName>
+                <controllingFieldValues>1.1: ICP reflects strong partner church vision and values.</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 1.1.2</fullName>
+                <controllingFieldValues>1.1: ICP reflects strong partner church vision and values.</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 1.1.3</fullName>
+                <controllingFieldValues>1.1: ICP reflects strong partner church vision and values.</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 1.2.1</fullName>
+                <controllingFieldValues>1.2: Pastor and recognized church leaders are engaged in ministry to children.</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 1.2.2</fullName>
+                <controllingFieldValues>1.2: Pastor and recognized church leaders are engaged in ministry to children.</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 1.2.3</fullName>
+                <controllingFieldValues>1.2: Pastor and recognized church leaders are engaged in ministry to children.</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 1.3.1</fullName>
+                <controllingFieldValues>1.3: Church has an accountability system in place that has a meaningful role in influencing and overseeing the program.</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 1.3.2</fullName>
+                <controllingFieldValues>1.3: Church has an accountability system in place that has a meaningful role in influencing and overseeing the program.</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 1.3.3</fullName>
+                <controllingFieldValues>1.3: Church has an accountability system in place that has a meaningful role in influencing and overseeing the program.</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 2.1.1</fullName>
+                <controllingFieldValues>2.1: ICP Recruits needed quality and quantity of staff and volunteers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 2.1.2</fullName>
+                <controllingFieldValues>2.1: ICP Recruits needed quality and quantity of staff and volunteers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 2.1.3</fullName>
+                <controllingFieldValues>2.1: ICP Recruits needed quality and quantity of staff and volunteers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 2.2.1</fullName>
+                <controllingFieldValues>2.2: Contributes facilities and financial support to the ministry to children and caregivers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 2.2.2</fullName>
+                <controllingFieldValues>2.2: Contributes facilities and financial support to the ministry to children and caregivers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 2.2.3</fullName>
+                <controllingFieldValues>2.2: Contributes facilities and financial support to the ministry to children and caregivers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 2.3.1</fullName>
+                <controllingFieldValues>2.3: Mobilizes community resources to support the ministry to children</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 2.3.2</fullName>
+                <controllingFieldValues>2.3: Mobilizes community resources to support the ministry to children</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 2.3.3</fullName>
+                <controllingFieldValues>2.3: Mobilizes community resources to support the ministry to children</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 3.1.1</fullName>
+                <controllingFieldValues>3.1: Addresses Outcomes and standards of the Partnership Agreement effectively</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 3.1.2</fullName>
+                <controllingFieldValues>3.1: Addresses Outcomes and standards of the Partnership Agreement effectively</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 3.1.3</fullName>
+                <controllingFieldValues>3.1: Addresses Outcomes and standards of the Partnership Agreement effectively</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 3.2.1</fullName>
+                <controllingFieldValues>3.2: Makes and implements effective annual plans</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 3.2.2</fullName>
+                <controllingFieldValues>3.2: Makes and implements effective annual plans</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 3.2.3</fullName>
+                <controllingFieldValues>3.2: Makes and implements effective annual plans</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 3.3.1</fullName>
+                <controllingFieldValues>3.3: Implements curriculum effectively</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 3.3.2</fullName>
+                <controllingFieldValues>3.3: Implements curriculum effectively</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 3.3.3</fullName>
+                <controllingFieldValues>3.3: Implements curriculum effectively</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 4.1.1</fullName>
+                <controllingFieldValues>4.1: Advocates for children and caregivers by engaging multiple stakeholders in the church and community with the program and on behalf of children</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 4.1.2</fullName>
+                <controllingFieldValues>4.1: Advocates for children and caregivers by engaging multiple stakeholders in the church and community with the program and on behalf of children</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 4.1.3</fullName>
+                <controllingFieldValues>4.1: Advocates for children and caregivers by engaging multiple stakeholders in the church and community with the program and on behalf of children</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 4.2.1</fullName>
+                <controllingFieldValues>4.2: Demonstrates ongoing learning and improvement in the management of the overall childrens ministry</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 4.2.2</fullName>
+                <controllingFieldValues>4.2: Demonstrates ongoing learning and improvement in the management of the overall childrens ministry</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 4.2.3</fullName>
+                <controllingFieldValues>4.2: Demonstrates ongoing learning and improvement in the management of the overall childrens ministry</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 4.3.1</fullName>
+                <controllingFieldValues>4.3: Mobilizes technical assistance and financial resources independently of Compassion</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 4.3.2</fullName>
+                <controllingFieldValues>4.3: Mobilizes technical assistance and financial resources independently of Compassion</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Measure 4.3.3</fullName>
+                <controllingFieldValues>4.3: Mobilizes technical assistance and financial resources independently of Compassion</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Measurement_Label__c</fullName>
+        <description>This field holds the value of the measurement label</description>
+        <externalId>false</externalId>
+        <label>Measurement Label</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Outcome_Number__c</fullName>
+        <description>This picklist value indicates the outcome number of the measurement label</description>
+        <externalId>false</externalId>
+        <label>Outcome Number</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1: Demonstrate Effective Vision and Leadership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2: Mobilize Resources</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3: Establishes efficient structures and management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4: Reflects local ownership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sorting_Number__c</fullName>
+        <description>This field value indicates the sorting number of the record. It assists in displaying the measure label accurately on the PMAT Form</description>
+        <externalId>false</externalId>
+        <formula>VALUE( SUBSTITUTE(( SUBSTITUTE(TEXT( Measure_Number__c ), &apos;Measure &apos;, &apos;&apos;)  ), &apos;.&apos;, &apos;&apos;) + CASE( Text_Position__c , &apos;Developing Partnership Stage Text&apos;, &apos;1&apos;, &apos;Established Partnership Stage Text&apos;, &apos;2&apos;,&apos;Mature Partnership Stage Text&apos;, &apos;3&apos;, null) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sorting Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Text_Position__c</fullName>
+        <description>This picklist value indicates the text position of the measurement label within a measure</description>
+        <externalId>false</externalId>
+        <label>Text Position</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Developing Partnership Stage Text</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Established Partnership Stage Text</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mature Partnership Stage Text</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>PMAT Cluster Measure</label>
+    <nameField>
+        <displayFormat>CD-{00000}</displayFormat>
+        <label>Cluster Data 2 Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>PMAT Cluster Measures</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

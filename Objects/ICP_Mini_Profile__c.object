@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>BillingCity__c</fullName>
+        <description>This field capture the address of the ICP&apos;s Billing city information.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.BillingCity</formula>
+        <label>City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BillingCountry__c</fullName>
+        <description>This field capture the address of the ICP&apos;s Billing Country information.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.BillingCountry</formula>
+        <label>Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BillingPostalCode__c</fullName>
+        <description>Captures the postal code of the ICP.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.BillingPostalCode</formula>
+        <label>Zip/Postal Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BillingState__c</fullName>
+        <description>This field will capture the Billing State of the ICP address.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.BillingState</formula>
+        <label>State/Province</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BillingStreet__c</fullName>
+        <description>This field will capture teh billing street of the ICP</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.BillingStreet</formula>
+        <label>Street</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CDSP_Capacity__c</fullName>
+        <description>Number of Total CDSP slots available</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.CDSP_Capacity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The maximum number of center-based Sponsorship beneficiaries that this ICP could currently accommodate with existing staff and resources</inlineHelpText>
+        <label>Center Based Sponsorship Capacity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CSP_Capacity__c</fullName>
+        <description>This number signifies the maximum number of beneficiaries that can be registered under an ICP.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.CSP_Capacity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The maximum number of Survival beneficiaries that this ICP could accommodate with existing staff and resources – PLEASE NOTE THAT THIS DOES NOT GUARANTEE NEW OR ADDITIONAL FUNDING</inlineHelpText>
+        <label>Current Survival Capacity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Check_Record__c</fullName>
+        <externalId>false</externalId>
+        <formula>ICP__r.Check_Record__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Check Record</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Dev_Center_Name_English__c</fullName>
+        <description>Name of the Child Development Center in Latin / English characters.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Child_Dev_Center_Name_English__c</formula>
+        <inlineHelpText>Name of the Child Development Center in Latin / English characters. Actual translation is not needed</inlineHelpText>
+        <label>Child Dev Center Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Dev_Center_Name_Local_Language__c</fullName>
+        <description>Name of the Child Development Center in non-Latin / English characters (in case local alphabet uses non-Latin characters)</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Child_Dev_Center_Name_Local_Language__c</formula>
+        <inlineHelpText>Name of the Child Development Center in non-Latin / English characters (in case local alphabet uses non-Latin characters)</inlineHelpText>
+        <label>Child Dev Center Name (Non-Latin Char)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Church_Name_Local_Language__c</fullName>
+        <description>Name of the church partner in non-Latin / English characters (in case local alphabet uses non-Latin characters)</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Church_Name_Local_Language__c</formula>
+        <inlineHelpText>Name of the church partner in non-Latin / English characters (in case local alphabet uses non-Latin characters)</inlineHelpText>
+        <label>Account Name (Non-Latin Char)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closest_Major_City_Local_Language__c</fullName>
+        <description>Captures the name of the closest major city to this community in non-Latin / English characters (in case local alphabet uses non-Latin characters).</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Closest_Major_City_Local_Language__c</formula>
+        <inlineHelpText>Enter the name of the closest major city to this community in non-Latin / English characters (in case local alphabet uses non-Latin characters)</inlineHelpText>
+        <label>Closest Major City (Non-Latin Char)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closest_Major_City__c</fullName>
+        <description>Captures the name of the closest major city to this community in Latin / English characters.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Closest_Major_City__c</formula>
+        <inlineHelpText>Enter the name of the closest major city to this community in Latin / English characters. Actual translation is not needed</inlineHelpText>
+        <label>Closest Major City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cluster__c</fullName>
+        <description>Field that captures the unique Cluster Id to identify each cluster independently</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Cluster__r.Name</formula>
+        <inlineHelpText>Automated - Geographical area in which the ICP is located</inlineHelpText>
+        <label>ICP Cluster</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Community_Name_Local_Language__c</fullName>
+        <description>This field will capture the name of the community in which the ICP is located in non-Latin / English characters (in case local alphabet uses non-Latin characters)</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Community_Name_Local_Language__c</formula>
+        <inlineHelpText>Enter the name of the community in which the ICP is located in non-Latin / English characters (in case local alphabet uses non-Latin characters)</inlineHelpText>
+        <label>Community Name (Non-Latin Char)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Community_Name__c</fullName>
+        <description>Enter Community name of the lead.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Community_Name__c</formula>
+        <inlineHelpText>Enter the name of the community in which the ICP is located in Latin / English characters. Actual translation is not needed</inlineHelpText>
+        <label>Community Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Beneficiary_Count__c</fullName>
+        <description>This field auto populates number of beneficiaries under the ICP, by summing up CSP and CDSP beneficiary count.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Current_Beneficiary_Count__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automated - The total number of beneficiaries registered at this ICP (Survival + Sponsorship)</inlineHelpText>
+        <label>Current Beneficiary Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax__c</fullName>
+        <description>This field will capture the Fax number of the ICP</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Fax</formula>
+        <inlineHelpText>Fax number of the ICP</inlineHelpText>
+        <label>Fax</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Office__c</fullName>
+        <description>This field populates Field Office value for ICP account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - Compassion Office responsible for overseeing this Territory.</inlineHelpText>
+        <label>Field Office</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Home_Based_Sponsorship_Beneficiaries__c</fullName>
+        <description>This is the current number of CDSP Home Based Beneficiaries enrolled with ICP.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Home_Based_Sponsorship_Beneficiaries__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automated – Number of registered home-based beneficiaries at this ICP funded through Sponsorship</inlineHelpText>
+        <label>Home Based Sponsorship Beneficiaries</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Home_Based_Sponsorship_Capacity__c</fullName>
+        <description>The maximum number of home-based Sponsorship beneficiaries that this ICP could currently accommodate with existing staff and resources</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Home_Based_Sponsorship_Capacity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The maximum number of home-based Sponsorship beneficiaries that this ICP could currently accommodate with existing staff and resources</inlineHelpText>
+        <label>Home Based Sponsorship Capacity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Unique Identifier for the ICP restricted to 5 characters.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Automated - The unique identifier assigned to this ICP when it was a Lead</inlineHelpText>
+        <label>ICP ID</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_Status__c</fullName>
+        <description>Field that represents the current status of Church Partner.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The status of Compassion&apos;s partnership relationship with this ICP</inlineHelpText>
+        <label>ICP Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suspended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transitioned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phase Out</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ICP__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field will associate ICP mini profile to Account.</description>
+        <externalId>false</externalId>
+        <label>ICP</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Other ICPs Detail</relationshipLabel>
+        <relationshipName>ICP_Mini_Profiles</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Implemented_Programs__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( INCLUDES ( ICP__r.Implemented_Programs__c , &quot;Survival&quot; ), &quot;Survival;&quot;,null ) &amp;
+IF ( INCLUDES ( ICP__r.Implemented_Programs__c , &quot;Center Based Sponsorship&quot; ), &quot;Center Based Sponsorship;&quot;,null) &amp; IF ( INCLUDES ( ICP__r.Implemented_Programs__c , &quot;Home Based Sponsorship&quot; ), &quot;Home Based Sponsorship;&quot;,null)</formula>
+        <inlineHelpText>Choose all that apply - The holistic child development programs that are implemented at this ICP</inlineHelpText>
+        <label>Implemented Programs</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Of_CDSP_Beneficiaries__c</fullName>
+        <description>This is the current number of CDSP Beneficiaries enrolled with ICP.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.No_Of_CDSP_Beneficiaries__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automated – Number of registered center-based beneficiaries at this ICP funded through Sponsorship</inlineHelpText>
+        <label>Center Based Sponsorship Beneficiaries</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Of_CSP_Beneficiaries__c</fullName>
+        <description>This field tells us the current CSP Beneficiaries enrolled with ICP</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.No_Of_CSP_Beneficiaries__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automated – Number of registered beneficiaries at this ICP funded by a Child Survival Grant</inlineHelpText>
+        <label>Survival Beneficiaries</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PersonEmail__c</fullName>
+        <description>This field will capture the main email address</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.PersonContact.Email</formula>
+        <inlineHelpText>Main email address</inlineHelpText>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <description>Captures the main phone number.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Phone</formula>
+        <inlineHelpText>Main phone number</inlineHelpText>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Territory__c</fullName>
+        <description>This field fetches Territory name for ICP account.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.Territory__c</formula>
+        <inlineHelpText>Automated - Geographical unit to which this Cluster belongs. Territory must have already been defined under Field Hierarchy</inlineHelpText>
+        <label>Territory</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Other ICPs Detail</label>
+    <listViews>
+        <fullName>All_ICPs</fullName>
+        <columns>ICP_ID__c</columns>
+        <columns>NAME</columns>
+        <columns>Field_Office__c</columns>
+        <columns>Phone__c</columns>
+        <columns>PersonEmail__c</columns>
+        <columns>Cluster__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Check_Record__c</field>
+            <operation>equals</operation>
+            <value>Other ICP</value>
+        </filters>
+        <label>All ICPs</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allPartnerUsers></allPartnerUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Account Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Other ICPs</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

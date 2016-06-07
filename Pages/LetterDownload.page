@@ -1,0 +1,40 @@
+<!--************************************************************************
+*Page Name          : LetterDownload
+*Description        : VisualForce page for Communication letter download. 
+*Created By         : Akashdeep Vinnakota
+*Created On         : 10-Sep-2015 
+********************************************************************************-->
+<apex:page showChat="false" controller="LetterDownloadExtension" showHeader="false" sidebar="false">
+<apex:includeScript value="{!URLFOR($Resource.Down, '/download.js')}" />
+<apex:includeScript value="{!URLFOR($Resource.jQuery2, 'js/jquery-1.6.2.min.js')}"/>  
+    <script>
+      $(document).ready(function()
+      {
+          var urlVar = $(location).attr('href');
+          var contentId;
+          var secondPart = urlVar.split("?");
+          var urlPart = secondPart[1];
+          var paramVal = urlPart.split("&");
+          for (var i = 0; i < paramVal.length; i++) {
+    
+                var firstPart = paramVal[i].split("=")[0];
+                var secondPart = paramVal[i].split("=")[1];
+                if (firstPart == "contentId") {
+                    contentId = secondPart;
+                }
+            }
+      }
+      );
+    
+    </script>
+    <apex:form id="form">
+        <apex:outputPanel layout="block" rendered="{!bShowLink}">
+            <!-- <apex:iframe src="data:{!sMIMEType};content-disposition:attachment;base64,{!sBlobFileStr}" width="100%" /> -->
+            <apex:image value="data:{!sMIMEType};base64,{!sBlobFileStr}" />
+            <br/>
+            
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!bShow}">
+            <apex:pageMessages /></apex:outputPanel>
+    </apex:form>
+</apex:page>

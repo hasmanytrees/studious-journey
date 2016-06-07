@@ -1,0 +1,238 @@
+<!--************************************************************************
+*Page Name          : CommunicationKitSearchPage
+*Description        : VisualForce page for the Print Portal Page. 
+*Created By         : Akashdeep Vinnakota
+*Created On         : 6-July-2015 
+********************************************************************************-->
+<apex:page tabStyle="Communication_Kit__c" Controller="CommunicationKitSearchPageController" >
+    
+    <script type="text/javascript">
+       
+       function selectAllCheckboxes(obj,receivedInputID)
+       {
+           var inputCheckBox = document.getElementsByTagName("input");                  
+            for(var i=0; i<inputCheckBox.length; i++)
+            {          
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1)
+                {                                     
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+       }
+       
+       function ClearSearch()
+       {
+           document.getElementById("chkbox").checked = false;
+       }
+       
+       function confirmPrint(bFlag)
+       {
+          if(bFlag == 'true')
+          {
+              alert('{!JSENCODE($Label.Print_Portal_Print_Message)}');
+          }
+       }
+       
+       function setFocusOnLoad() 
+       {
+       
+       }
+   </script>
+    
+    <apex:form >
+        
+        <apex:sectionHeader title="{!$Label.Print_Portal_Title}"/>
+        <apex:pageBlock >
+            
+            <apex:outputPanel id="PrintPortal">
+                
+                <apex:pageBlockSection columns="2">
+                    <apex:pageBlockSectionItem >
+                    <apex:outputLabel >{!$Label.Print_Portal_Record_Type}</apex:outputLabel>
+                    <apex:selectList value="{!sRecordType}" size="1" style="width:175px;">
+                        <apex:selectOptions value="{!lstCommKitRecordTypeNames}" ></apex:selectOptions>
+                        <apex:actionSupport action="{!reRenderDependentPanel}" event="onchange" status="status" reRender="PrintPortal"/>
+                    </apex:selectList>                     
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >{!$Label.Print_Portal_Print_Date}</apex:outputLabel>
+                    <apex:inputfield value="{!oUtilityObj.Print_Date__c}" required="false" style="width:175px;"/>
+                </apex:pageBlockSectionItem>                
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >{!$Label.Print_Portal_Print_Options}</apex:outputLabel>
+                    <apex:selectList value="{!sPrintOutput}"  size="1" style="width:175px;" disabled="{!bDisablePrintOption}">
+                        <apex:selectOptions value="{!lstPrintOptions}" />
+                    </apex:selectList> 
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >{!$Label.Print_Portal_Beneficiary}</apex:outputLabel>
+                    <apex:inputfield value="{!oUtilityObj.BEN_ID__c}" required="false" style="width:175px;"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel rendered="{!NOT(bDisableCommType)}">{!$Label.Print_Portal_Communication_Types}</apex:outputLabel>
+                    <apex:selectList value="{!sCorrType}"  size="1" style="width:175px;"  rendered="{!NOT(bDisableCommType)}">
+                        <apex:selectOptions value="{!lstCommunicationTypes}" ></apex:selectOptions>
+                    </apex:selectList>                                             
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >{!$Label.Print_Portal_ICP}</apex:outputLabel>
+                    <apex:inputText value="{!sUserInputICPs}" style="width:175px;"/>
+                </apex:pageBlockSectionItem>
+                                
+                <apex:pageBlockSectionItem rendered="{!NOT(bDependentPicklist)}">                
+                    <apex:outputLabel >{!$Label.Print_Portal_Status}</apex:outputLabel>
+                    <apex:selectList value="{!oUtilityObj.Status__c}" size="1">
+                        <apex:selectOptions value="{!lstCommKitStatusValues}" ></apex:selectOptions>                    
+                    </apex:selectList>
+                </apex:pageBlockSectionItem> 
+                <apex:pageBlockSectionItem rendered="{!bDependentPicklist}">
+                    <apex:outputLabel >{!$Label.Print_Portal_Status}</apex:outputLabel>                
+                    <apex:inputField value="{!oUtilityObj.Status__c}" />
+                </apex:pageBlockSectionItem>               
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >{!$Label.Print_Portal_Age_Group}</apex:outputLabel>
+                    <apex:selectList value="{!lstAgeGroup}" multiselect="true" size="3" style="width:175px;" >
+                        <apex:selectOptions value="{!lstAgeGroupValues}" />
+                    </apex:selectList>                                           
+                </apex:pageBlockSectionItem>
+                
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+            
+            <center>
+            <apex:commandButton title="Search" value="{!$Label.Print_Portal_Search_Button}" action="{!Search}" reRender="ResultBlock, MainTable" status="status" oncomplete="tableHandler();"  />
+            <apex:actionStatus id="status">
+                <apex:facet name="start">
+                    <div class="waitingSearchDiv" id="el_loading" style="background-color: #DCD6D6; height: 100%;width:100%; opacity:0.45 ; z-index:55;"> 
+                        <div class="waitingHolder" style="top: 250px;  align:center;opacity:0.65 ; z-index:78;">
+                            <img class="waitingImage" src="{!$Resource.Loading_New}"/>                      
+                        </div>
+                    </div>
+                </apex:facet>
+            </apex:actionStatus>   
+            
+            </center>
+        
+        
+        <apex:outputPanel id="ResultBlock" >
+            <apex:pageMessages />
+            
+            <apex:pageBlock rendered="{!bShowResTbl}">
+                <apex:actionFunction name="addId" action="{!addSetUpdateCommKit}">
+                    <apex:param name="firstParam" assignTo="{!sSelectedId}" value="" />
+                </apex:actionFunction>
+            <apex:pageBlockTable id="MainTable" value="{!lstResultList}" var="res" styleClass="dataTable">
+                
+                 <apex:column headerValue="{!$Label.Print_Portal_Select}">
+                    <apex:facet name="header">
+                        <apex:inputCheckbox value="{!bChecked}">
+                            <apex:actionSupport event="onchange" action="{!checkSelectAll}" reRender="ResultBlock" status="status"/>
+                        </apex:inputCheckbox>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!res.bIsSelected}">
+                        <apex:actionSupport event="onchange" action="{!addSetUpdateCommKit}" reRender="ResultBlock" status="status">
+                            <apex:param id="sSelectedId" name="sSelectedId" value="{!res.oCKRec.Id}"  assignTo="{!sSelectedId}"/>
+                        </apex:actionSupport>
+                    </apex:inputCheckbox>
+                </apex:column>
+                 <apex:column > 
+                    <apex:facet name="header">
+                        <apex:commandLink Value="{!$Label.Print_Portal_Communication_ID}" action="{!setSorting}" rerender="ResultBlock" status="status">
+                            <apex:param name="sortField" value="Name" assignTo="{!sSortField}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputLink target="_blank" value="/{!res.oCKRec.id}">
+                        <apex:outputText >{!res.oCKRec.Name}</apex:outputText>
+                    </apex:outputLink>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink Value="{!$Label.Print_Portal_ICP_ID}" action="{!setSorting}" rerender="ResultBlock" status="status">
+                            <apex:param name="sortField" value="BEN_Id__r.ICP__r.Name" assignTo="{!sSortField}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputText >{!res.oCKRec.BEN_Id__r.ICP__r.ICP_Id__c}</apex:outputText>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink Value="{!$Label.Print_Portal_Local_Beneficiary_ID}" action="{!setSorting}" rerender="ResultBlock" status="status">
+                            <apex:param name="sortField" value="BEN_Local_ID__c" assignTo="{!sSortField}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputLink target="_blank" value="/{!res.oCKRec.BEN_ID__c}">
+                        <apex:outputText >{!res.oCKRec.BEN_Local_ID__c}</apex:outputText>
+                    </apex:outputLink>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink Value="{!$Label.Print_Portal_Beneficiary_Name}" action="{!setSorting}" rerender="ResultBlock" status="status">
+                            <apex:param name="sortField" value="BEN_Id__r.Name" assignTo="{!sSortField}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputText >{!res.oCKRec.BEN_ID__r.Name}</apex:outputText>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink Value="{!$Label.Print_Portal_Record_Type}" action="{!setSorting}" rerender="ResultBlock" status="status">
+                            <apex:param name="sortField" value="RecordType.Name" assignTo="{!sSortField}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputText >{!res.oCKRec.RecordType.Name}</apex:outputText>
+                </apex:column>                   
+                <apex:column headerValue="{!$Label.Print_Portal_Communication_Types}">
+                    <apex:outputText >{!res.oCKRec.Communication_Types__c}</apex:outputText>
+                </apex:column>                    
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink Value="{!$Label.Print_Portal_Status}" action="{!setSorting}" rerender="ResultBlock" status="status">
+                            <apex:param name="sortField" value="Status__c" assignTo="{!sSortField}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputText >{!res.oCKRec.Status__c}</apex:outputText>
+                </apex:column> 
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink value="{!$Label.Print_Portal_Cognitive_Age_Group}" action="{!setSorting}" rerender="ResultBlock" status="status">
+                            <apex:param name="sortField" value="BEN_Id__r.Cognitive_Age_Group__c" assignTo="{!sSortField}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputText >{!res.oCKRec.BEN_Id__r.Cognitive_Age_Group__c}</apex:outputText>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:commandLink value="{!$Label.Print_Portal_Print_Date}" action="{!setSorting}" rerender="ResultBlock" status="status">
+                            <apex:param name="sortField" value="Print_Date__c" assignTo="{!sSortField}"/>
+                        </apex:commandLink>
+                    </apex:facet>
+                    <apex:outputText value="{0, date, MM'/'dd'/'YYYY}">
+                        <apex:param value="{!res.oCKRec.Print_Date__c}" /> 
+                    </apex:outputText>
+                </apex:column>         
+            </apex:pageBlockTable>
+            <apex:panelGrid columns="7">
+                <apex:commandButton status="status" reRender="ResultBlock" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page"/>
+                <apex:commandButton status="status" reRender="ResultBlock" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page"/>
+                <apex:commandButton status="status" reRender="ResultBlock" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page"/>
+                <apex:commandButton status="status" reRender="ResultBlock" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page"/>
+                <apex:outputText >{!(pageNumber * size)+1-size}-{!IF((pageNumber * size)>noOfRecords, noOfRecords,(pageNumber * size))} of {!noOfRecords}</apex:outputText>
+                <apex:commandButton status="status" reRender="ResultBlock" value="Refresh" action="{!refresh}" title="Refresh Page"/>
+            </apex:panelGrid>
+            <br/><br/>
+          <center>
+              <apex:commandButton status="status" value="{!$Label.Print_Portal_Print_Button}" action="{!getID}"  rerender="ResultBlock" />
+          </center>
+          </apex:pageBlock>
+        </apex:outputPanel>
+            
+         </apex:pageBlock>
+         
+      </apex:form>
+     
+    
+</apex:page>

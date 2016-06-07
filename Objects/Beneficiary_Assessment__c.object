@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>CDPRAssessmentEditViewPage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>CDPRAssessment</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>CDPRAssessmentEditViewPage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is created to capture assessment reports under beneficiary.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Assessment_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Completion Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Beneficiary__c</fullName>
+        <externalId>false</externalId>
+        <label>Beneficiary</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Sponsorship Beneficiary</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Survival Beneficiary</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Beneficiary Assessments</relationshipLabel>
+        <relationshipName>Beneficiary_Assessments</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Cognitive_Outcome_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Cognitive Outcome Score</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Height__c</fullName>
+        <description>Health Assessment Question</description>
+        <externalId>false</externalId>
+        <label>Height (Cm)</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Assessment_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Assessment Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Physical_Outcome_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Physical Outcome Score</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Socio_emotional_Outcome_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Socio-emotional Outcome Score</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Spiritual_Outcome_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Spiritual Outcome Score</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Next_Assessment_Due_Date__c &lt; TODAY(),
+IMAGE(&quot;/img/samples/flag_red.gif&quot;,&quot;Red&quot;),
+IMAGE ( &quot;/img/samples/flag_green.gif&quot;,&quot;Green&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Weight__c</fullName>
+        <externalId>false</externalId>
+        <label>Weight (Kg)</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Beneficiary Assessment</label>
+    <nameField>
+        <label>Beneficiary Assessment Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Beneficiary Assessments</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>CDPR</fullName>
+        <active>true</active>
+        <description>This record type is used to capture Beneficiary Assessments related to Child Development Progress Report</description>
+        <label>CDPR</label>
+        <picklistValues>
+            <picklist>Cognitive_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Physical_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Socio_emotional_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Spiritual_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Development_Plan</fullName>
+        <active>true</active>
+        <description>This record type is used to capture the beneficiary’s Development Plan.</description>
+        <label>Development Plan</label>
+        <picklistValues>
+            <picklist>Cognitive_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Physical_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Socio_emotional_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Spiritual_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Growth_Monitoring</fullName>
+        <active>true</active>
+        <description>This record type is used to capture monthly height and weight for Home-Based beneficiaries (which populate WHO Malnutrition levels).</description>
+        <label>Monthly Growth Monitoring</label>
+        <picklistValues>
+            <picklist>Cognitive_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Physical_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Socio_emotional_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Spiritual_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Health_Assessment</fullName>
+        <active>true</active>
+        <description>This record type is used to capture beneficiary health assessment height and weight data (which populate WHO Malnutrition levels).  Attaching the actual health assessment document is optional.</description>
+        <label>Health Assessment</label>
+        <picklistValues>
+            <picklist>Cognitive_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Physical_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Socio_emotional_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Spiritual_Outcome_Score__c</picklist>
+            <values>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant Development Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Some Development Needed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Assessment_Name_and_Date_Mandatory</fullName>
+        <active>true</active>
+        <description>Beneficiary Assessment Name and Beneficiary Assessment Date should be mandatory</description>
+        <errorConditionFormula>!($Label.Disable_For_Data_Load==&apos;true&apos;) &amp;&amp; (RecordType.DeveloperName = &apos;Growth_Monitoring&apos; || RecordType.DeveloperName = &apos;Health_Assessment&apos;)&amp;&amp;(ISBLANK((Assessment_Completion_Date__c)) &amp;&amp; (ISBLANK(Name)))</errorConditionFormula>
+        <errorMessage>Assessment Completion Date and Beneficiary assessment Date cannot be blank</errorMessage>
+    </validationRules>
+</CustomObject>

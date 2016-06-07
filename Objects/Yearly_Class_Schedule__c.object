@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <comment>This button will open customized Yearly Class Page</comment>
+        <content>YearlyClassPage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <comment>This button will open customized Yearly Class Page</comment>
+        <content>YearlyClassPage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>This button will open customized Yearly Class Page</comment>
+        <content>YearlyClassPage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is used to schedule Yearly Class by a Tutor. This is the main object which is used for Beneficiaries Enrollment Page through which Beneficiaries are enrolled in class for next 12 months.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>BEN_Cognitive_Age_Group__c</fullName>
+        <description>Used to track the Age Group for which Yearly class is scheduled.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents classroom age group; usually is the same as actual age.</inlineHelpText>
+        <label>Cognitive Age Group</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0-2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3-5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6-8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9-11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12-14</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15-18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BEN_Program_Delivery__c</fullName>
+        <description>Program Delivery of Class</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one:
+Center Based = program delivered at ICP;
+Home Based = program delivered at home.</inlineHelpText>
+        <label>Program Delivery</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Home Based</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Center Based</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Class_Description__c</fullName>
+        <description>This field will contain description of the Scheduled Class</description>
+        <externalId>false</externalId>
+        <inlineHelpText>An optional description of the class providing more information (e.g. class location, specific goals, etc.</inlineHelpText>
+        <label>Class Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Class_Type__c</fullName>
+        <description>This field signifies type of Class. Its value is dependent on value selected in Program Type picklist.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The type of class being scheduled; The selection list is based on whether Center-based or Home-based was chosen for Program Type.</inlineHelpText>
+        <label>Class Type</label>
+        <picklist>
+            <controllingField>BEN_Program_Delivery__c</controllingField>
+            <picklistValues>
+                <fullName>Home Visits</fullName>
+                <controllingFieldValues>Home Based</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Group Activities</fullName>
+                <controllingFieldValues>Home Based</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Center-Based Class</fullName>
+                <controllingFieldValues>Center Based</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Field_Office_For_Sharing_Rule__c</fullName>
+        <description>This field will be used in sharing rule.</description>
+        <externalId>false</externalId>
+        <label>Field Office For Sharing Rule</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_ID__c</fullName>
+        <description>This field fetches ICP Id based on the selected ICP</description>
+        <externalId>false</externalId>
+        <formula>ICP_Name__r.ICP_Id__c</formula>
+        <label>ICP ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>ICP Related to Yearly Class Schedule</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup Field – Name of the church where the Beneficiary is registered.</inlineHelpText>
+        <label>ICP Name</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>ICP</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Classes</relationshipLabel>
+        <relationshipName>Classes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Starting_Month__c</fullName>
+        <description>Used to track the starting month for which Class Schedule is being created</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The month the class schedule should begin; The schedule will then consist of 12 months with this being the first.</inlineHelpText>
+        <label>Starting Month</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Jan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feb</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Apr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>May</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jun</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jul</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aug</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sep</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oct</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nov</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dec</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Tutor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to associate Yearly class schedule to a Tutor (ICP Contact)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup Field – Tutor or Implementer for the Child.</inlineHelpText>
+        <label>Tutor / Implementer</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.Role_At_ICP__c</field>
+                <operation>equals</operation>
+                <value>Tutor / Implementer</value>
+            </filterItems>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.ICP_Name__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Classes</relationshipLabel>
+        <relationshipName>Classes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <description>Used to track the year for which Class Schedule is being created</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The year in which the class is being scheduled</inlineHelpText>
+        <label>Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2019</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2020</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2021</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2022</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2023</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2024</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2025</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2026</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2027</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2028</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2029</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2030</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2031</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2032</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2033</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2034</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2035</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2036</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Class</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Tutor__c</columns>
+        <columns>Class_Type__c</columns>
+        <columns>BEN_Cognitive_Age_Group__c</columns>
+        <columns>Year__c</columns>
+        <columns>Starting_Month__c</columns>
+        <columns>ICP_ID__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Class Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Classes</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Tutor__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Class_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BEN_Cognitive_Age_Group__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Year__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Starting_Month__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ICP_ID__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Apex_Based_Sharing__c</fullName>
+        <label>Apex Based Sharing</label>
+    </sharingReasons>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

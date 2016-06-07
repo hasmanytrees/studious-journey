@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Notes</relationshipLabel>
+        <relationshipName>Notes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Activity Plan</label>
+        <referenceTo>Activity_Plan__c</referenceTo>
+        <relationshipLabel>Notes</relationshipLabel>
+        <relationshipName>Notes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Beneficiary_Class_Attendance__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Beneficiary Class Attendance</label>
+        <referenceTo>Beneficiary_Class_Attendance__c</referenceTo>
+        <relationshipLabel>Notes</relationshipLabel>
+        <relationshipName>Notes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Body__c</fullName>
+        <description>The text of the note</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The text of the note</inlineHelpText>
+        <label>Note</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Class</label>
+        <referenceTo>Yearly_Class_Schedule__c</referenceTo>
+        <relationshipLabel>Notes</relationshipLabel>
+        <relationshipName>Notes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Content__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Content</label>
+        <referenceTo>Content__c</referenceTo>
+        <relationshipLabel>Notes</relationshipLabel>
+        <relationshipName>Notes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Field_Hierarchy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Field Hierarchy</label>
+        <referenceTo>PM_Hierarchy__c</referenceTo>
+        <relationshipLabel>Notes</relationshipLabel>
+        <relationshipName>Notes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Global_Data__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Global Data</label>
+        <referenceTo>Global_Data__c</referenceTo>
+        <relationshipLabel>Notes</relationshipLabel>
+        <relationshipName>Notes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ICP_Lifecycle_Events__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>ICP Lifecycle Events</label>
+        <referenceTo>ICP_Lifecycle_Events__c</referenceTo>
+        <relationshipLabel>Notes</relationshipLabel>
+        <relationshipName>Notes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Notes</relationshipLabel>
+        <relationshipName>Notes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Needs_Association__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Needs Association</label>
+        <referenceTo>Needs_Association__c</referenceTo>
+        <relationshipLabel>Notes</relationshipLabel>
+        <relationshipName>Notes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Notes</relationshipLabel>
+        <relationshipName>Notes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>For Visible to All only – select a reason for the note</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For Visible to All only – select a reason for the note</inlineHelpText>
+        <label>Type</label>
+        <picklist>
+            <controllingField>Visibility__c</controllingField>
+            <picklistValues>
+                <fullName>Photo Explanation</fullName>
+                <controllingFieldValues>All (Global Partners)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Education Explanation</fullName>
+                <controllingFieldValues>All (Global Partners)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Life Event</fullName>
+                <controllingFieldValues>All (Global Partners)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Profile Revision (Age, Name, Birthday, Gender)</fullName>
+                <controllingFieldValues>All (Global Partners)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health Explanation</fullName>
+                <controllingFieldValues>All (Global Partners)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <controllingFieldValues>All (Global Partners)</controllingFieldValues>
+                <controllingFieldValues>ICP and Field Office</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Visibility__c</fullName>
+        <description>Who can see this note</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Who can see this note</inlineHelpText>
+        <label>Visible To</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ICP Only</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field Office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP and Field Office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>All (Global Partners)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Note</label>
+    <nameField>
+        <label>Title</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Notes</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Account</fullName>
+        <active>true</active>
+        <label>Account</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Education Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Life Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Explanation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Profile Revision %28Age%2C Name%2C Birthday%2C Gender%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Visibility__c</picklist>
+            <values>
+                <fullName>All %28Global Partners%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Only</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>ICP and Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Activity_Plan</fullName>
+        <active>true</active>
+        <label>Activity Plan</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Education Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Life Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Explanation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Profile Revision %28Age%2C Name%2C Birthday%2C Gender%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Visibility__c</picklist>
+            <values>
+                <fullName>All %28Global Partners%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Only</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>ICP and Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Beneficiary_Class_Attendance</fullName>
+        <active>true</active>
+        <label>Beneficiary Class Attendance</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Education Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Life Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Explanation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Profile Revision %28Age%2C Name%2C Birthday%2C Gender%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Visibility__c</picklist>
+            <values>
+                <fullName>All %28Global Partners%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Only</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>ICP and Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Class</fullName>
+        <active>true</active>
+        <label>Class</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Education Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Life Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Explanation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Profile Revision %28Age%2C Name%2C Birthday%2C Gender%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Visibility__c</picklist>
+            <values>
+                <fullName>All %28Global Partners%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Only</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>ICP and Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Content</fullName>
+        <active>true</active>
+        <label>Content</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Education Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Life Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Explanation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Profile Revision %28Age%2C Name%2C Birthday%2C Gender%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Visibility__c</picklist>
+            <values>
+                <fullName>All %28Global Partners%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Only</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>ICP and Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Field_Hierarchy</fullName>
+        <active>true</active>
+        <label>Field Hierarchy</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Education Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Life Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Explanation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Profile Revision %28Age%2C Name%2C Birthday%2C Gender%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Visibility__c</picklist>
+            <values>
+                <fullName>All %28Global Partners%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Only</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>ICP and Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Global_Data</fullName>
+        <active>true</active>
+        <label>Global Data</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Education Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Life Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Explanation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Profile Revision %28Age%2C Name%2C Birthday%2C Gender%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Visibility__c</picklist>
+            <values>
+                <fullName>All %28Global Partners%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Only</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>ICP and Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ICP_Lifecycle_Events</fullName>
+        <active>true</active>
+        <label>ICP Lifecycle Events</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Education Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Life Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Explanation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Profile Revision %28Age%2C Name%2C Birthday%2C Gender%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Visibility__c</picklist>
+            <values>
+                <fullName>All %28Global Partners%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Only</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>ICP and Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Lead</fullName>
+        <active>true</active>
+        <label>Lead</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Education Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Life Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Explanation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Profile Revision %28Age%2C Name%2C Birthday%2C Gender%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Visibility__c</picklist>
+            <values>
+                <fullName>All %28Global Partners%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Only</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>ICP and Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Needs_Association</fullName>
+        <active>true</active>
+        <label>Needs Association</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Education Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Life Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Explanation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Profile Revision %28Age%2C Name%2C Birthday%2C Gender%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Visibility__c</picklist>
+            <values>
+                <fullName>All %28Global Partners%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Only</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>ICP and Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Opportunity</fullName>
+        <active>true</active>
+        <label>Opportunity</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Education Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Explanation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Life Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Explanation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Profile Revision %28Age%2C Name%2C Birthday%2C Gender%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Visibility__c</picklist>
+            <values>
+                <fullName>All %28Global Partners%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Only</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>ICP and Field Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>ICPUsers_Validation_when_Visibility_isFO</fullName>
+        <active>true</active>
+        <description>ICP users cannot select Visibility = Field Office</description>
+        <errorConditionFormula>ISPICKVAL(Visibility__c, &apos;Field Office&apos;) &amp;&amp; $User.Is_Icp_User__c</errorConditionFormula>
+        <errorMessage>Please select a different value for Visible To</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Validation_when_Type_is_Other</fullName>
+        <active>true</active>
+        <description>Type = ‘Other’ can be selected by users only when Visible To = ‘All(Global Partners)’</description>
+        <errorConditionFormula>IF(OR( $Profile.Name =  &apos;System Administrator&apos; , $Profile.Name= &apos;Web to Lead Profile&apos;), False, AND(ISPICKVAL(Type__c, &apos;Other&apos;) ,(ISPICKVAL(Visibility__c, &apos;ICP and Field Office&apos;))))</errorConditionFormula>
+        <errorMessage>Type = ‘Other’ can be selected only when Visible To is ‘All(Global Partners)’</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Validation_when_Visibility_is_ICP_Only</fullName>
+        <active>true</active>
+        <description>Field users cannot select Visibility = ICP Only</description>
+        <errorConditionFormula>ISPICKVAL(Visibility__c, &apos;ICP Only&apos;) &amp;&amp;   NOT($User.Is_Icp_User__c)</errorConditionFormula>
+        <errorMessage>Please select a different value for Visible To</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Note</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Note</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/apex.js&quot;)}
+window.$Label = window.$Label || {};
+
+var full_URL = parent.location.href; //String to capture the current Page URL
+var isICP = sforce.connection.query(&quot;SELECT IsPortalEnabled FROM User where id=&apos;{!$User.Id}&apos; limit 1&quot;); 
+var isPortal = isICP.getArray(&quot;records&quot;); 
+var isPortaluser = isPortal[0].IsPortalEnabled;
+var str_URL;
+var str_URL1;
+var str_URL2;
+
+var result = sforce.connection.describeSObjects([&quot;Note__c&quot;]); 
+var NoteObject = result[0].keyPrefix; //Custom note object id
+var NoteObjId;
+
+	if(isPortaluser == &apos;false&apos;)
+	{
+	NoteObjId = NoteObject;
+	str_URL = full_URL.indexOf(&quot;m/&quot;); 
+	str_URL1 = full_URL.substr(str_URL+2,3); //To fetch only the Id from URL
+	}
+	else
+	{
+	NoteObjId = &apos;ICPPortal/&apos;+NoteObject;
+
+	str_URL = full_URL.indexOf(&quot;Portal&quot;); 
+	str_URL1 = full_URL.substr(str_URL+7,3); //To fetch only the Id from URL
+	}
+
+var redirect_URL;
+
+
+		if(&apos;{!$ObjectType.Lead}&apos; == str_URL1)
+		{
+			var LdName = &apos;{!Lead.Name}&apos;;
+			var LdId = &apos;{!Lead.Id}&apos;;
+
+			var LeadRecType = sforce.connection.query(&quot;Select ID From RecordType where Name =&apos;Lead&apos; and SobjectType =&apos;Note__c&apos; limit 1&quot;); 
+			var records = LeadRecType.getArray(&quot;records&quot;); 
+			var LeadRecTypeId = records[0].Id; 
+
+			redirect_URL = &quot;/&quot;+NoteObjId+&quot;/e?&amp;RecordType=&quot;+LeadRecTypeId+&quot;&amp;CF00N1600000F8EyP=&quot;+LdName+&quot;&amp;CF00N1600000F8EyP_lkid=&quot;+LdId+&quot;&amp;retURL=&quot;+LdId;
+
+		} 
+		else if(&apos;001&apos; == str_URL1)
+		{
+			var AccountName = &apos;{!Account.Name}&apos;;
+			var AccountId = &apos;{!Account.Id}&apos;;
+
+			var AccRecType = sforce.connection.query(&quot;Select ID From RecordType where Name =&apos;Account&apos; and SobjectType =&apos;Note__c&apos; limit 1&quot;); 
+			var Accrecords = AccRecType.getArray(&quot;records&quot;); 
+			var AccRecTypeId = Accrecords[0].Id; 
+
+
+			if(isPortaluser == &apos;false&apos;)
+				{
+				redirect_URL = &quot;/&quot;+NoteObjId+&quot;/e?&amp;RecordType=&quot;+AccRecTypeId+&quot;&amp;CF00N1600000F8EyG=&quot;+AccountName+&quot;&amp;CF00N1600000F8EyG_lkid=&quot;+AccountId+&quot;&amp;retURL=&quot;+AccountId;  
+				}
+			else
+				{
+				redirect_URL = &quot;/&quot;+NoteObjId+&quot;/e?&amp;RecordType=&quot;+AccRecTypeId+&quot;&amp;CF00N1600000F8EyG=&quot;+AccountName+&quot;&amp;CF00N1600000F8EyG_lkid=&quot;+AccountId+&quot;&amp;retURL=/ICPPortal/&quot;+AccountId; 
+				}
+
+		 
+		}
+
+		else if(&apos;{!$ObjectType.ICP_Lifecycle_Events__c}&apos; == str_URL1)
+			{
+			var ICPLCName = &apos;{!ICP_Lifecycle_Events__c.Name}&apos;;
+			var ICPLCId = &apos;{!ICP_Lifecycle_Events__c.Id}&apos;;
+
+			var ICPRecType = sforce.connection.query(&quot;Select ID From RecordType where Name =&apos;ICP Lifecycle Events&apos; and SobjectType =&apos;Note__c&apos; limit 1&quot;); 
+			var ICPrecords = ICPRecType.getArray(&quot;records&quot;); 
+			var ICPRecTypeId = ICPrecords[0].Id; 
+
+			redirect_URL = &quot;/&quot;+NoteObjId+&quot;/e?&amp;RecordType=&quot;+ICPRecTypeId+&quot;&amp;CF00N1600000F8EyO=&quot;+ICPLCName+&quot;&amp;CF00N1600000F8EyO_lkid=&quot;+ICPLCId+&quot;&amp;retURL=&quot;+ICPLCId;
+
+		}
+		else if(&apos;{!$ObjectType.Content__c}&apos; == str_URL1)
+		{
+			var ConName = &apos;{!Content__c.Name}&apos;;
+			var ConId = &apos;{!Content__c.Id}&apos;;
+
+			var ConRecType = sforce.connection.query(&quot;Select ID From RecordType where Name =&apos;Content&apos; and SobjectType =&apos;Note__c&apos; limit 1&quot;); 
+			var Conrecords = ConRecType.getArray(&quot;records&quot;); 
+			var ConRecTypeId = Conrecords[0].Id; 
+
+
+			redirect_URL = &quot;/&quot;+NoteObjId+&quot;/e?&amp;RecordType=&quot;+ConRecTypeId+&quot;&amp;CF00N1600000F8EyL=&quot;+ConName+&quot;&amp;CF00N1600000F8EyL_lkid=&quot;+ConId+&quot;&amp;retURL=&quot;+ConId;
+
+		}
+
+			else if(&apos;{!$ObjectType.Activity_Plan__c}&apos; == str_URL1)
+			{
+			var APName = &apos;{!Activity_Plan__c.Name}&apos;;
+			var APId = &apos;{!Activity_Plan__c.Id}&apos;;
+
+			var APRecType = sforce.connection.query(&quot;Select ID From RecordType where Name =&apos;Activity Plan&apos; and SobjectType =&apos;Note__c&apos; limit 1&quot;); 
+			var APrecords = APRecType.getArray(&quot;records&quot;); 
+			var APRecTypeId = APrecords[0].Id; 
+
+			redirect_URL = &quot;/&quot;+NoteObjId+&quot;/e?&amp;RecordType=&quot;+APRecTypeId+&quot;&amp;CF00N1600000F8EyH=&quot;+APName+&quot;&amp;CF00N1600000F8EyH_lkid=&quot;+APId+&quot;&amp;retURL=&quot;+APId;
+
+		}
+
+		else if(&apos;{!$ObjectType.Beneficiary_Class_Attendance__c}&apos; == str_URL1)
+		{
+			var BCAName = &apos;{!Beneficiary_Class_Attendance__c.Name}&apos;;
+			var BCAId = &apos;{!Beneficiary_Class_Attendance__c.Id}&apos;;
+
+			var BCARecType = sforce.connection.query(&quot;Select ID From RecordType where Name =&apos;Beneficiary Class Attendance&apos; and SobjectType =&apos;Note__c&apos; limit 1&quot;); 
+			var BCArecords = BCARecType.getArray(&quot;records&quot;); 
+			var BCARecTypeId = BCArecords[0].Id; 
+
+			redirect_URL = &quot;/&quot;+NoteObjId+&quot;/e?&amp;RecordType=&quot;+BCARecTypeId+&quot;&amp;CF00N1600000F8EyI=&quot;+BCAName+&quot;&amp;CF00N1600000F8EyI_lkid=&quot;+BCAId+&quot;&amp;retURL=&quot;+BCAId;
+		}
+
+		else if(&apos;{!$ObjectType.PM_Hierarchy__c}&apos; == str_URL1)
+		{
+			var FHName = &apos;{!PM_Hierarchy__c.Name}&apos;;
+			var FHId = &apos;{!PM_Hierarchy__c.Id}&apos;;
+
+			var FHRecType = sforce.connection.query(&quot;Select ID From RecordType where Name =&apos;Field Hierarchy&apos; and SobjectType =&apos;Note__c&apos; limit 1&quot;); 
+			var FHrecords = FHRecType.getArray(&quot;records&quot;); 
+			var FHRecTypeId = FHrecords[0].Id; 
+
+			redirect_URL = &quot;/&quot;+NoteObjId+&quot;/e?&amp;RecordType=&quot;+FHRecTypeId+&quot;&amp;CF00N1600000F8EyM=&quot;+FHName+&quot;&amp;CF00N1600000F8EyM_lkid=&quot;+FHId+&quot;&amp;retURL=&quot;+FHId;  
+		}
+
+		else if(&apos;{!$ObjectType.Global_Data__c}&apos; == str_URL1)
+		{
+			var GDName = &apos;{!Global_Data__c.Name}&apos;;
+			var GDId = &apos;{!Global_Data__c.Id}&apos;;
+
+			var GDRecType = sforce.connection.query(&quot;Select ID From RecordType where Name =&apos;Global Data&apos; and SobjectType =&apos;Note__c&apos; limit 1&quot;); 
+			var GDrecords = GDRecType.getArray(&quot;records&quot;); 
+			var GDRecTypeId = GDrecords[0].Id; 
+
+			redirect_URL = &quot;/&quot;+NoteObjId+&quot;/e?&amp;RecordType=&quot;+GDRecTypeId+&quot;&amp;CF00N1600000F8EyN=&quot;+GDName+&quot;&amp;CF00N1600000F8EyN_lkid=&quot;+GDId+&quot;&amp;retURL=&quot;+GDId;
+
+		}
+
+
+
+		else if(&apos;{!$ObjectType.Needs_Association__c}&apos; == str_URL1)
+		{
+			var NAName = &apos;{!Needs_Association__c.Name}&apos;;
+			var NAId = &apos;{!Needs_Association__c.Id}&apos;;
+
+			var NARecType = sforce.connection.query(&quot;Select ID From RecordType where Name =&apos;Needs Association&apos; and SobjectType =&apos;Note__c&apos; limit 1&quot;); 
+			var NArecords = NARecType.getArray(&quot;records&quot;); 
+			var NARecTypeId = NArecords[0].Id; 
+
+			redirect_URL = &quot;/&quot;+NoteObjId+&quot;/e?&amp;RecordType=&quot;+NARecTypeId+&quot;&amp;CF00N1600000F8EyQ=&quot;+NAName+&quot;&amp;CF00N1600000F8EyQ_lkid=&quot;+NAId+&quot;&amp;retURL=&quot;+NAId;
+
+		}
+
+		else if(&apos;{!$ObjectType.Yearly_Class_Schedule__c}&apos; == str_URL1)
+		{
+			var ClassName = &apos;{!Yearly_Class_Schedule__c.Name}&apos;;
+			var ClassId = &apos;{!Yearly_Class_Schedule__c.Id}&apos;;
+
+			var ClassRecType = sforce.connection.query(&quot;Select ID From RecordType where Name =&apos;Class&apos; and SobjectType =&apos;Note__c&apos; limit 1&quot;); 
+			var Classrecords = ClassRecType.getArray(&quot;records&quot;); 
+			var ClassRecTypeId = Classrecords[0].Id; 
+
+			redirect_URL = &quot;/&quot;+NoteObjId+&quot;/e?&amp;RecordType=&quot;+ClassRecTypeId+&quot;&amp;CF00N1600000F8EyK=&quot;+ClassName+&quot;&amp;CF00N1600000F8EyK_lkid=&quot;+ClassId+&quot;&amp;retURL=&quot;+ClassId;
+
+		}
+
+		else if(&apos;{!$ObjectType.Opportunity}&apos; == str_URL1)
+		{
+			var OpName = &apos;{!Opportunity.Name}&apos;;
+			var OpId = &apos;{!Opportunity.Id}&apos;;
+
+			var OpRecType = sforce.connection.query(&quot;Select ID From RecordType where Name =&apos;Opportunity&apos; and SobjectType =&apos;Note__c&apos; limit 1&quot;); 
+			var Oprecords = OpRecType.getArray(&quot;records&quot;); 
+			var OpRecTypeId = Oprecords[0].Id; 
+
+			redirect_URL = &quot;/&quot;+NoteObjId+&quot;/e?&amp;RecordType=&quot;+OpRecTypeId+&quot;&amp;CF00N1600000F8EyR=&quot;+OpName+&quot;&amp;CF00N1600000F8EyR_lkid=&quot;+OpId+&quot;&amp;retURL=&quot;+OpId;
+
+		}
+
+top.location.href= redirect_URL;</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,5 @@
+<apex:page standardController="Account">
+    <apex:form rendered="{!IF(Account.Church_Name_Local_Language__c != null, true, false)}">
+        <b style="font-size: 200%;color:black;"><apex:outputField value="{!Account.Church_Name_Local_Language__c}"/></b>
+    </apex:form>
+</apex:page>

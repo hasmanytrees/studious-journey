@@ -1,0 +1,164 @@
+<!--************************************************************************
+*Page Name          : ChooseDownloadType
+*Description        : VisualForce page for Choose Download Type Pop Up. 
+*Created By         : Akashdeep Vinnakota
+*Created On         : 10-Sep-2015 
+********************************************************************************-->
+<apex:page sidebar="false" showHeader="false" showChat="false" controller="ChooseDownloadTypeController">
+
+    <!-- Script Static Resource Start-->
+    <apex:includeScript value="{!URLFOR($Resource.jQuery2, 'js/jquery-1.6.2.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.jQuery2, 'js/jquery-ui-1.8.16.custom.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.jqPlugin, '/jquery.blockUI.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.Down, '/download.js')}" />
+    
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+    var Source;
+    function openDownloadPage() {
+        
+        var urlVar = $(location).attr('href');
+        var contentId;
+        var secondPart = urlVar.split("?");
+        var urlPart = secondPart[1];
+        var paramVal = urlPart.split("&");
+        for (var i = 0; i < paramVal.length; i++) {
+    
+                var firstPart = paramVal[i].split("=")[0];
+                var secondPart = paramVal[i].split("=")[1];
+                if (firstPart == "contentId") {
+                    contentId = secondPart;
+                }
+                if (firstPart == "source") 
+                {
+                    Source = secondPart;
+                }
+    
+            }
+
+        var selectedStatus = document.getElementById('{!$Component.MainForm:MainBlock:MainSection:MainSectionItem:selectorId}').value;
+        
+        if ((contentId != null) && (contentId != ""))
+            {
+                if(Source == 'VfPage')
+                {
+                    
+                    convertToImage(contentId,selectedStatus);
+                }
+                else
+                {
+                    window.open('/apex/LetterDownload?Id=' + contentId + '&type=' + selectedStatus, '_blank');       
+                }
+            }
+        else
+            {alert("No SBC Communication Found !!.");}
+    }
+
+    function cancelBtn() 
+    {
+        var urlVar = $(location).attr('href');
+        var contentId;
+        var secondPart = urlVar.split("?");
+        var urlPart = secondPart[1];
+        var paramVal = urlPart.split("&");
+        for (var i = 0; i < paramVal.length; i++) {
+
+           
+            var firstPart = paramVal[i].split("=")[0];
+            var secondPart = paramVal[i].split("=")[1];
+            if (firstPart == "source") {
+                Source = secondPart;
+                
+            }
+
+        }
+        
+        
+        
+        if(Source == 'VfPage')
+        {
+            var d = parent.sfdcPage.dialogs['SampleDialog'], close;   
+            d.hide();
+        }
+        else
+        {
+            for (var i = 0; i < paramVal.length; i++) {
+    
+                var firstPart = paramVal[i].split("=")[0];
+                var secondPart = paramVal[i].split("=")[1];
+                if (firstPart == "contentId") {
+                    contentId = secondPart;
+                    contentId = contentId.split("%")[0];
+                    break;
+                }
+    
+            }
+    
+    
+    
+            if ((contentId != null) && (contentId != ""))
+                window.top.location = '/' + contentId;
+            else
+                alert("No SBC Communication Found !!.");
+        }
+    }
+    
+    function getDownload(ImageStr,FileName)
+    {
+        download('data:image/jpg;base64,'+ImageStr, FileName+".jpg", "image/jpg");
+    }
+    
+    function downloadImage(blob, ImageStr)
+    {
+        
+        alert(blob);
+        alert(ImageStr);
+        
+        download('data:image/jpg;base64,'+ImageStr, "Download.html", "text/html");
+    }
+    </script>
+    <apex:form id="MainForm">
+        <apex:actionFunction status="status" name="convertToImage" action="{!ConvertToBlob}" oncomplete="getDownload('{!sBlobFileStr}','{!sFileName}')" >
+            <apex:param name="Id" value=""/>
+            <apex:param name="type" value=""/>
+        </apex:actionFunction>
+        
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+                <div class="waitingSearchDiv" id="el_loading" style="background-color: #DCD6D6; height: 100%;width:100%; opacity:0.45 ; z-index:55;"> 
+                    <div class="waitingHolder" style="top: 25px; padding-left:140px; align:center;position:absolute ; opacity:0.65 ; z-index:78;">
+                        <img class="waitingImage" src="{!$Resource.Loading_New}"/>                       
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        
+        <apex:pageBlock id="MainBlock">
+            <apex:pageBlockSection id="MainSection">
+                <apex:pageBlockSectionItem id="MainSectionItem">
+                    <apex:outputLabel title="{!$Label.ChooseDown_Type_Header}" style="font-weight:bold;font-size:100%;color:#4a4a56;margin-left:134px">{!$Label.ChooseDown_Type_Header}</apex:outputLabel>
+                    <apex:selectList id="selectorId" value="{!sChosenLetterType}" size="1" style="width:175px;" >
+                        <apex:selectOptions value="{!lstLetterTypeMenu}" />
+                    </apex:selectList>
+                    <!-- <select id="selectorId">
+                        <Option value="Original">Original Letter Image</Option>
+                        <Option value="Final">Final Letter Image</Option>
+                    </select> -->
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="{!$Label.ChooseDown_Type_Download}" style="width:80px;" disabled="{! (oComm.Original_Letter_Link__c == null && oComm.Final_Composed_Letter_Link__c == null)}" onClick="openDownloadPage(); return false;" />
+                <apex:commandButton value="{!$Label.PMAT_Cancel_Btn_Text}" style="width:80px;" onClick="cancelBtn();" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+        <div style="display:none">
+            <a href="#" id="downLink">Click here to download your file</a>
+        </div>
+        
+        
+    </apex:form>
+
+
+
+</apex:page>

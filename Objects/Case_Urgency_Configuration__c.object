@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>This is used for Case Urgency</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Urgency_High__c</fullName>
+        <externalId>false</externalId>
+        <label>Urgency High</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Urgency_Low__c</fullName>
+        <externalId>false</externalId>
+        <label>Urgency Low</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Urgency_Medium__c</fullName>
+        <externalId>false</externalId>
+        <label>Urgency Medium</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Case Urgency Configuration</label>
+    <visibility>Public</visibility>
+</CustomObject>

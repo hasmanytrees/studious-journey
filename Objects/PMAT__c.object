@@ -1,0 +1,3240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Additional_Comments_Part_1__c</fullName>
+        <description>Additional comments, thoughts, ideas, challenges, dreams, recommendations, etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional comments, thoughts, ideas, challenges, dreams, recommendations, etc.</inlineHelpText>
+        <label>Additional Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Additional_Comments_Part_2__c</fullName>
+        <description>Additional comments, thoughts, ideas, challenges, dreams, recommendations, etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please provide any additional comments here that do not specifically fit under another question.</inlineHelpText>
+        <label>Additional Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Additional_Comments_Part_3__c</fullName>
+        <description>Additional comments, thoughts, ideas, challenges, dreams, recommendations, etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional comments, thoughts, ideas, challenges, dreams, recommendations, etc.</inlineHelpText>
+        <label>Additional Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Address_Outcomes_Standards_M1_Comments__c</fullName>
+        <description>Comments for Addresses Outcomes and standards of the Partnership Agreement effectively Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Address Outcomes Standards M1 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Address_Outcomes_Standards_M1__c</fullName>
+        <description>Addresses Outcomes and standards of the Partnership Agreement effectively Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Address Outcomes Standards M1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Address_Outcomes_Standards_M2_Comments__c</fullName>
+        <description>Comments for Addresses Outcomes and standards of the Partnership Agreement effectively Measure 2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Address Outcomes Standards M2 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Address_Outcomes_Standards_M2__c</fullName>
+        <description>Addresses Outcomes and standards of the Partnership Agreement effectively Measure 2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Address Outcomes Standards M2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Address_Outcomes_Standards_M3_Comments__c</fullName>
+        <description>Comments for Addresses Outcomes and standards of the Partnership Agreement effectively Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Address Outcomes Standards M3 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Address_Outcomes_Standards_M3__c</fullName>
+        <description>Addresses Outcomes and standards of the Partnership Agreement effectively Measure 3.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Address Outcomes Standards M3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Advocates_Children_Caregiver_M1_Comment__c</fullName>
+        <description>Comments for Advocates for children and caregivers by engaging multiple stakeholders in the church and community with the program and on behalf of children Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Advocates Children Caregiver M1 Comment</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Advocates_Children_Caregiver_M1__c</fullName>
+        <description>Advocates for children and caregivers by engaging multiple stakeholders in the church and community with the program and on behalf of children Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Advocates Children Caregiver M1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Advocates_Children_Caregiver_M2_Comment__c</fullName>
+        <description>Comments for Advocates for children and caregivers by engaging multiple stakeholders in the church and community with the program and on behalf of children Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Advocates Children Caregiver M2 Comment</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Advocates_Children_Caregiver_M2__c</fullName>
+        <description>Advocates for children and caregivers by engaging multiple stakeholders in the church and community with the program and on behalf of children Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Advocates Children Caregiver M2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Advocates_Children_Caregiver_M3_Comment__c</fullName>
+        <description>Comments for Advocates for children and caregivers by engaging multiple stakeholders in the church and community with the program and on behalf of children Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Advocates Children Caregiver M3 Comment</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Advocates_Children_Caregiver_M3__c</fullName>
+        <description>Advocates for children and caregivers by engaging multiple stakeholders in the church and community with the program and on behalf of children Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Advocates Children Caregiver M3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CRCH_Influence_Oversee_Program_M1_Comm__c</fullName>
+        <description>Comments for Church has an accountability system in place that has a meaningful role in influencing and overseeing the program Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>CRCH Influence Oversee Program M1 Comm</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CRCH_Influence_Oversee_Program_M1__c</fullName>
+        <description>Church has an accountability system in place that has a meaningful role in influencing and overseeing the program Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>CRCH Influence Oversee Program M1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CRCH_Influence_Oversee_Program_M2_Comm__c</fullName>
+        <description>Comments for Church has an accountability system in place that has a meaningful role in influencing and overseeing the program Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>CRCH Influence Oversee Program M2 Comm</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CRCH_Influence_Oversee_Program_M2__c</fullName>
+        <description>Church has an accountability system in place that has a meaningful role in influencing and overseeing the program Measure 2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>CRCH Influence Oversee Program M2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CRCH_Influence_Oversee_Program_M3_Comm__c</fullName>
+        <description>Comments for Church has an accountability system in place that has a meaningful role in influencing and overseeing the program Measure 3.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>CRCH Influence Oversee Program M3 Comm</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CRCH_Influence_Oversee_Program_M3__c</fullName>
+        <description>Church has an accountability system in place that has a meaningful role in influencing and overseeing the program Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>CRCH Influence Oversee Program M3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CRCH_Leader_Engage_Children_M1_Comment__c</fullName>
+        <description>Comments for Pastor and recognized church leaders are engaged in ministry to children Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>CRCH Leader Engage Children M1 Comment</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CRCH_Leader_Engage_Children_M1__c</fullName>
+        <description>Pastor and recognized church leaders are engaged in ministry to children Measure 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>CRCH Leader Engage Children M1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CRCH_Leader_Engage_Children_M2_Comment__c</fullName>
+        <description>Comments for Pastor and recognized church leaders are engaged in ministry to children Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>CRCH Leader Engage Children M2 Comment</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CRCH_Leader_Engage_Children_M2__c</fullName>
+        <description>Pastor and recognized church leaders are engaged in ministry to children Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>CRCH Leader Engage Children M2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CRCH_Leader_Engage_Children_M3_Comment__c</fullName>
+        <description>Comments for Pastor and recognized church leaders are engaged in ministry to children Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>CRCH Leader Engage Children M3 Comment</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CRCH_Leader_Engage_Children_M3__c</fullName>
+        <description>Pastor and recognized church leaders are engaged in ministry to children Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>CRCH Leader Engage Children M3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Christ_Mutual_Identity_Church_Example__c</fullName>
+        <description>Example For In the last 12 months, Compassion has treated the church in a way that reflected your mutual identity in Christ.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Christ Mutual Identity Church Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Christ_Mutual_Identity_Church__c</fullName>
+        <description>The church has treated Compassion in a way that reflected your mutual identity in Christ.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Christ Mutual Identity Church</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Christ_Mutual_Identity_Comp_Example__c</fullName>
+        <description>Example For: The church has treated Compassion in a way that reflected your mutual identity in Christ.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Christ Mutual Identity Comp Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Christ_Mutual_Identity_Compassion__c</fullName>
+        <description>In the last 12 months, Compassion has treated the church in a way that reflected your mutual identity in Christ.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement. 1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Christ Mutual Identity Compassion</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Compassion_Demonstrated_Sense_Example__c</fullName>
+        <description>Example for Compassion has demonstrated sensitivity in dealing with the ICP.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Compassion Demonstrated Sense Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Compassion_Demonstrated_Sensitivity__c</fullName>
+        <description>Compassion has demonstrated sensitivity in dealing with the ICP.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Compassion Demonstrated Sensitivity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Compassion_Requirement_Reason_Example__c</fullName>
+        <description>Example of In the past 12 months, Compassion&apos;s requirements have been reasonable to meet beneficiary outcomes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Compassion Requirement Reason Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Compassion_Requirement_Reasonable__c</fullName>
+        <description>In the past 12 months, Compassion&apos;s requirements have been reasonable to meet beneficiary outcomes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Compassion Requirement Reasonable</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Compassion_Requirement_Relevant_Example__c</fullName>
+        <description>Example for In the past 12 months, Compassion&apos;s requirements have been relevant to meet beneficiary outcomes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Compassion Requirement Relevant Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Compassion_Requirement_Relevant__c</fullName>
+        <description>In the past 12 months, Compassion&apos;s requirements have been relevant to meet beneficiary outcomes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Compassion Requirement Relevant</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contribute_Facility_Financial_Support_M1__c</fullName>
+        <description>Contributes facilities and financial support to the ministry to children and caregivers Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Contribute Facility Financial Support M1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contribute_Facility_Financial_Support_M2__c</fullName>
+        <description>Contributes facilities and financial support to the ministry to children and caregivers Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Contribute Facility Financial Support M2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contribute_Facility_Financial_Support_M3__c</fullName>
+        <description>Contributes facilities and financial support to the ministry to children and caregivers Measure 3.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Contribute Facility Financial Support M3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contribute_Facility_Support_M1_Comments__c</fullName>
+        <description>Comments for Contributing facilities and financial support to the ministry to children Measure 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Contribute Facility Support M1 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contribute_Facility_Support_M2_Comments__c</fullName>
+        <description>Comments for Contributes facilities and financial support to the ministry to children and caregivers Measure 2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Contribute Facility Support M2 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contribute_Facility_Support_M3_Comments__c</fullName>
+        <description>Comments for Contributes facilities and financial support to the ministry to children and caregivers M3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Contribute Facility Support M3 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Demonstrate_Learning_Improvement_M1_Comm__c</fullName>
+        <description>Comments for Demonstrates ongoing learning and improvement in the management of the overall children&apos;s ministry Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Demonstrate Learning Improvement M1 Comm</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Demonstrate_Learning_Improvement_M2_Comm__c</fullName>
+        <description>Comments for Demonstrates ongoing learning and improvement in the management of the overall children&apos;s ministry Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Demonstrate Learning Improvement M2 Comm</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Demonstrate_Learning_Improvement_M3_Comm__c</fullName>
+        <description>Comments for Demonstrates ongoing learning and improvement in the management of the overall children&apos;s ministry Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Demonstrate Learning Improvement M3 Comm</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Demonstrates_Learning_And_Improvement_M1__c</fullName>
+        <description>Demonstrates ongoing learning and improvement in the management of the overall children&apos;s ministry Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Demonstrates Learning And Improvement M1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Demonstrates_Learning_And_Improvement_M2__c</fullName>
+        <description>Demonstrates ongoing learning and improvement in the management of the overall children&apos;s ministry Measure 2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Demonstrates Learning And Improvement M2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Demonstrates_Learning_And_Improvement_M3__c</fullName>
+        <description>Demonstrates ongoing learning and improvement in the management of the overall children&apos;s ministry Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Demonstrates Learning And Improvement M3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Annual_Plans_M1_Comments__c</fullName>
+        <description>Comments for Makes and implements effective annual plans Measure 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Effective Annual Plans M1 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Effective_Annual_Plans_M1__c</fullName>
+        <description>Makes and implements effective annual plans Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Effective Annual Plans M1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Annual_Plans_M2_Comments__c</fullName>
+        <description>Comments for Makes and implements effective annual plans Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Effective Annual Plans M2 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Effective_Annual_Plans_M2__c</fullName>
+        <description>Makes and implements effective annual plans Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Effective Annual Plans M2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Annual_Plans_M3_Comments__c</fullName>
+        <description>Comments for Makes and implements effective annual plans Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Effective Annual Plans M3 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Effective_Annual_Plans_M3__c</fullName>
+        <description>Makes and implements effective annual plans Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Effective Annual Plans M3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Encourage_ICP_Innovate_Personal_Example__c</fullName>
+        <description>Example for Has Compassion allowed and encouraged the ICP to innovate and personalize their ministry to meet the needs of the sponsored children?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Encourage ICP Innovate Personal Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Encourage_ICP_Innovate_Personalize__c</fullName>
+        <description>Has Compassion allowed and encouraged the ICP to innovate and personalize their ministry to meet the needs of the sponsored children?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Encourage ICP Innovate Personalize</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ICP_Autonomy_Decision_Making_Example__c</fullName>
+        <description>Example for Compassion has respected the ICP&apos;s autonomy and decision-making in non-project matters.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>ICP Autonomy Decision Making Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ICP_Autonomy_Decision_Making__c</fullName>
+        <description>Compassion has respected the ICP&apos;s autonomy and decision-making in non-project matters.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>ICP Autonomy Decision Making</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ICP_Reflects_Vision_Values_M1_Comments__c</fullName>
+        <description>Comments for ICP Reflects strong partner church vision and values Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>ICP Reflects Vision Values M1 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ICP_Reflects_Vision_Values_M1__c</fullName>
+        <description>ICP Reflects strong partner church vision and values Measure 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>ICP Reflects Vision Values M1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ICP_Reflects_Vision_Values_M2_Comments__c</fullName>
+        <description>Comments for ICP Reflects strong partner church vision and values Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>ICP Reflects Vision Values M2 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ICP_Reflects_Vision_Values_M2__c</fullName>
+        <description>ICP Reflects strong partner church vision and values Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>ICP Reflects Vision Values M2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ICP_Reflects_Vision_Values_M3_Comments__c</fullName>
+        <description>Comments for ICP Reflects strong partner church vision and values Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>ICP Reflects Vision Values M3 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ICP_Reflects_Vision_Values_M3__c</fullName>
+        <description>ICP Reflects strong partner church vision and values Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>ICP Reflects Vision Values M3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ICP_Rep_Email__c</fullName>
+        <description>This field stores the email of the ICP Rep to whom a mail will be sent from the FO once the Compassion Form of the PMAT Assessment has been set to Ready for Discussion</description>
+        <externalId>false</externalId>
+        <label>ICP Rep Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implement_Curriculum_Effective_M1_Comm__c</fullName>
+        <description>Comments for Implements curriculum effectively Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Implement Curriculum Effective M1 Comm</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Implement_Curriculum_Effective_M2_Comm__c</fullName>
+        <description>Comments for Implements curriculum effectively Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Implement Curriculum Effective M2 Comm</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Implement_Curriculum_Effective_M3_Comm__c</fullName>
+        <description>Comments for Implements curriculum effectively Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Implement Curriculum Effective M3 Comm</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Implements_Curriculum_Effectively_M1__c</fullName>
+        <description>Implements curriculum effectively Measure 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Implements Curriculum Effectively M1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Implements_Curriculum_Effectively_M2__c</fullName>
+        <description>Implements curriculum effectively Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Implements Curriculum Effectively M2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Implements_Curriculum_Effectively_M3__c</fullName>
+        <description>Implements curriculum effectively Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Implements Curriculum Effectively M3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mobilize_Technical_Financial_Assist_M1__c</fullName>
+        <description>Mobilizes technical assistance and financial resources independently of Compassion Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Mobilize Technical Financial Assist M1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mobilize_Technical_Financial_Assist_M2__c</fullName>
+        <description>Mobilizes technical assistance and financial resources independently of Compassion Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Mobilize Technical Financial Assist M2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mobilize_Technical_Financial_Assist_M3__c</fullName>
+        <description>Mobilizes technical assistance and financial resources independently of Compassion Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Mobilize Technical Financial Assist M3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mobilize_Technical_Financial_M1_Comments__c</fullName>
+        <description>Comments for Mobilizes technical assistance and financial resources independently of Compassion Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Mobilize Technical Financial M1 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mobilize_Technical_Financial_M2_Comments__c</fullName>
+        <description>Comments for Mobilizes technical assistance and financial resources independently of Compassion Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Mobilize Technical Financial M2 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mobilize_Technical_Financial_M3_Comments__c</fullName>
+        <description>Comments for Mobilizes technical assistance and financial resources independently of Compassion Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Mobilize Technical Financial M3 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mobilizing_Community_Resource_M1_Comment__c</fullName>
+        <description>Comments for  Mobilizing community resources to support the ministry to children Measure 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Mobilizing Community Resource M1 Comment</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mobilizing_Community_Resource_M1__c</fullName>
+        <description>Mobilizing community resources to support the ministry to children Measure 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Mobilizing Community Resource M1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mobilizing_Community_Resource_M2_Comment__c</fullName>
+        <description>Comments for Mobilizing community resources to support the ministry to children Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Mobilizing Community Resource M2 Comment</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mobilizing_Community_Resource_M2__c</fullName>
+        <description>Mobilizing community resources to support the ministry to children Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Mobilizing Community Resource M2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mobilizing_Community_Resource_M3_Comment__c</fullName>
+        <description>Comments for Mobilizing community resources to support the ministry to children Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Mobilizing Community Resource M3 Comment</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mobilizing_Community_Resource_M3__c</fullName>
+        <description>Mobilizing community resources to support the ministry to children Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Mobilizing Community Resource M3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mutual_Respect_Benefit_Church_Example__c</fullName>
+        <description>Example for Compassion has treated the church in a way that is mutually respectful and beneficial.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Mutual Respect Benefit Church Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mutual_Respect_Benefit_Church__c</fullName>
+        <description>The church has treated Compassion in a way that is mutually respectful and beneficial.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Mutual Respect Benefit Church</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mutual_Respect_Benefit_Comp_Example__c</fullName>
+        <description>Example for The church has treated Compassion in a way that is mutually respectful and beneficial.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Mutual Respect Benefit Comp Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mutual_Respect_Benefit_Compassion__c</fullName>
+        <description>Compassion has treated the church in a way that is mutually respectful and beneficial.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Mutual Respect Benefit Compassion</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Natural_Extension_ICP_Ministry_Example__c</fullName>
+        <description>Example for The project has felt like a natural extension of the ICP&apos;s ministry and not just a Compassion program.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Natural Extension ICP Ministry Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Natural_Extension_ICP_Ministry__c</fullName>
+        <description>The project has felt like a natural extension of the ICP&apos;s ministry and not just a Compassion program.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Natural Extension ICP Ministry</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is lookup to User and holds the Owner of the PMAT</description>
+        <externalId>false</externalId>
+        <label>Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PMAT</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PF_Email__c</fullName>
+        <defaultValue>$Label.Attendance_Track_Title_Search</defaultValue>
+        <description>This field stores the email of the PF to whom a mail will be sent from the ICP once the ICP Form of the PMAT Assessment has been set to Ready for Discussion</description>
+        <externalId>false</externalId>
+        <label>PF Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PMAT_Assessment__c</fullName>
+        <description>This is the Master-Detail relationship with PMAT Assessment</description>
+        <externalId>false</externalId>
+        <label>PMAT Assessment</label>
+        <referenceTo>PMAT_Assessment__c</referenceTo>
+        <relationshipLabel>PMAT</relationshipLabel>
+        <relationshipName>PMAT</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PMAT_Completion_Date__c</fullName>
+        <description>This field holds the PMAT Completion date</description>
+        <externalId>false</externalId>
+        <label>PMAT Completion Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PMAT_Id_For_Data_Load__c</fullName>
+        <description>This is a back-end field used by Data conversion team for Upsert Purposes.</description>
+        <externalId>true</externalId>
+        <label>PMAT Id For Data Load</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PMAT_Maturity_Level__c</fullName>
+        <description>The overall Partnership Maturity Level identified by this PMAT form.  This level is determined by averaging the Relationship Maturity Level, Program Capacity Part 1 Maturity Level, and Program Capacity Part 2 Maturity Level.</description>
+        <externalId>false</externalId>
+        <formula>IF (PMAT_Maturity_Numeric_Average__c == null , &apos;&apos;, IF( PMAT_Maturity_Numeric_Average__c &gt;0 &amp;&amp; PMAT_Maturity_Numeric_Average__c &lt;= 2.5, $Label.PMAT_ProCap1_PS1 , IF( PMAT_Maturity_Numeric_Average__c &gt; 2.5 &amp;&amp; PMAT_Maturity_Numeric_Average__c &lt;= 4.5, $Label.PMAT_ProCap1_PS2, IF ( PMAT_Maturity_Numeric_Average__c &gt; 4.5, $Label.PMAT_ProCap1_PS3, &apos;&apos; ) )))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The overall Partnership Maturity Level identified by this PMAT form.  This level is determined by averaging the Relationship Maturity Level, Program Capacity Part 1 Maturity Level, and Program Capacity Part 2 Maturity Level.</inlineHelpText>
+        <label>PMAT Maturity Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PMAT_Maturity_Numeric_Average__c</fullName>
+        <description>PMAT Maturity Numeric Average</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The numeric average of the Relationship Maturity Level, Program Capacity Part 1 Maturity Level, and Program Capacity Part 2 Maturity Level.</inlineHelpText>
+        <label>PMAT Maturity Numeric Average</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PMAT_Status__c</fullName>
+        <description>Current status of PMAT</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Initiated - CI and the ICP are in the process of completing their PMAT forms.
+Ready for Discussion - Both forms have been submitted.
+Complete - The ICP and PF have discussed the results and made a plan to further strengthen the partnership.</inlineHelpText>
+        <label>PMAT Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Initiated</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready for Discussion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PMAT_Type__c</fullName>
+        <description>Type of PMAT</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Both Compassion and the ICP should complete their own PMAT form, each of which should be entered into the system.  It is not necessary to come to a consensus between the ICP and Compassion on any of the questions.</inlineHelpText>
+        <label>PMAT Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ICP</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compassion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Program_Capacity_Part_1_Average_Level__c</fullName>
+        <description>This field stores the Program Capacity Part 1 Average Level.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The maturity level of the Partnership as indicated by Progress Measures for our Partner Outcomes and Indicators.  This level is determined by averaging the responses in the Program Capacity Part 1 section.</inlineHelpText>
+        <label>Program Capacity Part 1 Average Level</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Capacity_Part_1_Average__c</fullName>
+        <description>The auto-calculated average of Program Capacity based on the inputs</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The numeric average of the Program Capacity Part 1 section.</inlineHelpText>
+        <label>Program Capacity Part 1 Average</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Capacity_Part_2_Average_Level__c</fullName>
+        <description>This is the field stores the Program Capacity 2 Maturity Average Level.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The maturity level of the Partnership as indicated by assessing Compassion&apos;s support of the ICP.  This level is determined by averaging the responses in the Program Capacity Part 2 section.</inlineHelpText>
+        <label>Program Capacity Part 2 Average Level</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Capacity_Part_2_Average__c</fullName>
+        <description>Program Capacity Part 2 Maturity Numeric Average</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+TEXT(Quality_Training_ICP_Staff__c) != &apos;0&apos; &amp;&amp; 
+TEXT(Encourage_ICP_Innovate_Personalize__c) != &apos;0&apos; &amp;&amp; 
+TEXT(Sufficient_Time_Project_Needs__c) != &apos;0&apos; &amp;&amp; 
+TEXT(Unique_Challenges_Project__c) != &apos;0&apos; &amp;&amp; 
+TEXT(ICP_Autonomy_Decision_Making__c) != &apos;0&apos; &amp;&amp; 
+TEXT(Natural_Extension_ICP_Ministry__c) != &apos;0&apos; &amp;&amp; 
+TEXT(Compassion_Demonstrated_Sensitivity__c) != &apos;0&apos; &amp;&amp; 
+TEXT(Compassion_Requirement_Reasonable__c) != &apos;0&apos; &amp;&amp;
+TEXT(Compassion_Requirement_Relevant__c) != &apos;0&apos;
+, 
+(
+VALUE(TEXT(Quality_Training_ICP_Staff__c)) + 
+VALUE(TEXT(Encourage_ICP_Innovate_Personalize__c)) +
+VALUE(TEXT(Sufficient_Time_Project_Needs__c)) +
+VALUE(TEXT(Unique_Challenges_Project__c)) +
+VALUE(TEXT(ICP_Autonomy_Decision_Making__c)) +
+VALUE(TEXT(Natural_Extension_ICP_Ministry__c)) +
+VALUE(TEXT(Compassion_Demonstrated_Sensitivity__c)) +
+VALUE(TEXT(Compassion_Requirement_Reasonable__c)) +
+VALUE(TEXT(Compassion_Requirement_Relevant__c))
+)/9, null )</formula>
+        <inlineHelpText>The numeric average of the Program Capacity Part 2 section.</inlineHelpText>
+        <label>Program Capacity Part 2 Average</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quality_Quantity_Staff_M1_Comments__c</fullName>
+        <description>Comments for Recruiting needed quality and quantity of staff and volunteers Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Quality Quantity Staff M1 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Quality_Quantity_Staff_M2_Comments__c</fullName>
+        <description>Comments for ICP - Recruits needed quality and quantity of staff and volunteers Measure 2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Quality Quantity Staff M2 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Quality_Quantity_Staff_M3_Comments__c</fullName>
+        <description>Comments for ICP - Recruits needed quality and quantity of staff and volunteers Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Quality Quantity Staff M3 Comments</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Quality_Quantity_Staff_Volunteers_M1__c</fullName>
+        <description>ICP - Recruits needed quality and quantity of staff and volunteers Measure 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Quality Quantity Staff Volunteers M1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Quality_Quantity_Staff_Volunteers_M2__c</fullName>
+        <description>ICP - Recruits needed quality and quantity of staff and volunteers Measure 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Quality Quantity Staff Volunteers M2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Quality_Quantity_Staff_Volunteers_M3__c</fullName>
+        <description>ICP - Recruits needed quality and quantity of staff and volunteers Measure 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the stage that best describes the past 12 months.  If the stage is met less than 50% of the time, select the low value.  If more than 50% of the time, select high.  You may choose different stages for each measure within an indicator.</inlineHelpText>
+        <label>Quality Quantity Staff Volunteers M3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Quality_Training_ICP_Staff_Example__c</fullName>
+        <description>Example for Compassion has provided the quality of training needed for ICP staff to be effective.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Quality Training ICP Staff Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Quality_Training_ICP_Staff__c</fullName>
+        <description>Compassion has provided the quality of training needed for ICP staff to be effective.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Quality Training ICP Staff</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Relationship_Capacity_Average_Level__c</fullName>
+        <description>This field stores the Relationship Capacity Maturity Level.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The maturity level of the Partnership as indicated by how well the both Compassion and the ICP have lived out the Partnership Principles.  This level is determined by averaging the responses in the Relationship Capacity section.</inlineHelpText>
+        <label>Relationship Capacity Average Level</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Relationship_Capacity_Average__c</fullName>
+        <description>This field holds the Numeric Average of Relationship Capacity</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+TEXT(Christ_Mutual_Identity_Church__c) != &apos;0&apos; &amp;&amp; 
+TEXT(Christ_Mutual_Identity_Compassion__c) != &apos;0&apos; &amp;&amp; 
+TEXT(Mutual_Respect_Benefit_Church__c) != &apos;0&apos; &amp;&amp;
+TEXT(Mutual_Respect_Benefit_Compassion__c) != &apos;0&apos; &amp;&amp; 
+TEXT(Responsibilty_Commitment_Church__c) != &apos;0&apos; &amp;&amp; 
+TEXT(Responsibilty_Commitment_Compassion__c) != &apos;0&apos; &amp;&amp;
+TEXT(Transformation_Outcomes_Church__c) != &apos;0&apos; &amp;&amp;
+TEXT(Transformation_Outcomes_Compassion__c) != &apos;0&apos;
+,
+(
+VALUE(TEXT(Christ_Mutual_Identity_Church__c)) + 
+VALUE(TEXT(Christ_Mutual_Identity_Compassion__c)) +
+VALUE(TEXT(Mutual_Respect_Benefit_Church__c)) +
+VALUE(TEXT(Mutual_Respect_Benefit_Compassion__c)) +
+VALUE(TEXT(Responsibilty_Commitment_Church__c))+
+VALUE(TEXT(Responsibilty_Commitment_Compassion__c)) +
+VALUE(TEXT(Transformation_Outcomes_Church__c)) +
+VALUE(TEXT(Transformation_Outcomes_Compassion__c))
+)/8, null )</formula>
+        <inlineHelpText>The numeric average of the Relationship Capacity section.</inlineHelpText>
+        <label>Relationship Capacity Average</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Responsibility_Commitment_Comp_Example__c</fullName>
+        <description>Example for Compassion has accepted responsibility and shown commitment to its partnership with the church.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Responsibility Commitment Comp Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Responsibilty_Commitment_Church_Example__c</fullName>
+        <description>Example for The church has accepted responsibility and shown commitment to its partnership with Compassion.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Responsibilty Commitment Church Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Responsibilty_Commitment_Church__c</fullName>
+        <description>The church has accepted responsibility and shown commitment to its partnership with Compassion.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Responsibilty Commitment Church</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Responsibilty_Commitment_Compassion__c</fullName>
+        <description>Compassion has accepted responsibility and shown commitment to its partnership with the church.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Responsibilty Commitment Compassion</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status_Curr_Date_Placeholder__c</fullName>
+        <description>This is a back-end field that is used as a Placeholder to store Current Date for Status.</description>
+        <externalId>false</externalId>
+        <label>Status Curr Date Placeholder</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_Discussion_Time_Period__c</fullName>
+        <description>This field stores the Status Discussion Time Period.</description>
+        <externalId>false</externalId>
+        <label>Status Discussion Time Period</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Initiated_Time_Period__c</fullName>
+        <description>This field stores the Status Initiated Time Period.</description>
+        <externalId>false</externalId>
+        <label>Status Initiated Time Period</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sufficient_Time_Project_Needs_Example__c</fullName>
+        <description>Example for Compassion has spent sufficient time meeting the project&apos;s needs.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Sufficient Time Project Needs Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sufficient_Time_Project_Needs__c</fullName>
+        <description>Compassion has spent sufficient time meeting the project&apos;s needs.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Sufficient Time Project Needs</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Transformation_Outcomes_Church_Example__c</fullName>
+        <description>Example for The church has shown visible transformation and outcomes as a result of its partnership with Compassion.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Transformation Outcomes Church Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Transformation_Outcomes_Church__c</fullName>
+        <description>The church has shown visible transformation and outcomes as a result of its partnership with Compassion.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Transformation Outcomes Church</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Transformation_Outcomes_Comp_Example__c</fullName>
+        <description>Example for Compassion has supported visible transformation and outcomes through its partnership with Compassion.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Transformation Outcomes Comp Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Transformation_Outcomes_Compassion__c</fullName>
+        <description>Compassion has supported visible transformation and outcomes through its partnership with Compassion.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Transformation Outcomes Compassion</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Unique_Challenges_Project_Example__c</fullName>
+        <description>Example for Compassion has understood the unique challenges of this project.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please give at least one clear example to illustrate your response.  These comments will be visible by both Compassion and the ICP, and can serve as conversation starters during the PMAT discussion.</inlineHelpText>
+        <label>Unique Challenges Project Example</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Unique_Challenges_Project__c</fullName>
+        <description>Compassion has understood the unique challenges of this project.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the number that best represents how much you agree with the statement.  1 = Strongly Disagree; 6 = Strongly Agree.</inlineHelpText>
+        <label>Unique Challenges Project</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>PMAT</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>PMAT_Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>PMAT Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>PMAT</pluralLabel>
+    <searchLayouts>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PMAT_Type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Test_Rule</fullName>
+        <active>true</active>
+        <errorConditionFormula>(Relationship_Capacity_Average__c == null ||  Program_Capacity_Part_1_Average__c == null || 
+Program_Capacity_Part_2_Average__c == null) &amp;&amp;  TEXT(PMAT_Status__c) == &apos;Ready for Discussion&apos;</errorConditionFormula>
+        <errorMessage>Please fill the form fully before trying to move to &apos;Ready for Discussion&apos;</errorMessage>
+    </validationRules>
+</CustomObject>

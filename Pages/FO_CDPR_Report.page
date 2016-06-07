@@ -1,0 +1,80 @@
+<apex:page standardController="Account"  extensions="FOCDPRExtension">
+    <style>
+        .indicator{
+        font-weight :bold; 
+        background: #4F81BD; 
+        padding: 4px;
+        }
+        .txtDisplay{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        }
+        body .bPageBlock .detailList tr td, body .bPageBlock .detailList tr th, body table.list tr td, body table.list tr th, body .hoverDetail .bPageBlock .detailList tr td, body .hoverDetail .bPageBlock .detailList tr th {
+        border-color: transparent;
+        }
+        .name {
+        font-weight: bold;
+        font-size: 18px;
+        padding-bottom: 20px;
+        }
+    </style>
+    <apex:form id="form">
+    	<apex:pageMessages id="message"> </apex:pageMessages>
+	    <apex:outputPanel id="jspanel">
+	    <script type="text/javascript">
+		        function cdprAdded(){
+		        	var message = '{!JSENCODE(sShowMessage)}'; 
+		        	if(message == 'true'){       		
+		        		alert('{!JSENCODE(sSuccessMessage)}');
+			            window.open("/{!JSENCODE(sAcctId)}", '_self');
+		        	}	
+		        }
+	    	</script>
+	    </apex:outputPanel>
+        <apex:outputText value="{!Account.Name}" styleClass="name" />
+        <apex:pageBlock title="{!$Label.FO_CDPR_Report_Title}">
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >{!$Label.FO_CDPR_Report_Label_Outcome}</apex:outputLabel>
+                    <apex:selectList value="{!sSelectOutcome}" size="1" >
+                        <!--<apex:selectOption itemvalue="" itemLabel="--None--"/>
+                            <apex:selectOption itemvalue="Spiritual" itemLabel="Spiritual"/>
+                            <apex:selectOption itemvalue="Socio-Emotional" itemLabel="Socio-Emotional"/>
+                            <apex:selectOption itemvalue="Cognitive" itemLabel="Cognitive"/>
+                            <apex:selectOption itemvalue="Physical" itemLabel="Physical"/>-->
+                        <apex:selectOptions value="{!Outcome}" /> 
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >{!$Label.FO_CDPR_Report_Label_AgeGroup}</apex:outputLabel>
+                    <apex:inputField value="{!oCreateFOA.Age_Group__c}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!doSearch}" value="{!$Label.FO_CDPR_Report_Btn_Edit}" rerender="pb1" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:outputPanel id="pb1">
+            <apex:pageBlock rendered="{!bShowResults}" title="{!$Label.FO_CDPR_Report_Title_Indicators}">
+                <apex:pageBlockTable value="{!lstIndicator}" var="i" columns="1">
+                    <apex:column >
+                        <apex:pageBlockTable value="{!mapInd[i]}" var="r">
+                            <b><apex:facet name="header">
+                                <apex:outputText value="{!i}" /> 
+                                </apex:facet></b>
+                            <apex:column headervalue="{!$Label.FO_CDPR_Report_Label_ProgressMeasure}">
+                                <apex:outputText value="{!r.Progress_Measure__c}" />
+                            </apex:column>  
+                            <apex:column headervalue="{!$Label.FO_CDPR_Report_Label_Description}">
+                                <apex:inputField value="{!r.Progress_Measure_Description__c}" />
+                            </apex:column>                      
+                        </apex:pageBlockTable>
+                    </apex:column>
+                </apex:pageBlockTable>
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton action="{!save}" value="{!$Label.FO_CDPR_Report_Btn_Update}" status="status" oncomplete="cdprAdded();" rerender="form"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>   
+</apex:page>

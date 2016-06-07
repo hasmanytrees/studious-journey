@@ -1,0 +1,15 @@
+<!--****************************************************************************
+*Page Name          : ContentDownload
+*Description        : This is a VisualForce page used to download Content data
+*Created By         : Nayana Prabhakar
+*Created On         : 27-Jan-2015
+
+********************************************************************************-->
+
+<apex:page standardcontroller="Content__c" cache="true" extensions="ContentDownloadExtension" id="pg" action="{!calloutForImageDwnld}">
+    <apex:outputPanel rendered="false">
+        {!Content__c.Content_Link__c} 
+    </apex:outputPanel> 
+    <apex:pageMessages />
+    <iframe src="data:{!sContentType};base64,{!sImageData}" width="100%" height="900px" ></iframe> 
+</apex:page>

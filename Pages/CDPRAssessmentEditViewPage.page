@@ -1,0 +1,120 @@
+<!--/************************************************************************
+*Page Name          : CDPRAssessmentEditViewPage
+*Description        : This page is used for the edit/view assessment of the Beneficiary which 
+                      in turn can be used to update a Beneficiary Assessment record.   
+*Created By         : Nayana Prabhakar 
+*Created On         : 19-Jan-2015
+
+********************************************************************************/-->
+<apex:page standardcontroller="Beneficiary_Assessment__c"  extensions="CDPRAssessmentEditViewExtension" action="{!redirect}" id="pg">
+    <input id="hiddenElement" type="hidden" />
+    <script type="text/javascript">
+    window.onload = setFocus
+    
+    function setFocus() {
+        document.getElementById("hiddenElement").focus();
+    }
+    </script>
+    <apex:sectionHeader title="" subtitle="{!$Label.CDPR_AssessmentEdit_Title}"/>
+    <apex:form id="frm">    
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:outputPanel id="jspanel">
+        <script type="text/javascript">
+                function cdprAdded(){
+                    var message = '{!JSENCODE(sShowMessage)}';
+                    var sLoginUserType = '{!JSENCODE(sUserType)}'; 
+                    if(message == 'true'){              
+                        alert('{!JSENCODE(sSuccessMessage)}');
+                        if(sLoginUserType == '{!JSENCODE(sPowerPartner)}'){
+                            window.open("/ICPPortal/{!JSENCODE(sBenefId)}", '_self');
+                        }else{
+                            window.open("/{!JSENCODE(sBenefId)}", '_self');
+                        }
+                        
+                    }   
+                }
+            </script>
+        </apex:outputPanel>
+        <apex:pageBlock id="pb1">
+            <apex:pageBlockSection title="{!$Label.CDPR_AssessmentEdit_Label_BenInfo}" columns="2">
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$Label.CDPR_AssessmentEdit_Label_BenName}" />
+                    <apex:outputText value="{!oAccnt.Name}" />
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$Label.CDPR_AssessmentEdit_Label_ICP}" />
+                    <apex:outputText value="{!oAccnt.ICP__r.Name}" />
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem rendered="{!bShowComponents}">
+                    <apex:outputLabel value="{!$Label.CDPR_AssessmentEdit_Label_AssessmentDate}" />
+                    <apex:inputField value="{!oBeneficiaryAssessment.Assessment_Completion_Date__c}" required="true"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem rendered="{!(!bShowComponents)}">
+                    <apex:outputLabel value="{!$Label.CDPR_AssessmentEdit_Label_AssessmentDate}" />
+                    <apex:outputField value="{!oBeneficiaryAssessment.Assessment_Completion_Date__c}"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$Label.CDPR_AssessmentEdit_Label_Age}" />
+                    <apex:outputText value="{!oAccnt.Age_In_Months_And_Years__c}" />
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem />
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$Label.CDPR_Assessment_Label_Cognitive_Age}" />
+                    <apex:outputText value="{!oAccnt.Cognitive_Age_Group__c}" />
+                </apex:pageblocksectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>   
+        <apex:pageBlock id="pb2">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!saveForm}" value="{!$Label.CDPR_AssessmentEdit_Btn_Save}" id="theButton1" oncomplete="cdprAdded()" rerender="frm" rendered="{!bShowComponents}"/>
+                <apex:commandButton action="{!cancel}" value="{!$Label.CDPR_AssessmentEdit_Btn_Cancel}" id="theButton2" rendered="{!bShowComponents}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" id="pbs2">             
+                <apex:pageBlockTable value="{!lstOutcomeArea}" var="oal"  id="pbtbl21">
+                    <apex:column >
+                        <apex:pageBlockTable value="{!mapIndicator[oal]}" var="r" id="pbtbl22">
+                            <apex:column >                              
+                                <apex:facet name="header">                                    
+                                    <apex:outputText value="{!oal}" style="font-size: medium;"/>                                    
+                                </apex:facet>                                                             
+                                <apex:pageBlockTable value="{!mapResponse[r]}" var="ind"  columns="5" id="pbtbl23">
+                                    <apex:facet name="header">
+                                        <apex:outputPanel layout="block" style="text-align:center">
+                                            <b>
+                                                <apex:outputText value="{!r}" />
+                                            </b>
+                                        </apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:column headervalue="{!$Label.CDPR_AssessmentEdit_Label_ProgressMeasure}">
+                                        <apex:outputText value="{!ind.Progress_Measure__c}" />
+                                    </apex:column>
+                                    <apex:column headervalue="{!$Label.CDPR_AssessmentEdit_Label_ProgressMeasureDescribe}">
+                                        <apex:outputText value="{!ind.Progress_Measure_Description__c}" />
+                                    </apex:column>
+                                    <apex:column headervalue="{!$Label.CDPR_AssessmentEdit_Label_Points}">
+                                        <apex:inputField value="{!ind.Points__c}" />
+                                    </apex:column>                          
+                                    <apex:column headervalue="{!$Label.CDPR_AssessmentEdit_Label_Comments}">
+                                        <apex:inputField value="{!ind.Comments__c}" />
+                                    </apex:column>                         
+                                </apex:pageBlockTable>
+                            </apex:column>  
+                            <br/>
+                        </apex:pageBlockTable>
+                    </apex:column>                  
+                </apex:pageBlockTable>               
+            </apex:pageBlockSection>            
+        </apex:pageBlock>  
+    </apex:form>  
+    <apex:outputPanel rendered="false">
+        {!Beneficiary_Assessment__c.Assessment_Completion_Date__c} 
+        {!Beneficiary_Assessment__c.name}
+        {!Beneficiary_Assessment__c.Beneficiary__c}
+        {!Beneficiary_Assessment__c.Next_Assessment_Due_Date__c}
+        {!Beneficiary_Assessment__c.Assessment_Completion_Date__c}
+        {!Beneficiary_Assessment__c.Physical_Outcome_Score__c}
+        {!Beneficiary_Assessment__c.Spiritual_Outcome_Score__c}
+        {!Beneficiary_Assessment__c.Socio_emotional_Outcome_Score__c}
+        {!Beneficiary_Assessment__c.Cognitive_Outcome_Score__c}
+    </apex:outputPanel>
+</apex:page>

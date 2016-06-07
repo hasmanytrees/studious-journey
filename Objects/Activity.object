@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ComposeGmail</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LogCall</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MailMerge</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SendEmail</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewAll</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Activity_Age_Group__c</fullName>
+        <description>This field holds the different age group values for which an operational plan objective&apos;s task can be created.</description>
+        <externalId>false</externalId>
+        <label>Activity Age Group</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Survival Caregivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>0-2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3-5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6-8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9-11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12-14</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15-18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Activity_Completion_Date__c</fullName>
+        <description>Fill in the Completion date of the task/activity</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is to capture the Activity Completion Date of an Activity</inlineHelpText>
+        <label>Activity Completion Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Source__c</fullName>
+        <description>This field will contain different kinds of Activity Source.</description>
+        <externalId>false</externalId>
+        <label>Activity Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Audit Results</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Case</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cluster Objective</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operational Plan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PMAT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Type__c</fullName>
+        <description>Type of Activity logged in Supporter / Partner Profile</description>
+        <externalId>false</externalId>
+        <label>Activity Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Appeal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Concern</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contact</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Facilitation Work Plan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Milestone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operational Plan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Beneficiary_Attendance__c</fullName>
+        <externalId>false</externalId>
+        <label>Invitee Attendance</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Attended</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invitation Sent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Beneficiary__c</fullName>
+        <description>Name of Beneficiary</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Beneficiary</inlineHelpText>
+        <label>Beneficiary</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CGV_Attendance__c</fullName>
+        <description>This field will contain information regarding Caregiver attendance</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will contain information regarding Caregiver attendance</inlineHelpText>
+        <label>Caregiver Attendance</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Caregiver_Attendance__c</fullName>
+        <description>This field will contain information regarding Caregiver attendance</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will contain information regarding Caregiver attendance</inlineHelpText>
+        <label>Caregiver Attendance</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Caregiver__c</fullName>
+        <description>This field will contain name of Caregiver</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will contain name of Caregiver</inlineHelpText>
+        <label>Caregiver</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Of_S2B_Packet_And_Pictures__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This flag signifies if Delivery of Supporter to Beneficiary Packet and pictures is done or not.</description>
+        <externalId>false</externalId>
+        <label>Delivery Of S2B Packet And Pictures</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Event_Beneficiary_Caregiver_Attendance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Denotes if Beneficiary&apos;s caregiver attended the meeting</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes if Beneficiary&apos;s caregiver attended the meeting</inlineHelpText>
+        <label>Event Beneficiary Caregiver Attendance</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Event_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Home Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assessment Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Breakfast</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lunch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dinner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit Field Office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit Sponsorship Center</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit Survival Center</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit CIV Center</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attend Home Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sightseeing And Shopping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ICP_Agreement_Date__c</fullName>
+        <description>This fields populate agreement signed date on Tasks</description>
+        <externalId>false</externalId>
+        <formula>Account.Latest_Partnership_Agreement_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Latest agreement date on an ICP.</inlineHelpText>
+        <label>ICP Agreement Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ICP_Contact__c</fullName>
+        <description>This field will contain ICP Contact information</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will contain ICP Contact information</inlineHelpText>
+        <label>ICP Contact</label>
+        <length>200</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invitee_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Invitee Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Beneficiary</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Caregiver - Mother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Caregiver - Father</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>IsTriggerFlag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Field to be used in Task trigger and will only be updated using Time based Workflow.</description>
+        <externalId>false</externalId>
+        <label>IsTriggerFlag</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Completion_Date_Less_Than_Due_Date__c</fullName>
+        <description>Formula Field to check whether Activity completion date is less than Due date.</description>
+        <externalId>false</externalId>
+        <formula>IF( AND( NOT( ISNULL( Activity_Completion_Date__c ) ) , NOT( ISNULL(ActivityDate) ) ,Activity_Completion_Date__c &lt; ActivityDate) , true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Completion Date Less Than Due Date</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Tasks_Completed_On_Time__c</fullName>
+        <description>This field will determine whether the task completed on time or not. This is used for reporting purpose.</description>
+        <externalId>false</externalId>
+        <formula>IF( AND( NOT( ISNULL( Activity_Completion_Date__c ) ) , NOT( ISNULL(ActivityDate) ) ,Activity_Completion_Date__c  &lt;=  ActivityDate) , true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Tasks Completed On Time</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Trigger_Flag_For_Today__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Trigger Flag For Today</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Trigger_Workflow_For_Today__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Trigger Workflow For Today</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Trigger_Workflow__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is used to trigger workflow for sending mails to PF and PFS.</description>
+        <externalId>false</externalId>
+        <label>Is Trigger Workflow</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Meeting_Notes__c</fullName>
+        <description>This field will contain all important notes taken while meeting.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will contain all important notes taken while meeting.</inlineHelpText>
+        <label>Meeting Notes</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Method__c</fullName>
+        <description>Activity Method for Activities on Supporter Profile / Partner Profile.</description>
+        <externalId>false</externalId>
+        <label>Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Online</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Podcast</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Postal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Media Message</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Webinar-Live</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Webinar Self-guided</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Objective__c</fullName>
+        <description>This field signifies objective of the event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field signifies objective of the event.</inlineHelpText>
+        <label>Objective</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Beneficiary Progress Discussion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Regular Beneficiary Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beneficiary Agreement Signing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Outcome__c</fullName>
+        <externalId>false</externalId>
+        <label>Outcomes Impacted</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Beneficiary: Physical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beneficiary: Spiritual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beneficiary: Cognitive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beneficiary: Socio-Emotional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP: Vision/Leadership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP: Management Structure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP: Resource Mobilization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP: Local Ownership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Outcomes_Next_Steps__c</fullName>
+        <externalId>false</externalId>
+        <label>Outcomes/Next Steps</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Percentage_Completed__c</fullName>
+        <description>Captures Task status as percentage of completion.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter Task status as percentage of completion</inlineHelpText>
+        <label>% Completed</label>
+        <picklist>
+            <picklistValues>
+                <fullName>10%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>30%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>40%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>60%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>70%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>80%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>90%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Purpose__c</fullName>
+        <description>Purpose of Activity for Supporter / Partner Profile</description>
+        <externalId>false</externalId>
+        <label>Purpose</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Coaching</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cultivation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Speech_Category__c</fullName>
+        <description>Signifies Speech Category of Celebration Event</description>
+        <externalId>false</externalId>
+        <label>Speech Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Motivational</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Testimony</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Home Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assessment Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Breakfast</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lunch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dinner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit Field Office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit Sponsorship Center</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit Survival Center</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit CIV Center</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attend Home Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sightseeing And Shopping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Venue__c</fullName>
+        <description>This field will contain Venue details for Beneficiary Celebration Event</description>
+        <externalId>false</externalId>
+        <label>Venue</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>What_Id_Object_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(LEFT( (WhatId) , 3) = &apos;001&apos;, &apos;Account&apos;, IF(LEFT( (WhatId) , 3) = &apos;006&apos;, &apos;Opportunity&apos;, &apos;&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>What Id Object Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Who_Id_Object_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(LEFT( (WhoId) , 3) = &apos;003&apos;, &apos;Contact&apos;, IF(LEFT( (WhoId) , 3) = &apos;00Q&apos;, &apos;Lead&apos;, &apos;&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Who Id Object Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>MyActivities</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyDelegatedActivities</fullName>
+        <filterScope>Delegated</filterScope>
+        <label>My Delegated Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyTeamsActivities</fullName>
+        <filterScope>Team</filterScope>
+        <label>My Team&apos;s Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>TodaysTasks</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TASK.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>lessThan</operation>
+            <value>TOMORROW</value>
+        </filters>
+        <label>Today&apos;s Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>UpcomingEvents</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>greaterThan</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <label>Upcoming Events</label>
+    </listViews>
+    <searchLayouts>
+        <searchResultsAdditionalFields>TASK.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.WHO_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.WHAT_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.DUE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Purpose__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Invitee_Type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

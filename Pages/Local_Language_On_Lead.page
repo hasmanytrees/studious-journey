@@ -1,0 +1,15 @@
+<!--****************************************************************************
+* Page Name: Local_Language_On_Lead * Description: This VisualForce page displays the Church Name in
+    Local Language
+for all ICP Records.*Created By: Rahul Agarwal * Created On: 23 - Jan - 2015
+
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * * -->
+
+    <apex:page standardController="Lead">
+    <apex:form rendered="{!IF(Lead.Church_Name_Local_Language__c != null, true, false)}">
+    <b style = "font-size: 200%;color:black;"> 
+    <apex:outputField value="{!Lead.Church_Name_Local_Language__c}" /> </b>
+    </apex:form>
+    </apex:page>

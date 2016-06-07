@@ -1,0 +1,311 @@
+<!--/************************************************************************
+*Page Name          : AttendanceTrackingPageOriginal
+*Description        : This is AttendanceTrackingPage, which helps user to specify
+                      monthly schedule of tutor. ALso Allows tutor to add corresponding Beneficiary's attendance.  
+*Created By         : Shaik Manzoor Sadiq 
+*Created On         : 10/09/2014 
+
+********************************************************************************/-->
+
+<apex:page sidebar="false" cache="false" readOnly="false">
+<!--
+  <head>  -->
+ <!--apex:includescript value="{!URLFOR($Resource.jQuery_Lib)}"/-->
+ <!--
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>  
+   <script class="jsbin" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/tableJquery2.js')}"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/demo_Page.css')}" />
+   <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/table.css')}" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"></link>
+   <style/>
+  </head>
+  
+    <script type="text/javascript">
+        var j;
+        //var $j = jQuery.noConflict();
+            $(document).ready(function(){
+                      
+           // for jquery table plugin
+            oTable =  $("[id$='SupporterAccountDatalist']").dataTable({
+               //"bJQueryUI": true,
+                "sPaginationType": "full_numbers",
+                "sPageLast":"last",
+                 "iDisplayLength": 10
+            });
+            oTable1 =  $("[id$='result']").dataTable({
+               //"bJQueryUI": true,
+                "sPaginationType": "full_numbers",
+                "sPageLast":"last",
+                 "iDisplayLength": 10
+            });
+           $("[id$='header']").css("cursor","pointer");
+          // j$("[id$='id48']").removeClass();
+            //j$("[id$='x']").parent("td").css("width","50px");
+           });
+           
+            function tableHandler1()
+            {
+             oTable =  $("[id$='result']").dataTable({
+               //"bJQueryUI": true,
+                "sPaginationType": "full_numbers",
+                "sPageLast":"last",
+             
+                 "iDisplayLength": 10
+            });
+            
+            // alert(oTable.fnGetData());
+            
+            console.log(oTable.fnGetData());
+            //dataTables_info
+           // alert($(".dataTables_paginate paging_full_numbers").len);
+        /*  $(".dataTables_length").eq(1).remove();
+           $(".dataTables_filter").eq(1).remove();
+            $(".dataTables_info").eq(1).remove();*/
+           //  $(".dataTables_paginate.paging_full_numbers").eq(1).remove();
+                $("[id$='header']").css("cursor","pointer");
+           }
+   </script> 
+
+<style type="text/css">
+    .bPageBlockwithoutlines {
+        border-top:0px;
+        margin-bottom:0px;
+        padding-bottom:0px;
+    }
+    
+    .bPageBlock .pbBodyNoMarginRight {
+        margin-right:0;
+        border-top:0px;
+        margin-bottom:0px;
+        padding-bottom:0px;
+    }
+    
+    .bPageBlock .pbFooterNoImage {
+        height:0px;
+        width:0px;
+    }
+    .toHideHeader{
+        display:none !important;
+    }
+
+    .add_Members{
+    
+    }
+
+    .custPopup{
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        z-index: 9999;
+        left: 20%;
+        padding:10px;
+        position: absolute;
+        /* These are the 3 css properties you will need to change so the popup 
+        displays in the center of the screen. First set the width. Then set 
+        margin-left to negative half of what the width is. You can add 
+        the height property for a fixed size pop up if you want.*/
+        width: 85%;
+        margin-left: -250px;
+        top:100px;
+    }
+    .popupBackground{
+        background-color:black;
+        opacity: 0.20;
+        filter: alpha(opacity = 20);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9998;
+    }
+
+</style>
+
+<apex:form id="form" >
+<apex:sectionHeader title="Attendance Tracking"/>
+<apex:pageBlock id="mainTab2" mode="maindetail">
+    <apex:pageBlockButtons location="bottom">
+        <apex:commandButton value="Submit" action="{!calculateColumns}"  reRender="allthetables,mainTab" status="status"/>
+        </apex:pageBlockButtons>
+    <apex:outputPanel style="width:100% ">
+    <apex:pageBlockSection title="Add Members" columns="2" id="pbs1">
+        <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Tutor Name"/>
+        <apex:outputText value="{!tutorName}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem dataStyleClass="add_Members">
+        <apex:outputLabel value="ICP"/>
+        <apex:outputText value="{!ICPName}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Month"/>
+        <apex:inputField value="{!monthlySchedule.Month__c}" required="true"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Year"/>
+        <apex:outputText value="{!monthlySchedule.Year__c}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Age Group"/>
+        <apex:inputField value="{!monthlySchedule.Cognitive_Age_Group__c}" required="true"/>
+        </apex:pageBlockSectionItem>
+        <br/>
+        
+    </apex:pageBlockSection>
+    
+    </apex:outputpanel>
+    </apex:pageBlock>
+    <apex:actionStatus id="status">
+        <apex:facet name="start">
+            <center>
+                <img src="/img/loading32.gif" />
+            </center>
+        </apex:facet>
+    </apex:actionStatus>
+    <apex:Pagemessages />
+    <apex:outputPanel id="allthetables">
+    <apex:outputPanel rendered="{!bottom}" >
+    <apex:pageBlock id="mainTab">
+    <div style="overflow:scroll;width:1520px;">
+    <apex:actionFunction name="callCheckAttendanceForAllBeneficiaries" action="{!checkAttendanceForAllBeneficiaries}" id="actionFunc1" reRender="mainTab">
+                    <apex:param name="dateSelectedByUser" value=""/>          
+            </apex:actionFunction>
+    <apex:pageBlockSection title="Add Beneficiary" dir="left" columns="1" id="pbs2" rendered="{!bottom}"/>
+    
+            <apex:commandButton value="Add Beneficiary" action="{!showPopup}" reRender="tstpopup"/>
+            
+            
+            <apex:pageBlockTable value="{!firstTwoRows}" var="displayData" id="result1" align="left" headerClass="toHideHeader" border="0" style="bgcolor:grey">
+                <apex:column style="background-color:lightgray;">
+                    <b><apex:outputText value="Date" style="display:flex;width:100px"/></b>
+                </apex:column>
+                <apex:repeat value="{!mapDateToDailyClassSchedule}" var="displayfieldname">
+                    <apex:column style="background-color:lightgray;">
+                    <apex:outputPanel style="display:flex;width:100px">
+                      
+                        
+                           <b><apex:inputCheckbox onclick="callCheckAttendanceForAllBeneficiaries('{!mapDateToDailyClassSchedule[displayfieldname].Session_Date__c}')" value="{!mapDateToDailyClassSchedule[displayfieldname].All_Beneficiary_Attending__c}"/>
+                           <apex:outputField value="{!mapDateToDailyClassSchedule[displayfieldname].Display_Date__c}" ></apex:outputField></b>
+                       </apex:outputPanel>
+                      
+                      
+                    </apex:column>
+                </apex:repeat>          
+            </apex:pageBlockTable>
+            <apex:pageBlockTable value="{!firstTwoRows}" var="displayData" id="result" align="left" headerClass="toHideHeader" border="0">
+                <apex:column >
+                    <apex:outputText value="{!lstText[0]}" style="display:flex;width:100px;font-weight:bold"/>
+                </apex:column>             
+                <apex:repeat value="{!mapDateToDailyClassSchedule}" var="displayfieldname">
+                    <apex:column >
+                    <apex:outputPanel style="display:flex;width:100px">
+                      <apex:inputText size="5" value="{!mapDateToDailyClassSchedule[displayfieldname].Hours_Scheduled__c}" /></apex:outputPanel>
+                    </apex:column>
+                </apex:repeat>                       
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!lstSelectedBeneficiaries}" var="displayBenefData" id="resultBenef" align="center" headerClass="toHideHeader" border="0">
+                <apex:column >
+                <apex:outputPanel style="display:flex;width:100px">
+                    <apex:outputText value="{!displayBenefData.Name}" /></apex:outputPanel>
+                </apex:column>
+                <apex:repeat value="{!mapDateToBeneficiaryNameAndAttendance}" var="displayfieldname">
+                    <apex:column >
+                    <apex:outputPanel style="display:flex;width:100px;">
+                        <apex:inputCheckbox value="{!mapDateToBeneficiaryNameAndAttendance[displayfieldname][displayBenefData.Name].Session_Attended__c}" /></apex:outputPanel>
+                    </apex:column>
+                </apex:repeat>                 
+            </apex:pageBlockTable>
+                   
+            <apex:commandButton value="Save Beneficiary Attendance" action="{!saveBeneficiaryAttendance}" reRender="mainTab" status="saving"/>
+            <apex:commandbutton id="button3" action="{!backToAccountDetailPage}" value="Back"/>
+    <apex:actionStatus id="saving">
+        <apex:facet name="start">
+            <center>
+                <img src="/img/loading32.gif" />
+            </center>
+        </apex:facet>
+    </apex:actionStatus>
+            <apex:pageMessages ></apex:pageMessages>
+   
+    </div>
+</apex:pageBlock>
+
+ </apex:outputPanel>
+ </apex:outputPanel>
+<apex:outputPanel id="tstpopup">
+<apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/>
+<apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+    
+<apex:sectionHeader title="Search Beneficiaries based on criteria below" subtitle="Beneficiary Search"  /> 
+
+  <apex:pageBlock >
+     
+       <apex:outputPanel id="searchComp">
+            <c:FilterList_1 DefaultSize="3" HeaderTitle="Search Account" inputFilterValues="{!filterListHandler}" logic="AND" ></c:FilterList_1>
+            <apex:commandButton value="Search" status="loading" action="{!search}" reRender="ben,result,message" oncomplete="tableHandler1()" />
+        </apex:outputPanel>
+    </apex:pageBlock>  
+    <apex:actionStatus id="loading" startText="Loading" >
+                <apex:facet name="start">
+                <apex:image value="{!$Resource.Loading_New}" id="loadingImage" style="background-repeat:repeat; padding-top:20px;padding-left:630px;  align:center;position:absolute ; opacity:1 ; z-index:78;"><div  style=" padding-top:950px;padding-left:630px;  align:center;position:absolute;z-index:79"><b> Searching...</b></div></apex:image>
+                 
+              </apex:facet>
+  </apex:actionStatus>     
+        <apex:pageBlock title="Search Result"  id="ben">
+            
+                <apex:pageBlockSection columns="1" >
+
+                    <apex:pageBlockTable value="{!lstBeneficiaryWrapper}" var="j" 
+                        id="result" align="left">
+                        
+                        <apex:column headerValue="Action" headerClass="alignCenter" styleClass="alignCenter">
+                            <apex:inputCheckbox value="{!j.SelectedBeneficiary}"/>
+                        </apex:column>
+                        
+                        <apex:column headerClass="alignCenter" styleClass="alignCenter">
+                            <apex:facet name="header">Beneficiary  Name</apex:facet>
+                            <apex:outputLink value="/{!j.BeneficiaryId}">{!j.BeneficiaryName}</apex:outputLink>
+                        </apex:column>
+
+                        <apex:column value="{!j.Country}" headerClass="alignCenter"
+                            styleClass="alignCenter">
+                            <apex:facet name="header">Country</apex:facet>
+                        </apex:column>
+                        <apex:column value="{!j.AccountOwner}" headerClass="alignCenter"
+                            styleClass="alignCenter">
+                            <apex:facet name="header">Account Owner</apex:facet>
+                        </apex:column>
+                        <apex:column value="{!j.ICP}" headerClass="alignCenter"
+                            styleClass="alignCenter">
+                            <apex:facet name="header">ICP</apex:facet>
+                        </apex:column>
+                        <apex:column value="{!j.Program}" headerClass="alignCenter"
+                            styleClass="alignCenter">
+                            <apex:facet name="header">Program</apex:facet>
+                        </apex:column>
+                        <apex:column value="{!j.Age}" headerClass="alignCenter"
+                            styleClass="alignCenter">
+                            <apex:facet name="header">Age</apex:facet>
+                        </apex:column>
+                        <apex:column value="{!j.Gender}" headerClass="alignCenter"
+                            styleClass="alignCenter">
+                            <apex:facet name="header">Gender</apex:facet>
+                        </apex:column>
+                    </apex:pageBlockTable>                  
+                </apex:pageBlockSection>
+
+                <apex:commandButton value="Add Beneficiaries" status="loading" action="{!selectBeneficiaries}" rerender="tstpopup,mainTab" />
+                <apex:pageMessages ></apex:pageMessages>
+                </apex:pageBlock>
+                <apex:commandButton value="Close" action="{!closePopupPage}" rerender="tstpopup,mainTab" />
+
+</apex:outputPanel>
+</apex:outputPanel>
+
+</apex:form> -->
+
+</apex:page>

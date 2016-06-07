@@ -1,0 +1,369 @@
+<apex:page standardController="Lead" extensions="CreateLeadFormExtension" sidebar="false" tabstyle="Lead_Form__tab" cache="true"  language="{!sLangCode}">
+    
+    <style>
+        .redChar{
+            color: #C30000;
+            font-size: 24px;
+            padding:5px;
+        }
+        .blackChar{
+            color: black;
+            font-weight: bold;
+            font-size: 24px;
+            padding:5px;
+        }
+        .container{
+            background-color: #E8E8E8;
+            border-style: solid;
+            border-width:1px;
+            width: 150px;
+            text-align: center;
+        }
+    </style>
+    <style>
+        body .bPageBlock .pbBody .labelCol, body .bPageBlock .pbBody .dataCol
+        {
+            border:0px;
+        }
+        
+    </style>
+    <apex:form id="frm">
+        <apex:actionFunction action="{!saveWebLead}" name="executeSave" reRender="frm,jspanel" oncomplete="confirmationMessage();"/>
+        <apex:PageMessages id="pgMsg"/>
+        <apex:outputPanel id="jspanel">
+            <script type="text/javascript">
+                function message(){
+                    var sMessage = '{!JSENCODE(sShowMessage)}';
+                    if(sMessage == '{!JSENCODE($Label.Web_To_Lead_True)}'){             
+                        var r = confirm('{!JSENCODE($Label.Web_To_Lead_Duplication_Error_Message)}');
+                        if(r == true){
+                            executeSave();
+                        }
+                    }
+                }              
+            </script>
+        </apex:outputPanel>
+        <div class="bPageTitle">
+            <div class="ptBody secondaryPalette brandSecondaryBrd">
+                <h1 class="noSecondHeader">{!$Label.Web_To_Lead_Compassion_Partner_Interest_Form}</h1>
+            </div>
+        </div>
+        <p><b>{!$Label.Web_To_Lead_Intro_Statement}</b></p>
+        <apex:pageBlock >
+            <apex:pageBlockSection title="{!$Label.Web_To_Lead_Basic_Church_Information}" collapsible="false">
+                <apex:pageBlockSectionItem helptext="{!$Label.Web_To_Lead_Name_Of_Interested_Church_Partner}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Church_Name}" ></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>   
+                            <apex:inputField taborderhint="1" value="{!Lead.Church_Name_Local_Language__c}" styleClass="textfield"/>
+                        </div>
+                   </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel ></apex:outputLabel>
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_First_Name_Of_The_Interested_Church_Pastor}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Pastor_First_Name}" ></apex:outputLabel>
+                    <apex:panelGrid columns="2" cellpadding="4" cellspacing="0">
+                        <apex:inputField value="{!Lead.Salutation}" taborderhint="2"/>
+                        <apex:outputPanel >
+                            <div class="requiredInput">
+                                <div class="requiredBlock"></div> 
+                                <apex:inputField taborderhint="3" value="{!Lead.FirstName}" Styleclass="textfield"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:panelGrid>              
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Your_First_Name_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Your_First_Name}" ></apex:outputLabel>
+                    <apex:outputPanel >
+                        <apex:selectList value="{!sContactSalutation}" size="1" tabindex="90">
+                            <apex:selectOptions value="{!salutations}"></apex:selectOptions>
+                        </apex:selectList>
+                        <apex:inputText value="{!sYourFirstName}" tabindex="100" style="position:relative;margin-left:4px;"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Pastor_Last_Name_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Pastor_Last_Name}" ></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div> 
+                            <apex:inputtext tabindex="40" value="{!sLastName}" styleClass="textfield"/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Your_Last_Name_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Your_Last_Name}"></apex:outputLabel> 
+                    <apex:inputText value="{!sYourLastName}" tabindex="110"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Pastor_Email_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Pastor_Email}"></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div> 
+                            <apex:inputText value="{!sPastorEmail}" tabindex="50" styleClass="textfield"/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Your_Email_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Your_Email}"></apex:outputLabel> 
+                    <apex:inputText value="{!sYourEmail}" tabindex="120"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Pastor_Phone_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Pastor_Phone}"></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div> 
+                            <apex:inputField value="{!Lead.Primary_Contact_s_Phone_Number__c}" taborderhint="6" styleClass="textfield"/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Your_Phone_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Your_Phone}"></apex:outputLabel> 
+                    <apex:inputText value="{!sYourPhone}" tabindex="130"/>
+                </apex:pageBlockSectionItem>          
+                
+                <apex:outputLabel ></apex:outputLabel>
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Your_Role_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Your_Role}"></apex:outputLabel> 
+                    <apex:selectList value="{!sYourRole}" size="1"  styleClass="textfield" tabindex="140">
+                        <apex:selectOptions value="{!yourRoles}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_How_Did_You_Hear}" ></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:inputField value="{!Lead.LeadSource}" taborderhint="7" styleClass="textfield"/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel ></apex:outputLabel>
+                
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Other_Reason_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Other_Reason}" ></apex:outputLabel>
+                    <apex:outputPanel >
+                        <!--<div class="requiredInput">
+                            <div class="requiredBlock"></div>-->
+                            <apex:inputField value="{!Lead.Other_Lead_Source__c}" styleClass="textfield"/>
+                        <!--</div>-->
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel ></apex:outputLabel>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Church_Interest}" ></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:inputTextArea value="{!sChurchInterest}" tabindex="80" Style="width:50%;" rows="3" styleClass="textfield"/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="{!$Label.Web_To_Lead_Church_Location_Information}" collapsible="false">
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Country_Help_Text}">
+                    <apex:outputLabel value="{!$ObjectType.Lead.fields.Country.Label}" ></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                                <apex:inputField value="{!Lead.CountryCode}" styleClass="textfield" taborderhint="15"/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Closest_Major_City_Help_Text}"> 
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Closest_Major_City}" ></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>                   
+                            <apex:inputField value="{!Lead.Closest_Major_City_Local_Language__c}" styleClass="textfield" taborderhint="20"/>
+                        </div>
+                    </apex:outputPanel>    
+                </apex:pageBlockSectionItem>
+                <apex:pageblockSectionItem helpText="{!$Label.Web_To_Lead_Street_Help_Text}">
+                    <apex:outputLabel value="{!$ObjectType.Lead.fields.Street.Label}"></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:inputField value="{!Lead.Street }" Style="width:50%;" styleClass="textfield" taborderhint="16"/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageblockSectionItem>
+                <apex:outputLabel ></apex:outputLabel> 
+                <apex:pageblockSectionItem helpText="{!$Label.Web_To_Lead_City_Help_Text}">
+                    <apex:outputLabel value="{!$ObjectType.Lead.fields.City.Label}"></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:inputField value="{!Lead.City}" styleClass="textfield" taborderhint="17"/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageblockSectionItem>
+                <apex:outputLabel ></apex:outputLabel>    
+                <apex:pageblockSectionItem helpText="{!$Label.Web_To_Lead_State_Help_Text}">
+                    <apex:outputLabel value="{!$ObjectType.Lead.fields.State.Label}"></apex:outputLabel>
+                    <apex:inputField value="{!Lead.StateCode}" taborderhint="18"/>
+                </apex:pageblockSectionItem> 
+                <apex:outputLabel ></apex:outputLabel>
+                <apex:pageblockSectionItem helpText="{!$Label.Web_To_Lead_Zip_Code_Help_Text}">
+                    <apex:outputLabel value="{!$ObjectType.Lead.fields.PostalCode.Label}"></apex:outputLabel>
+                    <apex:outputPanel >
+                        <apex:inputField value="{!Lead.PostalCode}" styleClass="textfield" taborderhint="19"/>
+                    </apex:outputPanel>
+                </apex:pageblockSectionItem>                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="{!$Label.Web_To_Lead_Church_Ministry_Information}" collapsible="false" >
+                <apex:pageBlockSectionItem dataStyle="width:1%"  labelStyle="width:40%;margin-left: 10px;text-align:left;">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Commitment_To_Child}" style="width:80%;"></apex:outputLabel>
+                    <apex:outputPanel style="margin-left: 60px;">
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:selectList value="{!sChurchMinistry}" size="1"  styleClass="textfield" tabindex="210">
+                                <apex:selectOptions value="{!oneGodOptions}"></apex:selectOptions>
+                            </apex:selectList>
+                        </div>
+                    </apex:outputPanel>        
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel ></apex:outputLabel>
+                <apex:pageBlockSectionItem dataStyle="width:10%"  labelStyle="width:30%;margin-left: 10px;text-align:left;">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Commitment_Of_Ministry}" ></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>   
+                            <apex:inputTextArea value="{!sChurchMinistryDemo}" Style="width:70%;" rows="5" styleClass="textfield" tabindex="220"/>
+                        </div>
+                    </apex:outputPanel>        
+                </apex:pageBlockSectionItem>
+                <apex:outputlabel ></apex:outputlabel>
+                
+                <apex:pageBlockSectionItem dataStyle="width:10%"  labelStyle="width:30%;margin-left: 10px;text-align:left;">
+                    <apex:outputPanel style="text-align: left;">
+                        <apex:outputLabel value="{!$Label.Web_To_Lead_Church_Agreement}" ></apex:outputLabel>
+                        <span class="helpButton" id="example-title-_help">
+                            <img src="/s.gif" class="helpOrb"/>
+                            <script type="text/javascript">
+                                sfdcPage.setHelp('example-title', '{!$Label.Web_To_Lead_Agreement_Help_Text}');
+                            </script>
+                        </span>
+                        <br></br>
+                        <apex:outputLabel value="{!$Label.Web_To_Lead_Agreement_Text_1}"></apex:outputLabel><br></br>
+                        <apex:outputLabel value="{!$Label.Web_To_Lead_Agreement_Help_Text_2}"></apex:outputLabel><br></br>
+                        <apex:outputLabel value="{!$Label.Web_To_Lead_Agreement_Text_3}"></apex:outputLabel>
+                    </apex:outputPanel>
+                    
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                                <apex:selectList value="{!sChurchAgreementToFaith}" size="1"  styleClass="textfield" tabindex="230">
+                                <apex:selectOptions value="{!oneGodOptions}"></apex:selectOptions>
+                                </apex:selectList>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel ></apex:outputLabel>
+                              
+                <apex:pageBlockSectionItem dataStyle="width:10%"  labelStyle="width:30%;margin-left: 10px;text-align:left;">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Other_Beliefs}"></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:inputTextArea value="{!sOtherBeliefs}" Style="width:70%;" rows="5" styleClass="textfield" tabindex="240"/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel ></apex:outputLabel>
+                
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Church_Ministry_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Church_Ministries}"></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div  class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:inputField value="{!Lead.Ministries__c}" styleClass="textfieldmulti" taborderhint="25"/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel ></apex:outputLabel>
+                
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Denomination_Help_Text}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Denomination}"></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>     
+                            <apex:inputField value="{!Lead.International_Mission_Affiliation__c}" styleClass="textfield" taborderhint="26"/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel ></apex:outputLabel>
+                 
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_number_Of_Active_Members}">
+                    <apex:outputLabel value="{!$Label.Web_To_Lead_Number_of_Church_Members}"></apex:outputLabel>
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:inputField value="{!Lead.Number_Of_Active_Church_Members__c}" styleClass="textfield" taborderhint="27"/>
+                        </div>
+                    </apex:outputPanel>  
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel ></apex:outputLabel>
+                 
+                <apex:pageBlockSectionItem helpText="{!$Label.Web_To_Lead_Share_With_Compassion}">
+                    <apex:outputLabel value="{!$ObjectType.Lead.fields.Comments__c.Label}"></apex:outputLabel>
+                    <apex:inputField value="{!Lead.Comments__c}" Style="width:70%;" taborderhint="28"/>
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel ></apex:outputLabel>
+                
+                <apex:pageBlockSectionItem rendered="false">
+                    <apex:inputField value="{!Lead.Statement_Of_Faith_Compatibility__c}" />
+                    <apex:inputField value="{!Lead.Commitment_To_Child_Ministry__c}" styleClass="textfield"/>
+                </apex:pageBlockSectionItem>      
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+            <apex:outputLabel ></apex:outputLabel>
+            <apex:outputLabel ></apex:outputLabel>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="Captcha">
+                <apex:actionRegion >
+                    <apex:outputPanel style="position:absolute;left: 40%;margin-right: -30%;">
+                        {!$Label.Web_To_Lead_Are_You_Human}
+                        <!--
+                        <div style="position: relative; background-image: img/CaptchaImage.jpeg; width: 170px; height: 30px;background-color: #AAD6AA;font-style: oblique">-->
+                        <apex:outputPanel styleClass="container" layout="block" id="code" style="width: 170px;background-color: #AAD6AA;font-style: oblique">
+                            <apex:outputText value="{!iNum1}" styleClass="blackChar"/>
+                            <apex:outputText value="{!sOperator}" styleClass="blackChar"/>
+                            <apex:outputText value="{!iNum2}" styleClass="blackChar"/>
+                        </apex:outputPanel>
+                        <!--</div>-->
+                        <!---->
+                        
+                        <apex:inputText value="{!sInput}" style="position:relative;top:2px;" tabindex="290"/>
+                        <apex:outputPanel id="result" rendered="{!bCaptcha}">
+                            {!sResult}
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:actionRegion>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection >
+            <br></br>
+            <br></br>
+            
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom" style="position:absolute;left: 40%;margin-right: -30%;">
+                <apex:commandButton value="{!$Label.Web_To_Lead_Submit}" action="{!validateWebLead}" reRender="frm,Captcha" onclick="if(!confirm('{!JSENCODE($Label.Web_To_Lead_Confirmation_Message)}')){return};" oncomplete="message();" tabindex="300"/>
+                <apex:commandButton value="{!$Label.Web_To_Lead_Reset}" rerender="Captcha" reRender="Captcha" tabindex="310"/>
+                <apex:commandButton value="{!$Label.Web_To_Lead_Cancel}" action="{!cancel}" tabindex="320"/>           
+            </apex:pageBlockButtons>
+        </apex:pageBlock>            
+    </apex:form>
+        
+</apex:page>

@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Associated_ICP_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This is a Back-end field that stores the Salesforce ID of the associated ICP.</description>
+        <externalId>false</externalId>
+        <label>Associated ICP ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>BEN_Disaster_Status_Comment__c</fullName>
+        <description>Changes to the beneficiary (i.e. this child is not impacted by the disaster, this child was mistakenly reported as injured).</description>
+        <externalId>false</externalId>
+        <label>Beneficiary Disaster Status Comment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Cluster__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is being used for Filtering the results in the Mass Create VF Page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup and select the Cluster based on which the ICP List will be filtered.</inlineHelpText>
+        <label>Cluster</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>PM_Hierarchy__c.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Cluster</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>PM_Hierarchy__c</referenceTo>
+        <relationshipName>ICP_Impacts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Created_Date_For_Reports__c</fullName>
+        <description>This field is created for reporting purposes to filter data based on date time of the Created Date field.</description>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <label>Created Date For Reports</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Impact_On_ICP_Program__c</fullName>
+        <description>This field stores the level of impact on the ICP&apos;s ability to implement normal program due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the level of impact on the ICP&apos;s ability to implement normal program due to the disaster.</inlineHelpText>
+        <label>Disaster Impact On ICP Program</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Impact</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Limited Program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Temporarily Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Impact_To_ICP_Infrastructure__c</fullName>
+        <description>This field stores the  the level of impact on the ICP&apos;s Infrastructure due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the level of impact to the ICP&apos;s building, property and equipment due to the disaster.</inlineHelpText>
+        <label>Disaster Impact To ICP Infrastructure</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Damage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minor Damage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Significant Damage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Destroyed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Name__c</fullName>
+        <description>This field stores the Disaster associated to the ICP Impact record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The name of the disaster entered on the disaster record.</inlineHelpText>
+        <label>Disaster Name</label>
+        <referenceTo>Disaster__c</referenceTo>
+        <relationshipName>ICP_Impacts</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Explanation_Of_Update__c</fullName>
+        <description>To capture explaination for changes on the ICP impact record</description>
+        <externalId>false</externalId>
+        <label>Explanation Of Update</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Office__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is being used for Filtering the results in the Mass Create VF Page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup and select the Field Office based on which the ICP List will be filtered.</inlineHelpText>
+        <label>Field Office</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Field_Office</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>ICP_Impacts1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ICP_Disaster_Comments__c</fullName>
+        <description>This field stores anything that should be communicated about this specific ICP</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Anything that should be communicated about this specific ICP</inlineHelpText>
+        <label>ICP Disaster Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ICP_Disaster_Impact_Description__c</fullName>
+        <description>This field stores the impact of the disaster on the ICP&apos;s ability to implement normal program and/or the impact to the ICP&apos;s infrastructure.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the impact of the disaster on the ICP&apos;s ability to implement normal program and/or the impact to the ICP&apos;s infrastructure.</inlineHelpText>
+        <label>ICP Disaster Impact Description</label>
+        <length>3300</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ICP_Disaster_Status__c</fullName>
+        <description>This field stores the status of the ICP as a result of the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the status of the ICP as a result of the disaster.</inlineHelpText>
+        <label>ICP Disaster Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Affected</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unaffected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ICP_ID__c</fullName>
+        <description>This field fetches the ICP ID of the ICP associated to the Impact record.</description>
+        <externalId>false</externalId>
+        <formula>ICP_Name__r.ICP_Id__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Enter the ICP ID of the ICP affected by the disaster.</inlineHelpText>
+        <label>ICP ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_Name__c</fullName>
+        <description>This field stores the ICP name of the ICP affected by the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the ICP name of the ICP affected by the disaster.</inlineHelpText>
+        <label>ICP Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>ICP</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.ICP_Status__c</field>
+                <operation>equals</operation>
+                <value>Active, Suspended, Phase Out</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>ICP Disaster Impacts</relationshipLabel>
+        <relationshipName>ICP_Impacts</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Modified_Date_For_Reports__c</fullName>
+        <description>This field is created for reporting purposes to filter data based on date time of the Last Modified Date field.</description>
+        <externalId>false</externalId>
+        <formula>LastModifiedDate</formula>
+        <label>Modified Date For Reports</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Territory__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is being used for Filtering the results in the Mass Create VF Page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup and select the Territory based on which the ICP List will be filtered.</inlineHelpText>
+        <label>Territory</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>PM_Hierarchy__c.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Territory</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>PM_Hierarchy__c</referenceTo>
+        <relationshipName>ICP_Impacts1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>ICP Disaster Impact</label>
+    <nameField>
+        <displayFormat>II-{0000}</displayFormat>
+        <label>Record ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>ICP Disaster Impacts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Ensure_same_FO_of_Disaster_and_ICP</fullName>
+        <active>true</active>
+        <description>This Validation Rule makes sure that the Field Office of the Disaster and the ICP is the same.</description>
+        <errorConditionFormula>IF(  ICP_Name__r.Cluster__r.Territory__r.Field_Office__c  &lt;&gt;  Disaster_Name__r.Field_Office__c , true, false)</errorConditionFormula>
+        <errorMessage>The Field Office of the Disaster and the ICP must be the same</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Mass_Create_New_ICP_Impact</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Mass Create New ICP Impact</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/MassUpdateRecordsICPImpact?disaster={! Disaster__c.Id}</url>
+    </webLinks>
+</CustomObject>

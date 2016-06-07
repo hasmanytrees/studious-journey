@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is a junction object which associates Beneficiary Attendance object to Beneficiary. This object is created when Beneficiaries are enrolled in any of the Activity conducted at ICP level.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Activity__c</fullName>
+        <description>This field will relate this junction object to Activity Attendance object</description>
+        <externalId>false</externalId>
+        <label>Activity</label>
+        <referenceTo>Activity_Attendance__c</referenceTo>
+        <relationshipLabel>Beneficiary Activity Association</relationshipLabel>
+        <relationshipName>Beneficiary_Activity_Association</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BEN_Attended__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field signifies if Beneficiary attended Activity held at ICP level or not.</description>
+        <externalId>false</externalId>
+        <label>Attended</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BEN_Id__c</fullName>
+        <description>This field related junction object to Beneficiary.</description>
+        <externalId>false</externalId>
+        <label>Beneficiary</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Survival Beneficiary, Sponsorship Beneficiary</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Activity Attendance</relationshipLabel>
+        <relationshipName>Beneficiary_Activity_Association</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BEN_Local_Id__c</fullName>
+        <description>This field fetches Local Beneficiary Id from its corresponding Beneficiary</description>
+        <externalId>false</externalId>
+        <formula>BEN_Id__r.Local_Beneficiary_ID__c</formula>
+        <label>Local Beneficiary Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEN_Name__c</fullName>
+        <description>This field will fetch Beneficiary Name from its Master-detail relationship with Beneficiary</description>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(BEN_Id__r.FirstName) , BEN_Id__r.LastName, BEN_Id__r.FirstName+&quot; &quot;+BEN_Id__r.LastName)</formula>
+        <label>Beneficiary Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Caregiver__c</fullName>
+        <description>This field will fetch Primary Caregiver name from its corresponding Beneficiary relationship.</description>
+        <externalId>false</externalId>
+        <formula>BEN_Id__r.Primary_Caregiver__r.Name</formula>
+        <label>Primary Caregiver</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Beneficiary Activity Association</label>
+    <nameField>
+        <displayFormat>BAA-{000000}</displayFormat>
+        <label>Beneficiary Activity Association Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Beneficiary Activity Association</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

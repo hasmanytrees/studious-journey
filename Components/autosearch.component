@@ -1,0 +1,152 @@
+<!--****************************************************************************
+*Page Name          : autosearch
+*Description        : This VisualForce component is used for DemoAutoComplete class
+                      which implements generic Search functionality
+*Created By         : Vishal Katyare
+*Created On         : 05-Oct-2014
+
+********************************************************************************-->
+
+<apex:component controller="DemoAutoComplete" id="autoSearchComp">
+    
+    <apex:attribute assignTo="{!sObjName}" type="String" name="objectName" required="true" description=""/>
+    <apex:attribute assignTo="{!sAccountType}" type="String" name="objectType" required="true" description=""/>  
+    
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>-->
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    
+    
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.jQuery_autoSearch,'jQuery/smooth.js')}"></script> 
+    <apex:stylesheet value="{!URLFOR($Resource.jQuery_autoSearch,'jQuery/jquery-ui.css')}" />
+    
+    <style>
+        .displayNone { 
+        display:none; 
+        }
+        .displayBlock {
+        display:block;
+        }
+        .ui-autocomplete-loading { 
+        background: white url(/img/loading32.gif) right center no-repeat;
+        background-size:15px 15px; 
+        
+        
+        }
+        .placeHolder {
+        font-style: italic;
+        }
+        .ui-autocomplete {
+        max-height: 100px;
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+        }
+        /* IE 6 doesn't support max-height
+        * we use height instead, but this forces the menu to always be this tall
+        */
+        * html .ui-autocomplete {
+        height: 100px;
+        }
+        .text-label {
+        color: #888888 ;
+        font-weight: bold Italic;
+        }
+    </style>
+    
+    <script>
+    
+    if(typeof jQuery != 'undefined'){
+        $j =jQuery.noConflict();
+    }
+    $j(function() {            
+        $j("input.auto001").autocomplete({
+            source: function(request, response){
+                getMyData(response,request.term);
+            },
+            select: function(event, ui){
+                $j("input.auto001").val(ui.item.value);
+                $j('input.auto002').val(ui.item.id);
+                refresh();                    
+                return false;
+            }            
+        });//alert("hiiiiiiiiii"+ $("[id$='x']").prev("td").val());
+        $("[id$='x']").parent().css("width","50px");  
+        // input default         
+        
+        $("[id$='x_val']").each(function(){
+            
+            this.value = $(this).attr('title');
+            $(this).addClass('text-label');
+            
+            $(this).focus(function(){
+                if(this.value == $(this).attr('title')) {
+                    this.value = '';
+                    $(this).removeClass('text-label');
+                }
+            });
+            
+            $(this).blur(function(){
+                if(this.value == '') {
+                    this.value = $(this).attr('title');
+                    $(this).addClass('text-label');
+                }
+            });
+        });
+        //ends default   
+        $( "[id$='x_val']" ).autocomplete({
+            source: availableTags
+        });        
+    });
+    function getMyData(response,param){
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.DemoAutoComplete.getAccounts}',
+            '{!sObjName}',param,'{!sAccountType}', 
+            function(result, event){
+                if (event.status) {                        
+                    var objList = [];
+                    for(var i = 0; i < result.length; i++){
+                        var obj = new Object();
+                        obj.label = result[i].Name;
+                        obj.value = result[i].Name;
+                        obj.id = result[i].Id;
+                        objList.push(obj);
+                    }
+                    response(objList);
+                }else {
+                    alert(event.message);
+                }
+            }, 
+            {escape: true}
+        );
+    }
+    
+    function onEnterKeyPress(e){
+        
+        if(window.event){                    
+            key = window.event.keyCode;     //IE               
+        } 
+        else{                    
+            key = e.which;     //firefox               
+        }               
+        if(key == 13) {                    
+            var ele=document.getElementById('page:d:pageBlk:SearchBtn');                                                           
+            ele.click(); 
+            return false;               
+        } else{                    
+            return true;               
+        }          
+    }   
+    </script>
+    
+     <apex:inputText id="x_val" styleClass="auto001" value="{!sAccName}" title="{!$Label.Auto_Search_Title_Enter}"  onkeypress="return onEnterKeyPress(event)"/><br/>
+    <apex:inputText id="auto002" value="{!accId}" styleClass="auto002" style="visibility:hidden"/> <br/> 
+    <apex:actionfunction name="refresh" action="{!Refresh}" rerender="pn1"/>
+    
+    <apex:outputPanel id="pn1">
+        <b>{!$Label.Auto_Search_Label_DetailPage}>> </b>
+        <apex:outputlink id="x_id" value="/{!accId}" target="_blank"  >{!sAccName}</apex:outputlink>
+    </apex:outputPanel> 
+</apex:component>

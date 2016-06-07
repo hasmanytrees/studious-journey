@@ -1,0 +1,177 @@
+<style type="text/css">
+	.tblhdr{font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; padding: 5px 10px; border-style: solid; border-width: 2px; overflow: hidden;  word-break: normal;  border-color: #000000;  color: #000000;  background-color: #b9c9fe;}
+	.tg  {border-collapse:collapse;border-spacing:0;border-color:color:##00FF00;}
+	.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 10px;border-style:solid;border-width:2px;overflow:hidden;word-break:normal;border-color:#000000;color:#000000;background-#00FF00;}
+	.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:5px 10px;border-style:solid;border-width:2px;overflow:hidden;word-break:normal;border-color:#000000;color:#000000;background-color:#b9c9fe;}
+	.main{width:100%;font-size: 12px;padding: 5px 10px;padding-top: 0px;}
+	.Pc
+	{
+	   border-style: groove;
+	   border-width:2px;
+	   border: solid thin;
+	}
+	.vfHelpText a 
+	{
+		position:relative;
+	}
+	.vfHelpText a span {
+		display: none;
+	}
+	.vfHelpText a:hover span {
+		display: block;
+		position:absolute;
+		top:1.25em;
+		padding:2px 5px;
+		left:-15em;
+		width:15em;
+		z-index:100;
+		border:1px solid orange;
+		background-color:#FEFDB9;
+		color:black;
+	}
+	.Tu
+	{
+		font-size: 115%;
+		font-style: italic;
+	}
+	.ClusterLabelStyle
+	{
+		width:33%;
+		font-size: 12px;
+	}
+	.TextAreaStyle
+	{
+		margin-left:4%;
+		width:96%;
+	}
+	.PCP1
+	{
+		width:100%;
+		font-size: 12px;
+	}
+	.PCP1Exception
+	{
+		width:100%;
+		font-size: 12px;
+		margin-right:2px;
+	}
+	.IndctorStyle
+	{
+		width:100%;
+		font-size: 12px;
+		padding: 5px 10px; 
+		padding-left: 0px; 
+		font-weight:bold;
+	}
+	.GenStyle
+	{
+		width:100%;
+		font-size: 12px;
+		padding: 5px 10px;
+	}
+	/* Color for the title bar */
+	.bPageBlock .pbHeader
+	{
+		background-color:#FF0000;
+	}
+	.bPageBlock .pbBody
+	{
+		/* Color for the pageblock background */
+		background-color:#FFFFFF;
+	}
+	.LongTxtStyle
+	{
+		margin: 5px 10px;
+		margin-right:0px;
+		width:96%;              
+	}
+	.StrAgree
+	{
+		float:left;
+	}
+	.StrDisagree
+	{
+		float:right;
+		padding-right:42%;
+	}
+	.StrDisagreePrint
+        {
+		float:right;
+		padding-right:32%;
+	}
+	.col1
+	{
+		width:20%;
+	}
+	.col2
+	{
+		width:10%;
+	}
+	.col3
+	{
+		width:70%;
+	}
+	.col4
+	{
+		width:12%;
+	}
+	.col5
+	{
+		width:68%;
+	}
+	.col6
+	{
+		width:30%;
+	}
+	.col7
+	{
+		width:33%;
+	}
+	.wdt
+	{
+		width:100%;
+	}
+	.tblwd
+	{
+		width:60%;
+	}
+	.wdtb
+	{
+		width:40%;
+	}
+	.OtblStyle
+	{
+		width:600px;
+	}
+	.ItblStyle
+	{
+		page-break-inside: avoid;
+	}
+	.smlwdt
+	{
+		width:400px;
+	}
+	.spanStyle
+	{
+		margin-left:2%; 
+		float:left; 
+		width:130px; 
+		word-wrap: break-word;
+	}
+	.fltStyle
+	{
+		float:left;
+	}
+	.spa1
+	{
+		margin-left:14%;
+	}
+	.spa2
+	{
+		margin-left:8%;
+	}
+	.spa3
+	{
+		margin-left:7%;
+	}
+ </style>

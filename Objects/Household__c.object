@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used for storing the household information. All Person Accounts belonging to a same household will be linked using this object</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Child_Id_for_Data_Load__c</fullName>
+        <description>This will hold the child_key</description>
+        <externalId>true</externalId>
+        <label>Child Id for Data Load</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Father_Is_Caregiver__c</fullName>
+        <externalId>false</externalId>
+        <label>Father Is Caregiver</label>
+        <summaryFilterItems>
+            <field>Household_Member__c.Role__c</field>
+            <operation>equals</operation>
+            <value>Father</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Household_Member__c.Is_Caregiver__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Household_Member__c.Household__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Female_Employment_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Mother/Female Guardian Employment Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Regularly Employed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sometimes Employed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Employed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Female_Occupation__c</fullName>
+        <externalId>false</externalId>
+        <label>Mother/Female Guardian Occupation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Agriculture/ Farmer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church Employee/ Project Worker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clothing Trades</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Day Labor/ Different Jobs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Domestic Service/ Housekeeper</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Factory Worker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hairdresser/ Manicurist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health Care/ Nurse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Housewife</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Laundress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Merchant/ Seller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teacher</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Field_Office_For_Sharing_Rule__c</fullName>
+        <description>This is field to store the name of field office(s) to which this household should be displayed to</description>
+        <externalId>false</externalId>
+        <label>Field Office For Sharing Rule</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Household_Name__c</fullName>
+        <displayFormat>H-{00000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Household Id</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Household_Religious_Affiliation__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Religion with which the person identifies</inlineHelpText>
+        <label>Household Religious Affiliation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Protestant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Catholic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hindu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Buddhist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jewish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Muslim</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mormon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Animist / Tribal / Ancestral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Christian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Male_Employment_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Father/Male Guardian Employment Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Regularly Employed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sometimes Employed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Employed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Male_Occupation__c</fullName>
+        <externalId>false</externalId>
+        <label>Father/Male Guardian Occupation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Agriculture/ Farmer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church Employee/ Project Worker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clothing Trade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Construction/ Tradesman</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Day Labor/ Different Jobs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Factory Worker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fisherman</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Janitor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mechanic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Merchant/ Seller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Security/ Guard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teacher</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation/ Driver</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Welder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Marital_Status__c</fullName>
+        <description>Marital status of the Beneficiary’s natural parents</description>
+        <externalId>false</externalId>
+        <label>Marital Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Married</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Were Married, Now Separated By Death</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Were Married, Now Divorced Or Permanently Separated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Never Married</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mother_Is_Caregiver__c</fullName>
+        <externalId>false</externalId>
+        <label>Mother Is Caregiver</label>
+        <summaryFilterItems>
+            <field>Household_Member__c.Role__c</field>
+            <operation>equals</operation>
+            <value>Mother</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Household_Member__c.Is_Caregiver__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Household_Member__c.Household__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Natural_Father_IsAlive__c</fullName>
+        <externalId>false</externalId>
+        <label>Is Natural Father Alive?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Natural_Father_Living_With_Child__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Natural Father Is Living With Child</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Natural_Mother_IsAlive__c</fullName>
+        <externalId>false</externalId>
+        <label>Is Natural Mother Alive?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Natural_Mother_Living_With_Child__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Natural Mother Is Living With Child</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Need_Key_for_Data_Load__c</fullName>
+        <description>This will hold the need_key</description>
+        <externalId>true</externalId>
+        <label>Need Key for Data Load</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Linked_Beneficiaries__c</fullName>
+        <description>This field roll up values of linked beneficiaries based upon Is_Household_Member_Beneficiary__c field of Household Member</description>
+        <externalId>false</externalId>
+        <label>Number Of Linked Beneficiaries</label>
+        <summaryFilterItems>
+            <field>Household_Member__c.Is_Household_Member_Beneficiary__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Household_Member__c.Household__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Together_Now__c</fullName>
+        <externalId>false</externalId>
+        <label>Together Now?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Total_Family_Females__c</fullName>
+        <description>Total Family Females  &lt; 18</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of Females in the Family whose Age is less than 18</inlineHelpText>
+        <label>Total Family Females  &lt; 18</label>
+        <summaryFilterItems>
+            <field>Household_Member__c.Role__c</field>
+            <operation>equals</operation>
+            <value>Sister, Beneficiary - Female</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Household_Member__c.Household__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Family_Males_18__c</fullName>
+        <description>Total Family Males &lt; 18</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of Males in the Family whose Age is less than 18</inlineHelpText>
+        <label>Total Family Males &lt; 18</label>
+        <summaryFilterItems>
+            <field>Household_Member__c.Role__c</field>
+            <operation>equals</operation>
+            <value>Brother, Beneficiary - Male</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Household_Member__c.Household__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Youth_headed_Household__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This flag will be checked if head of the family is with brother or sister role.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A household is considered to be “youth-headed” if the caregiving youth is between the ages of 15 and legal majority age as defined by local law.</inlineHelpText>
+        <label>Youth-headed Household</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Household</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Household Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Household</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Household_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Household_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Apex_Based_Sharing__c</fullName>
+        <label>Apex Based Sharing</label>
+    </sharingReasons>
+    <validationRules>
+        <fullName>Caregiver_Should_Be_Living_With_Child</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(AND(
+OR(
+AND(Mother_Is_Caregiver__c &gt;0, ISCHANGED(Natural_Mother_Living_With_Child__c)),
+AND(Father_Is_Caregiver__c &gt;0, ISCHANGED(Natural_Father_Living_With_Child__c))
+)),
+True,False)</errorConditionFormula>
+        <errorMessage>Natural parents who are not living with the child cannot be listed as a caregiver.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Employed_Guardian_Should_Have_Occupation</fullName>
+        <active>true</active>
+        <description>If Father/Guardian Employment status is employed/sometime employed then occpupation is mandatory.</description>
+        <errorConditionFormula>IF(
+	OR( 
+		AND( 
+			OR( 
+				ISPICKVAL((Male_Employment_Status__c),&quot;Regularly Employed&quot;),ISPICKVAL((Male_Employment_Status__c),&quot;Sometimes Employed&quot;) 
+			), 
+			ISBLANK(TEXT(Male_Occupation__c))
+		), 
+		AND( 
+			OR( 
+				ISPICKVAL((Female_Employment_Status__c),&quot;Regularly Employed&quot;),ISPICKVAL((Female_Employment_Status__c), &quot;Sometimes Employed&quot;) 
+			), 
+			ISBLANK(TEXT(Female_Occupation__c)) 
+		) 
+	), 
+True, False 
+)</errorConditionFormula>
+        <errorMessage>If father, mother, or guardian is employed or sometimes employed, then an Occupation is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Parents_Not_Alive_Living_With_Children</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(OR(AND(OR(ISPICKVAL(Natural_Father_IsAlive__c,&apos;No&apos;),ISPICKVAL(Natural_Father_IsAlive__c,&apos;Unknown&apos;)),Natural_Father_Living_With_Child__c=TRUE),
+AND(OR(ISPICKVAL(Natural_Mother_IsAlive__c,&apos;No&apos;),ISPICKVAL(Natural_Mother_IsAlive__c,&apos;Unknown&apos;)),Natural_Mother_Living_With_Child__c=TRUE)))</errorConditionFormula>
+        <errorMessage>Natural parents who are not alive cannot both be listed as also living with the child.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Together_Now_parents_Validation</fullName>
+        <active>true</active>
+        <description>Checks the criteria if the user selects Together now option as No/Unknown and both the parents selects option Living with child as</description>
+        <errorConditionFormula>IF(AND(OR( ISPICKVAL(Together_Now__c,&quot;No&quot;),ISPICKVAL(Together_Now__c,&quot;Unknown&quot;)),
+Natural_Father_Living_With_Child__c=TRUE,Natural_Mother_Living_With_Child__c=TRUE),true,false)</errorConditionFormula>
+        <errorMessage>Natural parents who are not living together now cannot both be listed as also living with the child.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>It contains the the Name for the Profile Image</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Image_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use Object API Name</inlineHelpText>
+        <label>Profile Image Name</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Profile Image Name</label>
+    <visibility>Public</visibility>
+</CustomObject>

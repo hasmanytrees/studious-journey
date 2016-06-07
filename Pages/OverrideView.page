@@ -1,0 +1,7 @@
+<apex:page standardController="Account" extensions="ViewOverrideExtension" action="{!customStandardViewLogic}"  >
+    <apex:form >
+        <apex:inputHidden value="{!Account.Check_Record__c}"/>
+        <apex:inputHidden value="{!Account.RecordType.DeveloperName}"/>
+    </apex:form>
+  
+</apex:page>

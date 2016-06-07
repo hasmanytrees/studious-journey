@@ -1,0 +1,328 @@
+<!--************************************************************************
+*Page Name          : BeneficiarySearchPage
+*Description        : VisualForce page for Communication records search page for GP Users. 
+*Created By         : Akashdeep Vinnakota
+*Created On         : 10-Sep-2015 
+********************************************************************************-->
+<apex:page tabStyle="Account" controller="BeneficiarySearchPageController" sidebar="false" readOnly="true">
+    
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/demo_Page.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/table.css')}" /> 
+    <apex:stylesheet value="{!URLFOR($Resource.SbcResource,'/SBCStyles/DataTables.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.SbcResource,'/SBCStyles/JquerySmoothnessUI.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.SbcResource,'/SBCStyles/TableTools.css')}"/> 
+    
+    <apex:includescript value="{!URLFOR($Resource.SbcResource,'/SBCStyles/JqueryMain.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.SbcResource,'/SBCStyles/DataTables.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.SbcResource,'/SBCStyles/TableTools.js')}"/>
+    
+    <style>
+    
+    .DTTT_button ui-button ui-state-default DTTT_button_xls {
+    text-decoration: none; font: menu;
+    display: inline-block; padding: 2px 8px;
+    background: ButtonFace; color: ButtonText;
+    border-style: solid; border-width: 2px;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+    }
+    .DTTT_button ui-button ui-state-default DTTT_button_xls:active {
+        border-color: ButtonShadow ButtonHighlight ButtonHighlight ButtonShadow;
+    }
+    .headTbl
+    {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #dedede;
+    }
+    </style>
+    
+    <script type="text/javascript">
+       function selectAllCheckboxes(obj,receivedInputID)
+       {
+           var inputCheckBox = document.getElementsByTagName("input");                  
+            for(var i=0; i<inputCheckBox.length; i++)
+            {          
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1)
+                {                                     
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+       }
+       
+       function ClearSearch()
+       {
+           document.getElementById("chkbox").checked = false;
+       }
+       
+       function CallMe( DocId)
+{
+  var d = sfdcPage.dialogs['SampleDialog'], close;
+  if (!d) {
+    
+    d = sfdcPage.dialogs['SampleDialog'] = new SimpleDialog('SampleDialog', false);
+    d.setTitle('Select Letter to Download');
+    d.setWidth(600);
+    d.createDialog();
+  }
+  
+  var elocationIdVar = DocId;
+  var iframe_url;
+  
+  var OrgURL;
+  
+  if('{!$Profile.Name}' == 'Global Partner')
+  {
+      OrgURL = '{!JSENCODE(URLFOR($Setup.Org_Level_Settings__c.Global_Partners_Link__c))}';
+      iframe_url = '{!JSENCODE(URLFOR("'+OrgURL+'/apex/ChooseDownloadType?source=VfPage&contentId="))}' ; 
+  }
+  else
+  {
+      OrgURL = '{!JSENCODE(URLFOR($Setup.Org_Level_Settings__c.Org_Base_URL__c))}';
+      iframe_url = '{!URLFOR("'+OrgURL+'apex/ChooseDownloadType?source=VfPage&contentId=")}' ; 
+  }
+  
+  iframe_url+=elocationIdVar; 
+  
+  $(d.dialog).find('#SampleDialogInner').html('<iframe src="'+iframe_url+'" height="110" width="565" border="0" style="border: 0;" />');
+  
+  $(d.dialog).find('#SampleDialogInner iframe').on('load', function() {
+    
+    $(this).contents().find('input[type="submit"]').on('click', function() {
+      
+      if ($(this).val() == 'Cancel') d.hide();
+      return false;
+    });
+  });
+  
+  if ($(d.dialog).find('#InlineEditDialogX').size() == 0) {
+    
+    close = $('<a id="InlineEditDialogX" title="Close" tabindex="0" href="javascript:void(0)" class="dialogClose">Close</a>');
+    
+    close.mouseover(function() {
+      this.className = 'dialogCloseOn';
+    }).mouseout(function() {
+      this.className = 'dialogClose';
+    }).click(function() {
+      
+      d.hide();
+    });
+    
+    close.insertBefore($(d.dialog).find('.topLeft h2'));
+  }
+  d.show();
+}
+    </script>
+    
+    <apex:form >
+        <apex:sectionHeader title="{!$Label.Search_Letters_Page_Title}"/>
+            <apex:pageBlock rendered="{!bShowPage}">
+            <apex:pageBlockSection columns="2" title="{!$Label.Search_Letters_First_Section}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >{!$Label.Search_Letters_Letter_Type}</apex:outputLabel>
+                    <apex:outputPanel >
+                        <apex:selectList value="{!sChosenLetterType}"  size="1" style="width:175px;">
+                            <apex:selectOptions value="{!lstLetterType}" ></apex:selectOptions>
+                        </apex:selectList>
+                        &nbsp;&nbsp;
+                        <apex:commandButton value="Go!" reRender="SearchCriteriaBlock" action="{!showFilterCriteria}" status="status" oncomplete=""  />
+                        <apex:actionStatus id="status">
+                            <apex:facet name="start">
+                                <div class="waitingSearchDiv" id="el_loading" style="background-color: #DCD6D6; height: 100%;width:100%; opacity:0.45 ; z-index:55;"> 
+                                    <div class="waitingHolder" style="top: 250px; padding-left:600px; align:center;position:absolute ; opacity:0.65 ; z-index:78;">
+                                        <img class="waitingImage" src="{!$Resource.Loading_New}"/>                       
+                                    </div>
+                                </div>
+                            </apex:facet>
+                        </apex:actionStatus> 
+                    </apex:outputPanel>     
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:outputPanel id="SearchCriteriaBlock" >
+            <apex:pageBlock rendered="{!bShowCriteriaBlock}">
+                <apex:pageBlockSection columns="2" title="Search Criteria:">
+                    <apex:pageBlockSectionItem helpText="{!$Label.Search_Letters_sGlobalSupId_HelpText}" >
+                        <apex:outputLabel >{!$Label.Search_Letters_sGlobalSupId}</apex:outputLabel>
+                        <apex:inputText value="{!sGlobalSupId}" required="false" style="width:175px;" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.Search_Letters_LegSupId_HelpText}" >
+                        <apex:outputLabel >{!$Label.Search_Letters_LegSupId}</apex:outputLabel>
+                        <apex:inputText value="{!sLegSupId}" required="false" style="width:175px;" />
+                    </apex:pageBlockSectionItem>                    
+                    <apex:pageBlockSectionItem rendered="{!bS2BCriteria}" helpText="{!$Label.Search_Letters_GlobalCommId_HelpText}" >
+                        <apex:outputLabel >{!$Label.Search_Letters_GlobalCommId}</apex:outputLabel>
+                        <apex:inputText value="{!sGlobalCommId}" required="false" style="width:175px;" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem rendered="{!bS2BCriteria}">
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel >{!$Label.Search_Letters_From_Date}</apex:outputLabel>
+                        <apex:inputField required="true" value="{!oUtilityObj.Print_Date__c}" style="width:175px;" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel >{!$Label.Search_Letters_To_Date}</apex:outputLabel>
+                        <apex:inputField required="true" value="{!oUtilityObj2.Print_Date__c}" style="width:175px;" />
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>   
+                
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton title="Search" value="{!$Label.Print_Portal_Search_Button}" action="{!search}" reRender="ResultBlock,ErrorBlock" status="status" oncomplete="tableHandler();"  />
+                    <apex:actionStatus id="status">
+                        <apex:facet name="start">
+                            <div class="waitingSearchDiv" id="el_loading" style="background-color: #DCD6D6; height: 100%;width:100%; opacity:0.45 ; z-index:55;"> 
+                                <div class="waitingHolder" style="top: 250px; padding-left:600px; align:center;position:absolute ; opacity:0.65 ; z-index:78;">
+                                    <img class="waitingImage" src="{!$Resource.Loading_New}"/>                       
+                                </div>
+                            </div>
+                        </apex:facet>
+                    </apex:actionStatus>   
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:outputPanel>    
+        
+        <apex:outputPanel id="ErrorBlock">
+            <apex:pageMessages ></apex:pageMessages>
+        </apex:outputPanel>
+        
+            
+        <apex:outputPanel id="ResultBlock" style="width:auto;display:{!sDisplay};">            
+            <table id="MainTable" cellpadding="0" cellspacing="0" border="0" class="display" style="table-layout: fixed; word-wrap:break-word;">
+                    <thead>
+                        <tr>
+                            <th class="headTbl">Select</th>
+                            <th class="headTbl">Global Comm ID</th>
+                            <th class="headTbl">Global Supporter ID</th>
+                            <th class="headTbl">Legacy Supporter ID</th>
+                            <th class="headTbl">Supporter Preferred Name</th>
+                            <th class="headTbl">Supporter Delivery Preference</th>
+                            <th class="headTbl">Supporter Gender</th>
+                            <th class="headTbl">Global Beneficiary Id</th>
+                            <th class="headTbl">Legacy Beneficiary Id</th>
+                            <th class="headTbl">Local Beneficiary Id</th>
+                            <th class="headTbl">Beneficiary Name</th>
+                            <th class="headTbl">Status</th>
+                            <th class="headTbl">Communication Type</th>
+                            <th class="headTbl">Original Letter URL</th>
+                            <th class="headTbl">Final Letter URL</th>
+                            <th class="headTbl">Original Text</th>
+                            <th class="headTbl">English Text</th>
+                            <th class="headTbl">Final Text</th>
+                            <th class="headTbl">Download</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!lstResult}" var="res" >
+                            <tr>
+                                <td style="text-align:center;"><apex:inputCheckbox value="{!bChecked}" id="lstChkBox"  /></td>
+                                <td style="text-align:center;">{!res.Name}</td>
+                                <td style="text-align:center;">{!res.SUP_Global_ID__c}</td>
+                                <td style="text-align:center;">{!res.GP_Supporter_ID__c}</td>
+                                <td style="text-align:center;">{!res.SUP_ID__r.Preferred_Name__pc}</td>
+                                <td style="text-align:center;">{!res.SUP_ID__r.Delivery_Preference__c}</td>    
+                                <td style="text-align:center;">{!res.SUP_ID__r.Gender__c}</td>                              
+                                <td style="text-align:center;">{!res.BEN_Global_ID__c}</td>
+                                <td style="text-align:center;">{!res.BEN_Compass_ID__c}</td>
+                                <td style="text-align:center;">{!res.BEN_Local_ID__c}</td>
+                                <td style="text-align:center;">{!res.BEN_ID__r.Name}</td>
+                                <td style="text-align:center;">{!res.Status__c}</td>    
+                                <td style="text-align:center;">{!res.Communication_Types__c}</td>   
+                                <td style="text-align:center;">{!res.Original_Letter_Link__c}</td>
+                                <td style="text-align:center;">{!res.Final_Composed_Letter_Link__c}</td>
+                                <td style="text-align:center;">{!res.Original_Text__c}</td>
+                                <td style="text-align:center;">{!res.Translated_Text_English__c}</td>
+                                <td style="text-align:center;">{!res.Final_Translated_Text__c}</td>    
+                                <td style="text-align:center;"><apex:commandButton value="Download" disabled="{! (res.Original_Letter_Link__c == null && res.Final_Composed_Letter_Link__c == null)}" onclick="CallMe('{!res.id}'); return false;" /></td>                              
+                           </tr>
+                       </apex:repeat>
+                   </tbody>
+                </table>
+            </apex:outputPanel>
+     </apex:form>
+     
+     <script type="text/javascript" >
+        $(document).ready( function () {
+            var table = $("[id$='MainTable']").dataTable({
+                "dom": 'fr<T"H">t<"F"ip>',
+                "sPaginationType": "full_numbers",
+                "sPageLast":"last",
+                "bAutoWidth": false, 
+                "iDisplayLength": 25,
+                "bJQueryUI": false,
+                "aoColumns": [
+                    { "sWidth": "4%" },
+                    { "sWidth": "10%" },
+                    { "visible": false },
+                    { "sWidth": "10%" },
+                    { "sWidth": "10%" },
+                    { "visible": false },
+                    { "visible": false },
+                    { "visible": false },
+                    { "visible": false },
+                    { "sWidth": "10%" },
+                    { "sWidth": "10%" },
+                    { "sWidth": "10%" },
+                    { "sWidth": "10%" },
+                    { "sWidth": "10%" },
+                    { "sWidth": "10%" },
+                    { "visible": false },
+                    { "visible": false  },
+                    { "visible": false },
+                    { "sWidth": "6%"}
+                ]
+            });
+        });
+        
+        
+        function tableHandler()
+        {
+            var table = $("[id$='MainTable']").dataTable({
+                "dom": 'fr<T"H">t<"F"ip>',
+                "oTableTools": 
+                {
+                    "sSwfPath": "{!$Resource.SWF_File}",
+                    "sRowSelect": "multi",
+                    "sRowSelector" : "td:first-child input",
+                    "aButtons": [
+                    { "sExtends": "xls", 
+                      "sTitle": "DataExtract",
+                      "bSelectedOnly": "true",
+                      "mColumns": [ 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],
+                      "sButtonText":"Download Communication Details"
+                    }
+                    ]
+                },
+                "sPaginationType": "full_numbers",
+                "sPageLast":"last",
+                "bAutoWidth": false,
+                "bJQueryUI": false, 
+                "aaSorting": [[ 1, "desc" ]],
+                "iDisplayLength": 25,
+                "aoColumns": [
+                    { "sWidth": "4%" },
+                    { "sWidth": "8%" },
+                    { "visible": false },
+                    { "sWidth": "10%" },
+                    { "sWidth": "12%" },
+                    { "visible": false },
+                    { "visible": false },
+                    { "visible": false },
+                    { "visible": false },
+                    { "sWidth": "10%" },
+                    { "sWidth": "10%" },
+                    { "sWidth": "10%" },
+                    { "sWidth": "10%" },
+                    { "sWidth": "10%" },
+                    { "sWidth": "10%" },
+                    { "visible": false },
+                    { "visible": false  },
+                    { "visible": false },
+                    { "sWidth": "6%"}
+                ]
+            });
+            $("[id$='header']").css("cursor","pointer");
+       }
+    </script>
+     
+</apex:page>

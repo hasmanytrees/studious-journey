@@ -1,0 +1,273 @@
+<!--****************************************************************************
+*Page Name          : MassUpdateNeeds
+*Description        : This VisualForce Page is used to mass update Needs
+                      for a particular Beneficiary/ICP from the Related List
+                      custom button
+*Created By         : Vishal Katyare
+*Created On         : 30-Oct-2014
+
+********************************************************************************-->
+
+<apex:page standardController="Account" extensions="MassUpdateNeedsExtension" tabStyle="Account">
+    <script>
+        window.$Label = window.$Label || {};
+        $Label.Show = '{!JSENCODE($Label.TableJQuery_Show)}';
+        $Label.Showing = '{!JSENCODE($Label.TableJQuery_Showing)}';
+        $Label.No_Data_Available = '{!JSENCODE($Label.TableJQuery_No_Data_Available)}';
+        $Label.Entries = '{!JSENCODE($Label.TableJQuery_Entries)}';
+        $Label.Search = '{!JSENCODE($Label.TableJQuery_Search)}';
+        $Label.To = '{!JSENCODE($Label.TableJQuery_To)}';
+        $Label.First = '{!JSENCODE($Label.TableJQuery_First)}';
+        $Label.Previous = '{!JSENCODE($Label.TableJQuery_Previous)}';
+        $Label.Next = '{!JSENCODE($Label.TableJQuery_Next)}';
+        $Label.Last = '{!JSENCODE($Label.TableJQuery_Last)}';
+        $Label.Filtered_From = '{!JSENCODE($Label.TableJQuery_Filtered_From)}';
+        $Label.Total_Enteries = '{!JSENCODE($Label.TableJQuery_Total_Enteries)}';
+        $Label.No_Matching_Records = '{!JSENCODE($Label.TableJQuery_No_Matching_Records)}';
+        $Label.Showing_Enteries = '{!JSENCODE($Label.TableJQuery_Showing_Enteries)}';
+        $Label.Of = '{!JSENCODE($Label.TableJQuery_Of)}';       
+    </script>
+    <apex:includescript value="{!URLFOR($Resource.jQuery_Lib)}"/>
+    
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/tableJquery.js')}"></script>  
+    <script class="jsbin" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/tableJquery2.js')}"></script>
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/fnLengthChange.js')}"></script>
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/demo_Page.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/table.css')}" />
+    
+    <Style>
+        .outputText{
+        color:#50509B; font-size:12px;font-weight:bold;
+        }
+        .custPopup{
+        background-color:white;
+        border-width: 2px;
+        border-style: solid;
+        z-index: 100003;
+        left: 50%;
+        padding:10px;
+        position: absolute;
+        opacity: ;1;
+        width: 500px;
+        height:270px;
+        margin-left:-100px;
+        top:100px;
+        text-align: justify;
+        display:block;
+        webkit-transform: translate(-50%, -50%);
+        
+        -webkit-transition: opacity .5s, top .5s;
+        
+        -moz-transition: opacity .5s, top .5s;
+        
+        -ms-transition: opacity .5s, top .5s;
+        
+        -o-transition: opacity .5s, top .5s;
+        
+        transition: opacity .51s, top .51s;
+        
+        }
+        .popupBackground{
+        background-color:grey;
+        opacity: 0.60;
+        filter: alpha(opacity = 60);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9998;
+        }
+        
+        #close{
+        z-index: 10000;
+        top:-89px;
+        right:-89px;
+        
+        }
+        
+        .colSpanClass
+        {
+        column-height:100px;
+        -moz-column-width:100px; /* Firefox */
+        -webkit-column-height:100px; /* Safari and Chrome */
+        }
+        
+        
+    </style>
+    
+    <apex:tabPanel switchType="client" height="100%">
+        <apex:tab label="{!$Label.Mass_Update_Need_TabLabel}" style="Account">
+            <apex:form id="form" >
+            <apex:pageMessages id="message"> </apex:pageMessages>
+            <apex:outputPanel id="jspanel">
+            <script type="text/javascript">
+                    function beneficiaryAdded(){
+                        var message = '{!JSENCODE(sShowMessage)}';
+                        var sLoginUserType = '{!JSENCODE(sUserType)}'; 
+                        if(message == 'true'){              
+                            alert('{!JSENCODE(sSuccessMessage)}');
+                            if(sLoginUserType == 'PowerPartner'){
+                                window.open("/ICPPortal/{!JSENCODE(sAccId)}", '_self');
+                            }
+                            else
+                                window.open("/{!JSENCODE(sAccId)}", '_self');
+                        }   
+                    }
+                    
+                </script>
+            </apex:outputPanel>
+                <apex:actionStatus id="loading" startText="{$Label.Search_Page_Loading}" >
+                    <apex:facet name="start">
+                        <apex:image value="{!$Resource.Loading_Image}" id="loadingImage" style=" padding-top:250px;padding-left:600px;  align:center;position:absolute ; opacity:0.65 ; z-index:78;"/>
+                    </apex:facet>
+                </apex:actionStatus>
+                <apex:sectionHeader title="{!$Label.Mass_Update_Need_Title}" subtitle="{!sAccName}"/>
+                <apex:pageBlock >
+                    <apex:outputText escape="false" value="{! $LAbel.Mass_Update_Need_Msg1 + ' ' + sAccName + $Label.Mass_Update_Need_Msg2}" styleClass="outputText"></apex:outputText>
+                    <br></br><br></br>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="{!$Label.Mass_Update_Need_Btn_Update}" id="button"
+                                    action="{!updateList}" oncomplete="showTable();beneficiaryAdded()" rerender="form" onclick="addAll()"/>
+                <apex:commandButton value="{!$Label.Mass_Update_Need_Btn_Cancel}" 
+                                    action="{!cancel}"/>   
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="{!$Label.Mass_Update_Need_Label_Beneficiaries}" columns="1" id="beneficiaryList">
+                <apex:pageBlockTable value="{!lstCiv}" var="civWrapper" id="kl">
+                    
+                    <apex:column ><apex:facet name="header">
+                        <apex:inputCheckbox id="selectCheck" label="{$Label.Mass_Update_Need_Label_Select}"  title="{!$Label.Mass_Update_Need_Label_Deselect}" onclick="selectAllCheck()"/>
+                        </apex:facet>
+                        <apex:inputCheckbox value="{!civWrapper.bIsSelected}" id="checkedone"/>
+                    </apex:column>  
+                    
+                    
+                    <apex:column ><apex:facet name="header">{!$Label.Mass_Update_Need_Label_Need}
+                        </apex:facet>
+                        <apex:outputText value="{!civWrapper.sNeedName}" />
+                    </apex:column>
+                    
+                    <apex:column ><apex:facet name="header">{!$Label.Mass_Update_Need_Label_NeedCategory}
+                        </apex:facet>
+                        <apex:outputText value="{!civWrapper.sNeedCategory}" />
+                    </apex:column>
+                    
+                    <apex:column ><apex:facet name="header">{!$Label.Mass_Update_Need_Label_Severity}
+                        </apex:facet>
+                        <apex:inputField value="{!civWrapper.oNeedAssociation.Severity__c}" />
+                    </apex:column>
+                    
+                    <apex:column >
+                        <apex:facet name="header">{!$Label.Mass_Update_Need_Label_Comments}</apex:facet>
+                        <apex:inputField value="{!civWrapper.oNeedAssociation.Comments__c}"/> 
+                    </apex:column>
+                    
+                </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:tab>
+
+<!--  <apex:tab label="Custom Needs" style="Account"> this is sample page
+</apex:tab> -->
+</apex:tabPanel> 
+<apex:outputPanel id="script">
+    
+    
+    
+    <script type="text/javascript"> 
+       
+    var pageInfo = 0;
+    $(document).ready(function(){
+        
+        var i=0;
+        $("[id$='add']").each(function() {
+            
+            $(this).attr('name',  i);
+            i++;
+        });
+        $(".datePicker").css("z-index","76787877678");   // to display date on the top layer on pop up
+        
+        // for jquery table plugin
+        
+        oTable =  $("[id$='kl']").dataTable({
+            //"bJQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "sPageLast":"last",
+            "iDisplayLength": 10,
+            //"lengthMenu": [[10, 25, 50, -1], [100]],
+        });
+        
+        $("[id$='header']").css("cursor","pointer");
+        
+    });
+    
+    function showTable(){
+        var i=0;
+        $("[id$='add']").each(function() {
+            
+            $(this).attr('name',  i);
+            i++;
+        });
+        $(".datePicker").css("z-index","76787877678");   // to display date on the top layer on pop up
+        
+        // for jquery table plugin
+        
+        oTable =  $("[id$='kl']").dataTable({
+            //"bJQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "sPageLast":"last",
+            "iDisplayLength": 10,
+            //"lengthMenu": [[10, 25, 50, -1], [100]],
+        });
+        $("[id$='header']").css("cursor","pointer");
+        oTable.fnPageChange(pageInfo);
+        document.getElementById('j_id0:form:j_id36:beneficiaryList:kl:selectCheck').checked = false;
+    }
+    
+    function tableHandler()
+    {
+        
+        // for getting table propely after rerender
+        
+        oTable =  $("[id$='kl']").dataTable({
+            //"bJQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "sPageLast":"last",
+            "iDisplayLength": 20    
+        });
+        
+        $(".dataTables_length").eq(0).remove();
+        $(".dataTables_filter").eq(0).remove();
+        $(".dataTables_info").eq(1).remove();
+        $(".dataTables_paginate.paging_full_numbers").eq(1).remove();
+        $("[id$='header']").css("cursor","pointer");
+        
+        $("[id$='header']").css("cursor","pointer");
+    }
+    
+    function addAll(){
+        var table =  $("[id$='kl']").dataTable();
+        pageInfo = table.fnPagingInfo().iPage;
+        table.fnFilter('');
+        table.fnLengthChange(500);
+    }
+    
+    function selectAllCheck(){
+        var inputElem = document.getElementById('j_id0:form:j_id36:beneficiaryList:kl:selectCheck').checked;
+        var table =  $("[id$='kl']").dataTable();
+        if(inputElem == true){        
+            $('input', table.fnGetNodes()).attr('checked',true);
+            return false;
+        }
+        if(inputElem == false){       
+            $('input', table.fnGetNodes()).attr('checked',false);
+            return false;
+        }
+    }
+    </script>
+    
+</apex:outputPanel>
+
+</apex:page>

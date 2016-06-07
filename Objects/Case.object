@@ -1,0 +1,2658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChangeStatus</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloneAsChild</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloseCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MassClose</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <businessProcesses>
+        <fullName>Incident</fullName>
+        <description>Support Process for MI3 Incident.</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Awaiting Response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-opened</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Inquiry</fullName>
+        <description>Support Process for MI3 Inquiry</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Awaiting Response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-opened</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Issue</fullName>
+        <description>Support Process for MI3 Issue</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Awaiting Response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-opened</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>AccountId</fullName>
+        <inlineHelpText>Field to capture the Beneficiary on the Case</inlineHelpText>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AssetId</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Beneficiary__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Field to capture the Beneficiary on the Case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Look Up and Select the beneficiary associated with this case (if applicable)</inlineHelpText>
+        <label>Beneficiary</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Survival Beneficiary, Sponsorship Beneficiary</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cases (Beneficiary)</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BusinessHoursId</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Case_Archived__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field tells us if the case is archived or not. A case is archived when not modified for a certain period of time.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is a System-controlled field that shows whether a case has been archived or not</inlineHelpText>
+        <label>Case Archived?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Case_Passed_Expected_Resolution_Date__c</fullName>
+        <description>This is a backend field to be used in reports. This field determines if the case has passed expected due date and is still open</description>
+        <externalId>false</externalId>
+        <formula>OR(AND(NOW() &gt;  Expected_Resolution_Date__c, NOT(IsClosed)),  ClosedDate &gt; Expected_Resolution_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Passed Expected Resolution Date?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Case_Resolved_Email_Recepient__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Resolved Email Recepient</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Urgency_Temp__c</fullName>
+        <description>Case urgency</description>
+        <externalId>false</externalId>
+        <label>Case Urgency Temp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <description>Describes the Process for which an I3 is raised</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the associated Core Process</inlineHelpText>
+        <label>Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Beneficiary Lifecycle Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Funds Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inventory Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partnership Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supporter Experience</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supporter Beneficiary Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legacy System</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ClosedDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Comments</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactFax</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContactMobile</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <inlineHelpText>Enter a detailed narrative description of this case</inlineHelpText>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Escalation_Reason__c</fullName>
+        <description>This field is used to capture the escalation reason for the case. It should be mandatory for the end user to fill in this field whenever case is Escalated</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the reason for Escalation (for use when Escalating a Case)</inlineHelpText>
+        <label>Escalation Reason</label>
+        <picklist>
+            <controllingField>Status</controllingField>
+            <picklistValues>
+                <fullName>Information Unavailable</fullName>
+                <controllingFieldValues>Escalated</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Response - A response has not been given, so an escalation is appropriate</fullName>
+                <controllingFieldValues>Escalated</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partial Response - The response received did not fully resolve the I3 and follow up is needed by the owner of the I3 or super user</fullName>
+                <controllingFieldValues>Escalated</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unsatisfactory Response - The response received was unsatisfactory AND communication with the owner to resolve was ineffective</fullName>
+                <controllingFieldValues>Escalated</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lack of Resources - Missing a needed resource in order to resolve this I3, ie. a PF isn’t answering my emails, or returning  a report, etc. that is outside of my control</fullName>
+                <controllingFieldValues>Escalated</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Workload Concern - Do not have the time to solve by the due date due to my workload</fullName>
+                <controllingFieldValues>Escalated</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assistance Needed or Knowledge Gap - Need a super user to look at this request with me and help me figure out what needs to be done</fullName>
+                <controllingFieldValues>Escalated</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Information Unavailable - Unable to attain the needed information from the project, etc., and need help in getting the correct information</fullName>
+                <controllingFieldValues>Escalated</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Resolution_Date__c</fullName>
+        <description>Expected Date of Resolution</description>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Status, &apos;Closed&apos;), Case_Urgency_Temp__c,  IF( ISPICKVAL(Severity__c, &apos;High&apos;)   , CreatedDate + $Setup.Case_Urgency_Configuration__c.Urgency_High__c,IF( ISPICKVAL(Severity__c, &apos;Medium&apos;), CreatedDate + $Setup.Case_Urgency_Configuration__c.Urgency_Medium__c,IF( ISPICKVAL(Severity__c, &apos;Low&apos;), CreatedDate + $Setup.Case_Urgency_Configuration__c.Urgency_Low__c, Now())) ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is a System-calculated field that shows the date by which this case is expected to be resolved (based on the Priority)</inlineHelpText>
+        <label>Expected Resolution Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Field_Office_Name__c</fullName>
+        <description>This field is used in Sharing Rule. In order to set criteria in sharing rule field shouldn&apos;t be either lookup or formula field. That&apos;s why this field gets updated via Workflow Field Update rule.</description>
+        <externalId>false</externalId>
+        <label>Field Office Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Office__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is auto-populated with the Field Office of the selected ICP</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Look Up and Select the Field Office associated with this case (if applicable)</inlineHelpText>
+        <label>Field Office</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Field Office</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cases (Field Office)</relationshipLabel>
+        <relationshipName>Cases_on_Field_Office</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Global_Partner_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Global Partner Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Global_Partner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the global partner to which the supporter belongs to</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Look Up and Select the Global Partner associated with this case (if applicable)</inlineHelpText>
+        <label>Global Partner</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Global Partner</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cases (Global Partner)</relationshipLabel>
+        <relationshipName>Cases2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Household__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Select household of the beneficiary for whom the case is raised</inlineHelpText>
+        <label>Household</label>
+        <referenceTo>Household__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ICP_Number__c</fullName>
+        <description>Field to capture ICP Number on MI3.</description>
+        <externalId>false</externalId>
+        <formula>ICP__r.ICP_Id__c</formula>
+        <inlineHelpText>This is a System-calculated field that shows ICP Number of the ICP selected (if applicable)</inlineHelpText>
+        <label>ICP ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Field to capture the associated ICP</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Look Up and Select the ICP associated with this case (if applicable)</inlineHelpText>
+        <label>ICP</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>ICP</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cases (ICP)</relationshipLabel>
+        <relationshipName>Cases3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Impact__c</fullName>
+        <description>Captures the Impact of the I3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the Impact for this case based on the number of stakeholders (Supporter/FO/ICP/Beneficiary) affected.   (Low: a single stakeholder is affected; Medium: multiple stakeholders are affected; High: A large number of stakeholders are affected.</inlineHelpText>
+        <label>Impact</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Initiating_Event__c</fullName>
+        <description>Please mention the scenario which led to the case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a description of the event that led to the creation of this case</inlineHelpText>
+        <label>Initiating Event</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsClosedOnCreate</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsEscalated</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsSelfServiceClosed</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsVisibleInSelfService</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Field to capture the Lead on the Case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Look Up and Select the ICP Lead associated with this case (if applicable)</inlineHelpText>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LessonsLearned__c</fullName>
+        <description>Ability to capture lessons Learned in a text field on the closed issue, incident and inquiry screen.Resolution Description/Notes can be used.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any lessons learned from this case</inlineHelpText>
+        <label>Lessons Learned</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Origin</fullName>
+        <inlineHelpText>Select the method used to bring attention to this case</inlineHelpText>
+        <picklist>
+            <picklistValues>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <inlineHelpText>&quot;The current Owner of this case (auto-assigned on case creation based on the field, &quot;Route To&quot;.
+Owners:  
+   -To route this case to another Owner, reassign it here
+   -To reject this case, manually change the owner to a) a Super User or b)another owner</inlineHelpText>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <inlineHelpText>This is a System-calculated field that shows the priority of the case.  Priority is calculated from the user-provided Impact and Severity.</inlineHelpText>
+        <picklist>
+            <picklistValues>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <description>Depicts priority of the case. 
+Priority is automatically calculated based on the urgency and impact values at the time of case creation.</description>
+        <externalId>false</externalId>
+        <formula>IF(
+	AND(
+		ISPICKVAL(Impact__c, &apos;High&apos;), 
+		ISPICKVAL(Severity__c, &apos;High&apos;)
+	), 
+	&apos;Critical&apos;,
+	IF(
+		OR(
+			AND(
+				ISPICKVAL(Impact__c, &apos;Medium&apos;), 
+				ISPICKVAL(Severity__c, &apos;High&apos;)
+			),
+			AND(
+				ISPICKVAL(Impact__c, &apos;High&apos;), 
+				ISPICKVAL(Severity__c, &apos;Medium&apos;)
+			),
+			AND(
+				ISPICKVAL(Impact__c, &apos;Low&apos;), 
+				ISPICKVAL(Severity__c, &apos;High&apos;)
+			)
+		),
+		&apos;High&apos;,
+		IF(
+			OR(
+				AND(
+					ISPICKVAL(Impact__c, &apos;Medium&apos;), 
+					ISPICKVAL(Severity__c, &apos;Medium&apos;)
+				),
+				AND(
+					ISPICKVAL(Impact__c, &apos;High&apos;), 
+					ISPICKVAL(Severity__c, &apos;Low&apos;)
+				)
+			),
+			&apos;Medium&apos;,
+			IF(
+				OR(
+					AND(
+						ISPICKVAL(Impact__c, &apos;Low&apos;), 
+						ISPICKVAL(Severity__c, &apos;Medium&apos;)
+					),
+					AND(
+						ISPICKVAL(Impact__c, &apos;Medium&apos;), 
+						ISPICKVAL(Severity__c, &apos;Low&apos;)
+					),
+					AND(
+						ISPICKVAL(Impact__c, &apos;Low&apos;), 
+						ISPICKVAL(Severity__c, &apos;Low&apos;)
+					)
+				),
+				&apos;Low&apos;,
+				&apos;&apos;
+			)
+		)
+	)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is a System-calculated field that shows the priority of the case. Priority is calculated from the user-provided Impact and Severity.</inlineHelpText>
+        <label>Priority</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason</fullName>
+        <inlineHelpText>Select the Resolution Status of this case (Resolved: a resolution has been found; Rejected:  this case is incorrectly classified or does not follow Mi3/PFM/Blueprint guidelines)</inlineHelpText>
+        <picklist>
+            <picklistValues>
+                <fullName>Resolved</fullName>
+                <cssExposed>true</cssExposed>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unresolved</fullName>
+                <cssExposed>true</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Existing problem</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Instructions not clear</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New problem</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance / Billing update</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beneficiary Communication status</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change of Communication Preference</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Commitment</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Resolution_Description__c</fullName>
+        <description>Describes the resolution provided for the Case</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a detailed description of the resolution for this case (for use when closing a case)</inlineHelpText>
+        <label>Resolution Description</label>
+        <length>40000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Route_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is auto-populated with the Field Office of the selected ICP</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the Field Office or Global Partner to which this case should be sent</inlineHelpText>
+        <label>Route To</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Field_Office</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Global_Partner</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cases (Field Office)</relationshipLabel>
+        <relationshipName>Cases4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Severity__c</fullName>
+        <description>Captures the Severity of the I3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the Severity for this case based on the effect on the stakeholders (Low: Minimum Organization Wide Impact; Medium: Moderate Organization Wide Impact;  High: Significant Organization Wide Impact/Risk to Compassion&apos;s Reputation/Safety-Related Case)</inlineHelpText>
+        <label>Severity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Solution_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the type of resolution for this case (for use when closing a case); (FAQ:  a common solution from previous resolved cases was found;   Research:  a common solution was not found, i.e. work specific to this case had to be done to reach a resolution)</inlineHelpText>
+        <label>Solution Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <inlineHelpText>Select the Status of this Case (New: Just created; Open: Accepted by the Owner; Awaiting Response: Question has been asked by the Owner; Closed: Resolved; Re-opened: Previously closed but not fully resolved; Escalated: An issue requires reassignment</inlineHelpText>
+        <picklist>
+            <picklistValues>
+                <fullName>Awaiting Response</fullName>
+                <closed>false</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Claimed</fullName>
+                <closed>true</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <closed>true</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Escalated</fullName>
+                <closed>false</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New</fullName>
+                <closed>false</closed>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <closed>false</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Re-opened</fullName>
+                <closed>false</closed>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Category__c</fullName>
+        <description>Choose the sub category based on Category</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the associated Sub Process</inlineHelpText>
+        <label>Sub Category</label>
+        <picklist>
+            <controllingField>Category__c</controllingField>
+            <picklistValues>
+                <fullName>Create Rolling Forecast</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Custom Gift</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Develop Marketing Strategy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disburse Funds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Educate Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engage Supporter with Beneficiary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exit Beneficiary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Facilitating Communications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP unfulfilled obligation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Identify Partnership Need</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage and Grow Partnership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage and Protect Funds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage Beneficiary Status Change</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage Campaigns</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage Current Inventory</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage Events</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage Partner Campaign</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage Partner Leads/Develop Relationships</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage Partnership Status</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage Partner Status</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage Supply Chain</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manage Translator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operational Plan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner Escalation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plan Communications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plan with ICP Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Process Correspondence B2S</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Process Correspondence S2B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Process GP Invoices and Payments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Provide CIV Interventions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Provide Context and About Communication for a Beneficiary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Provide Field Experience</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reporting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Servicing Communications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Set Up ICP Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Track, Assess &amp; Report Beneficiary Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Track Access and Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Track  Access and Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Track and Report Funds Usage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer Beneficiary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Translate Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unusable Asset</fullName>
+                <controllingFieldValues>Supporter Experience</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Welcome Beneficiary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field Memo</fullName>
+                <controllingFieldValues>Supporter Experience</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beneficiary Transfer</fullName>
+                <controllingFieldValues>Beneficiary Lifecycle Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partnership Performance Review</fullName>
+                <controllingFieldValues>Partnership Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner Status Change</fullName>
+                <controllingFieldValues>Partnership Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICP Transition Obligations</fullName>
+                <controllingFieldValues>Partnership Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field Visit</fullName>
+                <controllingFieldValues>Supporter Experience</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lost Or Damaged Shipment</fullName>
+                <controllingFieldValues>Supporter Beneficiary Communication</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Connect Information Correction for Compass</fullName>
+                <controllingFieldValues>Legacy System</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <inlineHelpText>Enter a brief summary of this case (ideally just a short phrase or sentence)</inlineHelpText>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Submitted_By__c</fullName>
+        <description>This field captures the name of the person who submits the Case</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the name of the person who is submitting the case (applicable for users sharing a common user log in)</inlineHelpText>
+        <label>Submitted By</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SuppliedCompany</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedName</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Supporter__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Field to capture the Supporter when Case was created on behalf of Supporter.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Look Up and Select the Supporter associated with this case (if applicable)</inlineHelpText>
+        <label>Supporter</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Supporter Person</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cases (Account)</relationshipLabel>
+        <relationshipName>Cases1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <inlineHelpText>Type Of Case</inlineHelpText>
+        <picklist>
+            <picklistValues>
+                <fullName>Problem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Was_Case_Escalated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is a backend field. This is used in reports. It tracks if the case was escalated.</description>
+        <externalId>false</externalId>
+        <label>Was Case Escalated?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Was_Case_Ever_Re_opened_In_It_s_Lifetime__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is a backend field which is used to track if a case was ever re-poened in its lifetime. This is used in reports.</description>
+        <externalId>false</externalId>
+        <label>Was Case Ever Re-opened In It&apos;s Lifetime</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Was_Case_Rejected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is a backend field. This is used in reports. It tracks if the case was rejected.</description>
+        <externalId>false</externalId>
+        <label>Was Case Rejected?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <listViews>
+        <fullName>AllOpenCases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Open Cases</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Cases</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Australia_Management_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Australia Management Team</label>
+        <language>en_US</language>
+        <queue>Australia_Management_Team</queue>
+        <sharedTo>
+            <group>Compassion_Australia_GP_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Bangladesh_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Bangladesh Management Team</label>
+        <language>en_US</language>
+        <queue>Bangladesh_Management_Team</queue>
+        <sharedTo>
+            <group>Bangladesh_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Bolivia_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Bolivia Management Team</label>
+        <language>en_US</language>
+        <queue>Bolivia_Management_Team</queue>
+        <sharedTo>
+            <group>Bolivia_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Brazil_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Brazil Management Team</label>
+        <language>en_US</language>
+        <queue>Brazil_Management_Team</queue>
+        <sharedTo>
+            <group>Brazil_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Burkina_Faso_Management_Queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Burkina Faso Management Team</label>
+        <language>en_US</language>
+        <queue>Burkina_Faso_Management_Team</queue>
+        <sharedTo>
+            <group>Burkina_Faso_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Canada_Management_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Canada Management Team</label>
+        <language>en_US</language>
+        <queue>Canada_Management_Team</queue>
+        <sharedTo>
+            <group>Compassion_Canada_GP_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Colombia_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Colombia Management Team</label>
+        <language>en_US</language>
+        <queue>Colombia_Management_Team</queue>
+        <sharedTo>
+            <group>Colombia_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Dominican_Republic_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Dominican Republic Management Team</label>
+        <language>en_US</language>
+        <queue>Dominican_Republic_Management_Team</queue>
+        <sharedTo>
+            <group>Dominican_Republic_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>East_India_Management_Queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>East India Management Team</label>
+        <language>en_US</language>
+        <queue>East_India_Management_Team</queue>
+        <sharedTo>
+            <group>East_India_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>East_Indonesia_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>East Indonesia Management Team</label>
+        <language>en_US</language>
+        <queue>East_Indonesia_Management_Team</queue>
+        <sharedTo>
+            <group>East_Indonesia_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ecuador_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Ecuador Management Team</label>
+        <language>en_US</language>
+        <queue>Ecuador_Management_Team</queue>
+        <sharedTo>
+            <group>Ecuador_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>El_Salvador_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>El Salvador Management Team</label>
+        <language>en_US</language>
+        <queue>El_Salvador_Management_Team</queue>
+        <sharedTo>
+            <group>El_Salvador_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ethiopia_Management_Queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Ethiopia Management Team</label>
+        <language>en_US</language>
+        <queue>Ethiopia_Management_Team</queue>
+        <sharedTo>
+            <group>Ethiopia_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>France_Management_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>France  Management Team</label>
+        <language>en_US</language>
+        <queue>France_Management_Team</queue>
+        <sharedTo>
+            <group>SEL_France_GP_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Germany_Management_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Germany Management Team</label>
+        <language>en_US</language>
+        <queue>Germany_Management_Team</queue>
+        <sharedTo>
+            <group>Germany_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ghana_Management_Queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Ghana Management Team</label>
+        <language>en_US</language>
+        <queue>Ghana_Management_Team</queue>
+        <sharedTo>
+            <group>Ghana_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Guatemala_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Guatemala Management Team</label>
+        <language>en_US</language>
+        <queue>Guatemala_Management_Team</queue>
+        <sharedTo>
+            <group>Guatemala_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Haiti_Management_Queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Haiti Management Team</label>
+        <language>en_US</language>
+        <queue>Haiti_Management_Team</queue>
+        <sharedTo>
+            <group>Haiti_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Honduras_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Honduras Management Team</label>
+        <language>en_US</language>
+        <queue>Honduras_Management_Team</queue>
+        <sharedTo>
+            <group>Honduras_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Indonesia_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Indonesia Management Team</label>
+        <language>en_US</language>
+        <queue>Indonesia_Management_Team</queue>
+        <sharedTo>
+            <group>Indonesia_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Italy_Management_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Italy Management Team</label>
+        <language>en_US</language>
+        <queue>Italy_Management_Team</queue>
+        <sharedTo>
+            <group>Italy_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Kenya_Management_Queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Kenya Management Team</label>
+        <language>en_US</language>
+        <queue>Kenya_Management_Team</queue>
+        <sharedTo>
+            <group>Kenya_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Mexico_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Mexico Management Team</label>
+        <language>en_US</language>
+        <queue>Mexico_Management_Team</queue>
+        <sharedTo>
+            <group>Mexico_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MyCases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Cases</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>MyOpenCases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Open Cases</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Netherlands_Management_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Netherlands Management Team</label>
+        <language>en_US</language>
+        <queue>Netherlands_Management_Team</queue>
+        <sharedTo>
+            <group>Netherlands_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>New_Zealand_Management_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>New Zealand Management Team</label>
+        <language>en_US</language>
+        <queue>New_Zealand_Management_Team</queue>
+        <sharedTo>
+            <group>New_Zealand_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Nicaragua_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Nicaragua Management Team</label>
+        <language>en_US</language>
+        <queue>Nicaragua_Management_Team</queue>
+        <sharedTo>
+            <group>Nicaragua_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Norway_Management_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Norway Management Team</label>
+        <language>en_US</language>
+        <queue>Norway_Management_Team</queue>
+        <sharedTo>
+            <group>Norway_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Peru_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Peru Management Team</label>
+        <language>en_US</language>
+        <queue>Peru_Management_Team</queue>
+        <sharedTo>
+            <group>Peru_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Philippines_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Philippines Management Team</label>
+        <language>en_US</language>
+        <queue>Philippines_Management_Team</queue>
+        <sharedTo>
+            <group>Philippines_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Rwanda_Management_Queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Rwanda Management Team</label>
+        <language>en_US</language>
+        <queue>Rwanda_Management_Team</queue>
+        <sharedTo>
+            <group>Rwanda_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>South_India_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>India Management Team</label>
+        <language>en_US</language>
+        <queue>South_India_Management_Team</queue>
+        <sharedTo>
+            <group>South_India_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>South_Korea_Management_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>South Korea Management Team</label>
+        <language>en_US</language>
+        <queue>South_Korea_Management_Team</queue>
+        <sharedTo>
+            <group>South_Korea_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Sri_Lanka_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Sri Lanka Management Team</label>
+        <language>en_US</language>
+        <queue>Sri_Lanka_Management_Team</queue>
+        <sharedTo>
+            <group>Sri_Lanka_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Switzerland_Management_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Switzerland Management Team</label>
+        <language>en_US</language>
+        <queue>Switzerland_Management_Team</queue>
+        <sharedTo>
+            <group>Switzerland_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Tanzania_Management_Queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Tanzania Management Team</label>
+        <language>en_US</language>
+        <queue>Tanzania_Management_Team</queue>
+        <sharedTo>
+            <group>Tanzania_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Thailand_Management_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Thailand Management Team</label>
+        <language>en_US</language>
+        <queue>Thailand_Management_Team</queue>
+        <sharedTo>
+            <group>Thailand_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Togo_Management_Queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Togo Management Team</label>
+        <language>en_US</language>
+        <queue>Togo_Management_Team</queue>
+        <sharedTo>
+            <group>Togo_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Uganda_Management_Queue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>Expected_Resolution_Date__c</columns>
+        <columns>Beneficiary__c</columns>
+        <columns>ICP_Number__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Uganda Management Team</label>
+        <language>en_US</language>
+        <queue>Uganda_Management_Team</queue>
+        <sharedTo>
+            <group>Uganda_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>United_Kingdom_Management_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>United Kingdom Management Team</label>
+        <language>en_US</language>
+        <queue>United_Kingdom_Management_Team</queue>
+        <sharedTo>
+            <group>United_Kingdom_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>United_States_Management_Team_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>United States Management Team</label>
+        <language>en_US</language>
+        <queue>United_States_Management_Team</queue>
+        <sharedTo>
+            <group>United_States_Management_Group</group>
+        </sharedTo>
+    </listViews>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Incident</fullName>
+        <active>true</active>
+        <businessProcess>Incident</businessProcess>
+        <description>Record a Incident with this type.</description>
+        <label>Incident</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Beneficiary Lifecycle Management</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Supporter Beneficiary Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supporter Experience</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalation_Reason__c</picklist>
+            <values>
+                <fullName>Assistance Needed or Knowledge Gap - Need a super user to look at this request with me and help me figure out what needs to be done</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Unavailable - Unable to attain the needed information from the project%2C etc%2E%2C and need help in getting the correct information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lack of Resources - Missing a needed resource in order to resolve this I3%2C ie%2E a PF isn%E2%80%99t answering my emails%2C or returning  a report%2C etc%2E that is outside of my control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Response - A response has not been given%2C so an escalation is appropriate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial Response - The response received did not fully resolve the I3 and follow up is needed by the owner of the I3 or super user</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsatisfactory Response - The response received was unsatisfactory AND communication with the owner to resolve was ineffective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workload Concern - Do not have the time to solve by the due date due to my workload</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Impact__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Severity__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Solution_Type__c</picklist>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Category__c</picklist>
+            <values>
+                <fullName>Beneficiary Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost Or Damaged Shipment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Inquiry</fullName>
+        <active>true</active>
+        <businessProcess>Inquiry</businessProcess>
+        <description>Record a Inquiry with this type.</description>
+        <label>Inquiry</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Partnership Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supporter Experience</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalation_Reason__c</picklist>
+            <values>
+                <fullName>Assistance Needed or Knowledge Gap - Need a super user to look at this request with me and help me figure out what needs to be done</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Unavailable - Unable to attain the needed information from the project%2C etc%2E%2C and need help in getting the correct information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lack of Resources - Missing a needed resource in order to resolve this I3%2C ie%2E a PF isn%E2%80%99t answering my emails%2C or returning  a report%2C etc%2E that is outside of my control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Response - A response has not been given%2C so an escalation is appropriate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial Response - The response received did not fully resolve the I3 and follow up is needed by the owner of the I3 or super user</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsatisfactory Response - The response received was unsatisfactory AND communication with the owner to resolve was ineffective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workload Concern - Do not have the time to solve by the due date due to my workload</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Impact__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Severity__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Solution_Type__c</picklist>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Category__c</picklist>
+            <values>
+                <fullName>Field Memo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Status Change</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Issue</fullName>
+        <active>true</active>
+        <businessProcess>Issue</businessProcess>
+        <description>Record a Issue with this type.</description>
+        <label>Issue</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Legacy System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partnership Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supporter Experience</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalation_Reason__c</picklist>
+            <values>
+                <fullName>Assistance Needed or Knowledge Gap - Need a super user to look at this request with me and help me figure out what needs to be done</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Unavailable - Unable to attain the needed information from the project%2C etc%2E%2C and need help in getting the correct information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lack of Resources - Missing a needed resource in order to resolve this I3%2C ie%2E a PF isn%E2%80%99t answering my emails%2C or returning  a report%2C etc%2E that is outside of my control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Response - A response has not been given%2C so an escalation is appropriate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial Response - The response received did not fully resolve the I3 and follow up is needed by the owner of the I3 or super user</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsatisfactory Response - The response received was unsatisfactory AND communication with the owner to resolve was ineffective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workload Concern - Do not have the time to solve by the due date due to my workload</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Impact__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Severity__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Solution_Type__c</picklist>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Category__c</picklist>
+            <values>
+                <fullName>Connect Information Correction for Compass</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ICP Transition Obligations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partnership Performance Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unusable Asset</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Route_To__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Supporter__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.STATUS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Expected_Resolution_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CORE.USERS.ALIAS</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeStatus</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>MassClose</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.STATUS</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.CASE_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.SUBJECT</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.STATUS</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CASE_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.PRIORITY</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Expected_Resolution_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER.NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Case_Creator_can_not_change_the_priority</fullName>
+        <active>false</active>
+        <description>This is to ensure that the case creator cannot edit the case priroty</description>
+        <errorConditionFormula>($User.Id= CreatedBy.Id)  &amp;&amp; ISCHANGED(Priority)</errorConditionFormula>
+        <errorMessage>Case Initiator does not have the capability to change the case priority</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>New_Case_Status</fullName>
+        <active>true</active>
+        <description>A new case can only be created in new status</description>
+        <errorConditionFormula>IF(ISNEW(), NOT(ISPICKVAL(Status, &apos;NEW&apos;)), FALSE)</errorConditionFormula>
+        <errorDisplayField>Status</errorDisplayField>
+        <errorMessage>Case can only be created in &quot;New&quot; status.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Only_Case_owner_can_change_the_priority</fullName>
+        <active>false</active>
+        <description>This is to ensure that the case priority is changed by case owner only and no one else</description>
+        <errorConditionFormula>(OwnerId != $User.Id) &amp;&amp; ISCHANGED(Priority)</errorConditionFormula>
+        <errorDisplayField>Priority</errorDisplayField>
+        <errorMessage>Only Case Owner is allowed to change the priority.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Accept_Case</fullName>
+        <availability>online</availability>
+        <description>User will click on this button to Accept the case.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Accept Case</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/28.0/connection.js&quot;)} 
+var c = new sforce.SObject(&quot;Case&quot;); 
+c.Id = &apos;{!Case.Id}&apos;; 
+
+var ownid = &apos;{!Case.OwnerId}&apos;;
+ ownid = ownid.substring(0,3);
+
+if( (ownid == &apos;005&apos; )&amp;&amp; (&apos;{!Case.Status}&apos; == &apos;New&apos;) &amp;&amp; (&apos;{!Case.OwnerId}&apos;==&apos;{!$User.Id}&apos;) ) { 
+
+c.Status = &apos;Open&apos;; 
+var result = sforce.connection.update([c]); 
+window.location.reload(); 
+}
+else if( ownid != &apos;005&apos;) 
+{
+alert(&apos;You cannot accept a case assigned to a queue. You can only accept a case once it is assigned to you.&apos;);
+}
+else 
+if(ownid == &apos;005&apos; &amp;&amp; (&apos;{!Case.OwnerId}&apos;!=&apos;{!$User.Id}&apos;)){
+
+alert(&apos;You cannot accept a case which is assigned to another user.&apos;);
+}
+else if((&apos;{!Case.Status}&apos;  != &apos;New&apos;)&amp;&amp; (ownid == &apos;005&apos;)&amp;&amp;(&apos;{!Case.OwnerId}&apos;!=&apos;{!$User.Id}&apos;) ){
+
+alert(&apos;You can only accept New cases.&apos;);
+}else {
+alert(&apos;This case is already assigned to you.&apos;)
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Claim_Case</fullName>
+        <availability>online</availability>
+        <description>This button flips the Status of the Case to &quot;Claimed&quot;</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Claim Case</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)}
+
+var c = new sforce.SObject(&quot;Case&quot;); 
+c.id = &quot;{!Case.Id}&quot;;
+c.Status = &quot;{!Case.Status}&quot;;
+if( c.Status == &apos;Closed&apos;)
+{
+  var reply = confirm(&apos;You are about to claim this case. Are you sure?&apos;);
+  if(reply == true)
+  {
+    c.Status = &apos;Claimed&apos;; 
+    sforce.connection.update([c]); 
+    window.location.reload(); 
+  }
+  else
+  window.location.reload();
+}
+else
+{
+  alert(&apos;You can only claim a &quot;Closed&quot; case&apos;);
+  window.location.reload();
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Case</fullName>
+        <availability>online</availability>
+        <description>This button will open Case of Inquiry record type.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{! REQUIRESCRIPT(&quot;/soap/ajax/24.0/connection.js&quot;)}
+var RecordTypeQuery = &quot;Select Id from RecordType where developername=&apos;Inquiry&apos; and SObjectType=&apos;Case&apos;&quot;;
+var recordtype= sforce.connection.query(RecordTypeQuery );
+var records = recordtype.getArray(&quot;records&quot;);
+window.open(&quot;/500/e?RecordType=&quot;+records[0].Id+&quot;&amp;{!$Setup.Org_Level_Settings__c.Case_Category_Id__c}=Partnership+Management&amp;CF{!$Setup.Org_Level_Settings__c.Case_Lead_Id__c}={!Lead.Name}&amp;CF{!$Setup.Org_Level_Settings__c.Case_Lead_Id__c}_lkid={!Lead.Id}&amp;retURL={!Lead.Id}&quot;,&quot;_parent&quot;);</url>
+    </webLinks>
+</CustomObject>

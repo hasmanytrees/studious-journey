@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This Custom object is used to generate print Orders based on Correspondence Items.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Attachment_Mailed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag denotes if the communication kit has any physical attachment or not.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether an attachment (For example: Stickers) was mailed along with the physical letter</inlineHelpText>
+        <label>Attachment Mailed</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Attachment_Not_Mailed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag denotes if the communication kit has any eligible physical attachment or not.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates that an item sent by the supporter was not eligible to be mailed</inlineHelpText>
+        <label>Attachment Not Mailed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BEN_Compass_ID__c</fullName>
+        <description>Formula field to bring Beneficiary Id on the communication record.</description>
+        <externalId>false</externalId>
+        <formula>BEN_ID__r.Compass_Id__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Compass Beneficiary ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEN_Global_ID__c</fullName>
+        <description>This formula brings in the global number of the beneficiary to the communication kit.</description>
+        <externalId>false</externalId>
+        <formula>BEN_ID__r.Global_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Global Beneficiary ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEN_ID__c</fullName>
+        <description>The Beneficiary whose Correspondence Items are included in this Print Order</description>
+        <externalId>false</externalId>
+        <label>Beneficiary</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1</booleanFilter>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Sponsorship Beneficiary</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Communications</relationshipLabel>
+        <relationshipName>Ben_Communication_Kits</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BEN_INT_ID__c</fullName>
+        <description>This field is a backend field used in integration class. This field is used in &quot;SendCommunicationKitStatus&quot; class</description>
+        <externalId>false</externalId>
+        <label>INT Beneficiary ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEN_INT_Local_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>INT Beneficiary Local ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEN_Local_ID__c</fullName>
+        <description>This field brings in the local beneficiary id of the beneficiary to the communication kit.</description>
+        <externalId>false</externalId>
+        <formula>BEN_ID__r.Local_Beneficiary_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Local Beneficiary ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>COMPASS_child_id__c</fullName>
+        <description>This is a backend field used in integrations to capture the Beneficiary Legacy Id in incoming JSON.</description>
+        <externalId>false</externalId>
+        <label>INT Beneficiary Legacy ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>COMPASS_con_pk__c</fullName>
+        <description>This is an integration specific field used in JSON. This will capture the Supporter&apos;s Legacy Id from the incoming JSON.</description>
+        <externalId>false</externalId>
+        <label>INT Supporter Legacy ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>COMPASS_corr_id__c</fullName>
+        <description>This is the legacy communication Id from Compass</description>
+        <externalId>true</externalId>
+        <label>Legacy Communication ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>This is to add any comment  on the communication kit.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional comments. For example: Elaborate on Content Issues Found</inlineHelpText>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Communication_Date__c</fullName>
+        <description>This is the date when communication kit was last updated.</description>
+        <externalId>false</externalId>
+        <label>Communication Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Communication_Types__c</fullName>
+        <description>This field stores the type of all the correspondence items added to the communication kit.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Types of communication that are called for to fulfill Beneficiary writing commitments; One communication may fulfill multiple types</inlineHelpText>
+        <label>Communication Types</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New Sponsor Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scheduled Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reciprocal Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Small Gift Thank You Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Large Gift Thank You Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beneficiary Initiated Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supporter Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Final Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Content_Issues_Found__c</fullName>
+        <description>This field captures the reasons for rework.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Issues with the communications that require rework</inlineHelpText>
+        <label>Content Issues Found</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Requests for money or special favors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>References to political issues</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inappropriate photo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Illegible handwriting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No date written</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supporter not addressed by name</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No personal info on Beneficiary’s life</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Does not contain new skill information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No  thank you for gift</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No photo for large gift</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No question for Sponsor/Correspondent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No prayer request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No drawing from beneficiary (8 or below)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3rd party not identified (if not child)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contains personal contact information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inappropriate content</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Correspondence_ID_For_Data_Load__c</fullName>
+        <description>This is a back-end field used to store compassion Correspondence id</description>
+        <externalId>true</externalId>
+        <label>Correspondence ID For Data Load</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Back_At_Field_Office__c</fullName>
+        <description>This field is used to display the Due Date of the Print Order Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date that the beneficiary letter is expected to be received at the Field Office after its printed</inlineHelpText>
+        <label>Due at FO by</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Due_Month__c</fullName>
+        <description>This field is used on Items Due Report. It is populated for all the kits that are due either in the past, or current month or future incoming month.</description>
+        <externalId>false</externalId>
+        <formula>if( NOT(TEXT(Status__c) == $Label.Printed_and_sent_to_ICP), &apos;&apos;,
+	if( Due_Back_At_Field_Office__c &lt; TODAY() &amp;&amp; TEXT(Status__c) == $Label.Printed_and_sent_to_ICP, 
+		$Label.Due_Month_Overdue, 
+		$Label.Due_Month_Future_Months			
+		)
+	)</formula>
+        <label>Due Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Error_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Error Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Final_Composed_Letter_Link__c</fullName>
+        <description>This is the link of the final letter.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the final fully composed letter including translation to the language of the recipient</inlineHelpText>
+        <label>Final Composed Letter Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Final_Letter_Archived__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used denotes if final letter is archived or not.</description>
+        <externalId>false</externalId>
+        <label>Final Letter Archived?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Final_Translated_Text__c</fullName>
+        <description>This is the translated version of the original text.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text content of the original letter in the final language of the recipient</inlineHelpText>
+        <label>Final Translated Text</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Final__c</fullName>
+        <description>This field is used in Items Due Report. This is populated whenever Communication Type includes Final Thank You Letter.</description>
+        <externalId>false</externalId>
+        <formula>IF( INCLUDES( Communication_Types__c , &apos;Final Thank You Letter&apos;) , &apos;X&apos;, &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Final</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GP_Supporter_ID__c</fullName>
+        <description>This field brings in the Supporter Id on the Communication kit.</description>
+        <externalId>false</externalId>
+        <formula>SUP_ID__r.GP_Supporter_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Legacy Supporter ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Global_Partner_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>SUP_ID__r.Global_Partner__r.Global_Partner_Code__c</formula>
+        <label>Global Partner ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_Lookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is used to link communication kit to an ICP.</description>
+        <externalId>false</externalId>
+        <label>ICP Lookup</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>ICP</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Communication_Kits1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>INT_Communication_Kit_ID__c</fullName>
+        <description>This field is a backend field used in integration class. This field is used in &quot;SendCommunicationKitStatus&quot; class</description>
+        <externalId>false</externalId>
+        <label>INT Communication Kit ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>INT_Final_Letter__c</fullName>
+        <description>This field checks if communication types include final letter or not.</description>
+        <externalId>false</externalId>
+        <formula>IF( INCLUDES( Communication_Types__c , &apos;Final Letter&apos;) , true, false)</formula>
+        <label>Final Letter?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>INT_New_Status__c</fullName>
+        <description>This is a backend field used in integration. This field is populated during integration call and then new status is set using this via workflow.</description>
+        <externalId>false</externalId>
+        <label>INT New Status</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>INT_RecordType_Name__c</fullName>
+        <description>This is a integration specific field used in JSON structures. This will capture the record type from incoming JSON.</description>
+        <externalId>false</externalId>
+        <label>INT RecordType Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>INT_Source_System__c</fullName>
+        <defaultValue>&quot;SFDC-CI&quot;</defaultValue>
+        <description>This is an integration specific field. This is used in JSONs.</description>
+        <externalId>false</externalId>
+        <label>INT Source System</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>INT_Supporter_Correspondence_Language__c</fullName>
+        <externalId>false</externalId>
+        <label>INT Supporter Correspondence Language</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>INT_Supporter_Review_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is a field that stores the Supporter Mandatory Review Status</description>
+        <externalId>false</externalId>
+        <label>INT Supporter Review Required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Large_Gift__c</fullName>
+        <description>This field is used in Items Due Report. This is populated whenever Communication Type includes Large Gift Thank You Letter.</description>
+        <externalId>false</externalId>
+        <formula>IF( INCLUDES( Communication_Types__c , &apos;Large Gift Thank You Letter&apos;) , &apos;X&apos;, &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Large Gift</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Local_GP_Kit_ID__c</fullName>
+        <description>This is the kit id generated locally by the Global Partner.</description>
+        <externalId>false</externalId>
+        <label>Local GP Communication ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Marked_For_Rework__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This determines if the communication kit is marked for rework.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates the communications where content issues requiring rework were found. Communication will be automatically made available for re-printing</inlineHelpText>
+        <label>Marked For Rework</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>New_Sponsor__c</fullName>
+        <description>This is used in Items Due Report. It is populated when communication type has New Sponsor Letter in it.</description>
+        <externalId>false</externalId>
+        <formula>IF( INCLUDES( Communication_Types__c , &apos;New Sponsor Letter&apos;) , &apos;X&apos; ,&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Sponsor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Pages__c</fullName>
+        <description>This is the number of pages of letter.</description>
+        <externalId>false</externalId>
+        <label>Number Of Pages</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Letter_Archived__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field denotes if the original letter is archived or not.</description>
+        <externalId>false</externalId>
+        <label>Original Letter Archived?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Original_Letter_Link__c</fullName>
+        <description>This is the link of the Original Letter.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the original scanned letter</inlineHelpText>
+        <label>Original Letter Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Original_Mailed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This denotes if the original physical document were mailed or not.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether the original physical letter was mailed</inlineHelpText>
+        <label>Original Mailed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Original_Text__c</fullName>
+        <description>This field is used to store the original JSON text coming form ISL.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text content of the original letter in the original language</inlineHelpText>
+        <label>Original Text</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Overdue_Indicator__c</fullName>
+        <description>This is the visual indicator for the due date on the communication kit.</description>
+        <externalId>false</externalId>
+        <formula>IF( AND(Today() &gt;  Due_Back_At_Field_Office__c,ISPICKVAL( Status__c , &apos;Printed and sent to ICP&apos;) , RecordType.DeveloperName = &apos;B2S&apos;)  , IMAGE(&apos;/img/msg_icons/error16.png&apos;, &apos;Due Date Ended&apos;),&apos;&apos;)</formula>
+        <inlineHelpText>Visual indicator that the letter has missed its due date at the Field office</inlineHelpText>
+        <label>Overdue Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Physical_Original_Required__c</fullName>
+        <description>This field shows if the supported has set his delivery preference to physical or not.</description>
+        <externalId>false</externalId>
+        <formula>IF( TEXT(SUP_ID__r.Delivery_Preference__c) == &apos;Physical&apos; , true, false)</formula>
+        <inlineHelpText>Sponsor has requested that the original physical letter be mailed to the Sponsor</inlineHelpText>
+        <label>Physical Original Required?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Print_Allowed_Date__c</fullName>
+        <description>This is the date on which communication kit is scheduled to be printed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Earliest date the communication can be printed at the Field Office to comply with the maximum letters a beneficiary can write in a year</inlineHelpText>
+        <label>Print Allowed Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Print_Date__c</fullName>
+        <description>This is the date on which communication kit was printed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date on which the communication was actually printed</inlineHelpText>
+        <label>Print Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Print_Type_Selected__c</fullName>
+        <description>This is the type of printing selected while printing the communication kit.</description>
+        <externalId>false</externalId>
+        <label>Print Type Selected</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Template with Header</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Header Only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Printed_Not_Sent_To_FO__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Printed Not Sent To FO</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Received_at_FO__c</fullName>
+        <description>This field is used for storing the date on which the B2S letter was received back at FO.</description>
+        <externalId>false</externalId>
+        <label>Received at FO</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Reciprocal__c</fullName>
+        <description>This is used in Items Due Report. It is populated when communication type has Reciprocal Letter in it.</description>
+        <externalId>false</externalId>
+        <formula>IF( INCLUDES( Communication_Types__c , &apos;Reciprocal Letter&apos;) ,&apos;X&apos;, &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reciprocal</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Relationship_Type__c</fullName>
+        <description>This defines the relationship type of the communication</description>
+        <externalId>false</externalId>
+        <label>Relationship Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Correspondent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Encourager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SUP_Global_ID__c</fullName>
+        <description>This formula brings in the global number of the supporter on to the communication kit.</description>
+        <externalId>false</externalId>
+        <formula>SUP_ID__r.Global_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Global Supporter ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SUP_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is used to link communication kit with the supporter.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the name of the Sponsor/Correspondent/Encourager associated with this communication</inlineHelpText>
+        <label>Supporter</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Supporter Person</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Communications</relationshipLabel>
+        <relationshipName>Communication_Kits</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SUP_INT_ID__c</fullName>
+        <description>This field is a backend field used in integration class. This field is used in &quot;SendCommunicationKitStatus&quot; class</description>
+        <externalId>false</externalId>
+        <label>INT Supporter ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scheduled__c</fullName>
+        <description>This is used in Items Due Report. It is populated when communication type has Scheduled Letter in it.</description>
+        <externalId>false</externalId>
+        <formula>IF( INCLUDES( Communication_Types__c , &apos;Scheduled Letter&apos;) , &apos;X&apos;, &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scheduled</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Small_Gift__c</fullName>
+        <description>This is used in Items Due Report. It is populated when communication type has Small Gift Thank You Letter in it.</description>
+        <externalId>false</externalId>
+        <formula>IF( INCLUDES( Communication_Types__c , &apos;Small Gift Thank You Letter&apos;) , &apos;X&apos;, &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Small Gift</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>This field is used to display the status of the Communication Kit.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Ready to be printed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Printed and sent to ICP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Received in the system</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field Office translation queue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field Office translation process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field Office quality check queue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field Office quality check process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Global Partner translation queue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Global Partner translation process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Translation and quality check complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality check unsuccessful</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Composition process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Published to Global Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System Error</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Supporter_Questions__c</fullName>
+        <defaultValue>&quot;No Questions&quot;</defaultValue>
+        <description>This field holds the Supporter questions.</description>
+        <externalId>false</externalId>
+        <label>Supporter Questions</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Template_ID__c</fullName>
+        <description>This field is used to capture the id of the template.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unique ID of the stationary template used for this communication</inlineHelpText>
+        <label>Template ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transaction_ID__c</fullName>
+        <description>This is the id of the transaction.</description>
+        <externalId>false</externalId>
+        <label>Transaction ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Translated_By__c</fullName>
+        <description>This is the name of the translator.</description>
+        <externalId>false</externalId>
+        <label>Translated by</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Translated_Text_English__c</fullName>
+        <description>This field stores the translated text form local language to english.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text content of the original letter in English</inlineHelpText>
+        <label>Translated Text (English)</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <label>Communication</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>BEN_Local_ID__c</columns>
+        <columns>BEN_ID__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Communication_Types__c</columns>
+        <columns>Status__c</columns>
+        <columns>SUP_ID__c</columns>
+        <columns>Print_Date__c</columns>
+        <columns>Due_Back_At_Field_Office__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>C{0000000000}</displayFormat>
+        <label>Global Comm ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Communications</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>B2S</fullName>
+        <active>true</active>
+        <description>This is for segregating all B2S communication kits.</description>
+        <label>From Beneficiary</label>
+        <picklistValues>
+            <picklist>Communication_Types__c</picklist>
+            <values>
+                <fullName>Beneficiary Initiated Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Gift Thank You Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Sponsor Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reciprocal Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Gift Thank You Letter</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Issues_Found__c</picklist>
+            <values>
+                <fullName>3rd party not identified %28if not child%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not contain new skill information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible handwriting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No  thank you for gift</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No date written</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No drawing from beneficiary %288 or below%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No personal info on Beneficiary%E2%80%99s life</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No photo for large gift</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No prayer request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No question for Sponsor%2FCorrespondent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>References to political issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requests for money or special favors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supporter not addressed by name</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Print_Type_Selected__c</picklist>
+            <values>
+                <fullName>Template with Header</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship_Type__c</picklist>
+            <values>
+                <fullName>Correspondent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Composition process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office quality check process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office quality check queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office translation process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office translation queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Partner translation process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Partner translation queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Printed and sent to ICP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Published to Global Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality check unsuccessful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready to be printed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received in the system</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Translation and quality check complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>S2B</fullName>
+        <active>true</active>
+        <description>This is for segregating all S2B communication kits.</description>
+        <label>From Supporter</label>
+        <picklistValues>
+            <picklist>Communication_Types__c</picklist>
+            <values>
+                <fullName>Supporter Letter</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Issues_Found__c</picklist>
+            <values>
+                <fullName>Contains personal contact information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inappropriate content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inappropriate photo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Print_Type_Selected__c</picklist>
+            <values>
+                <fullName>Header Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Template with Header</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship_Type__c</picklist>
+            <values>
+                <fullName>Correspondent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Encourager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Composition process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office quality check process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office quality check queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office translation process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Office translation queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Partner translation process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Partner translation queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Printed and sent to ICP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality check unsuccessful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready to be printed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received in the system</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Translation and quality check complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Download_Letters</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Download Letters</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js&quot;)}
+if({!ISNULL(Communication_Kit__c.Final_Composed_Letter_Link__c)} &amp;&amp;  {!ISNULL(Communication_Kit__c.Original_Letter_Link__c)})
+{
+    alert(&quot;There are no images related to this communication to view.&quot;);
+}
+else
+{ 
+var d = sfdcPage.dialogs[&apos;SampleDialog&apos;], close;
+  if (!d) {
+    
+    d = sfdcPage.dialogs[&apos;SampleDialog&apos;] = new SimpleDialog(&apos;SampleDialog&apos;, false);
+    d.setTitle(&apos;{!$Label.ChooseDownType_PopUp}&apos;);
+    d.setWidth(600);
+    d.createDialog();
+  }
+  
+  var elocationIdVar=&quot;{!Communication_Kit__c.Id}&quot;;
+  var iframe_url = &apos;{!URLFOR(&quot;/apex/ChooseDownloadType?source=JsMethod&amp;contentId=&quot;)}&apos;; 
+  iframe_url+=elocationIdVar; 
+  
+  $(d.dialog).find(&apos;#SampleDialogInner&apos;).html(&apos;&lt;iframe src=&quot;&apos;+iframe_url+&apos;&quot; height=&quot;110&quot; width=&quot;565&quot; border=&quot;0&quot; style=&quot;border: 0;&quot; /&gt;&apos;);
+  
+  $(d.dialog).find(&apos;#SampleDialogInner iframe&apos;).on(&apos;load&apos;, function() {
+    
+	$(this).contents().find(&apos;input[type=&quot;submit&quot;]&apos;).on(&apos;click&apos;, function() {
+      
+      if ($(this).val() == &apos;Cancel&apos;) d.hide();
+      return false;
+    });
+  });
+  
+  if ($(d.dialog).find(&apos;#InlineEditDialogX&apos;).size() == 0) {
+    
+    close = $(&apos;&lt;a id=&quot;InlineEditDialogX&quot; title=&quot;Close&quot; tabindex=&quot;0&quot; href=&quot;javascript:void(0)&quot; class=&quot;dialogClose&quot;&gt;Close&lt;/a&gt;&apos;);
+    
+    close.mouseover(function() {
+      this.className = &apos;dialogCloseOn&apos;;
+    }).mouseout(function() {
+      this.className = &apos;dialogClose&apos;;
+    }).click(function() {
+      
+      d.hide();
+    });
+    
+    close.insertBefore($(d.dialog).find(&apos;.topLeft h2&apos;));
+  }
+  d.show();
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Print</fullName>
+        <availability>online</availability>
+        <description>This button is used to execute the Print Functionality.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Print</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.location.href = &apos;/apex/RedirectPage?id={!Communication_Kit__c.Id}&apos;;</url>
+    </webLinks>
+</CustomObject>

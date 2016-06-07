@@ -1,0 +1,108 @@
+<!--************************************************************************
+*Page Name          : LetterDownload
+*Description        : VisualForce page for Communication creation & letter upload for GP users. 
+*Created By         : Akashdeep Vinnakota
+*Created On         : 10-Sep-2015 
+********************************************************************************-->
+<apex:page Controller="CommSubPageController" tabStyle="Communication_Kit__c" >
+    <apex:form >
+        <apex:pageMessages rendered="{!NOT(bShowPage)}" escape="false" />
+        <apex:outputPanel rendered="{!NOT(bShowSuccessPanel) && bShowPage}">
+            <apex:sectionHeader title="{!$Label.CommSubPage_Header_Title}"/>
+            <apex:pageBlock id="CommRecPanel" >
+                <apex:pageBlockSection columns="2" title="{!$Label.CommSubPage_Header_Details}">
+                    <apex:pageBlockSectionItem helpText="{!$Label.CommSubPage_Global_Ben_Id_HelpText}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_Global_Ben_Id}</apex:outputLabel>
+                        <apex:inputText disabled="{!bShowUploadPanel}" value="{!sBenGlobalID}"  style="width:175px;" />
+                    </apex:pageBlockSectionItem> 
+                    <apex:pageBlockSectionItem helpText="{!$Label.CommSubPage_Global_Sup_Id_HelpText}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_Sup_Id}</apex:outputLabel>
+                        <apex:inputText disabled="{!bShowUploadPanel}" value="{!sSupGlobalID}"  style="width:175px;" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.CommSubPage_Leg_Ben_Id_HelpText}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_Leg_Ben_Id}</apex:outputLabel>
+                        <apex:inputText disabled="{!bShowUploadPanel}" value="{!sBenLegacyID}"  style="width:175px;" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.CommSubPage_Leg_Sup_Id_HelpText}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_Leg_Sup_Id}</apex:outputLabel>
+                        <apex:inputText disabled="{!bShowUploadPanel}" value="{!sSupCompassID}"  style="width:175px;" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.CommSubPage_Local_Ben_Id_HelpText}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_Ben_Id}</apex:outputLabel>
+                        <apex:inputText disabled="{!bShowUploadPanel}" value="{!sBenLocalID}" style="width:175px;" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.CommSubPage_TempLayout_HelpText}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_Template_Id}</apex:outputLabel>
+                        <apex:outputPanel >
+                            <div class="requiredInput">
+                                <div class="requiredBlock"></div>
+                                <apex:selectList disabled="{!bShowUploadPanel}" value="{!sChosenTemplate}" size="1" style="width:180px;">
+                                    <apex:selectOptions value="{!lstTemplatePicklist}" ></apex:selectOptions>
+                                </apex:selectList>
+                            </div>
+                        </apex:outputPanel> 
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.CommSubPage_AM_HelpText}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_AM}</apex:outputLabel>
+                        <apex:inputCheckbox disabled="{!bShowUploadPanel}" value="{!bAttachmentMailed}" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.CommSubPage_ANM_HelpText}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_ANM}</apex:outputLabel>
+                        <apex:inputCheckbox disabled="{!bShowUploadPanel}" value="{!bAttachmentNotMailed}" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.CommSubPage_Eng_Txt_HelpText}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_Eng_Txt}</apex:outputLabel>
+                        <apex:inputTextarea disabled="{!bShowUploadPanel}" richText="true" value="{!sEngTxt}"  style="width:175px;"  />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.CommSubPage_Ori_Txt_HelpText}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_Ori_Txt}</apex:outputLabel>
+                        <apex:inputTextarea disabled="{!bShowUploadPanel}" richText="true" value="{!sOriTxt}"  style="width:175px;"  />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.CommSubPage_OM_HelpText}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_OM}</apex:outputLabel>
+                        <apex:inputCheckbox disabled="{!bShowUploadPanel}" value="{!bOriginalMailed}" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem rendered="{!NOT(bShowUploadPanel)}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_NOP}</apex:outputLabel>
+                        <apex:outputPanel >
+                            <div class="requiredInput">
+                                <div class="requiredBlock"></div>
+                                <apex:inputText disabled="{!bShowUploadPanel}" value="{!iNumberOfPages}" />
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem rendered="{!bShowUploadPanel}" >
+                        <apex:outputLabel >{!$Label.CommSubPage_NOP}</apex:outputLabel>
+                        <apex:outputPanel >
+                            <div class="requiredInput">
+                                <div class="requiredBlock"></div>
+                                <apex:outputText value="{!iNumberOfPages}" />
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <center>
+                    <apex:commandButton disabled="{!bShowUploadPanel}" value="{!$Label.CommSubPage_Btn_Txt}" action="{!clickSave}" />
+                </center>            
+            </apex:pageBlock>
+            <apex:pageMessages escape="false" />
+            <apex:outputPanel rendered="{!bShowUploadPanel}" >
+                <apex:pageBlock >
+                    <apex:pageBlockSection columns="1" title="{!$Label.CommSubPage_Upload_Details}">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputText >{!$Label.CommSubPage_Attach_Letter}</apex:outputText>
+                            <apex:inputFile value="{!oAttach}"></apex:inputFile>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:commandButton title="Search" value="Upload" action="{!clickUpload}" status="status" style="margin-left:20%;"/>
+                </apex:pageBlock>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!bShowSuccessPanel}">
+            <apex:pageBlock id="SuccessPanel" >
+                Your supporter letter has been successfully submitted: {!oCk.Name}. Please click on the <apex:outputLink value="/apex/CommSubPage"> link</apex:outputLink> to submit a new letter.
+            </apex:pageBlock>
+        </apex:outputPanel>
+        
+    </apex:form>   
+</apex:page>

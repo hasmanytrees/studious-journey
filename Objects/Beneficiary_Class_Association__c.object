@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object will serve as junction object between Beneficiary and Monthly Class Schedule. These objects are created as result of Beneficiaries Enrollment in any Yearly Class Schedule.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>BEN_Id__c</fullName>
+        <description>This field will relate this Association object to one of its parent - Beneficiary</description>
+        <externalId>false</externalId>
+        <label>Beneficiary</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Survival Beneficiary, Sponsorship Beneficiary</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Beneficiary Class Associations</relationshipLabel>
+        <relationshipName>Beneficiary_Class_Associations</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BEN_Local_Id__c</fullName>
+        <description>This field fetches Local Beneficiary Id traversing through master-detail relation.</description>
+        <externalId>false</externalId>
+        <formula>BEN_Id__r.Local_Beneficiary_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Local Beneficiary Id</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEN_Local_Number__c</fullName>
+        <description>This field fetches Local Beneficiary Number from its corresponding Beneficiary</description>
+        <externalId>false</externalId>
+        <formula>BEN_Id__r.Local_Beneficiary_Number__c</formula>
+        <label>BEN Local Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BEN_Name__c</fullName>
+        <description>This field fetches Beneficiary Name traversing through master-detail relation.</description>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(BEN_Id__r.FirstName) , BEN_Id__r.LastName, BEN_Id__r.FirstName+&quot; &quot;+BEN_Id__r.LastName)</formula>
+        <label>Beneficiary Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Class_ID__c</fullName>
+        <description>This is a backend field that stores the Class Id for Reporting purposes</description>
+        <externalId>false</externalId>
+        <formula>Monthly_Class_Schedule__r.Yearly_Class__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Class ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Month_Name__c</fullName>
+        <description>This field fetches month value from its parent object Monthly Class Schedule</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Monthly_Class_Schedule__r.Month__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Month Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monthly_Class_Schedule__c</fullName>
+        <description>This field will relate to one of its parent - Monthly Class Schedule</description>
+        <externalId>false</externalId>
+        <label>Monthly Class Schedule</label>
+        <referenceTo>Monthly_Class_Schedule__c</referenceTo>
+        <relationshipLabel>Beneficiary Class Associations</relationshipLabel>
+        <relationshipName>Beneficiary_Class_Associations</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Beneficiary Class Association</label>
+    <nameField>
+        <displayFormat>BCA-{0000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Beneficiary Class Associations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

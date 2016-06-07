@@ -1,0 +1,11 @@
+<apex:page controller="BeneficiaryImpactListController" contentType="application/vnd.ms-excel#SalesForceExport.xls" cache="true">>
+    <apex:form >
+    <apex:pageBlock id="BenImpactListNew">
+            <apex:outputPanel id="BenCreatedList" rendered="true">
+                <c:ImpactListComponent id="CreatedCall" sObject="Beneficiary" bCreate="true" lstCreatedBen="{!lstBeneficiaryImpactsCreated}" 
+                bNoRecordsToShow="{!bIsCreateListEmpty}" oCommUpdate="{!oComRecUpdate}" sURLForExport="{!sURLForInsert}"
+                sTitle=""></c:ImpactListComponent> 
+            </apex:outputPanel>
+</apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Associated_Beneficiary_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This is a Back-end field that stores the Salesforce ID of the associated Beneficiary.</description>
+        <externalId>false</externalId>
+        <label>Associated Beneficiary ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>BEN_Disaster_Status_Comment__c</fullName>
+        <description>Changes to the beneficiary (i.e. this child is not impacted by the disaster, this child was mistakenly reported as injured).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Changes to the beneficiary (i.e. this child is not impacted by the disaster, this child was mistakenly reported as injured).</inlineHelpText>
+        <label>Beneficiary Disaster Status Comment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>BEN_Disaster_Status__c</fullName>
+        <description>This field stores the status of the beneficiary as a result of the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the status of the beneficiary as a result of the disaster.</inlineHelpText>
+        <label>Beneficiary Disaster Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Affected</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unaffected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BEN_Location__c</fullName>
+        <description>This field stores the Location where the Beneficiary is staying.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the location where the child is staying.</inlineHelpText>
+        <label>Beneficiary Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>At Home</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Temporarily Moved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Permanently Moved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BEN_Name__c</fullName>
+        <description>This fields stores the  name of the beneficiary affected by the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the name of the beneficiary affected by the disaster.</inlineHelpText>
+        <label>Beneficiary Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>CDSP_Beneficiary</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>CSP_Beneficiary</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.Beneficiary_Status__c</field>
+                <operation>equals</operation>
+                <value>Active</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Beneficiary Disaster Impacts</relationshipLabel>
+        <relationshipName>Beneficiary_Impacts</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BEN_Phy_Condition_Description__c</fullName>
+        <description>This field captures the physical injury or condition of the beneficiary including the type and extent of injury if known.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the physical injury or condition of the beneficiary including the type and extent of injury if known.</inlineHelpText>
+        <label>Beneficiary Phy Condition Description</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>BEN_Physical_Condition__c</fullName>
+        <description>This field stores the impact to the Beneficiary&apos;s Physical condition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the impact to the beneficiary&apos;s physical condition due to the disaster.</inlineHelpText>
+        <label>Beneficiary Physical Condition</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beneficiary Died</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beneficiary Seriously Injured</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beneficiary Healthy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Beneficiary_Phy_Condition_Description__c</fullName>
+        <description>This field captures the physical injury or condition of the beneficiary including the type and extent of injury if known.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the physical injury or condition of the beneficiary including the type and extent of injury, if known. Note:This field is encrypted and not shared with the GPA. A limited number of user roles can view this field. All other users will see asterisk</inlineHelpText>
+        <label>Beneficiary Phy Condition Description</label>
+        <length>175</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>Correspondent_Country__c</fullName>
+        <description>This field stores the Global Partner that this Beneficiaries&apos; correspondent belongs to (sponsor, unsponsored, sponsor hold, reservation)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Global Partner responsible for facilitating a letter-writing relationship with this beneficiary.</inlineHelpText>
+        <label>Correspondent Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Correspondent_Global_ID__c</fullName>
+        <description>This field fetched the Global ID i.e. system generated auto number from the Supporter profile if the Commitment Type is Correspondent.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Compassion Connect identification number for the correspondent.</inlineHelpText>
+        <label>Correspondent Global ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Correspondent_ID__c</fullName>
+        <description>This field fetches the Global Partner Supporter ID based on the associated Beneficiary.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Compass identification number for the correspondent.</inlineHelpText>
+        <label>Correspondent ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Created_Date_For_Reports__c</fullName>
+        <description>This field is created for reporting purposes to filter data based on date time of the Created Date field.</description>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <label>Created Date For Reports</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Last_Reported__c</fullName>
+        <description>This is the date that we have last heard from the child</description>
+        <externalId>false</externalId>
+        <label>Date Last Reported</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Disaster_Name__c</fullName>
+        <description>This field stores the Disaster related to the Beneficiary Impact record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Automated - The name of the disaster entered on the disaster record.</inlineHelpText>
+        <label>Disaster Name</label>
+        <referenceTo>Disaster__c</referenceTo>
+        <relationshipName>Beneficiary_Impacts</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Explanation_Of_Update__c</fullName>
+        <description>This field captures explaination for changes on the ICP impact record</description>
+        <externalId>false</externalId>
+        <label>Explanation Of Update</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>House_Condition__c</fullName>
+        <description>This field stores the level of Damage to the Beneficiary&apos;s Home.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose one - Select the level of damage to beneficiary&apos;s home due to the disaster.</inlineHelpText>
+        <label>House Condition</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Damaged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Damaged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Destroyed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ICP__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is being used for Filtering the results in the Mass Create VF Page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup and select the ICP based on which the Beneficiary List will be filtered.</inlineHelpText>
+        <label>ICP</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>ICP</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Beneficiary_Impacts1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Injured_Description__c</fullName>
+        <description>This field stores the type and extent of physical injury, if known.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the type and extent of physical injury, if known.</inlineHelpText>
+        <label>Injured Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Local_Beneficiary_ID__c</fullName>
+        <description>This field fetches the Local Beneficiary ID of the associated Beneficiary.</description>
+        <externalId>false</externalId>
+        <formula>BEN_Name__r.Local_Beneficiary_ID__c</formula>
+        <inlineHelpText>Automated - FO / ICP / Local Beneficiary Number Field ID for Beneficiary</inlineHelpText>
+        <label>Local Beneficiary ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loss_Of_Livelihood__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box if beneficiary&apos;s family has lost their ability to earn a living due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check box if beneficiary&apos;s family has lost their ability to earn an income due to the disaster.</inlineHelpText>
+        <label>Loss Of Livelihood</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lost_Personal_Effects__c</fullName>
+        <description>This field stores any items the beneficiary&apos;s family lost due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose all that apply - Select any items the beneficiary&apos;s family lost due to the disaster.</inlineHelpText>
+        <label>Lost Personal Effects</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lost School Supplies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lost Clothing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lost Household Items</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Modified_Date_For_Reports__c</fullName>
+        <description>This field is created for reporting purposes to filter data based on date time of the Last Modified Date field.</description>
+        <externalId>false</externalId>
+        <formula>LastModifiedDate</formula>
+        <label>Modified Date For Reports</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Number_Caregivers_Died__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>This field stores the number of caregivers of Compassion beneficiaries that have passed away due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of caregivers of Compassion beneficiaries that have passed away due to the disaster.</inlineHelpText>
+        <label>Number Caregivers Died</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Caregivers_Seriously_Injured__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>This field stores the number of caregivers of Compassion beneficiaries that have been injured due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of caregivers of Compassion beneficiaries that have been injured due to the disaster.</inlineHelpText>
+        <label>Number Of Caregivers Seriously Injured</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Siblings_Seriously_Injured__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>This field stores the number of siblings of Compassion beneficiaries that have been injured due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of siblings of Compassion beneficiaries that have been injured due to the disaster.</inlineHelpText>
+        <label>Number Of Siblings Seriously Injured</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Siblings_Died__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>This field stores the number of siblings of Compassion beneficiaries that have passed away due to the disaster.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of siblings of Compassion beneficiaries that have passed away due to the disaster.</inlineHelpText>
+        <label>Number Siblings Died</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sponsor_Country__c</fullName>
+        <description>This field stores the Global Partner that this Beneficiaries&apos; sponsor belongs to  (sponsor, unsponsored, sponsor hold, reservation)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Global Partner responsible for financially supporting this beneficiary.</inlineHelpText>
+        <label>Sponsor Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sponsor_Global_ID__c</fullName>
+        <description>This field fetched the Global ID i.e. system generated auto number from the Supporter profile if the Commitment Type is Sponsor.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Compassion Connect identification number for the sponsor.</inlineHelpText>
+        <label>Sponsor Global ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sponsor_ID__c</fullName>
+        <description>This field fetches the Global Partner Supporter ID based on the associated Beneficiary.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Compass identification number for the sponsor.</inlineHelpText>
+        <label>Sponsor ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sponsorship_Status__c</fullName>
+        <description>This field fetches the Sponsorship Status of the Beneficiary from the associated Beneficiary.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(BEN_Name__r.Sponsorship_Status__pc)</formula>
+        <inlineHelpText>Automated – The auto-populated sponsorship status of the selected beneficiary.</inlineHelpText>
+        <label>Sponsorship Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Beneficiary Disaster Impact</label>
+    <nameField>
+        <displayFormat>BI-{0000}</displayFormat>
+        <label>Record ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Beneficiary Disaster Impacts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Ensure_same_FO_of_Disaster_and_Benef</fullName>
+        <active>true</active>
+        <description>This Validation Rule makes sure that the Field Office of the Disaster and the Beneficiary is the same.</description>
+        <errorConditionFormula>IF(  BEN_Name__r.ICP__r.Cluster__r.Territory__r.Field_Office__c  &lt;&gt; Disaster_Name__r.Field_Office__c , true, false)</errorConditionFormula>
+        <errorMessage>The Field Office of the Disaster and the Beneficiary must be the same.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Make_Ben_Physical_Condition_Mandatory</fullName>
+        <active>true</active>
+        <description>Beneficiary Physical Condition should be Mandatory if  Beneficiary Location is At Home, Temporarily Moved or Permanently Moved</description>
+        <errorConditionFormula>IF( AND( OR(ISPICKVAL(  BEN_Location__c , &apos;At Home&apos;) , ISPICKVAL( BEN_Location__c , &apos;Temporarily Moved&apos;) , ISPICKVAL( BEN_Location__c , &apos;Permanently Moved&apos;) ) , ISBLANK( TEXT(  BEN_Physical_Condition__c ) ) ) , true, false)</errorConditionFormula>
+        <errorDisplayField>BEN_Physical_Condition__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Make_Beneficiary_Phy_Cond_Desc_Mandatory</fullName>
+        <active>false</active>
+        <description>For “Beneficiary Physical Condition Description” field,  please make this required only if the beneficiary physical condition field has picklist values of beneficiary seriously injured, or beneficiary died.</description>
+        <errorConditionFormula>IF( AND( AND(OR(ISPICKVAL(  BEN_Location__c , &apos;At Home&apos;), ISPICKVAL( BEN_Location__c , &apos;Temporarily Moved&apos;), ISPICKVAL(  BEN_Location__c , &apos;Permanently Moved&apos;)), OR(ISPICKVAL( BEN_Physical_Condition__c , &apos;Beneficiary Seriously Injured&apos;) , ISPICKVAL( BEN_Physical_Condition__c , &apos;Beneficiary Died&apos;) )) , ISBLANK( BEN_Phy_Condition_Description__c ) ) , true, false)</errorConditionFormula>
+        <errorDisplayField>BEN_Phy_Condition_Description__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Make_Physical_Condition_Read_Only</fullName>
+        <active>true</active>
+        <description>‘Beneficiary Physical condition’ is non editable until the ‘Beneficiary Location’ is changed from ‘Unknown’/’Missing’</description>
+        <errorConditionFormula>IF( AND ( OR ( PRIORVALUE(BEN_Location__c) = &apos;Unknown&apos; , PRIORVALUE(BEN_Location__c) = &apos;Missing&apos; ) , ISCHANGED( BEN_Physical_Condition__c ) ) , true, false )</errorConditionFormula>
+        <errorDisplayField>BEN_Physical_Condition__c</errorDisplayField>
+        <errorMessage>You can not change this Value unless the Beneficiary Location is changed from Unknown/Missing.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Mass_Create_New_Beneficiary_Impact</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Mass Create New Beneficiary Impact</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/MassUpdateRecordsBenImpact?disaster={! Disaster__c.Id}</url>
+    </webLinks>
+</CustomObject>

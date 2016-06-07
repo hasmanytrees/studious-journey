@@ -1,0 +1,32 @@
+<!--****************************************************************************
+*Page Name          : MI3HelpLink
+*Description        : This is a VisualForce page used to display MI3 Help Link.
+*Created By         : Himanshu Raichandani
+*Created On         : 2/24/2015
+
+********************************************************************************-->
+<apex:page sidebar="false" tabStyle="Case">
+  <apex:form >  
+   <b> <h1>{!$Label.MI3HelpLink_Header1}</h1></B>
+   <br></br><br></br><br></br><br></br>
+    
+   <b><h1> <font size="2" >{!$Label.MI3HelpLink_Header2}</font></h1></B>
+   
+   <apex:pageBlock >
+   <apex:pageBlockSection title="{!$Label.MI3HelpLink_Title}" collapsible="false"></apex:pageBlockSection><br></br>
+   <font size ="2" ><u>{!$Label.MI3HelpLink_Label_Category}</u>{!$Label.MI3HelpLink_Label_CategoryMsg}<br></br><br></br></font>
+   <font size ="2" > <u>{!$Label.MI3HelpLink_Label_SubCategory}</u>{!$Label.MI3HelpLink_Label_SubCategoryMsg}<br></br><br></br></font>
+    
+    <font size ="2" ><u>{!$Label.MI3HelpLink_Label_Reason}</U>{!$Label.MI3HelpLink_Label_ReasonMsg}<br></br></font>
+   <font size ="2" >  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!$Label.MI3HelpLink_Label_Example}<br></br><br></br></font>
+  <font size ="2" > <u>{!$Label.MI3HelpLink_Label_I3Type}</U>{!$Label.MI3HelpLink_Label_I3TypeMsg}<br></br><br></br></font>
+                    <font size ="2" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!$Label.MI3HelpLink_Label_I3Type1}<br></br></font>
+                     <font size ="2" >  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!$Label.MI3HelpLink_Label_I3Type2}<br></br></font>
+                     <font size ="2" >  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!$Label.MI3HelpLink_Label_I3Type3}<br></br><br></br><br></br></font>
+<font size ="2" ><u>{!$Label.MI3HelpLink_Label_TimeFrame}</u>:<br></br><br></br></font>
+
+<font size ="2" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!$Label.MI3HelpLink_Label_TimeFrameMsg}</font>
+   </apex:pageBlock>
+   
+   </apex:form> 
+</apex:page>

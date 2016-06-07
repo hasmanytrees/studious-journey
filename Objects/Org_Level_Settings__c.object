@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>This Custom will contain some org specific constants, trigger points and data defined to control application behavior.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Account_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Address</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_BenAssessment_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Account BenAssessment Id</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Activity_Plan_Content_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Plan Content Id</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Activity_Plan_ICP_Field_Id__c</fullName>
+        <description>This will contain the ICP field id of the Activity Plan object.</description>
+        <externalId>false</externalId>
+        <label>Activity Plan ICP Field Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Activity_Plan_Lifecycle_Field_Id__c</fullName>
+        <description>This will contain the ICP Lifecycle Events Field Id of Activity Plan.</description>
+        <externalId>false</externalId>
+        <label>Activity Plan Lifecycle Field Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Activity_Plan_Operation_Plan_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Plan Operation Plan Id</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Activity_Plan_Prefix__c</fullName>
+        <description>This will contain the prefix of Activity Plan record which is used in task workflow</description>
+        <externalId>false</externalId>
+        <label>Activity Plan Prefix</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address_Object_Prefix__c</fullName>
+        <externalId>false</externalId>
+        <label>Address Object Prefix</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Australia_GP_Email_For_Case__c</fullName>
+        <description>This is used to store email address for case notifications for GP users. It will be used in Update Global Partner Name and Case Status update email alert</description>
+        <externalId>false</externalId>
+        <label>Australia GP Email For Case</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ben_Content_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Ben Content Id</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BeneficiaryAssessment_Content_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>BeneficiaryAssessment Content Id</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BeneficiaryLifecycleEvent_Content_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>BeneficiaryLifecycleEvent Content Id</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Canada_GP_Email_For_Case__c</fullName>
+        <description>This is used to store email address for case notifications for GP users. It will be used in Update Global Partner Name and Case Status update email alert</description>
+        <externalId>false</externalId>
+        <label>Canada GP Email For Case</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Category_Id__c</fullName>
+        <description>This will contain case Category field Id.</description>
+        <externalId>false</externalId>
+        <label>Case Category Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Lead_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Lead Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Lead_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Lead Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Content_Object_Prefix__c</fullName>
+        <externalId>false</externalId>
+        <label>Content Object Prefix</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disaster_Beneficiary_Report_Id__c</fullName>
+        <description>This field stores the Id of the Report used to view all the Beneficiary Disaster Impacts from a Master Disaster record.</description>
+        <externalId>false</externalId>
+        <label>Disaster Beneficiary Report Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disaster_Content_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Disaster Content Id</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disaster_ICP_Report_Id__c</fullName>
+        <description>This field stores the Id of the Report used to view all the ICP Disaster Impacts from a Master Disaster record.</description>
+        <externalId>false</externalId>
+        <label>Disaster ICP Report Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Office_Content_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Field Office Content Id</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Germany_GP_Email_For_Case__c</fullName>
+        <description>This is used to store email address for case notifications for GP users. It will be used in Update Global Partner Name and Case Status update email alert</description>
+        <externalId>false</externalId>
+        <label>Germany GP Email For Case</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Global_Partners_Link__c</fullName>
+        <description>This will contain the Global Partners link.</description>
+        <externalId>false</externalId>
+        <label>Global Partners Link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Global_User_For_Transfer__c</fullName>
+        <description>This field will contain the username of the user who will be assigned as owner of the ICP users record.</description>
+        <externalId>false</externalId>
+        <label>Global User For Transfer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_Admin_Profile_ID__c</fullName>
+        <description>This field stored the ICP Admin Profile ID.</description>
+        <externalId>false</externalId>
+        <label>ICP Admin Profile ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ICP_Content_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>ICP Content Id</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Italy_GP_Email_For_Case__c</fullName>
+        <description>This is used to store email address for case notifications for GP users. It will be used in Update Global Partner Name and Resolution recipient email workflow</description>
+        <externalId>false</externalId>
+        <label>Italy GP Email For Case</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Korea_GP_Email_For_Case__c</fullName>
+        <description>This is used to store email address for case notifications for GP users. It will be used in Update Global Partner Name and Resolution recipient email workflow</description>
+        <externalId>false</externalId>
+        <label>Korea GP Email For Case</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Address</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Content_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Content Id</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Medical_Incidents_Content_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Medical Incidents Content Id</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Netherlands_GP_Email_For_Case__c</fullName>
+        <description>This is used to store email address for case notifications for GP users. It will be useNetherlands d in Update Global Partner Name and Resolution recipient email workflow</description>
+        <externalId>false</externalId>
+        <label>Netherlands GP Email For Case</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Norden_GP_Email_For_Case__c</fullName>
+        <description>This is used to store email address for case notifications for GP users. It will be used in Update Global Partner Name and Case Status update email alert</description>
+        <externalId>false</externalId>
+        <label>Norden GP Email For Case</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>One_Login_User_Id__c</fullName>
+        <description>This will contain the One Login user Id</description>
+        <externalId>false</externalId>
+        <label>One Login User Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operational_Plan_Report_Id__c</fullName>
+        <description>This will contain the Report Id of the Operational Plan report. This will be used in Operational Plan At A Glance button on Operational Plan detail Page.</description>
+        <externalId>false</externalId>
+        <label>Operational Plan Report Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Org_Base_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Org Base URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Portal_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Portal URL</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SEL_France_GP_Email_For_Case__c</fullName>
+        <description>This is used to store email address for case notifications for GP users. It will be used in Update Global Partner Name and Case Status update email alert</description>
+        <externalId>false</externalId>
+        <label>SEL France GP Email For Case</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Switzerland_GP_Email_For_Case__c</fullName>
+        <description>This is used to store email address for case notifications for GP users. It will be used in Update Global Partner Name and Case Status update email alert</description>
+        <externalId>false</externalId>
+        <label>Switzerland GP Email For Case</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Task_Fields_For_Setup_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Task Fields For Setup Plan</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tear_Fund_New_Zealand_GP_Email_For_Case__c</fullName>
+        <description>This is used to store email address for case notifications for GP users. It will be used in Update Global Partner Name and Case Status update email alert</description>
+        <externalId>false</externalId>
+        <label>Tear Fund New Zealand GP Email For Case</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UK_GP_Email_For_Case__c</fullName>
+        <description>This is used to store email address for case notifications for GP users. It will be used in Update Global Partner Name and Resolution recipient email workflow</description>
+        <externalId>false</externalId>
+        <label>UK GP Email For Case</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>USA_GP_Email_For_Case__c</fullName>
+        <description>This is used to store email address for case notifications for GP users. It will be used in Update Global Partner Name and Resolution recipient email workflow</description>
+        <externalId>false</externalId>
+        <label>USA GP Email For Case</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <label>Org Level Settings</label>
+    <visibility>Protected</visibility>
+</CustomObject>

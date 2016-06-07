@@ -1,0 +1,9 @@
+<!--************************************************************************
+*Page Name          : ICP_Portal_Page
+*Description        : This page is used to show an ICP his/her own profile, when an ICP user log in to ICP Portal.
+*Created By         : Sfurti Pandey
+*Created On         : 25-June-2015
+********************************************************************************-->
+<apex:page standardController="Account" extensions="ICPPortalPageExtension" tabStyle="My_ICP_Detail__tab" action="{!icpRecordDetail}" cache="true"  >
+  
+</apex:page>

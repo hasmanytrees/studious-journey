@@ -1,0 +1,379 @@
+<!--************************************************************************
+*Page Name          : ActivityAttendancePage
+*Description        : VisualForce page where the attendance of a beneficiary is tracked for the activity. 
+*Created By         : Himanshu Raichandani
+*Created On         : 03-July-2015 
+********************************************************************************-->
+<apex:page standardController="Activity_Attendance__c" extensions="ActivityAttendanceExtension" sidebar="false" tabStyle="Activity_Attendance__c">
+    
+    <script>
+        window.$Label = window.$Label || {};
+        $Label.Show = '{!JSENCODE($Label.TableJQuery_Show)}';
+        $Label.Showing = '{!JSENCODE($Label.TableJQuery_Showing)}';
+        $Label.No_Data_Available = '{!JSENCODE($Label.TableJQuery_No_Data_Available)}';
+        $Label.Entries = '{!JSENCODE($Label.TableJQuery_Entries)}';
+        $Label.Search = '{!JSENCODE($Label.TableJQuery_Search)}';
+        $Label.To = '{!JSENCODE($Label.TableJQuery_To)}';
+        $Label.First = '{!JSENCODE($Label.TableJQuery_First)}';
+        $Label.Previous = '{!JSENCODE($Label.TableJQuery_Previous)}';
+        $Label.Next = '{!JSENCODE($Label.TableJQuery_Next)}';
+        $Label.Last = '{!JSENCODE($Label.TableJQuery_Last)}';
+        $Label.Filtered_From = '{!JSENCODE($Label.TableJQuery_Filtered_From)}';
+        $Label.Total_Enteries = '{!JSENCODE($Label.TableJQuery_Total_Enteries)}';
+        $Label.No_Matching_Records = '{!JSENCODE($Label.TableJQuery_No_Matching_Records)}';
+        $Label.Showing_Enteries = '{!JSENCODE($Label.TableJQuery_Showing_Enteries)}';
+        $Label.Of = '{!JSENCODE($Label.TableJQuery_Of)}';       
+    </script>
+    <apex:includescript value="{!URLFOR($Resource.jQuery_Lib)}"/>
+    
+    <script type="text/javascript" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/tableJquery.js')}"></script>  
+    <script class="jsbin" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/tableJquery2.js')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/fnLengthChange.js')}"></script>
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/demo_Page.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/table.css')}" />
+    
+    <style type="text/css">
+    .toHideHeader{
+    display:none !important;
+    }
+    .popupBackground{
+        background-color:black;
+        opacity: 0.20;
+        filter: alpha(opacity = 20);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9998;
+    }
+    .custPopup{
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        z-index: 9999;
+        left: 20%;
+        padding:15px;
+        position: absolute;
+        /* These are the 3 css properties you will need to change so the popup 
+        displays in the center of the screen. First set the width. Then set 
+        margin-left to negative half of what the width is. You can add 
+        the height property for a fixed size pop up if you want.*/
+        width: 95%;
+        margin-left: -270px;
+        top:20px;
+    }
+    
+</style>
+
+<apex:form id="form" >
+<apex:sectionHeader title="{!$Label.Activity_Attendance_Heading}"/>
+<apex:actionStatus id="status">
+       <apex:facet name="start">
+           <div class="waitingSearchDiv" id="el_loading" style="background-color: #DCD6D6;
+                  height: 100%;width:100%; opacity:0.45 ; z-index:55;"> 
+               <div class="waitingHolder" style="top: 250px; padding-left:600px;  align:center;position:absolute ; opacity:0.65 ; z-index:78;">
+                   <img class="waitingImage" src="{!$Resource.Loading_New}"/>                       
+               </div>
+           </div>
+       </apex:facet>
+    </apex:actionStatus>
+<apex:pageBlock id="mainTab2" mode="maindetail">
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:commandlink action="{!backToListPage}" immediate="true" style="text-decoration: none;">&lt;&lt; {!$Label.Back_To_List_Activity_Attn_Link}</apex:commandlink>
+
+    <br/><br/>
+    <apex:pageBlockButtons location="bottom">
+        <apex:commandButton value="{!$Label.Submit_Btn_Activity_Attn}" action="{!createActivityAttendance}"  reRender="form" status="status" rendered="{!bCreateFlow}"/>
+        <!-- apex:actionStatus id="status">
+            <apex:facet name="start">
+                <center>
+                    <img src="/img/loading32.gif" />
+                </center>
+            </apex:facet>
+        </apex:actionStatus> -->
+    </apex:pageBlockButtons>
+    <apex:outputPanel id="topPanel" style="width:100%">
+    <script type="text/javascript">
+        function openPrintPage(){
+            var message = '{!JSENCODE(bLoginFromPartnerPortal)}';
+            if(message == 'true'){
+                window.open("{!$Label.Activity_Attn_Print_PortalURL}"+"{!oActivityAttendance.Id}","_blank");
+            }else{
+                window.open("{!$Label.Activity_Attn_Print_Page_URL}"+"{!oActivityAttendance.Id}","_blank");
+            }
+        }
+    </script>
+    
+    <apex:pageBlockSection title="" columns="2" id="pbs1" rendered="{!bCreateFlow}">
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Account.fields.ICP_Id__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_ICP_ID_Lbl}"/>
+                <apex:outputText value="{!oActivityAttendance.ICP__r.ICP_Id__c}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem helpText="{!$Label.Act_Name_Hlp_Txt}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_Activity_Name_Lbl}"/>
+                <apex:inputField value="{!oActivityAttendance.Name}" required="true"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Activity_Attendance__c.fields.ICP__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_ICP_Name_Lbl}"/>
+                <apex:inputField value="{!oActivityAttendance.ICP__c}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Activity_Attendance__c.fields.BEN_Program_Type__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_Program_Type_Lbl}"/>
+                <apex:inputField value="{!oActivityAttendance.BEN_Program_Type__c}" required="true"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Activity_Attendance__c.fields.Tutor__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_Tutor_Implementer_Lbl}"/>
+                <apex:inputField value="{!oActivityAttendance.Tutor__c}" required="true"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Activity_Attendance__c.fields.Activity_Type__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_Activity_Type_Lbl}"/>
+                <apex:inputField value="{!oActivityAttendance.Activity_Type__c}" required="true"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem />
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Activity_Attendance__c.fields.Activity_Date__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_Activity_Date_Lbl}"/>
+                <apex:inputField value="{!oActivityAttendance.Activity_Date__c}" required="true"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem />
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Activity_Attendance__c.fields.Activity_Description__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_Activity_Desc_Lbl}"/>
+                <apex:inputField value="{!oActivityAttendance.Activity_Description__c}"/>
+        </apex:pageBlockSectionItem>
+        <br/>
+    </apex:pageBlockSection>
+   
+    <apex:pageBlockSection title="" columns="2" id="pbs2" rendered="{!bUpdateFlow}">
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Account.fields.ICP_Id__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_ICP_ID_Lbl}"/>
+                <apex:outputText value="{!oActivityAttendance.ICP__r.ICP_Id__c}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem helpText="{!$Label.Act_Name_Hlp_Txt}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_Activity_Name_Lbl}"/>
+                <apex:inputText value="{!oActivityAttendance.Name}"  required="true" disabled="{!(!bHideComponents)}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Activity_Attendance__c.fields.ICP__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_ICP_Name_Lbl}"/>
+                <apex:outputField value="{!oActivityAttendance.ICP__c}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Activity_Attendance__c.fields.BEN_Program_Type__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_Program_Type_Lbl}"/>
+                <apex:outputText value="{!oActivityAttendance.BEN_Program_Type__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Activity_Attendance__c.fields.Tutor__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_Tutor_Implementer_Lbl}"/>
+                <apex:inputField value="{!oActivityAttendance.Tutor__c}" required="true"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Activity_Attendance__c.fields.Activity_Type__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_Activity_Type_Lbl}"/>
+                <apex:outputText value="{!oActivityAttendance.Activity_Type__c}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem />
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Activity_Attendance__c.fields.Activity_Date__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_Activity_Date_Lbl}"/>
+                <apex:inputField value="{!oActivityAttendance.Activity_Date__c}" required="true"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem />        
+        <apex:pageBlockSectionItem helpText="{!$ObjectType.Activity_Attendance__c.fields.Activity_Description__c.InlineHelpText}">
+                <apex:outputLabel value="{!$Label.Activity_Attn_Activity_Desc_Lbl}"/>
+                <apex:inputField value="{!oActivityAttendance.Activity_Description__c}"/>
+        </apex:pageBlockSectionItem>
+        <br/>
+    </apex:pageBlockSection>
+    
+    </apex:outputpanel>
+    </apex:pageBlock>
+    <apex:outputPanel id="allthetables">
+    <apex:outputPanel rendered="{!bShowBottom}" >
+    <apex:pageBlock id="mainTab">
+    <div>
+    <apex:pageBlockSection title="{!$Label.Activity_Attn_Add_Benef_Lbl}" dir="left" columns="1" id="pbs2" rendered="{!bShowBottom}"/>
+    
+            <apex:commandButton value="{!$Label.Activity_Attn_Add_Remove_Benef_Lbl}" action="{!showPopup}" reRender="tstpopup" oncomplete="tableHandler1();" rendered="{!bHideComponents}"/>
+            
+            <apex:actionFunction name="callCheckAllAttendance" action="{!checkAllAttendance}" id="actionFunc1" reRender="result"/>
+                        
+            <apex:pageBlockTable value="{!mapBenefIdToBenefWrapper}" var="benefId" 
+                                         id="result" border="0" align="left">
+                        
+                
+                        <apex:column >
+                            <apex:outputPanel style="display:flex;width:100px;">
+                                <apex:inputCheckbox style="margin-left:7%;" value="{!mapBenefIdToBenefWrapper[benefId].bAttended}" disabled="{!(!bHideComponents)}"/>
+                            </apex:outputPanel>
+                            <apex:facet name="header">
+                                <apex:outputPanel style="display:flex;width:100px;">
+                                    <b><apex:inputCheckbox style="vertical-align:sub;margin-left:10%" onclick="callCheckAllAttendance()" value="{!bCheckAllAttendance}" disabled="{!(!bHideComponents)}"/>
+                                    <apex:outputText >{!$Label.Activity_Attn_Attended_Lbl}</apex:outputText></b>
+                                </apex:outputPanel>
+                            </apex:facet>
+                        </apex:column>
+                        <apex:column value="{!mapBenefIdToBenefWrapper[benefId].sLocalBeneficiaryId}" style="display:flex;width:100px">
+                            <apex:facet name="header">{!$Label.Activity_Attn_Local_Benef_ID_Lbl}</apex:facet>
+                        </apex:column>
+                        <apex:column >
+                            <apex:outputLink value="/{!mapBenefIdToBenefWrapper[benefId].sBeneficiaryId}" style="display:flex;width:100px">{!mapBenefIdToBenefWrapper[benefId].sBeneficiaryName}</apex:outputLink>
+                            <apex:facet name="header">{!$Label.Activity_Attn_Benef_Name_Lbl}</apex:facet>
+                        </apex:column>
+                        <apex:column value="{!mapBenefIdToBenefWrapper[benefId].sPrimaryCaregiverName}" style="display:flex;width:100px">
+                            <apex:facet name="header">{!$Label.Activity_Attn_Primary_Caregiver_Lbl}</apex:facet>
+                        </apex:column>
+             </apex:pageBlockTable>
+            
+   
+    </div>
+    <apex:commandButton value="{!$Label.Activity_Attn_Save_Btn_Lbl}" action="{!saveBeneficiaryAttendance}" reRender="mainTab" status="status" rendered="{!bHideComponents }"/>
+    <apex:commandButton value="{!$Label.Activity_Attn_Cancel_Btn_Lbl}" action="{!backToListPage}" rendered="{!bHideComponents}"/>
+    <apex:commandButton value="{!$Label.Activity_Attn_Print_Btn_Lbl}" onclick="openPrintPage();"/>
+    <!--apex:actionStatus id="status">
+       <apex:facet name="start">
+           <div class="waitingSearchDiv" id="el_loading" style="background-color: #DCD6D6;
+                  height: 100%;width:100%; opacity:0.45 ; z-index:55;"> 
+               <div class="waitingHolder" style="top: 250px; padding-left:600px;  align:center;position:absolute ; opacity:0.65 ; z-index:78;">
+                   <img class="waitingImage" src="{!$Resource.Loading_New}"/>                       
+               </div>
+           </div>
+       </apex:facet>
+    </apex:actionStatus>  -->
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:pageBlockTable columnsWidth="10%" value="{!lstForTable}" var="displayData" 
+                                         id="result4"  headerClass="toHideHeader" border="0" align="left" rendered="{!bShowBottom}">
+          <apex:column >
+                  <apex:outputText value="{!$Label.Activity_Attn_Total_Scheduled_Lbl}" style="font-weight:bold"/>
+          </apex:column>
+          <apex:column >
+              <apex:outputText value="{!iTotalScheduledHours}"/>
+          </apex:column>
+     </apex:pageBlockTable>
+     
+     <apex:pageBlockTable columnsWidth="10%" value="{!lstForTable}" var="displayData" 
+                                         id="result3"  headerClass="toHideHeader" border="0" align="left" rendered="{!bShowBottom}">
+          <apex:column >
+                  <apex:outputText value="{!$Label.Activity_Attn_Total_Attended_Lbl}" style="font-weight:bold"/>
+          </apex:column>
+          <apex:column >
+              <apex:outputText value="{!iTotalAttendedHours}"/>
+          </apex:column>
+     </apex:pageBlockTable>
+</apex:pageBlock>
+
+ </apex:outputPanel>
+ </apex:outputPanel>
+<apex:outputPanel id="tstpopup">
+<apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!bDisplayPopup}"/>
+<apex:outputPanel styleClass="custPopup" layout="block" rendered="{!bDisplayPopup}">
+    
+<apex:sectionHeader title="{!$Label.Activity_Attn_Search_Benef_Crit_Lbl}" subtitle="{!$Label.Activity_Attn_Benef_Search_Lbl}"  /> 
+
+  <apex:pageBlock >
+     
+       <apex:outputPanel id="searchComp" style="width:80%;">
+            <c:FilterListComponent DefaultSize="3" HeaderTitle="{!$Label.Activity_Attn_Search_Benef_Lbl}" inputFilterValues="{!oFilterListHandler}" logic="{!$Label.Mass_Update_Records_Logic_And}" ></c:FilterListComponent>
+            <apex:commandButton value="{!$Label.Search_Ben_Search_Button_Label}" status="loading" action="{!search}" reRender="ben,result,message" oncomplete="tableHandler1();" />
+        </apex:outputPanel>
+    </apex:pageBlock>  
+    <apex:actionStatus id="loading" startText="{!$Label.Search_Page_Loading}" >
+                <apex:facet name="start">
+                <apex:image value="{!$Resource.Loading_New}" id="loadingImage" style="background-repeat:repeat; padding-top:20px;padding-left:630px;  align:center;position:absolute ; opacity:1 ; z-index:78;"><div  style=" padding-top:950px;padding-left:630px;  align:center;position:absolute;z-index:79"><b> {!$Label.Account_Search_Searchin}</b></div></apex:image>
+                 
+              </apex:facet>
+  </apex:actionStatus>     
+        <apex:pageBlock title="{!$Label.Account_Search_Label_Search}"  id="ben">
+            
+                <apex:pageBlockSection columns="1" id="pbs3">
+
+                    <apex:pageBlockTable value="{!lstBenefWrapForPopup}" var="oBenefWrapPopup" 
+                        id="result2" align="left">
+                        
+                        <apex:column headerClass="leftAlign" styleClass="leftAlign">
+                            <apex:facet name="header" >
+                                <apex:inputCheckbox id="selectCheck" styleClass="selecctall" label="Action" onclick="selectAllCheck1()" value="{!bCheckAllForPopup}"/>
+                            </apex:facet>
+                            <apex:inputCheckbox value="{!oBenefWrapPopup.bSelected}" id="checkedone" styleClass="checkbox1" />
+                        </apex:column>
+                        
+                        <apex:column value="{!oBenefWrapPopup.sLocalBeneficiaryId}" headerClass="leftAlign" styleClass="leftAlign">
+                                <apex:facet name="header">{!$Label.Activity_Attn_Local_Benef_ID_Lbl}</apex:facet>
+                        </apex:column>
+                        <apex:column headerClass="leftAlign" styleClass="leftAlign">
+                            <apex:facet name="header">{!$Label.Activity_Attn_Benef_Name_Lbl}</apex:facet>
+                            <apex:outputLink value="/{!oBenefWrapPopup.sBeneficiaryId}">{!oBenefWrapPopup.sBeneficiaryName}</apex:outputLink>
+                        </apex:column>
+                        <apex:column value="{!oBenefWrapPopup.sTutorImplementerName}" headerClass="leftAlign" styleClass="leftAlign">
+                                <apex:facet name="header">{!$Label.Activity_Attn_Tutor_Implementer_Lbl}</apex:facet>
+                        </apex:column>
+                        <apex:column value="{!oBenefWrapPopup.sPrimaryCaregiverName}" headerClass="leftAlign" styleClass="leftAlign">
+                                <apex:facet name="header">{!$Label.Activity_Attn_Primary_Caregiver_Lbl}</apex:facet>
+                        </apex:column>
+                        <apex:column value="{!oBenefWrapPopup.sActiveProgram}" headerClass="leftAlign"
+                            styleClass="leftAlign">
+                            <apex:facet name="header">{!$Label.Account_Search_Label_Program}</apex:facet>
+                        </apex:column>
+                        <apex:column value="{!oBenefWrapPopup.sProgramType}" headerClass="leftAlign"
+                            styleClass="leftAlign">
+                            <apex:facet name="header">{!$Label.Activity_Attn_Program_Type_Lbl}</apex:facet>
+                        </apex:column>
+                        <apex:column value="{!oBenefWrapPopup.sCognitiveAgeGroup}" headerClass="leftAlign"
+                            styleClass="leftAlign">
+                            <apex:facet name="header">{!$Label.Activity_Attn_Cognitive_Age_Group_Lbl}</apex:facet>
+                        </apex:column>
+                        <apex:column value="{!oBenefWrapPopup.sGender}" headerClass="leftAlign"
+                            styleClass="leftAlign">
+                            <apex:facet name="header">{!$Label.Activity_Attn_Gender_Lbl}</apex:facet>
+                        </apex:column>
+                    </apex:pageBlockTable>                  
+                </apex:pageBlockSection>
+                <apex:commandButton value="{!$Label.Activity_Attn_Save_Benef_Lbl}" status="loading" action="{!selectBeneficiaries}" rerender="tstpopup,mainTab" />
+                <apex:pageMessages ></apex:pageMessages>
+                </apex:pageBlock>
+                <apex:commandButton value="{!$Label.Activity_Attn_Cancel_Btn_Lbl}" action="{!closePopupPage}" rerender="tstpopup,mainTab"/>
+
+</apex:outputPanel>
+</apex:outputPanel>
+</apex:form>
+    
+    <script type="text/javascript">
+    
+    var pageInfo = 0;
+    function tableHandler1()
+      {
+             var i=0;
+            $("[id$='add']").each(function() {
+                $(this).attr('name',  i);
+                i++;
+            });
+             oTable =  $("[id$='result2']").dataTable({
+                "sPaginationType": "full_numbers",
+                "sPageLast":"last",
+                 "iDisplayLength": 100
+            });
+            console.log(oTable.fnGetData());
+             $("[id$='header']").css("cursor","pointer");
+             oTable.fnPageChange(pageInfo);
+    }
+           
+    function addAll(){
+        var table =  $("[id$='result2']").dataTable();
+        pageInfo = table.fnPagingInfo().iPage;
+        table.fnFilter('');
+        table.fnLengthChange(500);
+    }
+    
+    function selectAllCheck1(){
+
+        var inputElem = document.getElementById('j_id0:form:ben:pbs3:result2:selectCheck').checked;
+        var table =  $("[id$='result2']").dataTable();
+        if(inputElem == true){        
+            $('input', table.fnGetNodes()).attr('checked',true);
+            return false;
+        }
+        if(inputElem == false){       
+            $('input', table.fnGetNodes()).attr('checked',false);
+            return false;
+        }
+    }
+    
+    </script>
+    
+
+</apex:page>

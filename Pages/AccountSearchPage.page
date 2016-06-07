@@ -1,0 +1,156 @@
+<!--************************************************************************
+*Page Name          : AccountSearchPage
+*Description        : This page is used to search any Account record, of type Beneficiary or ICP,
+                      based on certain filter criterias
+*Created By         : Vishal Katyare
+*Created On         : 10-May-2014
+
+********************************************************************************-->
+<apex:page controller="AccountSearchController" sidebar="false" tabStyle="Beneficiary_Search__tab" cache="false" id="page">
+   <script>
+        window.$Label = window.$Label || {};
+        $Label.Show = '{!JSENCODE($Label.TableJQuery_Show)}';
+        $Label.Showing = '{!JSENCODE($Label.TableJQuery_Showing)}';
+        $Label.No_Data_Available = '{!JSENCODE($Label.TableJQuery_No_Data_Available)}';
+        $Label.Entries = '{!JSENCODE($Label.TableJQuery_Entries)}';
+        $Label.Search = '{!JSENCODE($Label.TableJQuery_Search)}';
+        $Label.To = '{!JSENCODE($Label.TableJQuery_To)}';
+        $Label.First = '{!JSENCODE($Label.TableJQuery_First)}';
+        $Label.Previous = '{!JSENCODE($Label.TableJQuery_Previous)}';
+        $Label.Next = '{!JSENCODE($Label.TableJQuery_Next)}';
+        $Label.Last = '{!JSENCODE($Label.TableJQuery_Last)}';
+        $Label.Filtered_From = '{!JSENCODE($Label.TableJQuery_Filtered_From)}';
+        $Label.Total_Enteries = '{!JSENCODE($Label.TableJQuery_Total_Enteries)}';
+        $Label.No_Matching_Records = '{!JSENCODE($Label.TableJQuery_No_Matching_Records)}';
+        $Label.Showing_Enteries = '{!JSENCODE($Label.TableJQuery_Showing_Enteries)}';
+        $Label.Of = '{!JSENCODE($Label.TableJQuery_Of)}';       
+    </script>
+    <apex:includescript value="{!URLFOR($Resource.jQuery_Lib)}"/>
+    <script type="text/javascript" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/tableJquery.js')}"></script>   
+    <script class="jsbin" src="{!URLFOR($Resource.tableJquery,'tableJQUERY/tableJquery2.js')}"></script>
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/demo_Page.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.tableJquery,'tableJQUERY/table.css')}" />
+    
+    <style>
+        .alignCenter{text-align:left}
+    </style>
+    <script type="text/javascript">
+        function replaceEnter(evt){
+          var e = evt || window.event;
+          if (e.keyCode == 13){
+            var allElements = document.getElementsByTagName('*');
+            for (var i = 0; i < allElements.length; i++){
+              if (allElements[i].id.indexOf("SearchBtn") !=-1){
+                allElements[i].click();
+              }
+            }
+            return false;
+          }else{
+            return true;
+          }
+        }
+        document.onkeypress = replaceEnter;
+    </script>
+    <apex:form id="d">
+        <apex:pageMessages id="message"> </apex:pageMessages>
+        <apex:actionStatus id="loading" startText="{$Label.Search_Page_Loading}">
+            <apex:facet name="start">
+                <apex:image value="{!$Resource.Loading_New}" id="loadingImage" style=" padding-top:300px;padding-left:630px;  align:center;position:absolute; opacity:1 ; z-index:78;"><div  style="padding-top:400px;padding-left:630px;  align:center;position:absolute;z-index:79"><b> {!$Label.Account_Search_Searchin}</b></div></apex:image>
+                
+            </apex:facet>
+        </apex:actionStatus> 
+        <apex:sectionHeader title="{!$Label.Account_Search_Title}" subtitle="{!$Label.Account_Search_Sub_Title}" />
+        <apex:pageBlock id="pageBlk">
+            <apex:pageBlockSection title="{!$Label.Account_Search_Section_Title}" dir="left" columns="1" id="pb1">
+                
+                <apex:selectList onchange="callSetValueTypeMap2()" label="{!$Label.Account_Search_Label_Name}" value="{!sObjectName}" size="1"> 
+                    <apex:selectOptions value="{!objectList}" > </apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList onchange="callSetValueTypeMap(this.value)" label="{!$Label.Account_Search_Label_Type}" value="{!sObjectType}" size="1" rendered="{!sObjectName='Account'}">
+                    <apex:selectOptions value="{!RecordTypeListAccount}"> </apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList onchange="callSetValueTypeMap(this.value)" label="{!$Label.Account_Search_Label_Type}" value="{!sObjectType}" size="1" rendered="{!sObjectName='Lead'}">
+                    <apex:selectOptions value="{!RecordTypeListLead}"> </apex:selectOptions>
+                </apex:selectList>
+                <apex:actionFunction name="callSetValueTypeMap" action="{!setvalueTypeMap}" reRender="searchComp,result" oncomplete="tableHandler()" status="loading">
+                    <apex:param name="sObjectType" value=""/>
+                </apex:actionFunction>
+                <apex:actionFunction name="callSetValueTypeMap2" action="{!setvalueTypeMap}" reRender="pageBlk,searchComp,result" oncomplete="tableHandler()" status="loading"/>
+            </apex:pageBlockSection>
+            <br></br> 
+        <apex:outputPanel id="searchComp">
+            <c:FilterListComponent DefaultSize="3" HeaderTitle="{!$Label.Search_Ben_Search_Account_Label}" inputFilterValues="{!oFilterListHandler}" logic="{!$Label.Mass_Update_Records_Logic_And}" id="filterLst"></c:FilterListComponent>
+            <apex:commandButton value="{!$Label.Search_Ben_Search_Button_Label}" status="loading" action="{!search}" reRender="result,message" oncomplete="tableHandler()" id="SearchBtn"/>
+            <apex:commandButton value="{!$Label.Search_Ben_Close_Button_Label}" action="{!close}"/>
+        </apex:outputPanel>
+    </apex:pageBlock>
+    <apex:pageBlock >
+        <apex:pageBlockSection title="{!$Label.Account_Search_Label_Search}" columns="1" id="pbs1">
+            <apex:pageBlockTable value="{!lstSObjectResult}" var="displaydata" id="result" align="left">
+                <apex:repeat value="{!lstFieldsToDisplay}" var="field">
+                    
+                    <apex:column rendered="{!IF(field=='Name',true,false)}">
+                         <apex:facet name="header">{!sColumnName}</apex:facet>  
+                        <apex:outputLink target="_new" value="/{!displaydata.Id}">{!displaydata[field]} </apex:outputLink>
+                    </apex:column>  
+                    <apex:column value="{!displaydata[field]}" rendered="{!IF(field=='Name',false,true)}"/>
+                </apex:repeat>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+</apex:form>
+<apex:outputPanel id="script">
+
+<script type="text/javascript">
+var j;
+//var $j = jQuery.noConflict();
+$(document).ready(function(){
+    
+    // for jquery table plugin
+    oTable =  $("[id$='result']").dataTable({
+        //"bJQueryUI": true,
+        "sPaginationType": "full_numbers",
+        "sPageLast":"last",
+        "iDisplayLength": 10,
+        
+        
+    });
+    
+    //$("[id$='header']").css("cursor","pointer");
+    // j$("[id$='id48']").removeClass();
+    //j$("[id$='x']").parent("td").css("width","50px");
+});
+
+function tableHandler()
+{
+    oTable =  $("[id$='result']").dataTable({
+        //"bJQueryUI": true,
+        "sPaginationType": "full_numbers",
+        "sPageLast":"last",
+        
+        "iDisplayLength": 10,
+       
+    });
+    
+    // alert(oTable.fnGetData());
+    
+    console.log(oTable.fnGetData());
+    //dataTables_info
+    // alert($(".dataTables_paginate paging_full_numbers").len);
+    $(".dataTables_length").eq(0).remove();
+    $(".dataTables_filter").eq(0).remove();
+    $(".dataTables_info").eq(1).remove();
+    $(".dataTables_paginate.paging_full_numbers").eq(1).remove();
+    $("[id$='header']").css("cursor","pointer");
+}
+
+function storeAll()
+{
+    alert( document.getElementById("selectCheck1"));
+    storeSelected();
+}   
+
+</script>
+</apex:outputPanel>
+</apex:page>

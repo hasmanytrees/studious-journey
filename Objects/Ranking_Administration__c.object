@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This Junction object helps capture ranking administration data of Lead that needs to be contextualized at Field office level</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>Child_Enrollment_Capacity__c</fullName>
+        <description>Capacity of the church leadership to mobilize children and caregivers for enrollment within the program.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Capacity of the church leadership to mobilize children and caregivers for enrollment within the program.</inlineHelpText>
+        <label>Child Enrollment Capacity</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Commitment_To_Child_Ministry__c</fullName>
+        <description>Evidence that the church already has an active commitment to minister to children. Commitment to Children acts as one of the ranking criteria of Lead</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Evidence that the church already has an active commitment to minister to children</inlineHelpText>
+        <label>Commitment To Child Ministry</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Commitment_To_Recruiting_Christians__c</fullName>
+        <description>Ability of the church to recruit sufficient committed Christians to serve in accountability structure and project workers.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Ability of the church to recruit sufficient committed Christians to serve in accountability structure and project workers.</inlineHelpText>
+        <label>Commitment To Recruiting Christians</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Commitment_To_Use_Local_Resources__c</fullName>
+        <description>Commitment of the church to use some of its own human, financial, and physical resources to develop and implement ministry to children.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Commitment of the church to use some of its own human, financial, and physical resources to develop and implement ministry to children.</inlineHelpText>
+        <label>Commitment To Use Local Resources</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Denomination__c</fullName>
+        <description>Is this lead from a denomination that represents approximately 20% of the partnerships in your  country?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this lead from a denomination that represents approximately 20% of the partnerships in your  country?</inlineHelpText>
+        <label>Denomination</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Field_Office__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Name of the Field Office</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the Field Office</inlineHelpText>
+        <label>Field Office</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Field Office</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Ranking Administration</relationshipLabel>
+        <relationshipName>Ranking_Administration</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legal_Registration__c</fullName>
+        <description>A legal registration under which the church partner may operate. Either its own registration or that of its denomination.Legal Registration acts as one of the ranking criteria of Lead</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A legal registration under which the church partner may operate. Either its own registration or that of its denomination</inlineHelpText>
+        <label>Legal Registration</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <description>Location of ICP acts as one of the ranking criteria of Lead</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Location of ICP acts as one of the ranking criteria of Lead</inlineHelpText>
+        <label>Location</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Physical_Environment__c</fullName>
+        <description>Physical Environment acts as one of the ranking criteria of Lead. Existence of sufficient space and a physical environment conducive for effective holistic child and adolescent programming</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Existence of sufficient space and a physical environment conducive for effective holistic child and adolescent programming</inlineHelpText>
+        <label>Physical Environment</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Statement_Of_Faith_Compatibility__c</fullName>
+        <description>Statement of Faith compatibility acts as one of the ranking criteria of Lead. Compatibility of the local church’s doctrine with Compassion’s Statement of Faith and a view of the role of the local church view</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Compatibility of the local church’s doctrine with Compassion’s Statement of Faith and a view of the role of the local church view</inlineHelpText>
+        <label>Statement Of Faith Compatibility</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <label>Ranking Administration</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Field_Office__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>RA-{0000}</displayFormat>
+        <label>Ranking Administration Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Ranking Administration</pluralLabel>
+    <recordTypes>
+        <fullName>Record_Type_1</fullName>
+        <active>true</active>
+        <label>Record Type 1</label>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Field_Office__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Sum_of_Stage1criteria_must_be_equal_to_1</fullName>
+        <active>true</active>
+        <description>This validation rule checks if the sum of weights given to stage 1 fields is equal to 100%.</description>
+        <errorConditionFormula>IF( ( Statement_Of_Faith_Compatibility__c +Commitment_To_Child_Ministry__c+Location__c) = 1, false, true)</errorConditionFormula>
+        <errorMessage>Sum of weights given to all fields of Stage 1 (Statement of faith compatibility, Commitment to child ministry and Location) must be equal to 100%</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sum_of_Stg2_criteria_must_be_equal_to_1</fullName>
+        <active>true</active>
+        <description>This validation rule checks if the sum of weights given to stage 2 fields is equal to 100%.</description>
+        <errorConditionFormula>IF( (Child_Enrollment_Capacity__c+Commitment_To_Recruiting_Christians__c+Commitment_To_Use_Local_Resources__c+Denomination__c+Legal_Registration__c+Physical_Environment__c) = 1, false, true)</errorConditionFormula>
+        <errorMessage>Sum of weights given to all fields of Stage 2(Legal Registration, Physical Environment, Child Enrollment Capacity, Commitment to Recruiting Christians, Commitment to Use Local Resources &amp; Denomination) must be equal to 100%</errorMessage>
+    </validationRules>
+</CustomObject>

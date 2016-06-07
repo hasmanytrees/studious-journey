@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Use this custom setting to add Global constants to be used across the organization. Data to be stored in Name-Value pair where name would be record Name and Value would be either Value field or Number Value field.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Number_Value__c</fullName>
+        <description>Use this field to store any numeric value against the parameter.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only use this if you have any Numeric value to the parameter as well.</inlineHelpText>
+        <label>Number Value</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <description>This will be text value stored against the Parameter name which is custom setting&apos;s Name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Put Value of the parameter defined as Custom setting&apos;s Record Name.</inlineHelpText>
+        <label>Value</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Global Constants</label>
+    <visibility>Protected</visibility>
+</CustomObject>

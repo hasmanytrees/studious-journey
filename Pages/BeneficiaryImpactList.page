@@ -1,0 +1,26 @@
+<!--****************************************************************************
+*Page Name          : BeneficiaryImpactList
+*Description        : This is a VisualForce page used to display the list of Beneficiary 
+                      Disaster Impact records created and updated in a particular
+                      duration for Communication Update to GMC.
+*Created By         : Sudipta Nayak
+*Created On         : 10-Sep-2015
+
+********************************************************************************-->
+
+<apex:page controller="BeneficiaryImpactListController" tabStyle="Disaster__c">
+    <apex:form id="ImpactList">
+    <apex:pageBlock title="{!$Label.Disaster_Beneficiary_Impacts_List}">
+            <apex:outputPanel rendered="true">
+                <c:ImpactListComponent id="CreatedCall" sObject="Beneficiary" bCreate="true" lstCreatedBen="{!lstBeneficiaryImpactsCreated}" 
+                bNoRecordsToShow="{!bIsCreateListEmpty}" oCommUpdate="{!oComRecUpdate}" sURLForExport="{!sURLForInsert}"
+                sTitle="{!$Label.Disaster_New_Beneficiary_List}"></c:ImpactListComponent> 
+            </apex:outputPanel>
+            <apex:outputPanel rendered="true">
+               <c:ImpactListComponent id="UpdatedCall" sObject="Beneficiary" bCreate="false" lstCreatedBen="{!lstBeneficiaryImpactsUpdated}" 
+               bNoRecordsToShow="{!bIsUpdateListEmpty}" oCommUpdate="{!oComRecUpdate}" sURLForExport="{!sURLForUpdate}"
+               sTitle="{!$Label.Disaster_Updated_Beneficiary_List}"></c:ImpactListComponent> 
+            </apex:outputPanel>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>
